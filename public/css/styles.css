@@ -1,0 +1,9 @@
+.gradient-text {
+    background-image: linear-gradient(to right, #22a8e0, #22a8e0, #265888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar-hidden {
+    transform: translateY(-100%);
+}
