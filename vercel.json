@@ -2,19 +2,39 @@
     "version": 2,
     "framework": "vite",
     "functions": {
-        "api/*.php": {
-            "runtime": "vercel-php@0.6.0"
-        }
+        "api/*.php": { "runtime": "vercel-php@0.6.0" }
     },
     "routes": [
-        { "src": "/css/(.+)",  "dest": "/api/assets.php?file=/public/css/$1" },
-        { "src": "/js/(.+)",  "dest": "/api/assets.php?file=/public/js/$1" },
-        { "src": "/(.*)",  "dest": "/api/index.php" }
-   ],
+        {
+            "src": "/build/(.*)",
+            "dest": "/public/build/"
+        },
+        {
+            "src": "/resources/(.*)",
+            "dest": "/public/resources/"
+        },
+        {
+            "src": "/assets/(.*)",
+            "dest": "/public/assets/"
+        },
+        {
+            "src": "/css/(.*)",
+            "dest": "/public/css/"
+        },
+        {
+            "src": "/js/(.*)",
+            "dest": "/public/js/"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
     "env": {
+        "APP_NAME": "Stelar",
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
-        "APP_URL": "https://stelarhub.vercel.app",
+        "APP_DEBUG": "false",
+    
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
         "APP_PACKAGES_CACHE": "/tmp/packages.php",
@@ -23,6 +43,8 @@
         "VIEW_COMPILED_PATH": "/tmp",
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie"
-    }
+        "SESSION_DRIVER": "cookie", 
+        "SSR_TEMP_PATH": "/tmp/ssr",
+        "NODE_PATH": "node"
+      }
 }

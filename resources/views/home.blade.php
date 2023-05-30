@@ -34,8 +34,8 @@
       <div class="flex lg:flex-1">
         <a href="/" class="-m-1.5 p-1.5">
           <span class="sr-only">Stelar</span>
-          <img class="hidden w-auto h-8 lg:inline" src="images/stelar-logo-color.svg" alt="Logo">
-          <img class="w-auto h-8 lg:hidden" src="images/stelar-logo-color-mobile.svg" alt="Logo">
+          <img class="hidden w-auto h-8 lg:inline" src="assets/stelar-logo-color.svg" alt="Logo">
+          <img class="w-auto h-8 lg:hidden" src="assets/stelar-logo-color-mobile.svg" alt="Logo">
         </a>
       </div>
       <div class="flex lg:hidden">
@@ -426,7 +426,7 @@
       <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">
           <a href="https://flowbite.com/" class="flex items-center">
-            <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="FlowBite Logo" />
+            <img src="https://flowbite.com/docs/assets/logo.svg" class="h-8 mr-3" alt="FlowBite Logo" />
             <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
           </a>
         </div>
