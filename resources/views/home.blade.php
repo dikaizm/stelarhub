@@ -27,7 +27,7 @@
 
   {{-- Navbar --}}
   <header id="navbar"
-    class="fixed inset-x-0 top-0 z-50 h-20 transition-all duration-700 bg-white hover:shadow-2xl hover:shadow-neutral-300/50">
+    class="fixed inset-x-0 top-0 z-50 h-20 transition-all duration-700 bg-white hover:shadow-2xl hover:shadow-black/10">
 
     {{-- Desktop menu --}}
     <nav class="flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8" aria-label="Global">
@@ -150,7 +150,7 @@
 
     {{-- Service section --}}
     <section class="relative mx-auto mt-4 h-fit max-w-7xl lg:-m-20 lg:mx-auto xl:mt-4">
-      <div class="w-full px-16 lg:px-24">
+      <div class="w-full px-6 lg:px-8">
         <div class="flex items-end gap-2 text-5xl font-bold select-none">
           <h2 class="">We have every <br class="inline min-[1200px]:hidden"> solutions for your</h2>
           <div class="flex flex-col">
@@ -183,11 +183,10 @@
                 class="px-6 py-2 text-xs font-bold transition-all duration-200 border rounded-full w-fit border-sky-700 text-sky-700 hover:bg-sky-700 hover:text-white">LEARN
                 MORE</a>
             </div>
-            <img
-              class="self-center object-cover overflow-hidden transition-all duration-200 bg-white h-72 w-72 rounded-3xl hover:scale-105 hover:drop-shadow-2xl md:h-56"
+            <img class="self-center object-cover overflow-hidden bg-white h-72 w-72 rounded-3xl md:h-56"
               src="https://images.unsplash.com/photo-1566657817181-c69e4a8eeb1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
               alt="">
-            <button class="h-12 mt-4 min-w-fit text-sky-700"><svg width="currentWidth" height="currentWidth"
+            <button class="h-10 mt-4 min-w-fit text-sky-700"><svg width="currentWidth" height="currentWidth"
                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 8L12 16" stroke-linecap="round" />
@@ -211,7 +210,7 @@
 
             </div>
 
-            <button class="h-12 mt-4 min-w-fit text-sky-700"><svg width="currentWidth" height="currentWidth"
+            <button class="h-10 mt-4 min-w-fit text-sky-700"><svg width="currentWidth" height="currentWidth"
                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 8L12 16" stroke-linecap="round" />
@@ -235,7 +234,7 @@
 
             </div>
 
-            <button class="h-12 mt-4 min-w-fit text-sky-700"><svg width="currentWidth" height="currentWidth"
+            <button class="h-10 mt-4 min-w-fit text-sky-700"><svg width="currentWidth" height="currentWidth"
                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 8L12 16" stroke-linecap="round" />
@@ -259,7 +258,7 @@
 
             </div>
 
-            <button class="h-12 mt-4 min-w-fit text-sky-700"><svg width="currentWidth" height="currentWidth"
+            <button class="h-10 mt-4 min-w-fit text-sky-700"><svg width="currentWidth" height="currentWidth"
                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 8L12 16" stroke-linecap="round" />
@@ -283,7 +282,7 @@
 
             </div>
 
-            <button class="h-12 mt-4 min-w-fit text-sky-700"><svg width="currentWidth" height="currentWidth"
+            <button class="h-10 mt-4 min-w-fit text-sky-700"><svg width="currentWidth" height="currentWidth"
                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 8L12 16" stroke-linecap="round" />
@@ -294,17 +293,135 @@
           <div class="h-[2px] bg-gray-200"></div>
         </div>
       </div>
-      <div class="bg-white h-96"></div>
     </section>
 
     {{-- Portfolio section --}}
-    <section>
+    <section class="relative mt-48">
+      <div class="flex flex-col px-6 py-20 mx-auto h-fit max-w-7xl gap-y-10 lg:px-8">
+        <div class="flex flex-col items-center text-center gap-y-6">
+          <h2 class="text-5xl font-bold">Explore what we have done</h2>
+        <p class="max-w-2xl leading-loose text-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. </p>
+        </div>
 
+        <div class="grid justify-between gap-8 grid-auto-fit-xl">
+          <div class="p-5 transition-all duration-200 bg-white rounded-3xl hover:scale-105 hover:drop-shadow-2xl">
+            <img class="object-cover w-full overflow-hidden bg-white h-96 rounded-2xl"
+              src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="">
+            <h2 class="mt-6 text-2xl font-bold">Kargo Technologies</h2>
+            <p class="mt-4 text-sm leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="flex items-center justify-between mt-6 font-semibold">
+              <p href="">See case study</p>
+              <svg class="w-4 h-4" width="currentWidth" height="currentHeigth" viewBox="0 0 48 48" fill="none"
+                stroke="currentColor" stroke-width="5" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <div class="p-5 transition-all duration-200 bg-white rounded-3xl hover:scale-105 hover:drop-shadow-2xl">
+            <img class="object-cover w-full overflow-hidden bg-white h-96 rounded-2xl"
+              src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="">
+            <h2 class="mt-6 text-2xl font-bold">Kargo Technologies</h2>
+            <p class="mt-4 text-sm leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="flex items-center justify-between mt-6 font-semibold">
+              <p href="">See case study</p>
+              <svg class="w-4 h-4" width="currentWidth" height="currentHeigth" viewBox="0 0 48 48" fill="none"
+                stroke="currentColor" stroke-width="5" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <div class="p-5 transition-all duration-200 bg-white rounded-3xl hover:scale-105 hover:drop-shadow-2xl">
+            <img class="object-cover w-full overflow-hidden bg-white h-96 rounded-2xl"
+              src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="">
+            <h2 class="mt-6 text-2xl font-bold">Kargo Technologies</h2>
+            <p class="mt-4 text-sm leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="flex items-center justify-between mt-6 font-semibold">
+              <p href="">See case study</p>
+              <svg class="w-4 h-4" width="currentWidth" height="currentHeigth" viewBox="0 0 48 48" fill="none"
+                stroke="currentColor" stroke-width="5" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center mt-4">
+          <a href="#"
+          class="px-4 py-2 text-xs font-semibold transition-all duration-200 border rounded-full w-fit border-sky-700 text-sky-700 hover:bg-sky-700 hover:text-white">SEE
+          OUR WORKS</a>
+        </div>
+      </div>
     </section>
+
+    {{-- Testimonial section --}}
+    {{-- <section class="relative mt-32">
+      <div class="px-6 mx-auto max-w-7xl lg:px-8">
+        <h2 class="text-5xl font-bold">What clients are saying about our services</h2>
+
+        <div class="grid gap-8 mt-12 grid-auto-fit-lg">
+          <div class="p-5 transition-all duration-200 bg-white border rounded-lg hover:drop-shadow-xl">
+            <p class="text-sm">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.
+            </p>
+            <div class="flex items-center mt-6 gap-x-3">
+              <img class="object-cover w-10 h-10 rounded-full"  src="https://images.unsplash.com/photo-1584611139207-9cf4fed64188?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="">
+              <div class="flex flex-col gap-y-1">
+                <p class="text-sm font-semibold">Name</p>
+                <p class="text-xs text-neutral-400">Desc</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 transition-all duration-200 bg-white border rounded-lg hover:drop-shadow-xl">
+            <p class="text-sm">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.
+            </p>
+            <div class="flex items-center mt-6 gap-x-3">
+              <img class="object-cover w-10 h-10 rounded-full"  src="https://images.unsplash.com/photo-1584611139207-9cf4fed64188?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="">
+              <div class="flex flex-col gap-y-1">
+                <p class="text-sm font-semibold">Name</p>
+                <p class="text-xs text-neutral-400">Desc</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-5 transition-all duration-200 bg-white border rounded-lg hover:drop-shadow-xl">
+            <p class="text-sm ">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.
+            </p>
+            <div class="flex items-center mt-6 gap-x-3">
+              <img class="object-cover w-10 h-10 rounded-full"  src="https://images.unsplash.com/photo-1584611139207-9cf4fed64188?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="">
+              <div class="flex flex-col gap-y-1">
+                <p class="text-sm font-semibold">Name</p>
+                <p class="text-xs text-neutral-400">Desc</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> --}}
+ 
   </main>
 
   {{-- Footer --}}
-  <footer class="bg-white dark:bg-gray-900">
+  <footer class="relative mt-32 bg-neutral-900">
+
+  </footer>
+
+  {{-- Footer --}}
+  <footer class="mt-40 bg-white dark:bg-gray-900">
     <div class="w-full max-w-screen-xl p-4 py-6 mx-auto lg:py-8">
       <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0">

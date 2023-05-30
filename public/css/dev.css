@@ -7,23 +7,23 @@
 }
 
 .rotate-word-1 {
-    animation: spin_words_1 ease-in-out 10s infinite;
+    animation: spin_words_1 ease-in-out 8s infinite;
 }
 
 .rotate-word-2 {
-    animation: spin_words_2 ease-in-out 10s infinite;
+    animation: spin_words_2 ease-in-out 8s infinite;
 }
 
 .rotate-word-3 {
-    animation: spin_words_3 ease-in-out 10s infinite;
+    animation: spin_words_3 ease-in-out 8s infinite;
 }
 
 .rotate-word-4 {
-    animation: spin_words_4 ease-in-out 10s infinite;
+    animation: spin_words_4 ease-in-out 8s infinite;
 }
 
 .rotate-word-5 {
-    animation: spin_words_5 ease-in-out 10s infinite;
+    animation: spin_words_5 ease-in-out 8s infinite;
 }
 
 @keyframes spin_words_1 {
