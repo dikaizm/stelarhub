@@ -6,6 +6,10 @@
     },
     "routes": [
         {
+            "src": "/favicon/(.*)",
+            "dest": "/public/favicon/"
+        },
+        {
             "src": "/build/(.*)",
             "dest": "/public/build/"
         },

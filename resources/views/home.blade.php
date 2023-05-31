@@ -3,9 +3,14 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
   <title>Stelar - Digital Agency</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
 
   {{-- Fonts --}}
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,10 +32,10 @@
 
   {{-- Navbar --}}
   <header id="navbar"
-    class="fixed inset-x-0 top-0 z-50 h-20 transition-all duration-700 bg-white hover:shadow-2xl hover:shadow-black/10">
+    class="fixed inset-x-0 top-0 z-50 h-16 transition-all duration-700 bg-white hover:shadow-2xl hover:shadow-black/10 sm:h-20">
 
     {{-- Desktop menu --}}
-    <nav class="flex items-center justify-between p-6 mx-auto max-w-7xl lg:px-8" aria-label="Global">
+    <nav class="flex items-center justify-between px-6 py-4 mx-auto max-w-7xl sm:p-6 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1">
         <a href="/" class="-m-1.5 p-1.5">
           <span class="sr-only">Stelar</span>
@@ -99,59 +104,204 @@
     </nav>
   </header>
 
-  <main class="relative w-full pt-0 mt-20 overflow-hidden">
+  <main class="relative w-full pt-0 overflow-hidden">
+
     {{-- Hero section --}}
-    <section class="relative mx-auto flex h-[360px] max-w-7xl justify-between lg:h-[480px]">
-      <div class="absolute inset-x-0 w-full h-56 px-6 lg:px-8">
-        <div class="flex items-end justify-between w-full gap-12">
-          <h1 class="gradient-text pt-12 text-9xl font-extrabold tracking-tight lg:text-[12rem]">Stellar</h1>
-          <div class="flex items-end justify-end max-w-sm pb-2">
-            <strong class="text-xs font-normal leading-loose lg:text-sm lg:font-normal lg:leading-loose">We craft
-              exceptional digital experiences that bring your brand to success. With expertise in websites, apps, and
+    <section class="relative w-full h-screen bg-gradient-to-r from-sky-100 to-blue-100/0">
+      <div class="relative flex flex-col justify-between w-full h-full">
+        <div class="flex flex-col items-center justify-center h-full">
+          <div class="flex items-end justify-between w-full gap-12 px-6 mx-auto max-w-7xl lg:px-8">
+            <h1 class="gradient-text pt-12 text-6xl font-extrabold tracking-tight sm:text-9xl lg:text-[12rem]">Stellar
+            </h1>
+            <div class="flex items-end justify-end max-w-sm pb-2">
+              <strong
+                class="hidden text-sm font-normal leading-loose sm:inline lg:text-lg lg:font-normal lg:leading-loose">We
+                craft
+                exceptional digital experiences that bring your brand to success. With expertise in websites, apps,
+                and
+                branding, we combine creativity and technology to bring your vision to life.</strong>
+            </div>
+          </div>
+          <div class="flex items-end justify-between w-full px-6 mx-auto max-w-7xl gap-x-2 sm:gap-x-8 lg:px-8">
+            <h1 class="gradient-text text-6xl font-extrabold tracking-tight sm:text-9xl lg:text-[12rem]">Creations</h1>
+            <svg class="h-12 min-w-fit text-sky-200 sm:h-24 lg:h-36" width="122" height="140"
+              viewBox="0 0 122 140" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M85.17 68.34C54.95 75.6 49.64 81.48 43.08 114.93C36.52 81.48 31.21 75.6 0.98999 68.34C31.21 61.08 36.52 55.2 43.08 21.75C49.64 55.2 54.95 61.08 85.17 68.34Z" />
+              <path
+                d="M121.68 109.98C102.51 114.58 99.14 118.32 94.98 139.54C90.82 118.32 87.45 114.59 68.28 109.98C87.45 105.38 90.82 101.64 94.98 80.4199C99.14 101.64 102.51 105.37 121.68 109.98Z" />
+              <path
+                d="M104.88 20.52C91.5701 23.72 89.2301 26.31 86.3501 41.04C83.4601 26.31 81.1201 23.72 67.8201 20.52C81.1301 17.32 83.4701 14.73 86.3501 0C89.2401 14.73 91.5801 17.32 104.88 20.52Z" />
+            </svg>
+          </div>
+          <div class="px-6 mx-auto mt-10">
+            <strong class="text-sm font-normal leading-loose sm:hidden">We craft
+              exceptional digital experiences that bring your brand to success. With expertise in websites, apps,
+              and
               branding, we combine creativity and technology to bring your vision to life.</strong>
           </div>
         </div>
-        <div class="flex items-end justify-between gap-x-8">
-          <h1 class="gradient-text text-9xl font-extrabold tracking-tight lg:text-[12rem]">Creations</h1>
-          <svg class="h-24 min-w-fit text-sky-400 lg:h-36" width="132" height="132" viewBox="0 0 132 132"
-            stroke="currentColor" stroke-width="2" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M87.737 83.19C86.685 83.571 85.729 84.179 84.938 84.97C84.147 85.761 83.539 86.717 83.158 87.769L68.382 128.38C68.194 128.858 67.866 129.268 67.441 129.557C67.016 129.846 66.514 130 66 130C65.486 130 64.984 129.846 64.559 129.557C64.135 129.268 63.806 128.858 63.618 128.38L48.842 87.737C48.461 86.685 47.853 85.729 47.062 84.938C46.271 84.147 45.315 83.539 44.263 83.158L3.62 68.382C3.142 68.194 2.732 67.866 2.443 67.441C2.154 67.016 2 66.514 2 66C2 65.486 2.155 64.984 2.443 64.559C2.732 64.135 3.142 63.806 3.62 63.618L44.263 48.842C45.315 48.461 46.271 47.853 47.062 47.062C47.853 46.271 48.461 45.315 48.842 44.263L63.618 3.62C63.806 3.142 64.135 2.732 64.559 2.443C64.984 2.154 65.486 2 66 2C66.514 2 67.016 2.155 67.441 2.443C67.866 2.732 68.194 3.142 68.382 3.62L83.158 44.263C83.539 45.315 84.147 46.271 84.938 47.062C85.729 47.853 86.685 48.461 87.737 48.842L128.38 63.618C128.858 63.806 129.268 64.135 129.557 64.559C129.846 64.984 130 65.486 130 66C130 66.514 129.846 67.016 129.557 67.441C129.268 67.866 128.858 68.194 128.38 68.382L87.737 83.19Z" />
-          </svg>
+
+        <div class="py-4 bg-white sm:py-8">
+          <div class="h-full px-6 mx-auto max-w-7xl lg:px-8">
+            <div class="grid justify-between grid-cols-2 gap-3 text-neutral-700 sm:flex sm:gap-6">
+              <div class="flex items-center gap-2 sm:gap-4">
+                <p class="text-4xl font-semibold tracking-tighter sm:text-[4rem]">20<span
+                    class="text-3xl sm:text-[3.5rem]">+</span></p>
+                <p class="text-xs sm:text-sm">Satisfied <br> Customers</p>
+              </div>
+              <div class="flex items-end gap-2 sm:gap-4">
+                <p class="text-4xl font-semibold tracking-tighter sm:text-[4rem]">96<span
+                    class="text-xl font-extrabold sm:text-[2.5rem]">%</span></p>
+                <p class="text-xs sm:text-sm">Client's <br> Satisfaction</p>
+              </div>
+              <div class="flex items-end gap-2 sm:gap-4">
+                <p class="text-4xl font-semibold tracking-tighter sm:text-[4rem]">50<span
+                    class="text-3xl sm:text-[3.5rem]">+</span></p>
+                <p class="text-xs sm:text-sm">Completed <br> Projects</p>
+              </div>
+              <div class="flex items-end gap-2 sm:gap-4">
+                <p class="text-4xl font-semibold tracking-tighter sm:text-[4rem]">5k<span
+                    class="text-3xl sm:text-[3.5rem]">+</span></p>
+                <p class="text-xs sm:text-sm">Leads <br> Generated</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     {{-- Showcase section --}}
-    <section class="relative flex justify-between mx-auto mt-20 h-fit max-w-7xl">
+    <section class="relative flex justify-between mx-auto mt-24 h-fit max-w-7xl">
       <div
         class="grid w-full grid-cols-1 gap-6 px-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 lg:px-8 xl:grid-cols-4">
-        <a href="#" class="h-min"><img
-            class="object-cover overflow-hidden transition-all duration-200 bg-white h-96 rounded-3xl hover:scale-105 hover:drop-shadow-2xl"
+        <a href="#"
+          class="relative overflow-hidden transition-all duration-200 group h-96 rounded-3xl hover:scale-105 hover:drop-shadow-2xl">
+          <div
+            class="absolute z-40 w-full h-full p-6 transition-all duration-500 translate-y-full bg-white group-hover:translate-y-0">
+            <div class="flex flex-col justify-between h-full">
+              <div>
+                <h4 class="text-xl font-semibold">System Information</h4>
+                <p class="text-sm">Technology</p>
+              </div>
+              <p class="text-sm leading-loose">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor
+                incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.</p>
+              <div class="flex justify-end">
+                <svg class="w-4 h-4" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="5"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="absolute bottom-0 z-30 w-full p-6 text-white">
+            <h4 class="text-xl font-semibold">System Information</h4>
+            <p class="text-sm">Technology</p>
+          </div>
+          <div class="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-black/70 to-black/0"></div>
+          <img class="object-cover h-full"
             src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-            alt=""></a>
-        <a href="#" class="h-min md:mt-20">
-          <img
-            class="object-cover overflow-hidden transition-all duration-200 bg-white h-96 rounded-3xl hover:scale-105 hover:drop-shadow-2xl"
+            alt="">
+        </a>
+        <a href="#"
+          class="relative overflow-hidden transition-all duration-200 group h-96 rounded-3xl hover:scale-105 hover:drop-shadow-2xl md:mt-20">
+          <div
+            class="absolute z-40 w-full h-full p-6 transition-all duration-500 translate-y-full bg-white group-hover:translate-y-0">
+            <div class="flex flex-col justify-between h-full">
+              <div>
+                <h4 class="text-xl font-semibold">System Information</h4>
+                <p class="text-sm">Technology</p>
+              </div>
+              <p class="text-sm leading-loose">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor
+                incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.</p>
+              <div class="flex justify-end">
+                <svg class="w-4 h-4" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="5"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="absolute bottom-0 z-30 w-full p-6 text-white">
+            <h4 class="text-xl font-semibold">System Information</h4>
+            <p class="text-sm">Technology</p>
+          </div>
+          <div class="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-black/70 to-black/0"></div>
+          <img class="object-cover h-full"
             src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-            alt=""></a>
-        <a href="#" class="h-min">
-          <img
-            class="object-cover overflow-hidden transition-all duration-200 bg-white h-96 rounded-3xl hover:scale-105 hover:drop-shadow-2xl"
+            alt="">
+        </a>
+        <a href="#"
+          class="relative overflow-hidden transition-all duration-200 group h-96 rounded-3xl hover:scale-105 hover:drop-shadow-2xl">
+          <div
+            class="absolute z-40 w-full h-full p-6 transition-all duration-500 translate-y-full bg-white group-hover:translate-y-0">
+            <div class="flex flex-col justify-between h-full">
+              <div>
+                <h4 class="text-xl font-semibold">System Information</h4>
+                <p class="text-sm">Technology</p>
+              </div>
+              <p class="text-sm leading-loose">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor
+                incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.</p>
+              <div class="flex justify-end">
+                <svg class="w-4 h-4" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="5"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="absolute bottom-0 z-30 w-full p-6 text-white">
+            <h4 class="text-xl font-semibold">System Information</h4>
+            <p class="text-sm">Technology</p>
+          </div>
+          <div class="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-black/70 to-black/0"></div>
+          <img class="object-cover h-full"
             src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-            alt=""></a>
-        <a href="#" class="h-min lg:mt-20">
-          <img
-            class="object-cover overflow-hidden transition-all duration-200 bg-white h-96 rounded-3xl hover:scale-105 hover:drop-shadow-2xl md:hidden xl:inline"
+            alt="">
+        </a>
+        <a href="#"
+          class="relative hidden overflow-hidden transition-all duration-200 group h-96 rounded-3xl hover:scale-105 hover:drop-shadow-2xl lg:mt-20 xl:inline">
+          <div
+            class="absolute z-40 w-full h-full p-6 transition-all duration-500 translate-y-full bg-white group-hover:translate-y-0">
+            <div class="flex flex-col justify-between h-full">
+              <div>
+                <h4 class="text-xl font-semibold">System Information</h4>
+                <p class="text-sm">Technology</p>
+              </div>
+              <p class="text-sm leading-loose">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor
+                incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.</p>
+              <div class="flex justify-end">
+                <svg class="w-4 h-4" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="5"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="absolute bottom-0 z-30 w-full p-6 text-white">
+            <h4 class="text-xl font-semibold">System Information</h4>
+            <p class="text-sm">Technology</p>
+          </div>
+          <div class="absolute bottom-0 w-full h-1/2 bg-gradient-to-t from-black/70 to-black/0"></div>
+          <img class="object-cover h-full"
             src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-            alt=""></a>
+            alt="">
+        </a>
       </div>
     </section>
 
     {{-- Service section --}}
-    <section class="relative mx-auto mt-4 h-fit max-w-7xl lg:-m-20 lg:mx-auto xl:mt-4">
+    <section class="relative mx-auto mt-16 sm:mt-4 h-fit max-w-7xl lg:mx-auto xl:mt-4">
       <div class="w-full px-6 lg:px-8">
-        <div class="flex items-end gap-2 text-5xl font-bold select-none">
+        <div class="flex flex-col gap-2 text-3xl font-bold select-none sm:items-end sm:flex-row sm:text-5xl">
           <h2 class="">We have every <br class="inline min-[1200px]:hidden"> solutions for your</h2>
           <div class="flex flex-col">
             <span class="rotate-word-5">Analysis</span>
@@ -167,8 +317,8 @@
           <div class="flex justify-between py-6 transition-all bg-white gap-x-8">
             <div class="flex flex-col w-1/2 max-w-lg py-4 gap-y-6">
               <div class="flex items-center w-min gap-x-3">
-                <svg class="w-12 text-sky-600" width="currentWidth" height="currentWidth" viewBox="0 0 24 24"
-                  fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-12 text-sky-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M9.71432 21.1428H14.2857M12 2.85709V1.71423M17.7143 5.1428L18.8572 3.99995M6.28575 5.1428L5.14289 3.99995M17.7143 15.4285L18.8572 16.5714M6.28575 15.4285L5.14289 16.5714M4.00003 9.71423H2.85718M21.1429 9.71423H20M12 5.71423C13.1604 5.71352 14.2869 6.10523 15.1965 6.82572C16.106 7.5462 16.7452 8.5531 17.0102 9.6828C17.2751 10.8125 17.1503 11.9986 16.6559 13.0484C16.1614 14.0981 15.3266 14.9498 14.2869 15.4651L14.2857 16.5714C14.2857 17.1776 14.0449 17.759 13.6163 18.1876C13.1876 18.6163 12.6062 18.8571 12 18.8571C11.3938 18.8571 10.8124 18.6163 10.3838 18.1876C9.95514 17.759 9.71432 17.1776 9.71432 16.5714V15.4651C8.67473 14.9499 7.8399 14.0983 7.34548 13.0486C6.85106 11.999 6.7261 10.813 6.9909 9.68336C7.2557 8.55372 7.8947 7.54682 8.80408 6.82625C9.71346 6.10568 10.8398 5.71378 12 5.71423Z"
                     stroke-linecap="round" stroke-linejoin="round" />
@@ -186,9 +336,8 @@
             <img class="self-center object-cover overflow-hidden bg-white h-72 w-72 rounded-3xl md:h-56"
               src="https://images.unsplash.com/photo-1566657817181-c69e4a8eeb1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
               alt="">
-            <button class="h-10 mt-4 min-w-fit text-sky-700"><svg width="currentWidth" height="currentWidth"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
-                xmlns="http://www.w3.org/2000/svg">
+            <button class="mt-4 text-sky-700"><svg class="w-10 h-10" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 8L12 16" stroke-linecap="round" />
                 <path d="M16 12L8 12" stroke-linecap="round" />
                 <circle cx="12" cy="12" r="11" />
@@ -199,20 +348,19 @@
           <div class="flex justify-between py-6 transition-all bg-white gap-x-8">
             <div class="flex flex-col w-1/2 max-w-lg py-4 gap-y-6">
               <div class="flex items-center w-min gap-x-3">
-                <svg class="w-12 text-sky-600" width="currentWidth" height="currentWidth" viewBox="0 0 24 24"
-                  fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-12 text-sky-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M9.71432 21.1428H14.2857M12 2.85709V1.71423M17.7143 5.1428L18.8572 3.99995M6.28575 5.1428L5.14289 3.99995M17.7143 15.4285L18.8572 16.5714M6.28575 15.4285L5.14289 16.5714M4.00003 9.71423H2.85718M21.1429 9.71423H20M12 5.71423C13.1604 5.71352 14.2869 6.10523 15.1965 6.82572C16.106 7.5462 16.7452 8.5531 17.0102 9.6828C17.2751 10.8125 17.1503 11.9986 16.6559 13.0484C16.1614 14.0981 15.3266 14.9498 14.2869 15.4651L14.2857 16.5714C14.2857 17.1776 14.0449 17.759 13.6163 18.1876C13.1876 18.6163 12.6062 18.8571 12 18.8571C11.3938 18.8571 10.8124 18.6163 10.3838 18.1876C9.95514 17.759 9.71432 17.1776 9.71432 16.5714V15.4651C8.67473 14.9499 7.8399 14.0983 7.34548 13.0486C6.85106 11.999 6.7261 10.813 6.9909 9.68336C7.2557 8.55372 7.8947 7.54682 8.80408 6.82625C9.71346 6.10568 10.8398 5.71378 12 5.71423Z"
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <h2 class="text-3xl font-bold text-sky-600">Branding</h2>
+                <h2 class="text-3xl font-bold text-sky-600">Analysis</h2>
               </div>
 
             </div>
 
-            <button class="h-10 mt-4 min-w-fit text-sky-700"><svg width="currentWidth" height="currentWidth"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
-                xmlns="http://www.w3.org/2000/svg">
+            <button class="h-10 mt-4 min-w-fit text-sky-700"><svg class="w-10 h-10" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 8L12 16" stroke-linecap="round" />
                 <path d="M16 12L8 12" stroke-linecap="round" />
                 <circle cx="12" cy="12" r="11" />
@@ -223,20 +371,19 @@
           <div class="flex justify-between py-6 transition-all bg-white gap-x-8">
             <div class="flex flex-col w-1/2 max-w-lg py-4 gap-y-6">
               <div class="flex items-center w-min gap-x-3">
-                <svg class="w-12 text-sky-600" width="currentWidth" height="currentWidth" viewBox="0 0 24 24"
-                  fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-12 text-sky-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M9.71432 21.1428H14.2857M12 2.85709V1.71423M17.7143 5.1428L18.8572 3.99995M6.28575 5.1428L5.14289 3.99995M17.7143 15.4285L18.8572 16.5714M6.28575 15.4285L5.14289 16.5714M4.00003 9.71423H2.85718M21.1429 9.71423H20M12 5.71423C13.1604 5.71352 14.2869 6.10523 15.1965 6.82572C16.106 7.5462 16.7452 8.5531 17.0102 9.6828C17.2751 10.8125 17.1503 11.9986 16.6559 13.0484C16.1614 14.0981 15.3266 14.9498 14.2869 15.4651L14.2857 16.5714C14.2857 17.1776 14.0449 17.759 13.6163 18.1876C13.1876 18.6163 12.6062 18.8571 12 18.8571C11.3938 18.8571 10.8124 18.6163 10.3838 18.1876C9.95514 17.759 9.71432 17.1776 9.71432 16.5714V15.4651C8.67473 14.9499 7.8399 14.0983 7.34548 13.0486C6.85106 11.999 6.7261 10.813 6.9909 9.68336C7.2557 8.55372 7.8947 7.54682 8.80408 6.82625C9.71346 6.10568 10.8398 5.71378 12 5.71423Z"
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <h2 class="text-3xl font-bold text-sky-600">Branding</h2>
+                <h2 class="text-3xl font-bold text-sky-600">Website</h2>
               </div>
 
             </div>
 
-            <button class="h-10 mt-4 min-w-fit text-sky-700"><svg width="currentWidth" height="currentWidth"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
-                xmlns="http://www.w3.org/2000/svg">
+            <button class="h-10 mt-4 min-w-fit text-sky-700"><svg class="w-10 h-10" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 8L12 16" stroke-linecap="round" />
                 <path d="M16 12L8 12" stroke-linecap="round" />
                 <circle cx="12" cy="12" r="11" />
@@ -247,20 +394,19 @@
           <div class="flex justify-between py-6 transition-all bg-white gap-x-8">
             <div class="flex flex-col w-1/2 max-w-lg py-4 gap-y-6">
               <div class="flex items-center w-min gap-x-3">
-                <svg class="w-12 text-sky-600" width="currentWidth" height="currentWidth" viewBox="0 0 24 24"
-                  fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-12 text-sky-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M9.71432 21.1428H14.2857M12 2.85709V1.71423M17.7143 5.1428L18.8572 3.99995M6.28575 5.1428L5.14289 3.99995M17.7143 15.4285L18.8572 16.5714M6.28575 15.4285L5.14289 16.5714M4.00003 9.71423H2.85718M21.1429 9.71423H20M12 5.71423C13.1604 5.71352 14.2869 6.10523 15.1965 6.82572C16.106 7.5462 16.7452 8.5531 17.0102 9.6828C17.2751 10.8125 17.1503 11.9986 16.6559 13.0484C16.1614 14.0981 15.3266 14.9498 14.2869 15.4651L14.2857 16.5714C14.2857 17.1776 14.0449 17.759 13.6163 18.1876C13.1876 18.6163 12.6062 18.8571 12 18.8571C11.3938 18.8571 10.8124 18.6163 10.3838 18.1876C9.95514 17.759 9.71432 17.1776 9.71432 16.5714V15.4651C8.67473 14.9499 7.8399 14.0983 7.34548 13.0486C6.85106 11.999 6.7261 10.813 6.9909 9.68336C7.2557 8.55372 7.8947 7.54682 8.80408 6.82625C9.71346 6.10568 10.8398 5.71378 12 5.71423Z"
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <h2 class="text-3xl font-bold text-sky-600">Branding</h2>
+                <h2 class="text-3xl font-bold text-sky-600">Apps</h2>
               </div>
 
             </div>
 
-            <button class="h-10 mt-4 min-w-fit text-sky-700"><svg width="currentWidth" height="currentWidth"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
-                xmlns="http://www.w3.org/2000/svg">
+            <button class="h-10 mt-4 min-w-fit text-sky-700"><svg class="w-10 h-10" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 8L12 16" stroke-linecap="round" />
                 <path d="M16 12L8 12" stroke-linecap="round" />
                 <circle cx="12" cy="12" r="11" />
@@ -271,20 +417,19 @@
           <div class="flex justify-between py-6 transition-all bg-white gap-x-8">
             <div class="flex flex-col w-1/2 max-w-lg py-4 gap-y-6">
               <div class="flex items-center w-min gap-x-3">
-                <svg class="w-12 text-sky-600" width="currentWidth" height="currentWidth" viewBox="0 0 24 24"
-                  fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-12 text-sky-600" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M9.71432 21.1428H14.2857M12 2.85709V1.71423M17.7143 5.1428L18.8572 3.99995M6.28575 5.1428L5.14289 3.99995M17.7143 15.4285L18.8572 16.5714M6.28575 15.4285L5.14289 16.5714M4.00003 9.71423H2.85718M21.1429 9.71423H20M12 5.71423C13.1604 5.71352 14.2869 6.10523 15.1965 6.82572C16.106 7.5462 16.7452 8.5531 17.0102 9.6828C17.2751 10.8125 17.1503 11.9986 16.6559 13.0484C16.1614 14.0981 15.3266 14.9498 14.2869 15.4651L14.2857 16.5714C14.2857 17.1776 14.0449 17.759 13.6163 18.1876C13.1876 18.6163 12.6062 18.8571 12 18.8571C11.3938 18.8571 10.8124 18.6163 10.3838 18.1876C9.95514 17.759 9.71432 17.1776 9.71432 16.5714V15.4651C8.67473 14.9499 7.8399 14.0983 7.34548 13.0486C6.85106 11.999 6.7261 10.813 6.9909 9.68336C7.2557 8.55372 7.8947 7.54682 8.80408 6.82625C9.71346 6.10568 10.8398 5.71378 12 5.71423Z"
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <h2 class="text-3xl font-bold text-sky-600">Branding</h2>
+                <h2 class="text-3xl font-bold text-sky-600">Marketing</h2>
               </div>
 
             </div>
 
-            <button class="h-10 mt-4 min-w-fit text-sky-700"><svg width="currentWidth" height="currentWidth"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
-                xmlns="http://www.w3.org/2000/svg">
+            <button class="h-10 mt-4 min-w-fit text-sky-700"><svg class="w-10 h-10" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="1" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 8L12 16" stroke-linecap="round" />
                 <path d="M16 12L8 12" stroke-linecap="round" />
                 <circle cx="12" cy="12" r="11" />
@@ -316,8 +461,8 @@
               tempor incididunt ut labore et dolore magna aliqua.</p>
             <div class="flex items-center justify-between mt-6 font-semibold">
               <p href="">See case study</p>
-              <svg class="w-4 h-4" width="currentWidth" height="currentHeigth" viewBox="0 0 48 48" fill="none"
-                stroke="currentColor" stroke-width="5" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-4 h-4" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="5"
+                xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
                   stroke-linecap="round" stroke-linejoin="round" />
               </svg>
@@ -333,8 +478,8 @@
               tempor incididunt ut labore et dolore magna aliqua.</p>
             <div class="flex items-center justify-between mt-6 font-semibold">
               <p href="">See case study</p>
-              <svg class="w-4 h-4" width="currentWidth" height="currentHeigth" viewBox="0 0 48 48" fill="none"
-                stroke="currentColor" stroke-width="5" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-4 h-4" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="5"
+                xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
                   stroke-linecap="round" stroke-linejoin="round" />
               </svg>
@@ -350,8 +495,8 @@
               tempor incididunt ut labore et dolore magna aliqua.</p>
             <div class="flex items-center justify-between mt-6 font-semibold">
               <p href="">See case study</p>
-              <svg class="w-4 h-4" width="currentWidth" height="currentHeigth" viewBox="0 0 48 48" fill="none"
-                stroke="currentColor" stroke-width="5" xmlns="http://www.w3.org/2000/svg">
+              <svg class="w-4 h-4" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="5"
+                xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
                   stroke-linecap="round" stroke-linejoin="round" />
               </svg>
@@ -374,8 +519,8 @@
           <img class="object-contain" src="assets/testimonial-01.png" alt="">
 
           <div class="flex flex-col px-10 gap-y-6">
-            <svg class="w-12 text-white h-fit" width="currentWidth" height="currentHeight" viewBox="0 0 42 34"
-              fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-12 text-white h-fit" viewBox="0 0 42 34" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M4.99995 33.7999C3.72691 33.7999 2.50601 33.2942 1.60584 32.394C0.705664 31.4939 0.199951 30.273 0.199951 28.9999L0.199949 12.9999C0.199949 9.60516 1.54852 6.34943 3.94898 3.94896C6.34945 1.5485 9.60518 0.199927 12.9999 0.199927L12.9999 3.39993C10.4539 3.39993 8.01207 4.41135 6.21172 6.2117C4.41137 8.01205 3.39995 10.4538 3.39995 12.9999L3.39995 14.5999L14.5999 14.5999C15.873 14.5999 17.0939 15.1056 17.9941 16.0058C18.8942 16.906 19.3999 18.1269 19.3999 19.3999L19.3999 28.9999C19.3999 30.273 18.8942 31.4939 17.9941 32.394C17.0939 33.2942 15.873 33.7999 14.6 33.7999L4.99995 33.7999ZM27.4 33.7999C26.1269 33.7999 24.906 33.2942 24.0058 32.394C23.1057 31.4939 22.5999 30.273 22.5999 28.9999L22.5999 12.9999C22.5999 9.60515 23.9485 6.34943 26.349 3.94896C28.7494 1.5485 32.0052 0.199926 35.3999 0.199925L35.3999 3.39993C32.8539 3.39993 30.4121 4.41135 28.6117 6.2117C26.8114 8.01205 25.7999 10.4538 25.7999 12.9999L25.7999 14.5999L36.9999 14.5999C38.273 14.5999 39.4939 15.1056 40.3941 16.0058C41.2942 16.906 41.7999 18.1269 41.7999 19.3999L41.7999 28.9999C41.7999 30.273 41.2942 31.4939 40.3941 32.394C39.4939 33.2942 38.273 33.7999 37 33.7999L27.4 33.7999Z" />
             </svg>
@@ -394,16 +539,16 @@
           </div>
 
           <div class="flex flex-col self-center gap-y-4">
-            <svg class="w-2 text-white h-fit" width="currentWidth" height="currentHeight" viewBox="0 0 8 8"
-              fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-2 text-white h-fit" viewBox="0 0 8 8" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
               <circle cx="4" cy="4" r="4" />
             </svg>
-            <svg class="w-2 h-fit text-neutral-600" width="currentWidth" height="currentHeight" viewBox="0 0 8 8"
-              fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-2 h-fit text-neutral-600" viewBox="0 0 8 8" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
               <circle cx="4" cy="4" r="4" />
             </svg>
-            <svg class="w-2 h-fit text-neutral-600" width="currentWidth" height="currentHeight" viewBox="0 0 8 8"
-              fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-2 h-fit text-neutral-600" viewBox="0 0 8 8" fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg">
               <circle cx="4" cy="4" r="4" />
             </svg>
           </div>
@@ -414,7 +559,7 @@
 
   {{-- Footer --}}
   <footer class="relative w-full bg-neutral-900">
-    <div class="px-6 pb-12 mx-auto lg:px-12 max-w-[89rem]">
+    <div class="mx-auto max-w-[89rem] px-6 pb-12 lg:px-12">
       <div class="pb-8 rounded-3xl bg-sky-700 px-14 pt-14">
         <section class="flex justify-between">
           <p class="text-4xl text-white">Have an awesome project together?</p>
@@ -430,7 +575,7 @@
               stunning and functional design that will engage and captivate your audience.</p>
             <div>
               <p class="text-white">hello@stelarhub.com</p>
-            <p class="text-white">(+62) 8560-0080-9354</p>
+              <p class="text-white">(+62) 8560-0080-9354</p>
             </div>
           </div>
           <div class="flex gap-20 text-white whitespace-nowrap">
@@ -459,13 +604,13 @@
               <ul class="flex flex-col gap-3 text-sm">
                 <li><a href="">Twitter</a></li>
                 <li><a href="">Instagram</a></li>
-                <li><a href="">Linkedin</a></li> 
+                <li><a href="">Linkedin</a></li>
               </ul>
             </div>
           </div>
         </section>
 
-        <p class="mt-8 text-sm text-center text-white">PT Semesta Teknologi Karya © 2023 - Jakarta</p>
+        <p class="mt-8 text-sm text-center text-white">Stelar © 2023 - Bandung</p>
       </div>
     </div>
   </footer>
