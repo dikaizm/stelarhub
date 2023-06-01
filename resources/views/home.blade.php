@@ -34,6 +34,73 @@
   <header id="navbar"
     class="fixed inset-x-0 top-0 z-50 h-16 transition-all duration-700 ease-in-out bg-white/0 hover:shadow-2xl hover:shadow-black/10 sm:h-20">
 
+    {{-- Mobile menu --}}
+    <nav id="mobile-menu"
+      class="absolute inset-x-0 w-full h-screen pb-16 overflow-y-auto transition-all duration-300 ease-in-out translate-x-full bg-white lg:hidden"
+      aria-label="Menu" aria-hidden="true">
+      <div class="flex flex-col justify-between w-full h-full mx-auto">
+        <div>
+          <div class="flex items-center justify-between px-6 py-4">
+            <img class="w-auto h-8" src="assets/stelar-logo-color-mobile.svg" alt="Logo">
+            <button id="close-menu-btn" class="p-2" type="button"
+              class="-m-2.5 inline-flex items-center justify-center p-2.5 text-gray-700">
+              <span class="sr-only">Close main menu</span>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" stroke="currentColor" fill="none"stroke-width="1.5"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.51465 1.51477L22.5146 22.5148" stroke-linecap="round" />
+                <path d="M22.5144 1.51477L1.5144 22.5148" stroke-linecap="round" />
+              </svg>
+            </button>
+          </div>
+  
+          <div class="px-6 mt-10">
+            <ul class="flex flex-col gap-6 text-xl font-medium text-neutral-700">
+              <ul class="flex flex-col gap-4">
+                <li>
+                  <button class="flex justify-between w-full" aria-controls="dropdown-platform" data-collapse-toggle="true" aria-expanded="false">
+                    <span>PLATFORM</span>
+                    <svg class="flex-none w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                  </button> 
+                </li>
+                <ul id="dropdown-platform" class="flex flex-col hidden gap-4 ml-4 text-lg">
+                  <li><a href="">Novanote</a></li>
+                  <li><a href="">Fintrack</a></li>
+                </ul>
+              </ul>
+               
+              <ul class="flex flex-col gap-4">
+                <li>
+                  <button class="flex justify-between w-full" aria-controls="dropdown-solutions" data-collapse-toggle="true" aria-expanded="false">
+                    <span>SOLUTIONS</span>
+                    <svg class="flex-none w-5 h-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                </li>
+                <ul id="dropdown-solutions" class="flex flex-col hidden gap-4 ml-4 text-lg">
+                  <li><a href="">Branding</a></li>
+                  <li><a href="">Analysis</a></li>
+                  <li><a href="">Website</a></li>
+                  <li><a href="">Apps</a></li>
+                  <li><a href="">Marketing</a></li>
+                </ul>
+              </ul>
+              <li><a href="">LEARN</a></li>
+              <li><a href="">WHY STELAR</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="w-full px-6 py-6 ">
+          <a href="#"
+            class="block w-full px-4 py-2 text-center transition-all duration-200 border rounded-full border-sky-700 hover:bg-sky-700 hover:text-white">CONTACT
+            US</a>
+        </div>
+      </div>
+    </nav>
+
     {{-- Desktop menu --}}
     <nav class="flex items-center justify-between px-6 py-4 mx-auto max-w-7xl sm:p-6 lg:px-8" aria-label="Global">
       <div class="flex lg:flex-1">
@@ -44,7 +111,8 @@
         </a>
       </div>
       <div class="flex lg:hidden">
-        <button type="button" class="-m-2.5 inline-flex items-center justify-center p-2.5 text-gray-700">
+        <button id="menu-btn" type="button"
+          class="-m-2.5 inline-flex items-center justify-center p-2.5 text-gray-700">
           <span class="sr-only">Open main menu</span>
           <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             aria-hidden="true">
@@ -98,10 +166,7 @@
       </div>
     </nav>
 
-    {{-- Mobile menu --}}
-    <nav class="" aria-label="Menu" aria-expanded="false">
 
-    </nav>
   </header>
 
   <main class="relative w-full pt-0 overflow-hidden">
@@ -142,28 +207,28 @@
           </div>
         </div>
 
-        <div class="py-4 bg-white sm:py-8">
+        <div class="py-4 pb-20 bg-white sm:py-8">
           <div class="h-full px-6 mx-auto max-w-7xl lg:px-8">
             <div class="grid justify-between grid-cols-2 gap-3 text-sky-700 sm:flex sm:gap-6">
               <div class="flex items-center gap-2 sm:gap-4">
                 <p class="text-4xl font-semibold tracking-tighter sm:text-[4rem]">20<span
                     class="text-3xl sm:text-[3.5rem]">+</span></p>
-                <p class="text-xs sm:text-sm text-neutral-700">Satisfied <br> Customers</p>
+                <p class="text-xs text-neutral-700 sm:text-sm">Satisfied <br> Customers</p>
               </div>
               <div class="flex items-end gap-2 sm:gap-4">
                 <p class="text-4xl font-semibold tracking-tighter sm:text-[4rem]">96<span
                     class="text-xl font-extrabold sm:text-[2.5rem]">%</span></p>
-                <p class="text-xs sm:text-sm text-neutral-700">Client's <br> Satisfaction</p>
+                <p class="text-xs text-neutral-700 sm:text-sm">Client's <br> Satisfaction</p>
               </div>
               <div class="flex items-end gap-2 sm:gap-4">
                 <p class="text-4xl font-semibold tracking-tighter sm:text-[4rem]">50<span
                     class="text-3xl sm:text-[3.5rem]">+</span></p>
-                <p class="text-xs sm:text-sm text-neutral-700">Completed <br> Projects</p>
+                <p class="text-xs text-neutral-700 sm:text-sm">Completed <br> Projects</p>
               </div>
               <div class="flex items-end gap-2 sm:gap-4">
                 <p class="text-4xl font-semibold tracking-tighter sm:text-[4rem]">5k<span
                     class="text-3xl sm:text-[3.5rem]">+</span></p>
-                <p class="text-xs sm:text-sm text-neutral-700">Leads <br> Generated</p>
+                <p class="text-xs text-neutral-700 sm:text-sm">Leads <br> Generated</p>
               </div>
             </div>
           </div>
@@ -172,7 +237,7 @@
     </section>
 
     {{-- Showcase section --}}
-    <section class="relative flex justify-between mx-auto mt-24 h-fit max-w-7xl">
+    <section class="relative flex justify-between mx-auto mt-8 sm:mt-24 h-fit max-w-7xl">
       <div
         class="grid w-full grid-cols-1 gap-6 px-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 lg:px-8 xl:grid-cols-4">
         <a href="#"
@@ -358,7 +423,7 @@
                     d="M9.71432 21.1428H14.2857M12 2.85709V1.71423M17.7143 5.1428L18.8572 3.99995M6.28575 5.1428L5.14289 3.99995M17.7143 15.4285L18.8572 16.5714M6.28575 15.4285L5.14289 16.5714M4.00003 9.71423H2.85718M21.1429 9.71423H20M12 5.71423C13.1604 5.71352 14.2869 6.10523 15.1965 6.82572C16.106 7.5462 16.7452 8.5531 17.0102 9.6828C17.2751 10.8125 17.1503 11.9986 16.6559 13.0484C16.1614 14.0981 15.3266 14.9498 14.2869 15.4651L14.2857 16.5714C14.2857 17.1776 14.0449 17.759 13.6163 18.1876C13.1876 18.6163 12.6062 18.8571 12 18.8571C11.3938 18.8571 10.8124 18.6163 10.3838 18.1876C9.95514 17.759 9.71432 17.1776 9.71432 16.5714V15.4651C8.67473 14.9499 7.8399 14.0983 7.34548 13.0486C6.85106 11.999 6.7261 10.813 6.9909 9.68336C7.2557 8.55372 7.8947 7.54682 8.80408 6.82625C9.71346 6.10568 10.8398 5.71378 12 5.71423Z"
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <h2 class="text-2xl font-bold sm:text-3xl text-sky-600">Analysis</h2>
+                <h2 class="text-2xl font-bold text-sky-600 sm:text-3xl">Analysis</h2>
               </div>
 
             </div>
@@ -382,7 +447,7 @@
                     d="M9.71432 21.1428H14.2857M12 2.85709V1.71423M17.7143 5.1428L18.8572 3.99995M6.28575 5.1428L5.14289 3.99995M17.7143 15.4285L18.8572 16.5714M6.28575 15.4285L5.14289 16.5714M4.00003 9.71423H2.85718M21.1429 9.71423H20M12 5.71423C13.1604 5.71352 14.2869 6.10523 15.1965 6.82572C16.106 7.5462 16.7452 8.5531 17.0102 9.6828C17.2751 10.8125 17.1503 11.9986 16.6559 13.0484C16.1614 14.0981 15.3266 14.9498 14.2869 15.4651L14.2857 16.5714C14.2857 17.1776 14.0449 17.759 13.6163 18.1876C13.1876 18.6163 12.6062 18.8571 12 18.8571C11.3938 18.8571 10.8124 18.6163 10.3838 18.1876C9.95514 17.759 9.71432 17.1776 9.71432 16.5714V15.4651C8.67473 14.9499 7.8399 14.0983 7.34548 13.0486C6.85106 11.999 6.7261 10.813 6.9909 9.68336C7.2557 8.55372 7.8947 7.54682 8.80408 6.82625C9.71346 6.10568 10.8398 5.71378 12 5.71423Z"
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <h2 class="text-2xl font-bold sm:text-3xl text-sky-600">Website</h2>
+                <h2 class="text-2xl font-bold text-sky-600 sm:text-3xl">Website</h2>
               </div>
 
             </div>
@@ -406,7 +471,7 @@
                     d="M9.71432 21.1428H14.2857M12 2.85709V1.71423M17.7143 5.1428L18.8572 3.99995M6.28575 5.1428L5.14289 3.99995M17.7143 15.4285L18.8572 16.5714M6.28575 15.4285L5.14289 16.5714M4.00003 9.71423H2.85718M21.1429 9.71423H20M12 5.71423C13.1604 5.71352 14.2869 6.10523 15.1965 6.82572C16.106 7.5462 16.7452 8.5531 17.0102 9.6828C17.2751 10.8125 17.1503 11.9986 16.6559 13.0484C16.1614 14.0981 15.3266 14.9498 14.2869 15.4651L14.2857 16.5714C14.2857 17.1776 14.0449 17.759 13.6163 18.1876C13.1876 18.6163 12.6062 18.8571 12 18.8571C11.3938 18.8571 10.8124 18.6163 10.3838 18.1876C9.95514 17.759 9.71432 17.1776 9.71432 16.5714V15.4651C8.67473 14.9499 7.8399 14.0983 7.34548 13.0486C6.85106 11.999 6.7261 10.813 6.9909 9.68336C7.2557 8.55372 7.8947 7.54682 8.80408 6.82625C9.71346 6.10568 10.8398 5.71378 12 5.71423Z"
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <h2 class="text-2xl font-bold sm:text-3xl text-sky-600">Apps</h2>
+                <h2 class="text-2xl font-bold text-sky-600 sm:text-3xl">Apps</h2>
               </div>
 
             </div>
@@ -430,7 +495,7 @@
                     d="M9.71432 21.1428H14.2857M12 2.85709V1.71423M17.7143 5.1428L18.8572 3.99995M6.28575 5.1428L5.14289 3.99995M17.7143 15.4285L18.8572 16.5714M6.28575 15.4285L5.14289 16.5714M4.00003 9.71423H2.85718M21.1429 9.71423H20M12 5.71423C13.1604 5.71352 14.2869 6.10523 15.1965 6.82572C16.106 7.5462 16.7452 8.5531 17.0102 9.6828C17.2751 10.8125 17.1503 11.9986 16.6559 13.0484C16.1614 14.0981 15.3266 14.9498 14.2869 15.4651L14.2857 16.5714C14.2857 17.1776 14.0449 17.759 13.6163 18.1876C13.1876 18.6163 12.6062 18.8571 12 18.8571C11.3938 18.8571 10.8124 18.6163 10.3838 18.1876C9.95514 17.759 9.71432 17.1776 9.71432 16.5714V15.4651C8.67473 14.9499 7.8399 14.0983 7.34548 13.0486C6.85106 11.999 6.7261 10.813 6.9909 9.68336C7.2557 8.55372 7.8947 7.54682 8.80408 6.82625C9.71346 6.10568 10.8398 5.71378 12 5.71423Z"
                     stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <h2 class="text-2xl font-bold sm:text-3xl text-sky-600">Marketing</h2>
+                <h2 class="text-2xl font-bold text-sky-600 sm:text-3xl">Marketing</h2>
               </div>
 
             </div>
@@ -570,11 +635,12 @@
 
   {{-- Footer --}}
   <footer class="relative w-full bg-neutral-900">
-    <div class="mx-auto max-w-[89rem] px-4 pb-4  sm:pb-12 lg:px-12">
+    <div class="mx-auto max-w-[89rem] px-4 pb-4 sm:pb-12 lg:px-12">
       <div class="px-6 pt-10 pb-8 rounded-3xl bg-sky-700 sm:px-14 sm:pt-14">
         <section class="flex flex-col justify-between gap-6 sm:flex-row">
           <p class="text-3xl text-white sm:text-4xl">Have an awesome project together?</p>
-          <a href="" class="px-6 py-3 text-white border rounded-full w-fit whitespace-nowrap h-fit">START A PROJECT</a>
+          <a href="" class="px-6 py-3 text-white border rounded-full h-fit w-fit whitespace-nowrap">START A
+            PROJECT</a>
         </section>
 
         <div class="mt-12 mb-10 h-[1px] bg-white/40"></div>
@@ -589,7 +655,7 @@
               <p class="text-white">(+62) 8560-0080-9354</p>
             </div>
           </div>
-          <div class="grid grid-cols-2 gap-6 text-white sm:gap-20 sm:flex whitespace-nowrap">
+          <div class="grid grid-cols-2 gap-6 text-white whitespace-nowrap sm:flex sm:gap-20">
             <div class="flex flex-col gap-6">
               <p class="font-bold">Site</p>
               <ul class="flex flex-col gap-3 text-sm">
@@ -610,7 +676,7 @@
               </ul>
             </div>
 
-            <div class="flex flex-col gap-6 ">
+            <div class="flex flex-col gap-6">
               <p class="font-bold">Social Media</p>
               <ul class="flex flex-row gap-3 text-sm sm:flex-col">
                 <li><a href="">Twitter</a></li>
