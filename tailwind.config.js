@@ -6,10 +6,13 @@ export default {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'xl': '1440px',
+      },
+    },
   },
   plugins: [
     require('@shrutibalasa/tailwind-grid-auto-fit'),
   ],
 }
-

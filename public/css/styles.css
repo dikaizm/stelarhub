@@ -7,3 +7,26 @@
 .navbar-hidden {
     transform: translateY(-100%);
 }
+
+.dropdown-arrow::after {
+    content: "";
+    position: absolute;
+    top: -11%;
+    left: 15%;
+    border-width: 12px;
+    border-style: solid;
+    z-index: 40;
+    border-color: transparent transparent #fff transparent;
+}
+
+.hide-dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+}
+
+.show-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
