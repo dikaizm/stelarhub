@@ -54,9 +54,9 @@
           </div>
 
           <div class="px-6 mt-10">
-            <ul class="flex flex-col gap-6 text-xl font-medium text-neutral-700">
-              <ul class="flex flex-col gap-4">
-                <li>
+            <ul class="flex flex-col text-xl font-medium text-neutral-700">
+              <ul class="flex flex-col overflow-hidden">
+                <li class="z-10 py-4 bg-white">
                   <button class="flex justify-between w-full" aria-controls="dropdown-platform"
                     data-collapse-toggle="true" aria-expanded="false">
                     <span>PLATFORM</span>
@@ -68,14 +68,15 @@
                     </svg>
                   </button>
                 </li>
-                <ul id="dropdown-platform" class="flex flex-col hidden gap-4 ml-4 text-lg">
+                <ul
+                  class="z-0 flex flex-col gap-4 ml-4 text-lg transition-all duration-500 ease-in-out list-collapse-hide dropdown-platform">
                   <li><a href="https://stelarhub.com/" target="_blank">Novanote</a></li>
                   <li><a href="">Fintrack</a></li>
                 </ul>
               </ul>
 
-              <ul class="flex flex-col gap-4">
-                <li>
+              <ul class="flex flex-col overflow-hidden">
+                <li class="z-10 py-4 bg-white">
                   <button class="flex justify-between w-full" aria-controls="dropdown-solutions"
                     data-collapse-toggle="true" aria-expanded="false">
                     <span>SOLUTIONS</span>
@@ -87,7 +88,8 @@
                     </svg>
                   </button>
                 </li>
-                <ul id="dropdown-solutions" class="flex flex-col hidden gap-4 ml-4 text-lg">
+                <ul
+                  class="flex flex-col gap-4 ml-4 text-lg transition-all duration-500 ease-in-out list-collapse-hide dropdown-solutions">
                   <li><a href="">Branding</a></li>
                   <li><a href="">Analysis</a></li>
                   <li><a href="">Website</a></li>
@@ -95,8 +97,8 @@
                   <li><a href="">Marketing</a></li>
                 </ul>
               </ul>
-              <li><a href="">LEARN</a></li>
-              <li><a href="/about">ABOUT</a></li>
+              <li class="z-10 py-4 bg-white"><a href="">LEARN</a></li>
+              <li class="z-10 py-4 bg-white"><a href="/about">ABOUT</a></li>
             </ul>
           </div>
         </div>
@@ -110,7 +112,8 @@
     </nav>
 
     {{-- Desktop menu --}}
-    <nav class="flex items-center justify-between max-w-6xl px-6 py-4 mx-auto xl:max-w-7xl sm:p-6 lg:px-12" aria-label="Global">
+    <nav class="flex items-center justify-between max-w-6xl px-6 py-4 mx-auto sm:p-6 lg:px-12 xl:max-w-7xl"
+      aria-label="Global">
       <div class="flex lg:flex-1">
         <a href="/" class="-m-1.5 p-1.5">
           <span class="sr-only">Stelar</span>
@@ -145,7 +148,7 @@
 
           {{-- Dropdown Platform --}}
           <div id="nav-dropdown-platform"
-            class="absolute z-10 w-screen max-w-md mt-10 transition-all duration-300 ease-out bg-white shadow-lg hide-dropdown -left-8 top-full rounded-3xl">
+            class="absolute z-10 w-screen max-w-md mt-10 transition-all duration-300 ease-out bg-white shadow-lg nav-dropdown-hide -left-8 top-full rounded-3xl">
             <div class="dropdown-arrow"></div>
             <div class="p-4">
 
@@ -205,7 +208,7 @@
 
           {{-- Dropdown Solutions --}}
           <div id="nav-dropdown-solutions"
-            class="absolute z-10 w-screen max-w-md mt-10 transition-all duration-300 ease-out bg-white shadow-lg hide-dropdown -left-8 top-full rounded-3xl">
+            class="absolute z-10 w-screen max-w-md mt-10 transition-all duration-300 ease-out bg-white shadow-lg nav-dropdown-hide -left-8 top-full rounded-3xl">
             <div class="dropdown-arrow after:-top-[22px]"></div>
             <div class="p-4">
               <div class="relative flex items-center p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">

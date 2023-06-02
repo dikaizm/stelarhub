@@ -72,15 +72,18 @@ function mobileMenu() {
 function toggleBtn(button) {
     var targetId = button.getAttribute('aria-controls');
     var toggleAttr = button.getAttribute('data-collapse-toggle');
+    var btn = $(button).find('.accordion-btn')
 
     if (targetId && toggleAttr === 'true') {
-        $('#' + targetId).removeClass('hidden').addClass('block');
+        $('.' + targetId).removeClass('list-collapse-hide').addClass('list-collapse-show');
         button.setAttribute('data-collapse-toggle', 'false');
         button.setAttribute('aria-expanded', 'true');
+        btn.addClass('accordion-btn-show')
     } else if (targetId && toggleAttr === 'false') {
-        $('#' + targetId).removeClass('block').addClass('hidden');
+        $('.' + targetId).removeClass('list-collapse-show').addClass('list-collapse-hide');
         button.setAttribute('data-collapse-toggle', 'true');
         button.setAttribute('aria-expanded', 'false');
+        btn.removeClass('accordion-btn-show')
     }
 }
 
@@ -90,7 +93,7 @@ function hoverBtn(button) {
     var span = $(button).find('span:first')
 
     if (targetId && toggleAttr === 'true') {
-        $('#' + targetId).removeClass('hide-dropdown').addClass('show-dropdown');
+        $('#' + targetId).removeClass('nav-dropdown-hide').addClass('nav-dropdown-show');
         button.setAttribute('data-hover', 'false');
         button.setAttribute('aria-expanded', 'true');
         span.removeClass('-z-10').addClass('z-10')
@@ -103,7 +106,7 @@ function unhoverBtn(button) {
     var span = $(button).find('span:first')
 
     if (targetId && toggleAttr === 'false') {
-        $('#' + targetId).removeClass('show-dropdown').addClass('hide-dropdown');
+        $('#' + targetId).removeClass('nav-dropdown-show').addClass('nav-dropdown-hide');
         button.setAttribute('data-hover', 'true');
         button.setAttribute('aria-expanded', 'false');
         span.removeClass('z-10').addClass('-z-10')

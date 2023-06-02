@@ -19,14 +19,38 @@
     border-color: transparent transparent #fff transparent;
 }
 
-.hide-dropdown {
+/* Navbar */
+.nav-dropdown-hide {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
 }
 
-.show-dropdown {
+.nav-dropdown-show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+/* List */
+.list-collapse-hide {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transform: translateY(-100%);
+    transition-property: all;
+    transition-duration: 200ms;
+}
+
+.list-collapse-show {
+    position: relative;
+    height: fit-content;
+    overflow: hidden;
+    transform: translateY(0);
+    transition-property: all;
+    transition-duration: 200ms;
+}
+
+.accordion-btn-show {
+    display: none;
 }
