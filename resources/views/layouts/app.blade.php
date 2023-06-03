@@ -332,7 +332,7 @@
 
   {{-- Footer --}}
   <footer class="relative w-full bg-neutral-900">
-    <div class="mx-auto max-w-[89rem] px-4 pb-4 pt-8  md:pb-8 lg:px-16">
+    <div class="mx-auto max-w-[89rem] px-4 py-4 md:py-8  lg:px-16">
       <div class="px-6 pt-10 pb-8 rounded-3xl bg-sky-700 sm:px-12 sm:pt-14">
         <section class="flex flex-col justify-between gap-6 sm:flex-row">
           <p class="text-3xl text-white sm:text-4xl">Have an awesome project together?</p>

@@ -13,6 +13,10 @@
         @apply relative w-full max-w-6xl px-6 mx-auto xl:max-w-7xl lg:px-12;
     }
 
+    .container-full {
+        @apply relative w-full mx-auto; 
+    }
+
     .section-title {
         @apply text-4xl font-bold sm:text-5xl;
     }
