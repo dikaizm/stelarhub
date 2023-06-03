@@ -91,10 +91,10 @@
                 <ul
                   class="flex flex-col gap-4 ml-4 text-lg transition-all duration-500 ease-in-out list-collapse-hide dropdown-solutions">
                   <li><a href="">Branding</a></li>
-                  <li><a href="">Analysis</a></li>
                   <li><a href="">Website</a></li>
                   <li><a href="">Apps</a></li>
                   <li><a href="">Marketing</a></li>
+                  <li><a href="">Data Analysis</a></li>
                 </ul>
               </ul>
               <li class="z-10 py-4 bg-white"><a href="">LEARN</a></li>
@@ -240,24 +240,6 @@
                 </div>
                 <div class="flex-auto">
                   <a href="#" class="block font-semibold text-gray-900">
-                    Analysis
-                    <span class="absolute inset-0"></span>
-                  </a>
-                  <p class="mt-1 text-gray-600">Get a better understanding of your financial</p>
-                </div>
-              </div>
-
-              <div class="relative flex items-center p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
-                <div
-                  class="flex items-center justify-center flex-none rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
-                  <svg class="w-6 h-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24"
-                    stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
-                  </svg>
-                </div>
-                <div class="flex-auto">
-                  <a href="#" class="block font-semibold text-gray-900">
                     Website
                     <span class="absolute inset-0"></span>
                   </a>
@@ -300,12 +282,30 @@
                   <p class="mt-1 text-gray-600">Get a better understanding of your financial</p>
                 </div>
               </div>
+
+              <div class="relative flex items-center p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50">
+                <div
+                  class="flex items-center justify-center flex-none rounded-lg h-11 w-11 bg-gray-50 group-hover:bg-white">
+                  <svg class="w-6 h-6 text-gray-600 group-hover:text-indigo-600" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                  </svg>
+                </div>
+                <div class="flex-auto">
+                  <a href="#" class="block font-semibold text-gray-900">
+                    Data Analysis
+                    <span class="absolute inset-0"></span>
+                  </a>
+                  <p class="mt-1 text-gray-600">Get a better understanding of your financial</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <a href="#"
           class="font-semibold text-gray-700 transition-all duration-300 hover:font-bold hover:text-sky-700">LEARN</a>
-        <a href="#"
+        <a href="/about"
           class="font-semibold text-gray-700 transition-all duration-300 hover:font-bold hover:text-sky-700">ABOUT</a>
       </div>
 
@@ -332,7 +332,7 @@
 
   {{-- Footer --}}
   <footer class="relative w-full bg-neutral-900">
-    <div class="mx-auto max-w-[89rem] px-4 pb-4 sm:pb-12 lg:px-16">
+    <div class="mx-auto max-w-[89rem] px-4 pb-4 pt-8  md:pb-8 lg:px-16">
       <div class="px-6 pt-10 pb-8 rounded-3xl bg-sky-700 sm:px-12 sm:pt-14">
         <section class="flex flex-col justify-between gap-6 sm:flex-row">
           <p class="text-3xl text-white sm:text-4xl">Have an awesome project together?</p>

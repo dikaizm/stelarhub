@@ -4,6 +4,28 @@
 
 @layer base {
     html {
-        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-family: "Plus Jakarta Sans", sans-serif;
+    }
+}
+
+@layer components {
+    .container {
+        @apply relative w-full max-w-6xl px-6 mx-auto xl:max-w-7xl lg:px-12;
+    }
+
+    .section-title {
+        @apply text-4xl font-bold sm:text-5xl;
+    }
+
+    .card {
+        @apply flex flex-col gap-4 p-8 transition-all duration-200 ease-in-out bg-white border rounded-2xl hover:scale-105 hover:drop-shadow-2xl;
+    }
+
+    .card-title {
+        @apply text-xl font-semibold;
+    }
+
+    .card-content {
+        @apply text-sm leading-loose;
     }
 }

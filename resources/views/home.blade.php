@@ -7,7 +7,7 @@
     <div class="relative flex flex-col justify-between w-full h-full">
       <div class="flex flex-col items-center justify-center h-full">
         <div class="flex items-end justify-between w-full max-w-6xl gap-12 px-6 mx-auto lg:px-12 xl:max-w-7xl">
-          <h1 class="gradient-text pt-12 text-6xl font-extrabold tracking-tight sm:text-9xl lg:text-[12rem]">Stellar
+          <h1 class="gradient-blue pt-12 text-6xl font-extrabold tracking-tight sm:text-9xl lg:text-[12rem]">Stellar
           </h1>
           <div class="flex items-end justify-end max-w-sm pb-2">
             <strong
@@ -19,7 +19,7 @@
           </div>
         </div>
         <div class="flex items-end justify-between w-full max-w-6xl px-6 mx-auto gap-x-2 sm:gap-x-8 lg:px-12 xl:max-w-7xl">
-          <h1 class="gradient-text text-6xl font-extrabold tracking-tight sm:text-9xl lg:text-[12rem]">Creations</h1>
+          <h1 class="gradient-blue text-6xl font-extrabold tracking-tight sm:text-9xl lg:text-[12rem]">Creations</h1>
           <svg class="h-12 min-w-fit text-sky-200 sm:h-24 lg:h-36" width="122" height="140" viewBox="0 0 122 140"
             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path
