@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('container')
   {{-- Hero section --}}
   <section class="container">
     <div class="relative flex flex-col items-center justify-between gap-16 my-32 sm:my-48 sm:flex-row">

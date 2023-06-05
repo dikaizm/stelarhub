@@ -4,7 +4,7 @@
     @include('partials.nav')
 @endsection
 
-@section('content')
+@section('container')
 <div class="container h-screen">
     <div class="flex flex-col items-center justify-center h-full gap-4">
         <h2 class="text-6xl font-bold text-red-500">404</h2>

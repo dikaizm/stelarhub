@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('container')
   {{-- Hero section --}}
   <section
     class="relative h-screen w-full bg-gradient-to-r from-sky-100 to-blue-100/0 sm:max-h-[640px] lg:h-screen lg:max-h-[900px]">

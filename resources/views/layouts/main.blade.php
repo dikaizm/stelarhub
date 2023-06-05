@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-  <title>Stelar - Digital Agency</title>
+  <title>{{ $title }}</title>
 
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -32,7 +32,7 @@
   @yield('nav')
 
   <main class="relative w-full pt-0 overflow-hidden">
-    @yield('content')
+    @yield('container')
   </main>
 
   @yield('footer')

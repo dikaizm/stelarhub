@@ -4,8 +4,8 @@
   @include('partials.nav')
 @endsection
 
-@section('content')
-  @yield('content')
+@section('container')
+  @yield('container')
 @endsection
 
 @section('footer')

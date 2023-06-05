@@ -38,8 +38,8 @@ class="fixed inset-x-0 top-0 z-50 h-16 transition-all duration-700 ease-in-out b
             </li>
             <ul
               class="z-0 flex flex-col gap-4 ml-4 text-lg transition-all duration-500 ease-in-out list-collapse-hide dropdown-platform">
-              <li><a href="https://stelarhub.com/" target="_blank">Novanote</a></li>
-              <li><a href="">Fintrack</a></li>
+              <li><a href="/novanote">Novanote</a></li>
+              <li><a href="/fintrack">Fintrack</a></li>
             </ul>
           </ul>
 
@@ -66,14 +66,14 @@ class="fixed inset-x-0 top-0 z-50 h-16 transition-all duration-700 ease-in-out b
             </ul>
           </ul>
           <li class="z-10 py-4 bg-white"><a href="/about">ABOUT</a></li>
-          <li class="z-10 py-4 bg-white"><a href="">WORKS</a></li>
+          <li class="z-10 py-4 bg-white"><a href="/projects">WORKS</a></li>
           <li class="z-10 py-4 bg-white"><a href="/blog">BLOG</a></li> 
         </ul>
       </div>
     </div>
 
     <div class="w-full px-6 py-6">
-      <a href="#"
+      <a href="/contact"
         class="block w-full px-4 py-2 text-center transition-all duration-200 border rounded-full border-sky-700 hover:bg-sky-700 hover:text-white">CONTACT
         US</a>
     </div>
@@ -131,7 +131,7 @@ class="fixed inset-x-0 top-0 z-50 h-16 transition-all duration-700 ease-in-out b
               </svg>
             </div>
             <div class="flex-auto">
-              <a href="https://stelarhub.com/" target="_blank" class="block font-semibold text-gray-900">
+              <a href="/novanote" class="block font-semibold text-gray-900">
                 Novanote
                 <span class="absolute inset-0"></span>
               </a>
@@ -149,7 +149,7 @@ class="fixed inset-x-0 top-0 z-50 h-16 transition-all duration-700 ease-in-out b
               </svg>
             </div>
             <div class="flex-auto">
-              <a href="#" class="block font-semibold text-gray-900">
+              <a href="/fintrack" class="block font-semibold text-gray-900">
                 Fintrack
                 <span class="absolute inset-0"></span>
               </a>
@@ -273,11 +273,11 @@ class="fixed inset-x-0 top-0 z-50 h-16 transition-all duration-700 ease-in-out b
       </div>
     </div>
     <a href="/about"
-      class="font-semibold text-gray-700 transition-all duration-300 hover:font-bold hover:text-sky-700">ABOUT</a>
+      class="font-semibold text-gray-700 transition-all duration-300 hover:font-bold hover:text-sky-700 {{ Request::is('about') ? 'text-sky-700' : '' }}">ABOUT</a>
     <a href="/projects"
-      class="font-semibold text-gray-700 transition-all duration-300 hover:font-bold hover:text-sky-700">WORKS</a>
+      class="font-semibold text-gray-700 transition-all duration-300 hover:font-bold hover:text-sky-700 {{ Request::is('projects') ? 'text-sky-700' : '' }}">WORKS</a>
     <a href="/blog"
-      class="font-semibold text-gray-700 transition-all duration-300 hover:font-bold hover:text-sky-700">BLOG</a>
+      class="font-semibold text-gray-700 transition-all duration-300 hover:font-bold hover:text-sky-700 {{ Request::is('blog') ? 'text-sky-700' : '' }}">BLOG</a>
   </div>
 
   <div class="hidden text-xs font-semibold gap-x-3 text-sky-700 lg:flex lg:flex-1 lg:justify-end">
@@ -290,7 +290,7 @@ class="fixed inset-x-0 top-0 z-50 h-16 transition-all duration-700 ease-in-out b
           clip-rule="evenodd" />
       </svg>
     </a>
-    <a href="#"
+    <a href="/contact"
       class="px-4 py-2 transition-all duration-200 border rounded-full border-sky-700 hover:bg-sky-700 hover:text-white">CONTACT
       US</a>
   </div>

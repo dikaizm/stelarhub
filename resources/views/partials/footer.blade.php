@@ -4,7 +4,7 @@
       <div class="px-6 pt-10 pb-8 rounded-3xl bg-sky-700 sm:px-12 sm:pt-14">
         <section class="flex flex-col justify-between gap-6 sm:flex-row">
           <p class="text-3xl text-white sm:text-4xl">Have an awesome project together?</p>
-          <a href="" class="px-6 py-3 text-white border rounded-full h-fit w-fit whitespace-nowrap">START A
+          <a href="/contact" class="px-6 py-3 text-white transition-all border rounded-full h-fit w-fit whitespace-nowrap hover:bg-white hover:text-sky-700">START A
             PROJECT</a>
         </section>
 
@@ -22,10 +22,8 @@
           </div>
           <div class="grid grid-cols-2 gap-6 text-white whitespace-nowrap sm:flex sm:gap-12 lg:gap-20">
             <div class="flex flex-col gap-6">
-              <p class="font-bold">Site</p>
+              <p class="font-bold">Company</p>
               <ul class="flex flex-col gap-3 text-sm">
-                <li><a href="">Platform</a></li>
-                <li><a href="">Solutions</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/projects">Works</a></li>
                 <li><a href="">Blog</a></li>
@@ -33,11 +31,13 @@
             </div>
 
             <div class="flex flex-col gap-6">
-              <p class="font-bold">Support</p>
+              <p class="font-bold">Solutions</p>
               <ul class="flex flex-col gap-3 text-sm">
-                <li><a href="">FAQ</a></li>
-                <li><a href="">Privacy Policy</a></li>
-                <li><a href="">Terms of Service</a></li>
+                <li><a href="">Branding</a></li>
+                <li><a href="">Website</a></li>
+                <li><a href="">Apps</a></li>
+                <li><a href="">Marketing</a></li>
+                <li><a href="">Analysis</a></li>
               </ul>
             </div>
 

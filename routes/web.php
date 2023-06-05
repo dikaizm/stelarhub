@@ -14,9 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        'title' => 'Stelar - Digital Agency',
+    ]);
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', [
+        'title' => 'About',
+    ]);
 });
+
+Route::get('/novanote', function () {
+    return view('platform.novanote', [
+        'title' => 'Novanote',
+    ]);
+});
+
+Route::get('/{any}', function () {
+    return view('errors.404', [
+        'title' => 'Not found'
+    ]);
+})->where('any', '.*');
