@@ -64,7 +64,7 @@
           alt="">
         <div class="flex flex-col ">
           <p class="text-xl font-semibold">Mahardika</p>
-          <p class="text-lg text-neutral-500">Director, Stelar</p>
+          <p class="text-lg text-neutral-500">Developer, Stelar</p>
         </div>
       </div>
 
@@ -100,7 +100,7 @@
             alt="">
           <div class="flex flex-col items-center">
             <p class="text-xl font-bold">Mazir</p>
-            <p class="text-neutral-500">Interface Designer</p>
+            <p class="text-neutral-500">Visual Designer</p>
           </div>
         </div>
       </div>

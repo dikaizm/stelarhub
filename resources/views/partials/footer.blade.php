@@ -1,7 +1,7 @@
 {{-- Footer --}}
 <footer class="relative w-full bg-neutral-900">
     <div class="mx-auto max-w-[89rem] px-4 py-4 md:py-8  lg:px-16">
-      <div class="px-6 pt-10 pb-8 rounded-3xl bg-sky-700 sm:px-12 sm:pt-14">
+      <div class="px-6 pt-10 pb-8 rounded-3xl bg-sky-700 md:px-14 sm:pt-14">
         <section class="flex flex-col justify-between gap-6 sm:flex-row">
           <p class="text-3xl text-white sm:text-4xl">Have an awesome project together?</p>
           <a href="/contact" class="px-6 py-3 text-white transition-all border rounded-full h-fit w-fit whitespace-nowrap hover:bg-white hover:text-sky-700">START A
