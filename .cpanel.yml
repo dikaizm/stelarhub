@@ -1,4 +1,4 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/stel9762/public_html/
+    - export DEPLOYPATH=/home/stel9762/public_html/staging
     - /bin/cp -R . "$DEPLOYPATH"
