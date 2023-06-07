@@ -2,9 +2,9 @@
 
 @section('container')
   <section class="relative h-screen w-full sm:max-h-[640px] lg:h-screen lg:max-h-[900px]">
-    <div class="flex items-center w-full h-full max-w-6xl px-6 mx-auto lg:px-12 xl:max-w-7xl justify-evenly">
+    <div class="flex flex-col items-center w-full h-full max-w-6xl gap-12 px-6 mx-auto mt-72 sm:flex-row lg:px-12 xl:max-w-7xl justify-evenly sm:mt-0">
       <div class="flex flex-col gap-y-16">
-        <div class="flex flex-col text-5xl font-bold">
+        <div class="flex flex-col text-4xl font-bold lg:text-5xl">
           <span>Brainstorm ideas.</span>
           <span>Complete your tasks.</span>
           <span>Organize everything.</span>
@@ -16,7 +16,7 @@
                 stroke-linecap="round" stroke-linejoin="round" />
             </svg></span></a>
       </div>
-      <img class="object-contain w-1/3 rounded-2xl drop-shadow-2xl" src="assets/novanote.png" alt="">
+      <img class="object-contain w-full sm:w-1/3 rounded-2xl drop-shadow-2xl" src="assets/novanote.png" alt="">
     </div>
   </section>
 @endsection

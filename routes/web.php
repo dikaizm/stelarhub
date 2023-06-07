@@ -33,6 +33,6 @@ Route::get('/novanote', function () {
 
 Route::get('/{any}', function () {
     return view('errors.404', [
-        'title' => 'Not found'
+        'title' => 'Not found',
     ]);
 })->where('any', '.*');

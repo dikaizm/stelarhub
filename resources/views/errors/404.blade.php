@@ -1,8 +1,4 @@
-@extends('layouts.main')
-
-@section('nav')
-    @include('partials.nav')
-@endsection
+@extends('layouts.app')
 
 @section('container')
 <div class="container h-screen">

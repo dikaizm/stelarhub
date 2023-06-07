@@ -12,7 +12,9 @@
 
         <section class="flex flex-col justify-between gap-10 sm:flex-row">
           <div class="flex flex-col max-w-lg gap-8 text-sm">
-            <img class="h-10 w-fit" src="assets/stelar-logo-white.svg" alt="">
+            
+            @svg('assets/stelar-logo-white.svg', 'h-10 w-fit')
+            
             <p class="leading-loose text-white">Let us help you blast off into the stratosphere with a
               stunning and functional design that will engage and captivate your audience.</p>
             <div>
