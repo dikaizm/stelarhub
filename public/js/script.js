@@ -2,9 +2,9 @@ var menuState;
 
 function changeNavColor(state) {
     if (state) {
-        $('#navbar').removeClass('bg-white/0').addClass('bg-white');
+        $('#navbar').addClass('bg-white');
     } else {
-        $('#navbar').removeClass('bg-white').addClass('bg-white/0');
+        $('#navbar').removeClass('bg-white');
     }
 }
 
@@ -74,6 +74,12 @@ function toggleBtn(button) {
     var toggleAttr = button.getAttribute('data-collapse-toggle');
     var btn = $(button).find('.accordion-btn')
 
+    // Close all other accordions
+    $('.accordion-btn').removeClass('accordion-btn-show');
+    $('.list-collapse-show').removeClass('list-collapse-show').addClass('list-collapse-hide');
+    $('[data-collapse-toggle="false"]').attr('data-collapse-toggle', 'true').attr('aria-expanded', 'false');
+
+    // Open accordion
     if (targetId && toggleAttr === 'true') {
         $('.' + targetId).removeClass('list-collapse-hide').addClass('list-collapse-show');
         button.setAttribute('data-collapse-toggle', 'false');
@@ -129,4 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $('[data-hover]').on('mouseleave', function () {
         unhoverBtn(this);
     });
+
+    var currentYear = new Date().getFullYear();
+    document.getElementById("current-year").textContent = currentYear;
 })

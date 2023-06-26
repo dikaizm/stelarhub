@@ -15,7 +15,7 @@
   </section>
 
   {{-- Values section --}}
-  <section class="container mt-12">
+  <section class="mt-12 container">
     <div class="relative flex flex-col justify-center gap-12">
       <h2 class="text-center section-title">Our pillars</h2>
       <div class="grid gap-8 grid-auto-fit-xl">
