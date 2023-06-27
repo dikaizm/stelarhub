@@ -1,0 +1,213 @@
+@use "base" as *;
+@use "layout";
+
+// SITE
+.s-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    @include transition;
+
+    .flex-col {
+        justify-content: space-between;
+    }
+
+    .flex {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 6rem;
+    }
+
+    @include responsive($screen-sm) {
+        .flex {
+            flex-direction: row;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 0;
+        }
+    }
+
+    @include responsive($screen-lg) {
+        .flex {
+            align-items: center;
+            gap: 6rem;
+        }
+    }
+
+    .content-w {
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        gap: 2.5rem;
+
+        &-big {
+            @extend .content-w;
+            width: 100%;
+            gap: 0;
+        }
+
+        svg {
+            display: none;
+            padding-bottom: 6rem;
+            height: 3rem;
+            color: $light-blue;
+        }
+
+        @include responsive($screen-sm) {
+            svg {
+                display: inline;
+                height: 6rem;
+            }
+        }
+
+        @include responsive($screen-xl) {
+            svg {
+                height: 9rem;
+            }
+        }
+
+        .flex-row {
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 3rem;
+            height: fit-content;
+        }
+
+        .hero-title {
+            @include transition(500ms);
+
+            &-big {
+                @extend .hero-title;
+                font-size: calc(18vw);
+                line-height: 1;
+                font-weight: $font-black;
+                letter-spacing: -0.025em;
+
+                &-top {
+                    @extend .hero-title-big;
+                    padding-top: 2rem;
+                }
+
+                &-bottom {
+                    @extend .hero-title-big;
+                    padding-bottom: 2rem;
+                }
+            }
+
+            &-generic {
+                @extend .hero-title;
+                @include text-size(5xl);
+                font-weight: $font-black;
+            }
+
+            @include responsive($screen-xs) {
+                &-big {
+                    font-size: calc(18vw);
+                }
+            }
+
+            @include responsive($screen-sm) {
+                &-big {
+                    font-size: calc(15vw);
+
+                    &-top {
+                        padding-top: 8rem;
+                    }
+
+                    &-bottom {
+                        padding-bottom: 6rem;
+                    }
+                }
+            }
+
+            @include responsive($screen-lg) {
+                &-big {
+                    font-size: calc(14vw);
+                }
+
+                &-generic {
+                    @include text-size(6xl);
+                }
+            }
+        }
+
+        .hero-desc {
+            @include text-size(md);
+            display: block;
+            line-height: 2rem;
+            padding-bottom: 0.5rem;
+
+            &-big {
+                @extend .hero-desc;
+                display: none;
+                max-width: 24rem;
+            }
+
+            &-m {
+                @include text-size(sm);
+                line-height: 1.5rem;
+                display: block;
+            }
+        }
+
+        @include responsive($screen-sm) {
+            .hero-desc {
+                &-big {
+                    display: block;
+                }
+
+                &-m {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .hero-image {
+        transform: rotate(-5deg);
+        align-self: center;
+        filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+    }
+
+    @include responsive($screen-sm) {
+        .content-w {
+            width: 50%;
+
+            &-big {
+                width: 100%;
+            }
+        }
+
+        .hero-image {
+            width: 50%;
+            max-width: 32rem;
+        }
+    }
+}
+
+.s-values {
+    position: relative;
+    margin-top: 6rem;
+    width: 100%;
+
+    @include responsive($screen-sm) {
+        margin-top: 0;
+    }
+
+    .flex-col {
+        gap: 4rem;
+    }
+
+    .section-title {
+        text-align: center;
+    }
+}

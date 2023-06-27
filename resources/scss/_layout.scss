@@ -1,0 +1,98 @@
+@use "base" as *;
+
+// LAYOUT
+.container {
+    position: relative;
+    padding: 0 1rem;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    max-width: 90%;
+    @include transition;
+}
+
+.flex {
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    &-col {
+        @extend .flex;
+        flex-direction: column;
+    }
+
+    &-row {
+        @extend .flex;
+        flex-direction: row;
+    }
+}
+
+.grid-wrapper {
+    display: grid;
+    gap: 1.5rem;
+    @include grid-auto-fit;
+}
+
+.section {
+    &-title {
+        @include text-size(4xl);
+        font-weight: $font-bold;
+    }
+
+    &-desc {
+        @include text-size(md);
+        line-height: 2;
+        max-width: 42rem;
+        color: $gray-400;
+    }
+}
+
+.content-w {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    &-container {
+        display: grid;
+        gap: 1rem;
+        border-radius: 1rem;
+        background-color: white;
+        border: 1px solid $gray-100;
+        padding: 2rem;
+        align-content: flex-start;
+        @include transition;
+    }
+
+    &-container:hover {
+        transform: scale(1.05);
+        transform: translate(-5px, -5px);
+        filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
+    }
+
+    &-title {
+        @include text-size(xl);
+        font-weight: $font-bold;
+    }
+
+    &-desc {
+        @include text-size(sm);
+        line-height: 2;
+    }
+}
+
+@include responsive($screen-sm) {
+    .container {
+        padding: 0;
+    }
+
+    .section-title {
+        @include text-size(5xl);
+    }
+}
+
+@include responsive($screen-lg) {
+    .container {
+        max-width: 82%;
+    }
+}

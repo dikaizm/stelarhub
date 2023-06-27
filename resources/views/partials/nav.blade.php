@@ -257,7 +257,7 @@
             clip-rule="evenodd" />
         </svg>
       </button>
-      <a href="/contact" class="btn-nav">
+      <a href="/contact" class="btn-nav btn">
         <span>LET'S TALK</span>
         <svg width="34" height="34" viewBox="0 0 34 34" stroke="currentColor" fill="none"
           xmlns="http://www.w3.org/2000/svg">

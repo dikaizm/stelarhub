@@ -1,11 +1,12 @@
 {{-- Footer --}}
 <footer>
+  <div class="background"></div>
   <section class="s-cta container">
     <div class="cta-w">
       <h2 class="section-title">Have an awesome project for your brand?</h2>
       <div class="btn-w">
-        <a class="btn-primary" href="">START A PROJECT</a>
-        <a class="btn-secondary" href="">SEE OUR WORKS</a>
+        <a class="btn-primary btn" href="">START A PROJECT</a>
+        <a class="btn-secondary btn" href="">SEE OUR WORKS</a>
       </div>
     </div>
     <ul>

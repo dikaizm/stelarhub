@@ -3,20 +3,20 @@
 @section('container')
   {{-- Hero section --}}
   <section class="s-hero">
-    <div class="background"></div>
-    <div class="hero-w">
-      <div class="heading-w">
-        <div class="row-w">
-          <div class="text-blue-g title title-1">Stellar</div>
-          <div class="desc-w">
-            <strong class="desc">We craft exceptional digital experiences that bring your brand to success. With
-              expertise in websites, apps, and
-              branding, we combine creativity and technology to bring your vision to life.</strong>
-          </div>
+
+    <div class="bg-blue-g"></div>
+
+    <div class="flex-col">
+      <div class="content-w-big container">
+        <div class="flex-row">
+          <h1 class="text-blue-g hero-title-big-top">Stellar</h1>
+          <strong class="hero-desc-big">We craft exceptional digital experiences that bring your brand to success. With
+            expertise in websites, apps, and
+            branding, we combine creativity and technology to bring your vision to life.</strong>
         </div>
 
-        <div class="row-w">
-          <div class="text-blue-g title title-2">Creations</div>
+        <div class="flex-row">
+          <h1 class="text-blue-g hero-title-big-bottom">Creations</h1>
           <svg width="122" height="140" viewBox="0 0 122 140" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M85.17 68.34C54.95 75.6 49.64 81.48 43.08 114.93C36.52 81.48 31.21 75.6 0.98999 68.34C31.21 61.08 36.52 55.2 43.08 21.75C49.64 55.2 54.95 61.08 85.17 68.34Z" />
@@ -27,12 +27,10 @@
           </svg>
         </div>
 
-        <div class="desc-w-m">
-          <strong class="desc-m">We craft
-            exceptional digital experiences that bring your brand to success. With expertise in websites, apps,
-            and
-            branding, we combine creativity and technology to bring your vision to life.</strong>
-        </div>
+        <strong class="hero-desc-m">We craft
+          exceptional digital experiences that bring your brand to success. With expertise in websites, apps,
+          and
+          branding, we combine creativity and technology to bring your vision to life.</strong>
       </div>
 
       {{-- Achievement section --}}
@@ -239,7 +237,7 @@
                     experts. Performance-driven digital agency to deliver successful branding. Boost your brand presence
                     with strong branding strategy from our
                     experts. Performance-driven digital agency to deliver successful branding.</div>
-                  <a href="#" class="btn-primary btn-service">LEARN
+                  <a href="#" class="btn btn-primary btn-service">LEARN
                     MORE</a>
                 </div>
               </div>
@@ -281,7 +279,7 @@
                     experts. Performance-driven digital agency to deliver successful branding. Boost your brand presence
                     with strong branding strategy from our
                     experts. Performance-driven digital agency to deliver successful branding.</div>
-                  <a href="#" class="btn-primary btn-service">LEARN
+                  <a href="#" class="btn btn-primary btn-service">LEARN
                     MORE</a>
                 </div>
               </div>
@@ -322,7 +320,7 @@
                     experts. Performance-driven digital agency to deliver successful branding. Boost your brand presence
                     with strong branding strategy from our
                     experts. Performance-driven digital agency to deliver successful branding.</div>
-                  <a href="#" class="btn-primary btn-service">LEARN
+                  <a href="#" class="btn btn-primary btn-service">LEARN
                     MORE</a>
                 </div>
               </div>
@@ -364,7 +362,7 @@
                     experts. Performance-driven digital agency to deliver successful branding. Boost your brand presence
                     with strong branding strategy from our
                     experts. Performance-driven digital agency to deliver successful branding.</div>
-                  <a href="#" class="btn-primary btn-service">LEARN
+                  <a href="#" class="btn btn-primary btn-service">LEARN
                     MORE</a>
                 </div>
               </div>
@@ -406,7 +404,7 @@
                     experts. Performance-driven digital agency to deliver successful branding. Boost your brand presence
                     with strong branding strategy from our
                     experts. Performance-driven digital agency to deliver successful branding.</div>
-                  <a href="#" class="btn-primary btn-service">LEARN
+                  <a href="#" class="btn btn-primary btn-service">LEARN
                     MORE</a>
                 </div>
               </div>
@@ -500,7 +498,7 @@
       </div>
 
       <div class="btn-portfolio">
-        <a href="#" class="btn-primary">SEE
+        <a href="#" class="btn btn-primary">SEE
           OUR WORKS</a>
       </div>
     </div>

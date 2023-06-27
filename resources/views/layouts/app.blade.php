@@ -19,14 +19,13 @@
     rel="stylesheet">
 
   {{-- Styles --}}
-  <link rel="stylesheet" href="css/animation.css">
   <link rel="stylesheet" href="css/styles.css">
 
   {{-- Scripts --}}
   <script src="js/script.js"></script>
 
   {{-- Vite --}}
-  @vite(['resources/js/app.js'])
+  @vite(['resources/scss/app.scss','resources/js/app.js'])
 </head>
 
 <body>
