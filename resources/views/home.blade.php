@@ -4,7 +4,7 @@
   {{-- Hero section --}}
   <section class="s-hero">
 
-    <div class="bg-blue-g"></div>
+    <div class="bg-glr-blue"></div>
 
     <div class="flex-col">
       <div class="content-w-big container">
@@ -34,168 +34,171 @@
       </div>
 
       {{-- Achievement section --}}
-      <div class="feat-box bg-white">
-        <div class="container">
-          <div class="feat-w">
-            <div class="item">
-              <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"
-                aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
-              </svg>
-              <p>Satisfied <br> Customers</p>
-            </div>
-            <div class="item">
-              <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"
-                aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
-              </svg>
-              <p>Satisfied <br> Customers</p>
-            </div>
-            <div class="item">
-              <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"
-                aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
-              </svg>
-              <p>Satisfied <br> Customers</p>
-            </div>
-            <div class="item">
-              <svg class="icon" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"
-                aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
-              </svg>
-              <p>Satisfied <br> Customers</p>
-            </div>
+      <div class="feat-container bg-white">
+        <div class="grid-wrapper container">
+          <div class="feat-item">
+            <svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+            </svg>
+            <p>Satisfied <br> Customers</p>
+          </div>
+          <div class="feat-item">
+            <svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+            </svg>
+            <p>Satisfied <br> Customers</p>
+          </div>
+          <div class="feat-item">
+            <svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+            </svg>
+            <p>Satisfied <br> Customers</p>
+          </div>
+          <div class="feat-item">
+            <svg class="feat-icon" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+            </svg>
+            <p>Satisfied <br> Customers</p>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
   {{-- Showcase section --}}
-  <section class="s-showcase container">
-    <div class="showcase-w">
-      <a href="#" class="card">
-        <div class="content-slide">
-          <div class="content-w">
-            <div>
-              <div class="title">System Information</div>
-              <div class="subtitle">Technology</div>
-            </div>
-            <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit,
-              sed do eiusmod
-              tempor
-              incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.</p>
-            <div class="icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="5"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div class="content-default">
-          <div class="title">System Information</div>
-          <div class="subtitle">Technology</div>
-        </div>
-        <div class="background"></div>
-        <img
+  <section class="s-showcase">
+    <div class="grid-wrapper container">
+      <a href="#" class="card-container">
+        <div class="bg-shadow"></div>
+
+        <img class="card-image"
           src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
           alt="">
+
+        <div class="bg-white"></div>
+
+        <div class="content-w">
+          <div class="card-filler"></div>
+
+          <div class="subcontent-w">
+            <div class="card-title">System Information</div>
+            <div class="card-subtitle">Technology</div>
+          </div>
+          <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit,
+            sed do eiusmod
+            tempor
+            incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.</p>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="5"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
       </a>
 
-      <a href="#" class="card item-down">
-        <div class="content-slide">
-          <div class="content-w">
-            <div>
-              <div class="title">System Information</div>
-              <div class="subtitle">Technology</div>
-            </div>
-            <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor
-              incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.</p>
-            <div class="icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="5"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div class="content-default">
-          <div class="title">System Information</div>
-          <div class="subtitle">Technology</div>
-        </div>
-        <div class="background"></div>
-        <img
+      <a href="#" class="card-container item-down">
+        <div class="bg-shadow"></div>
+
+        <img class="card-image"
           src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
           alt="">
+
+        <div class="bg-white"></div>
+
+        <div class="content-w">
+          <div class="card-filler"></div>
+
+          <div class="subcontent-w">
+            <div class="card-title">System Information</div>
+            <div class="card-subtitle">Technology</div>
+          </div>
+          <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit,
+            sed do eiusmod
+            tempor
+            incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.</p>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="5"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
       </a>
 
-      <a href="#" class="card">
-        <div class="content-slide">
-          <div class="content-w">
-            <div>
-              <div class="title">System Information</div>
-              <div class="subtitle">Technology</div>
-            </div>
-            <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit,
-              sed do eiusmod
-              tempor
-              incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.</p>
-            <div class="icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="5"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div class="content-default">
-          <div class="title">System Information</div>
-          <div class="subtitle">Technology</div>
-        </div>
-        <div class="background"></div>
-        <img
+      <a href="#" class="card-container">
+        <div class="bg-shadow"></div>
+
+        <img class="card-image"
           src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
           alt="">
+
+        <div class="bg-white"></div>
+
+        <div class="content-w">
+          <div class="card-filler"></div>
+
+          <div class="subcontent-w">
+            <div class="card-title">System Information</div>
+            <div class="card-subtitle">Technology</div>
+          </div>
+          <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit,
+            sed do eiusmod
+            tempor
+            incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.</p>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="5"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
       </a>
 
-      <a href="#" class="card item-down item-end">
-        <div class="content-slide">
-          <div class="content-w">
-            <div>
-              <div class="title">System Information</div>
-              <div class="subtitle">Technology</div>
-            </div>
-            <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor
-              incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.</p>
-            <div class="icon">
-              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="5"
-                xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div class="content-default">
-          <div class="title">System Information</div>
-          <div class="subtitle">Technology</div>
-        </div>
-        <div class="background"></div>
-        <img
+      <a href="#" class="card-container item-down item-end">
+        <div class="bg-shadow"></div>
+
+        <img class="card-image"
           src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
           alt="">
+
+        <div class="bg-white"></div>
+
+        <div class="content-w">
+          <div class="card-filler"></div>
+
+          <div class="subcontent-w">
+            <div class="card-title">System Information blabds abasd</div>
+            <div class="card-subtitle">Technology</div>
+          </div>
+          <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit,
+            sed do eiusmod
+            tempor
+            incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.</p>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="5"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
       </a>
     </div>
   </section>
@@ -203,229 +206,55 @@
   {{-- Service section --}}
   <section class="s-service">
     <div class="container">
-      <div class="title">
-        <div>Every solutions <br> for your </div>
-        <div class="rotate-word-w">
+      <div class="section-title flex">
+        <h2>Every solutions <br> for your </h2>
+        <h2 class="flex-col">
           <span class="rotate-word-5">Analysis</span>
           <span class="rotate-word-4">Marketing</span>
           <span class="rotate-word-3">Branding</span>
           <span class="rotate-word-2">Website</span>
           <span class="rotate-word-1">Apps</span>
-        </div>
+        </h2>
       </div>
 
-      <div class="accordion-w">
+      <div class="accordion-wrapper">
 
         <hr>
-
-        <section>
-          <button class="item" aria-controls="srv-accordion-branding" data-collapse-toggle="true"
-            aria-expanded="false">
-            <div class="content-w">
-              <div class="content-text">
-                <div class="title-w">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M9.71432 21.1428H14.2857M12 2.85709V1.71423M17.7143 5.1428L18.8572 3.99995M6.28575 5.1428L5.14289 3.99995M17.7143 15.4285L18.8572 16.5714M6.28575 15.4285L5.14289 16.5714M4.00003 9.71423H2.85718M21.1429 9.71423H20M12 5.71423C13.1604 5.71352 14.2869 6.10523 15.1965 6.82572C16.106 7.5462 16.7452 8.5531 17.0102 9.6828C17.2751 10.8125 17.1503 11.9986 16.6559 13.0484C16.1614 14.0981 15.3266 14.9498 14.2869 15.4651L14.2857 16.5714C14.2857 17.1776 14.0449 17.759 13.6163 18.1876C13.1876 18.6163 12.6062 18.8571 12 18.8571C11.3938 18.8571 10.8124 18.6163 10.3838 18.1876C9.95514 17.759 9.71432 17.1776 9.71432 16.5714V15.4651C8.67473 14.9499 7.8399 14.0983 7.34548 13.0486C6.85106 11.999 6.7261 10.813 6.9909 9.68336C7.2557 8.55372 7.8947 7.54682 8.80408 6.82625C9.71346 6.10568 10.8398 5.71378 12 5.71423Z"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <div class="title">Branding</div>
+        @foreach ($services as $service)
+          <section>
+            <button class="accordion-item" aria-controls="srv-accordion-{{ $service->slug }}"
+              data-collapse-toggle="true" aria-expanded="false">
+              <div class="content-w">
+                <div class="content-text flex-col">
+                  <div class="title-wrapper flex">
+                    <svg>
+                      <use xlink:href="{{ $service->icon }}"></use>
+                    </svg>
+                    <h3 class="accordion-title">{{ $service->name }}</h3>
+                  </div>
+                  <div class="list-collapse-hide srv-accordion-{{ $service->slug }} subcontent-w flex-col">
+                    <p class="desc">{{ $service->desc_long }}</p>
+                    <a href="{{ $service->slug }}" class="btn btn-primary">LEARN
+                      MORE</a>
+                  </div>
                 </div>
-                <div class="list-collapse-hide srv-accordion-branding desc-w">
-                  <div class="desc">Boost your brand presence with strong branding strategy
-                    from our
-                    experts. Performance-driven digital agency to deliver successful branding. Boost your brand presence
-                    with strong branding strategy from our
-                    experts. Performance-driven digital agency to deliver successful branding.</div>
-                  <a href="#" class="btn btn-primary btn-service">LEARN
-                    MORE</a>
+                <div class="list-collapse-hide srv-accordion-{{ $service->slug }} content-image">
+                  <img src="{{ $service->image }}" alt="">
                 </div>
               </div>
-              <div class="list-collapse-hide srv-accordion-branding content-img">
-                <img
-                  src="https://images.unsplash.com/photo-1566657817181-c69e4a8eeb1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-                  alt="">
+              <div class="btn-toggle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path class="accordion-btn" d="M12 8L12 16" stroke-linecap="round" />
+                  <path d="M16 12L8 12" stroke-linecap="round" />
+                  <circle cx="12" cy="12" r="11" />
+                </svg>
               </div>
-            </div>
-            <div class="btn-toggle">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
-                xmlns="http://www.w3.org/2000/svg">
-                <path class="accordion-btn" d="M12 8L12 16" stroke-linecap="round" />
-                <path d="M16 12L8 12" stroke-linecap="round" />
-                <circle cx="12" cy="12" r="11" />
-              </svg>
-            </div>
-          </button>
-        </section>
+            </button>
+          </section>
 
-        <hr>
-
-        <section>
-          <button class="item" aria-controls="srv-accordion-website" data-collapse-toggle="true"
-            aria-expanded="false">
-            <div class="content-w">
-              <div class="content-text">
-                <div class="title-w">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M9.71432 21.1428H14.2857M12 2.85709V1.71423M17.7143 5.1428L18.8572 3.99995M6.28575 5.1428L5.14289 3.99995M17.7143 15.4285L18.8572 16.5714M6.28575 15.4285L5.14289 16.5714M4.00003 9.71423H2.85718M21.1429 9.71423H20M12 5.71423C13.1604 5.71352 14.2869 6.10523 15.1965 6.82572C16.106 7.5462 16.7452 8.5531 17.0102 9.6828C17.2751 10.8125 17.1503 11.9986 16.6559 13.0484C16.1614 14.0981 15.3266 14.9498 14.2869 15.4651L14.2857 16.5714C14.2857 17.1776 14.0449 17.759 13.6163 18.1876C13.1876 18.6163 12.6062 18.8571 12 18.8571C11.3938 18.8571 10.8124 18.6163 10.3838 18.1876C9.95514 17.759 9.71432 17.1776 9.71432 16.5714V15.4651C8.67473 14.9499 7.8399 14.0983 7.34548 13.0486C6.85106 11.999 6.7261 10.813 6.9909 9.68336C7.2557 8.55372 7.8947 7.54682 8.80408 6.82625C9.71346 6.10568 10.8398 5.71378 12 5.71423Z"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <div class="title">Website</div>
-                </div>
-                <div class="list-collapse-hide srv-accordion-website desc-w">
-                  <div class="desc">Boost your brand presence with strong branding strategy
-                    from our
-                    experts. Performance-driven digital agency to deliver successful branding. Boost your brand presence
-                    with strong branding strategy from our
-                    experts. Performance-driven digital agency to deliver successful branding.</div>
-                  <a href="#" class="btn btn-primary btn-service">LEARN
-                    MORE</a>
-                </div>
-              </div>
-              <div class="list-collapse-hide srv-accordion-website content-img">
-                <img
-                  src="https://images.unsplash.com/photo-1566657817181-c69e4a8eeb1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-                  alt="">
-              </div>
-            </div>
-            <div class="btn-toggle">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
-                xmlns="http://www.w3.org/2000/svg">
-                <path class="accordion-btn" d="M12 8L12 16" stroke-linecap="round" />
-                <path d="M16 12L8 12" stroke-linecap="round" />
-                <circle cx="12" cy="12" r="11" />
-              </svg>
-            </div>
-          </button>
-        </section>
-
-        <hr>
-
-        <section>
-          <button class="item" aria-controls="srv-accordion-apps" data-collapse-toggle="true" aria-expanded="false">
-            <div class="content-w">
-              <div class="content-text">
-                <div class="title-w">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M9.71432 21.1428H14.2857M12 2.85709V1.71423M17.7143 5.1428L18.8572 3.99995M6.28575 5.1428L5.14289 3.99995M17.7143 15.4285L18.8572 16.5714M6.28575 15.4285L5.14289 16.5714M4.00003 9.71423H2.85718M21.1429 9.71423H20M12 5.71423C13.1604 5.71352 14.2869 6.10523 15.1965 6.82572C16.106 7.5462 16.7452 8.5531 17.0102 9.6828C17.2751 10.8125 17.1503 11.9986 16.6559 13.0484C16.1614 14.0981 15.3266 14.9498 14.2869 15.4651L14.2857 16.5714C14.2857 17.1776 14.0449 17.759 13.6163 18.1876C13.1876 18.6163 12.6062 18.8571 12 18.8571C11.3938 18.8571 10.8124 18.6163 10.3838 18.1876C9.95514 17.759 9.71432 17.1776 9.71432 16.5714V15.4651C8.67473 14.9499 7.8399 14.0983 7.34548 13.0486C6.85106 11.999 6.7261 10.813 6.9909 9.68336C7.2557 8.55372 7.8947 7.54682 8.80408 6.82625C9.71346 6.10568 10.8398 5.71378 12 5.71423Z"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <div class="title">Apps</div>
-                </div>
-                <div class="list-collapse-hide srv-accordion-apps desc-w">
-                  <div class="desc">Boost your brand presence with strong branding strategy
-                    from our
-                    experts. Performance-driven digital agency to deliver successful branding. Boost your brand presence
-                    with strong branding strategy from our
-                    experts. Performance-driven digital agency to deliver successful branding.</div>
-                  <a href="#" class="btn btn-primary btn-service">LEARN
-                    MORE</a>
-                </div>
-              </div>
-              <div class="list-collapse-hide srv-accordion-apps content-img">
-                <img
-                  src="https://images.unsplash.com/photo-1566657817181-c69e4a8eeb1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-                  alt="">
-              </div>
-            </div>
-            <div class="btn-toggle">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
-                xmlns="http://www.w3.org/2000/svg">
-                <path class="accordion-btn" d="M12 8L12 16" stroke-linecap="round" />
-                <path d="M16 12L8 12" stroke-linecap="round" />
-                <circle cx="12" cy="12" r="11" />
-              </svg>
-            </div>
-          </button>
-        </section>
-
-        <hr>
-
-        <section>
-          <button class="item" aria-controls="srv-accordion-marketing" data-collapse-toggle="true"
-            aria-expanded="false">
-            <div class="content-w">
-              <div class="content-text">
-                <div class="title-w">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M9.71432 21.1428H14.2857M12 2.85709V1.71423M17.7143 5.1428L18.8572 3.99995M6.28575 5.1428L5.14289 3.99995M17.7143 15.4285L18.8572 16.5714M6.28575 15.4285L5.14289 16.5714M4.00003 9.71423H2.85718M21.1429 9.71423H20M12 5.71423C13.1604 5.71352 14.2869 6.10523 15.1965 6.82572C16.106 7.5462 16.7452 8.5531 17.0102 9.6828C17.2751 10.8125 17.1503 11.9986 16.6559 13.0484C16.1614 14.0981 15.3266 14.9498 14.2869 15.4651L14.2857 16.5714C14.2857 17.1776 14.0449 17.759 13.6163 18.1876C13.1876 18.6163 12.6062 18.8571 12 18.8571C11.3938 18.8571 10.8124 18.6163 10.3838 18.1876C9.95514 17.759 9.71432 17.1776 9.71432 16.5714V15.4651C8.67473 14.9499 7.8399 14.0983 7.34548 13.0486C6.85106 11.999 6.7261 10.813 6.9909 9.68336C7.2557 8.55372 7.8947 7.54682 8.80408 6.82625C9.71346 6.10568 10.8398 5.71378 12 5.71423Z"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <div class="title">Marketing</div>
-                </div>
-                <div class="list-collapse-hide srv-accordion-marketing desc-w">
-                  <div class="desc">Boost your brand presence with strong branding strategy
-                    from our
-                    experts. Performance-driven digital agency to deliver successful branding. Boost your brand presence
-                    with strong branding strategy from our
-                    experts. Performance-driven digital agency to deliver successful branding.</div>
-                  <a href="#" class="btn btn-primary btn-service">LEARN
-                    MORE</a>
-                </div>
-              </div>
-              <div class="list-collapse-hide srv-accordion-marketing content-img">
-                <img
-                  src="https://images.unsplash.com/photo-1566657817181-c69e4a8eeb1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-                  alt="">
-              </div>
-            </div>
-            <div class="btn-toggle">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
-                xmlns="http://www.w3.org/2000/svg">
-                <path class="accordion-btn" d="M12 8L12 16" stroke-linecap="round" />
-                <path d="M16 12L8 12" stroke-linecap="round" />
-                <circle cx="12" cy="12" r="11" />
-              </svg>
-            </div>
-          </button>
-        </section>
-
-        <hr>
-
-        <section>
-          <button class="item" aria-controls="srv-accordion-analysis" data-collapse-toggle="true"
-            aria-expanded="false">
-            <div class="content-w">
-              <div class="content-text">
-                <div class="title-w">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M9.71432 21.1428H14.2857M12 2.85709V1.71423M17.7143 5.1428L18.8572 3.99995M6.28575 5.1428L5.14289 3.99995M17.7143 15.4285L18.8572 16.5714M6.28575 15.4285L5.14289 16.5714M4.00003 9.71423H2.85718M21.1429 9.71423H20M12 5.71423C13.1604 5.71352 14.2869 6.10523 15.1965 6.82572C16.106 7.5462 16.7452 8.5531 17.0102 9.6828C17.2751 10.8125 17.1503 11.9986 16.6559 13.0484C16.1614 14.0981 15.3266 14.9498 14.2869 15.4651L14.2857 16.5714C14.2857 17.1776 14.0449 17.759 13.6163 18.1876C13.1876 18.6163 12.6062 18.8571 12 18.8571C11.3938 18.8571 10.8124 18.6163 10.3838 18.1876C9.95514 17.759 9.71432 17.1776 9.71432 16.5714V15.4651C8.67473 14.9499 7.8399 14.0983 7.34548 13.0486C6.85106 11.999 6.7261 10.813 6.9909 9.68336C7.2557 8.55372 7.8947 7.54682 8.80408 6.82625C9.71346 6.10568 10.8398 5.71378 12 5.71423Z"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <div class="title">Data Analysis</div>
-                </div>
-                <div class="list-collapse-hide srv-accordion-analysis desc-w">
-                  <div class="desc">Boost your brand presence with strong branding strategy
-                    from our
-                    experts. Performance-driven digital agency to deliver successful branding. Boost your brand presence
-                    with strong branding strategy from our
-                    experts. Performance-driven digital agency to deliver successful branding.</div>
-                  <a href="#" class="btn btn-primary btn-service">LEARN
-                    MORE</a>
-                </div>
-              </div>
-              <div class="list-collapse-hide srv-accordion-analysis content-img">
-                <img
-                  src="https://images.unsplash.com/photo-1566657817181-c69e4a8eeb1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
-                  alt="">
-              </div>
-            </div>
-            <div class="btn-toggle">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
-                xmlns="http://www.w3.org/2000/svg">
-                <path class="accordion-btn" d="M12 8L12 16" stroke-linecap="round" />
-                <path d="M16 12L8 12" stroke-linecap="round" />
-                <circle cx="12" cy="12" r="11" />
-              </svg>
-            </div>
-          </button>
-        </section>
-
-        <hr>
+          <hr>
+        @endforeach
 
       </div>
     </div>

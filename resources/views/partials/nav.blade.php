@@ -84,8 +84,8 @@
     <div>
       <a href="/">
         <span class="sr-only">Stelar</span>
-        <img class="logo-full" src="assets/stelar-logo-color.svg" alt="Logo">
-        <img class="logo-icon" src="assets/stelar-logo-color-mobile.svg" alt="Logo">
+        <img class="logo-full" src="{{ url('assets/stelar-logo-color.svg') }}" alt="Logo">
+        <img class="logo-icon" src="{{ url('assets/stelar-logo-color-mobile.svg') }}" alt="Logo">
       </a>
     </div>
 
@@ -238,13 +238,13 @@
 
       <a href="/about" class="{{ Request::is('about') ? 'item-focus' : '' }} item">ABOUT</a>
       <a href="/projects" class="{{ Request::is('projects') ? 'item-focus' : '' }} item">WORKS</a>
-      <a href="/blog" class="{{ Request::is('blog') ? 'item-focus' : '' }} item">BLOG</a>
+      <a href="/blog" class="{{ Request::is('blog') || Request::is('blog/*') ? 'item-focus' : '' }} item">BLOG</a>
     </div>
 
     <div class="btn-nav-w">
       <button class="btn-lang">
-        <svg class="icon-lang"  width="34" height="34" viewBox="0 0 34 34" stroke="currentColor" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
+        <svg class="icon-lang" width="34" height="34" viewBox="0 0 34 34" stroke="currentColor"
+          fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1.94116 22.0195H32.0588" stroke-width="1.5" stroke-miterlimit="10" />
           <path d="M1.94116 11.6667H32.0588" stroke-width="1.5" stroke-miterlimit="10" />
           <circle cx="17" cy="17" r="16" stroke-width="1.5" />

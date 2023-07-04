@@ -6,6 +6,7 @@ $mid-blue: #22a8e0;
 $light-blue: #72d0f6;
 
 // Secondary Color
+$gray-50: #f8f8f8;
 $gray-100: #e5e5e5;
 $gray-200: #c9c9c9;
 $gray-300: #aeaeae;
@@ -76,7 +77,28 @@ $text-sizes: (
     ),
 );
 
+$bg-colors: (
+    white: (
+        background-color: white,
+        background-image: transparent,
+    ),
+
+    glr-blue: (
+        background-color: transparent,
+        background-image: linear-gradient(to right, $light-blue, white),
+    ),
+);
+
 // THEME
+@mixin bg-colors() {
+    @each $color, $properties in $bg-colors {
+        .bg-#{$color} {
+            background-color: map-get($properties, background-color);
+            background-image: map-get($properties, background-image);
+        }
+    }
+}
+
 @mixin text-size($size) {
     font-size: map-get(map-get($text-sizes, $size), font-size);
     line-height: map-get(map-get($text-sizes, $size), line-height);
@@ -86,8 +108,8 @@ $text-sizes: (
     transition: all $duration cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
-@mixin grid-auto-fit($width: 200px) {
-    grid-template-columns: repeat(auto-fit, minmax($width, 1fr));
+@mixin grid-auto-fit($column: auto-fit, $width: 200px) {
+    grid-template-columns: repeat($column, minmax($width, 1fr));
 }
 
 @mixin responsive($min-width) {

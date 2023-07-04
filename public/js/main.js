@@ -138,4 +138,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var currentYear = new Date().getFullYear();
     document.getElementById("current-year").textContent = currentYear;
+
+    $.get("assets/icons/main.svg", function (data) {
+        var div = document.createElement("div");
+        div.innerHTML = new XMLSerializer().serializeToString(data.documentElement);
+        document.body.insertBefore(div, document.body.childNodes[0]);
+    });
 })

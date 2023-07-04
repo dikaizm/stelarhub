@@ -18,24 +18,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
 
-  {{-- Styles --}}
-  <link rel="stylesheet" href="css/styles.css">
-
   {{-- Scripts --}}
-  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
   {{-- Vite --}}
-  @vite(['resources/scss/app.scss','resources/js/app.js'])
+  @vite(['resources/scss/dashboard/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>
-  @include('partials.nav')
+  @include('dashboard.partials.nav')
+  @include('dashboard.partials.sidebar')
 
   <main>
-    @yield('container')
-  </main>
+    <div class="mt-16 ml-16 lg:ml-56">
+      @yield('container')
 
-  @include('partials.footer')
+      @include('dashboard.partials.footer')
+    </div>
+  </main>
 </body>
 
 </html>
