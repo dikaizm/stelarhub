@@ -1,4 +1,4 @@
-<header class="fixed z-20 h-16 w-full bg-black">
+<header class="fixed z-20 h-16 w-full bg-gray-600">
   <div class="flex h-full items-center justify-between px-4">
     <div class="flex items-center gap-4">
       <button id="menu-btn" role="button" class="rounded-full p-2 hover:bg-white/20" aria-expanded="false">
@@ -32,7 +32,7 @@
       </div>
 
       {{-- Dropdown Profile --}}
-      <div class="absolute right-0 mt-2 h-fit w-64 rounded-lg bg-white p-4 drop-shadow-xl">
+      <div class="absolute right-0 mt-2 h-fit w-64 rounded-lg bg-white p-4 drop-shadow-xl hidden">
         <div class="grid gap-4 text-sm">
           <div class="flex items-center gap-4">
             <div class="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full">

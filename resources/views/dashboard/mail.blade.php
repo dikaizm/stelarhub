@@ -1,3 +1,3 @@
 <section>
-  this is home
+  this is mails
 </section>

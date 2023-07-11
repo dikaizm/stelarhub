@@ -126,6 +126,17 @@ hr {
             transform: translateY(-3px);
         }
     }
+
+    &-card {
+        font-weight: $font-semibold;
+        justify-content: space-between;
+        margin-top: 1rem;
+
+        svg {
+            height: 1rem;
+            width: 1rem;
+        }
+    }
 }
 
 .card {
@@ -135,10 +146,17 @@ hr {
         gap: 1rem;
         overflow: hidden;
         position: relative;
-        padding: 2rem;
+        padding: 1.5rem;
         border-radius: 1.5rem;
         background-color: white;
         @include transition;
+
+        img {
+            object-fit: cover;
+            overflow: hidden;
+            background-color: white;
+            width: 100%;
+        }
     }
 
     &-container:hover {
@@ -174,6 +192,13 @@ hr {
 }
 
 .section {
+    &-title-wrapper {
+        @extend .flex-col;
+        gap: 1.5rem;
+        align-items: center;
+        text-align: center;
+    }
+
     &-title {
         @include text-size(4xl);
         font-weight: $font-bold;

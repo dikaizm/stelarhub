@@ -89,6 +89,18 @@ $bg-colors: (
     ),
 );
 
+.text-blue-g {
+    background-image: linear-gradient(
+        to right,
+        $mid-blue,
+        $mid-blue,
+        $dark-blue
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 // THEME
 @mixin bg-colors() {
     @each $color, $properties in $bg-colors {

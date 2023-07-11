@@ -3,6 +3,12 @@
 use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\Dashboard\HomeController;
+use App\Http\Controllers\Dashboard\MailController;
+use App\Http\Controllers\Dashboard\PagesController;
+use App\Http\Controllers\Dashboard\PostsController;
+use App\Http\Controllers\Dashboard\StatsController;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +21,7 @@ use App\Http\Controllers\PostController;
 |
 */
 
+// Main
 Route::get('/', function () {
     return view('home', [
         'title' => 'Stelar - Digital Agency',
@@ -37,12 +44,22 @@ Route::get('/novanote', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard.home', [
-        'title' => 'Stelar - Dashboard',
+// Dashboard
+Route::get('/dashboard', [HomeController::class, 'index']);
+
+Route::get('/dashboard/home', [HomeController::class, 'home'])->name('dashboard.home');
+Route::get('/dashboard/pages', [PagesController::class, 'index'])->name('dashboard.pages');
+Route::get('/dashboard/posts', [PostsController::class, 'index'])->name('dashboard.posts');
+Route::get('/dashboard/stats', [StatsController::class, 'index'])->name('dashboard.stats');
+Route::get('/dashboard/mail', [MailController::class, 'index'])->name('dashboard.mail');
+
+Route::get('dashboard/pages/edit', function() {
+    return view('dashboard.pages-modal', [
+        'services' => Service::all()
     ]);
 });
 
+// Others
 Route::get('/{any}', function () {
     return view('errors.404', [
         'title' => 'Not found',

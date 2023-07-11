@@ -38,7 +38,7 @@
   </section>
 
   {{-- Story section --}}
-  <section class="container my-32 sm:my-48">
+  {{-- <section class="container my-32 sm:my-48">
     <div class="grid-auto-fit relative grid gap-8">
       <h2 class="section-title max-w-md">Empowering businesses in the digital world</h2>
       <div>
@@ -81,10 +81,10 @@
           ever-changing digital landscape, adapt to new challenges, and embrace opportunities for growth.</p>
       </div>
     </div>
-  </section>
+  </section> --}}
 
   {{-- Team section --}}
-  <section class="container-full mt-32 bg-neutral-100 py-32">
+  {{-- <section class="container-full mt-32 bg-neutral-100 py-32">
     <div class="container">
       <h2 class="section-title text-center">Meet our amazing team</h2>
       <div class="mt-24 grid gap-y-12 sm:grid-cols-2">
@@ -108,5 +108,5 @@
       <p class="mt-24 text-center text-3xl sm:text-4xl">Getting good players is easy. <br>Getting them to play together is
         the hard part.</p>
     </div>
-  </section>
+  </section> --}}
 @endsection

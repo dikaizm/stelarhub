@@ -31,10 +31,8 @@
   @include('dashboard.partials.sidebar')
 
   <main>
-    <div class="mt-16 ml-16 lg:ml-56">
+    <div id="dashboard-content" class="mt-16 ml-16 p-6 lg:ml-56">
       @yield('container')
-
-      @include('dashboard.partials.footer')
     </div>
   </main>
 </body>
