@@ -104,7 +104,7 @@ $bg-colors: (
 // THEME
 @mixin bg-colors() {
     @each $color, $properties in $bg-colors {
-        .bg-#{$color} {
+        .bg-#{"" + $color} {
             background-color: map-get($properties, background-color);
             background-image: map-get($properties, background-image);
         }
