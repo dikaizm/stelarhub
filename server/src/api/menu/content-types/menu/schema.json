@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menus",
+  "info": {
+    "singularName": "menu",
+    "pluralName": "menus",
+    "displayName": "Menu",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "submenu": {
+      "type": "json"
+    },
+    "endpoint": {
+      "type": "string",
+      "required": true
+    },
+    "rank": {
+      "type": "integer"
+    }
+  }
+}
