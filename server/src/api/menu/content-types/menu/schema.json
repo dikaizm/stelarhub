@@ -21,10 +21,22 @@
     },
     "endpoint": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "rank": {
       "type": "integer"
+    },
+    "submenu_icon": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

@@ -6,7 +6,7 @@ const Home = () => {
         <>
             <Navbar />
 
-            {/* Hero */}
+            {/* Hero section */}
             <section className="s-hero">
 
                 <div className="bg-glr-blue"></div>
@@ -41,34 +41,34 @@ const Home = () => {
                     <div className="feat-container bg-white">
                         <div className="grid-wrapper container">
                             <div className="feat-item">
-                                <svg className="feat-icon" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"
+                                <svg className="feat-icon" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor"
                                     aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
                                 </svg>
                                 <p>Satisfied <br /> Customers</p>
                             </div>
                             <div className="feat-item">
-                                <svg className="feat-icon" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"
+                                <svg className="feat-icon" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor"
                                     aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
                                 </svg>
                                 <p>Satisfied <br /> Customers</p>
                             </div>
                             <div className="feat-item">
-                                <svg className="feat-icon" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"
+                                <svg className="feat-icon" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor"
                                     aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
                                 </svg>
                                 <p>Satisfied <br /> Customers</p>
                             </div>
                             <div className="feat-item">
-                                <svg className="feat-icon" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"
+                                <svg className="feat-icon" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor"
                                     aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
                                 </svg>
                                 <p>Satisfied <br /> Customers</p>
                             </div>
@@ -77,6 +77,260 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Showcase section */}
+            <section className="s-showcase">
+                <div className="grid-wrapper container">
+                    <a href="#" className="card-container">
+                        <div className="bg-shadow"></div>
+
+                        <img className="card-image"
+                            src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="" />
+
+                        <div className="bg-white"></div>
+
+                        <div className="content-w">
+                            <div className="card-filler"></div>
+
+                            <div className="subcontent-w">
+                                <div className="card-title">System Information</div>
+                                <div className="card-subtitle">Technology</div>
+                            </div>
+                            <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit,
+                                sed do eiusmod
+                                tempor
+                                incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.</p>
+                            <div className="card-icon">
+                                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="5"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
+                                        strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" className="card-container item-down">
+                        <div className="bg-shadow"></div>
+
+                        <img className="card-image"
+                            src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="" />
+
+                        <div className="bg-white"></div>
+
+                        <div className="content-w">
+                            <div className="card-filler"></div>
+
+                            <div className="subcontent-w">
+                                <div className="card-title">System Information</div>
+                                <div className="card-subtitle">Technology</div>
+                            </div>
+                            <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit,
+                                sed do eiusmod
+                                tempor
+                                incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.</p>
+                            <div className="card-icon">
+                                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="5"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
+                                        strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" className="card-container">
+                        <div className="bg-shadow"></div>
+
+                        <img className="card-image"
+                            src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="" />
+
+                        <div className="bg-white"></div>
+
+                        <div className="content-w">
+                            <div className="card-filler"></div>
+
+                            <div className="subcontent-w">
+                                <div className="card-title">System Information</div>
+                                <div className="card-subtitle">Technology</div>
+                            </div>
+                            <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit,
+                                sed do eiusmod
+                                tempor
+                                incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.</p>
+                            <div className="card-icon">
+                                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="5"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
+                                        strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" className="card-container item-down item-end">
+                        <div className="bg-shadow"></div>
+
+                        <img className="card-image"
+                            src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="" />
+
+                        <div className="bg-white"></div>
+
+                        <div className="content-w">
+                            <div className="card-filler"></div>
+
+                            <div className="subcontent-w">
+                                <div className="card-title">System Information blabds abasd</div>
+                                <div className="card-subtitle">Technology</div>
+                            </div>
+                            <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit,
+                                sed do eiusmod
+                                tempor
+                                incididunt ut labore et dolore magna aliqua. Et malesuada fames ac turpis egestas.</p>
+                            <div className="card-icon">
+                                <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="5"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.78684 45.2133L45.2132 2.78685M45.2132 2.78685V36.728M45.2132 2.78685H11.2721"
+                                        strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+
+            {/* Service section */}
+            <section className="s-service">
+                <div className="container">
+                    <div className="section-title flex">
+                        <h2>Every solutions <br /> for your </h2>
+                        <h2 className="flex-col">
+                            <span className="rotate-word-5">Analysis</span>
+                            <span className="rotate-word-4">Marketing</span>
+                            <span className="rotate-word-3">Branding</span>
+                            <span className="rotate-word-2">Website</span>
+                            <span className="rotate-word-1">Apps</span>
+                        </h2>
+                    </div>
+
+                    <div className="accordion-wrapper">
+
+                        <hr />
+                        
+                        {/* {  (<section>
+                            <button className="accordion-item" aria-controls="srv-accordion-{{ $service->slug }}"
+                                data-collapse-toggle="true" aria-expanded="false">
+                                <div className="content-w">
+                                    <div className="content-text flex-col">
+                                        <div className="title-wrapper flex">
+                                            <svg>
+                                                <use xlink: href="{{ $service->icon }}"></use>
+                                            </svg>
+                                            <h3 className="accordion-title">{{ $service-> name}}</h3>
+                                        </div>
+                                        <div className="list-collapse-hide srv-accordion-{{ $service->slug }} subcontent-w flex-col">
+                                            <p className="desc">{{ $service-> desc_long}}</p>
+                                            <a href="{{ $service->slug }}" className="btn btn-primary">LEARN
+                                                MORE</a>
+                                        </div>
+                                    </div>
+                                    <div className="list-collapse-hide srv-accordion-{{ $service->slug }} content-image">
+                                        <img src="{{ $service->image }}" alt="" />
+                                    </div>
+                                </div>
+                                <div className="btn-toggle">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path className="accordion-btn" d="M12 8L12 16" strokeLinecap="round" />
+                                        <path d="M16 12L8 12" strokeLinecap="round" />
+                                        <circle cx="12" cy="12" r="11" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </section>
+
+                        <hr>)} */}
+                       
+
+                    </div>
+                </div>
+            </section>
+
+            {/* Portfolio section */}
+            {/* <section className="s-portfolio">
+                <div className="flex-col container">
+                    <div className="section-title-wrapper">
+                        <h2 className="section-title">Explore what we have done</h2>
+                        <p className="section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. </p>
+                    </div>
+
+                    <div className="grid-wrapper">
+                        <a href="#" className="card-container">
+                            <img
+                                src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="" />
+                            <h2 className="card-title">Kargo Technologies</h2>
+                            <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div className="btn btn-card">
+                                <a href="">See case study</a>
+                                <svg>
+                                    <use xlink: href="#icon-btn-arrow"></use>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <a href="#" className="card-container">
+                            <img
+                                src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="" />
+                            <h2 className="card-title">Kargo Technologies</h2>
+                            <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div className="btn btn-card">
+                                <a href="">See case study</a>
+                                <svg>
+                                    <use xlink: href="#icon-btn-arrow"></use>
+                                </svg>
+                            </div>
+                        </a>
+
+                        <a href="#" className="card-container">
+                            <img
+                                src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="" />
+                            <h2 className="card-title">Kargo Technologies</h2>
+                            <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div className="btn btn-card">
+                                <a href="">See case study</a>
+                                <svg>
+                                    <use xlink: href="#icon-btn-arrow"></use>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div className="btn-wrapper">
+                        <a href="#" className="btn btn-primary">SEE
+                            OUR WORKS</a>
+                    </div>
+                </div>
+            </section> */}
         </>
     )
 }
