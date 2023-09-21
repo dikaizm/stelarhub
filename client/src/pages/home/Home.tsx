@@ -2,6 +2,7 @@ import Navbar from '../../components/navbar/Navbar'
 import './home.scss'
 
 import iconArrow from '../../assets/icons/arrow-r.svg'
+import Footer from '../../components/footer/Footer'
 
 const Home = () => {
     return (
@@ -329,6 +330,7 @@ const Home = () => {
                     </div>
                 </section>
             </main>
+            <Footer />
         </>
     )
 }

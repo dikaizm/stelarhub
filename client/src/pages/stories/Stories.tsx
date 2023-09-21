@@ -9,6 +9,7 @@ import Navbar from "../../components/navbar/Navbar"
 import iconSearch from '../../assets/icons/stories-search.svg'
 // import iconArrow from '../../assets/icons/arrow-r.svg'
 import CardPost from '../../components/card/post/CardPost';
+import Footer from '../../components/footer/Footer';
 
 const POSTS = gql`
 query GetPost {
@@ -154,51 +155,53 @@ const Stories = () => {
                     </div>
                 </section>
 
-                {/* Recommended articles */}
-                <section className='container recommended'>
-                    {/* Section content */}
-                    <div className="section-content-wrapper">
-                        {recommendedPosts.length > 0 && (
-                            <div className='grid-wrapper'>
-                                <div className='main-col'>
-                                    <CardPost data={recommendedPosts[0]} isCategoryVisible={true} />
+                {!loading && !error && data && data.posts && (
+                    <>
+                        {/* Recommended articles */}
+                        <section className='container recommended'>
+                            {/* Section content */}
+                            <div className="section-content-wrapper">
+                                {recommendedPosts.length > 0 && (
+                                    <div className='grid-wrapper'>
+                                        <div className='main-col'>
+                                            <CardPost data={recommendedPosts[0]} isCategoryVisible={true} />
+                                        </div>
+                                        <div className='side-col'>
+                                            {recommendedPosts.slice(1, 5).map((post, index) => (
+                                                <CardPost key={index} data={post} isDescVisible={false} />
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        </section>
+
+                        {/* Latest articles */}
+                        <section className='collection'>
+                            {/* Section title */}
+                            <div className='container section-title-wrapper'>
+                                <div className='flex-col'>
+                                    <h2 className='section-title'>Artikel Terbaru</h2>
+                                    <span className='section-desc'>Supply and allocation algorithms that match users, drivers, and vendors in the real world</span>
                                 </div>
-                                <div className='side-col'>
-                                    {recommendedPosts.slice(1, 5).map((post, index) => (
-                                        <CardPost key={index} data={post} isDescVisible={false} />
-                                    ))}
+                                <div className="btn-wrapper">
+                                    <a href="#" className="btn btn-primary">VIEW MORE
+                                    </a>
                                 </div>
                             </div>
-                        )}
-                    </div>
-                </section>
 
-                {/* Latest articles */}
-                <section className='collection'>
-                    {/* Section title */}
-                    <div className='container section-title-wrapper'>
-                        <div className='flex-col'>
-                            <h2 className='section-title'>Artikel Terbaru</h2>
-                            <span className='section-desc'>Supply and allocation algorithms that match users, drivers, and vendors in the real world</span>
-                        </div>
-                        <div className="btn-wrapper">
-                            <a href="#" className="btn btn-primary">VIEW MORE
-                            </a>
-                        </div>
-                    </div>
+                            {/* Section content */}
 
-                    {/* Section content */}
+                            <div className="container section-content-wrapper">
+                                <div className='carousel'>
+                                    {posts.length > 0 && posts.map((post) => {
+                                        return (
+                                            <CardPost data={post} key={post.id} />
+                                        )
+                                    })}
+                                </div>
 
-                    <div className="container section-content-wrapper">
-                        <div className='carousel'>
-                            {posts.length > 0 && posts.map((post) => {
-                                return (
-                                    <CardPost data={post} key={post.id} />
-                                )
-                            })}
-                        </div>
-
-                        {/* <button className='slide-btn prev'>
+                                {/* <button className='slide-btn prev'>
                             <div className='icon-w'>
                                 <img src={iconArrow} alt="Icon arrow right" />
                             </div>
@@ -209,62 +212,65 @@ const Stories = () => {
                                 <img src={iconArrow} alt="Icon arrow right" />
                             </div>
                         </button> */}
-                    </div>
-                </section>
+                            </div>
+                        </section>
 
-                {/* Category articles */}
-                <section className='collection'>
-                    {/* Section title */}
-                    <div className='container section-title-wrapper'>
-                        <div className='flex-col'>
-                            <h2 className='section-title'>Website</h2>
-                            <span className='section-desc'>Supply and allocation algorithms that match users, drivers, and vendors in the real world</span>
-                        </div>
-                        <div className="btn-wrapper">
-                            <a href="#" className="btn btn-primary">VIEW MORE
-                            </a>
-                        </div>
-                    </div>
+                        {/* Category articles */}
+                        <section className='collection'>
+                            {/* Section title */}
+                            <div className='container section-title-wrapper'>
+                                <div className='flex-col'>
+                                    <h2 className='section-title'>Website</h2>
+                                    <span className='section-desc'>Supply and allocation algorithms that match users, drivers, and vendors in the real world</span>
+                                </div>
+                                <div className="btn-wrapper">
+                                    <a href="#" className="btn btn-primary">VIEW MORE
+                                    </a>
+                                </div>
+                            </div>
 
-                    {/* Section content */}
+                            {/* Section content */}
 
-                    <div className="container section-content-wrapper">
-                        <div className='carousel'>
-                            {websitePosts.length > 0 && websitePosts.map((post) => {
-                                return (
-                                    <CardPost data={post} key={post.id} />
-                                )
-                            })}
-                        </div>
-                    </div>
-                </section>
+                            <div className="container section-content-wrapper">
+                                <div className='carousel'>
+                                    {websitePosts.length > 0 && websitePosts.map((post) => {
+                                        return (
+                                            <CardPost data={post} key={post.id} />
+                                        )
+                                    })}
+                                </div>
+                            </div>
+                        </section>
 
-                <section className='collection'>
-                    {/* Section title */}
-                    <div className='container section-title-wrapper'>
-                        <div className='flex-col'>
-                            <h2 className='section-title'>Machine Learning</h2>
-                            <span className='section-desc'>Supply and allocation algorithms that match users, drivers, and vendors in the real world</span>
-                        </div>
-                        <div className="btn-wrapper">
-                            <a href="#" className="btn btn-primary">VIEW MORE
-                            </a>
-                        </div>
-                    </div>
+                        <section className='collection'>
+                            {/* Section title */}
+                            <div className='container section-title-wrapper'>
+                                <div className='flex-col'>
+                                    <h2 className='section-title'>Machine Learning</h2>
+                                    <span className='section-desc'>Supply and allocation algorithms that match users, drivers, and vendors in the real world</span>
+                                </div>
+                                <div className="btn-wrapper">
+                                    <a href="#" className="btn btn-primary">VIEW MORE
+                                    </a>
+                                </div>
+                            </div>
 
-                    {/* Section content */}
+                            {/* Section content */}
 
-                    <div className="container section-content-wrapper">
-                        <div className='carousel'>
-                            {mlPosts.length > 0 && mlPosts.map((post) => {
-                                return (
-                                    <CardPost data={post} key={post.id} />
-                                )
-                            })}
-                        </div>
-                    </div>
-                </section>
+                            <div className="container section-content-wrapper">
+                                <div className='carousel'>
+                                    {mlPosts.length > 0 && mlPosts.map((post) => {
+                                        return (
+                                            <CardPost data={post} key={post.id} />
+                                        )
+                                    })}
+                                </div>
+                            </div>
+                        </section>
+                    </>
+                )}
             </main>
+            <Footer />
         </>
     )
 }

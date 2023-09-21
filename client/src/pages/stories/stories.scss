@@ -3,7 +3,7 @@
 @include text-colors();
 
 #stories {
-  margin-top: 7rem;
+  padding: 7rem 0;
   display: flex;
   flex-direction: column;
   row-gap: 4.5rem;
@@ -146,7 +146,7 @@
       }
 
       .section-title {
-        @include text-size(3xl);
+        @include text-size(4xl);
       }
     }
 

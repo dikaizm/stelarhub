@@ -60,6 +60,7 @@
   }
 
   &-container:hover {
+    z-index: 10;
     transform: scale(1.03);
     filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
 
