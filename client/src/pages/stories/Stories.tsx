@@ -105,6 +105,8 @@ const Stories = () => {
     const [posts, setPosts] = useState<PostData[]>([])
     const [recommendedPosts, setRecommendedPosts] = useState<PostData[]>([])
     const [websitePosts, setWebsitePosts] = useState<PostData[]>([])
+    const [mlPosts, setMLPosts] = useState<PostData[]>([])
+    const [searchInput, setSearchInput] = useState<string>("")
 
     useEffect(() => {
         if (!loading && !error && data && data.posts) {
@@ -120,6 +122,9 @@ const Stories = () => {
             // Filter and set website posts
             const websitePosts = postData.filter(post => post.attributes.category.data.attributes.codename === 'WEB');
             setWebsitePosts(websitePosts);
+
+            const mlPosts = postData.filter(post => post.attributes.category.data.attributes.codename === 'MLG')
+            setMLPosts(mlPosts);
         }
     }, [data, loading, error]);
 
@@ -130,20 +135,22 @@ const Stories = () => {
             <main id="stories">
                 {/* Hero section */}
                 <section className="container hero">
-                    <div>
-                        <h1>Ada Apa di Stelar</h1>
-                        <p>Cerita kami, berita seru, dan tips terkini. Baca semua artikel soal Stelar di sini.</p>
+                    <div className='flex-col hero-title-wrapper'>
+                        <h1 className='hero-title'>Ada Apa di Stelar</h1>
+                        <p className='hero-desc'>Cerita kami, berita seru, dan tips terkini. Baca semua artikel soal Stelar di sini.</p>
                     </div>
 
-                    <div>
-                        <div>
-                            <label htmlFor="stories-search"></label>
-                            <input type="text" id="stories-search" />
+                    <div className='flex-row hero-search-wrapper'>
+                        <label htmlFor="stories-search"></label>
+                        <div className="search-bar">
+                            <input className='search-input' id="stories-search" type="text" name="stories-search" placeholder="Search" value={searchInput} onChange={(e) => {
+                                setSearchInput(e.target.value)
+                            }} />
+                            <button className='search-submit'>
+                                <img src={iconSearch} alt="" />
+                                <span>Cari</span>
+                            </button>
                         </div>
-                        <button>
-                            <img src={iconSearch} alt="" />
-                            <span>Cari</span>
-                        </button>
                     </div>
                 </section>
 
@@ -167,9 +174,9 @@ const Stories = () => {
                 </section>
 
                 {/* Latest articles */}
-                <section className='container collection'>
+                <section className='collection'>
                     {/* Section title */}
-                    <div className='section-title-wrapper'>
+                    <div className='container section-title-wrapper'>
                         <div className='flex-col'>
                             <h2 className='section-title'>Artikel Terbaru</h2>
                             <span className='section-desc'>Supply and allocation algorithms that match users, drivers, and vendors in the real world</span>
@@ -182,7 +189,7 @@ const Stories = () => {
 
                     {/* Section content */}
 
-                    <div className="section-content-wrapper">
+                    <div className="container section-content-wrapper">
                         <div className='carousel'>
                             {posts.length > 0 && posts.map((post) => {
                                 return (
@@ -206,9 +213,9 @@ const Stories = () => {
                 </section>
 
                 {/* Category articles */}
-                <section className='container collection'>
+                <section className='collection'>
                     {/* Section title */}
-                    <div className='section-title-wrapper'>
+                    <div className='container section-title-wrapper'>
                         <div className='flex-col'>
                             <h2 className='section-title'>Website</h2>
                             <span className='section-desc'>Supply and allocation algorithms that match users, drivers, and vendors in the real world</span>
@@ -221,9 +228,35 @@ const Stories = () => {
 
                     {/* Section content */}
 
-                    <div className="section-content-wrapper">
+                    <div className="container section-content-wrapper">
                         <div className='carousel'>
                             {websitePosts.length > 0 && websitePosts.map((post) => {
+                                return (
+                                    <CardPost data={post} key={post.id} />
+                                )
+                            })}
+                        </div>
+                    </div>
+                </section>
+
+                <section className='collection'>
+                    {/* Section title */}
+                    <div className='container section-title-wrapper'>
+                        <div className='flex-col'>
+                            <h2 className='section-title'>Machine Learning</h2>
+                            <span className='section-desc'>Supply and allocation algorithms that match users, drivers, and vendors in the real world</span>
+                        </div>
+                        <div className="btn-wrapper">
+                            <a href="#" className="btn btn-primary">VIEW MORE
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Section content */}
+
+                    <div className="container section-content-wrapper">
+                        <div className='carousel'>
+                            {mlPosts.length > 0 && mlPosts.map((post) => {
                                 return (
                                     <CardPost data={post} key={post.id} />
                                 )
