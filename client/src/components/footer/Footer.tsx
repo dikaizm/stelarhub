@@ -1,5 +1,7 @@
 import './footer.scss'
 
+import logoStelar from '../../assets/logo/stelar-logo-white.svg'
+
 const Footer = () => {
     return (
         <footer>
@@ -43,8 +45,8 @@ const Footer = () => {
             <hr className="container" />
 
             <section className="s-company container">
-                <img src="assets/stelar-logo-white.svg" alt="Logo" />
-                <p>Stelar © <span id="current-year"></span></p>
+                <img src={logoStelar} alt="Logo" />
+                <p>Stelar © <span>{new Date().getFullYear()}</span></p>
                 <ul>
                     <li><a href="https://www.instagram.com/stelar.hub">Instagram</a></li>
                     <li><a href="">Twitter</a></li>
