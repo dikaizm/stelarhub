@@ -7,12 +7,12 @@ import './stories.scss'
 import Navbar from "../../components/navbar/Navbar"
 
 import iconSearch from '../../assets/icons/stories-search.svg'
-import iconArrow from '../../assets/icons/arrow-r.svg'
+// import iconArrow from '../../assets/icons/arrow-r.svg'
 import CardPost from '../../components/card/post/CardPost';
 
 const POSTS = gql`
 query GetPost {
-    posts {
+    posts(pagination: { start: 0, limit: 16 }, sort: "updatedAt:asc") {
       data {
         id
         attributes {
@@ -27,7 +27,21 @@ query GetPost {
               attributes {
                 name
                 endpoint
+                codename
               }
+            }
+          }
+          recommended {
+            data {
+                id
+            }
+          }
+          image {
+            data {
+                id
+                attributes {
+                    formats
+                }
             }
           }
         }
@@ -36,14 +50,24 @@ query GetPost {
   }
 `
 
-interface CategoryAttributes {
-    name: string;
-    endpoint: string;
-}
-
 interface CategoryData {
     id: number;
-    attributes: CategoryAttributes;
+    attributes: {
+        name: string;
+        endpoint: string;
+        codename: string;
+    }
+}
+
+interface ImageData {
+    id: number;
+    attributes: {
+        formats: {
+            small: {
+                url: string;
+            }
+        }
+    }
 }
 
 interface PostAttributes {
@@ -53,8 +77,16 @@ interface PostAttributes {
     body: string;
     updatedAt: string;
     category: {
-        data: CategoryData[];
+        data: CategoryData;
     };
+    recommended: {
+        data: {
+            id: number;
+        }
+    }
+    image: {
+        data: ImageData;
+    }
 }
 
 interface PostData {
@@ -71,16 +103,25 @@ interface PostsData {
 const Stories = () => {
     const { loading, error, data } = useQuery<PostsData>(POSTS)
     const [posts, setPosts] = useState<PostData[]>([])
-
-    const handlePostData = () => {
-        if (!loading && !error && data && data.posts) {
-            setPosts(data.posts.data);
-        }
-    }
+    const [recommendedPosts, setRecommendedPosts] = useState<PostData[]>([])
+    const [websitePosts, setWebsitePosts] = useState<PostData[]>([])
 
     useEffect(() => {
-        handlePostData();
-    })
+        if (!loading && !error && data && data.posts) {
+            const postData = data.posts.data;
+
+            // Set posts
+            setPosts(postData);
+
+            // Filter and set recommended posts
+            const recommendedPosts = postData.filter(post => post.attributes.recommended.data);
+            setRecommendedPosts(recommendedPosts);
+
+            // Filter and set website posts
+            const websitePosts = postData.filter(post => post.attributes.category.data.attributes.codename === 'WEB');
+            setWebsitePosts(websitePosts);
+        }
+    }, [data, loading, error]);
 
     return (
         <>
@@ -108,38 +149,20 @@ const Stories = () => {
 
                 {/* Recommended articles */}
                 <section className='container recommended'>
-                    {/* Main article */}
-                    <div>
-                        <img src="" alt="" />
-                        <div>
-                            <h3>Lorem ipsum dolor sit amet</h3>
-                            <span>Stelar | 12 Sep 2023</span>
-                        </div>
-                    </div>
-
-                    {/* Side articles */}
-                    <div>
-                        <div>
-                            <img src="" alt="" />
-                            <div>
-                                <div>
-                                    <h3>Lorem ipsum dolor sit amet</h3>
-                                    <p>Our backend is made to prioritise balance and efficiency to ensure everyone can thrive.</p>
+                    {/* Section content */}
+                    <div className="section-content-wrapper">
+                        {recommendedPosts.length > 0 && (
+                            <div className='grid-wrapper'>
+                                <div className='main-col'>
+                                    <CardPost data={recommendedPosts[0]} isCategoryVisible={true} />
                                 </div>
-                                <span>Stelar | 12 Sep 2023</span>
-                            </div>
-                        </div>
-
-                        <div>
-                            <img src="" alt="" />
-                            <div>
-                                <div>
-                                    <h3>Lorem ipsum dolor sit amet</h3>
-                                    <p>Our backend is made to prioritise balance and efficiency to ensure everyone can thrive.</p>
+                                <div className='side-col'>
+                                    {recommendedPosts.slice(1, 5).map((post, index) => (
+                                        <CardPost key={index} data={post} isDescVisible={false} />
+                                    ))}
                                 </div>
-                                <span>Stelar | 12 Sep 2023</span>
                             </div>
-                        </div>
+                        )}
                     </div>
                 </section>
 
@@ -161,14 +184,14 @@ const Stories = () => {
 
                     <div className="section-content-wrapper">
                         <div className='carousel'>
-                            {posts && posts.map((post) => {
+                            {posts.length > 0 && posts.map((post) => {
                                 return (
                                     <CardPost data={post} key={post.id} />
                                 )
                             })}
                         </div>
 
-                        <button className='slide-btn prev'>
+                        {/* <button className='slide-btn prev'>
                             <div className='icon-w'>
                                 <img src={iconArrow} alt="Icon arrow right" />
                             </div>
@@ -178,13 +201,35 @@ const Stories = () => {
                             <div className='icon-w'>
                                 <img src={iconArrow} alt="Icon arrow right" />
                             </div>
-                        </button>
+                        </button> */}
                     </div>
                 </section>
 
                 {/* Category articles */}
-                <section>
+                <section className='container collection'>
+                    {/* Section title */}
+                    <div className='section-title-wrapper'>
+                        <div className='flex-col'>
+                            <h2 className='section-title'>Website</h2>
+                            <span className='section-desc'>Supply and allocation algorithms that match users, drivers, and vendors in the real world</span>
+                        </div>
+                        <div className="btn-wrapper">
+                            <a href="#" className="btn btn-primary">VIEW MORE
+                            </a>
+                        </div>
+                    </div>
 
+                    {/* Section content */}
+
+                    <div className="section-content-wrapper">
+                        <div className='carousel'>
+                            {websitePosts.length > 0 && websitePosts.map((post) => {
+                                return (
+                                    <CardPost data={post} key={post.id} />
+                                )
+                            })}
+                        </div>
+                    </div>
                 </section>
             </main>
         </>

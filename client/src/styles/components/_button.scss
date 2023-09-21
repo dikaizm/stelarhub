@@ -1,0 +1,62 @@
+@use "../base" as *;
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    transition: all 200ms;
+    white-space: nowrap;
+  
+    &-nav {
+      padding: 0.25rem 1rem;
+      font-weight: $font-semibold;
+      @include text-size(xs);
+      color: white;
+      background-color: $dark-blue;
+  
+      &:hover {
+        background-color: $mid-blue;
+        transform: translateY(-3px);
+      }
+    }
+  
+    &-primary {
+      padding: 0.75rem 1.5rem;
+      @include text-size(sm);
+      font-weight: $font-semibold;
+      color: white;
+      background-color: $dark-blue;
+  
+      &:hover {
+        background-color: $mid-blue;
+        transform: translateY(-3px);
+      }
+    }
+  
+    &-secondary {
+      padding: 0.75rem 1.5rem;
+      @include text-size(sm);
+      font-weight: $font-bold;
+      color: white;
+      border: 1px solid $mid-blue;
+  
+      &:hover {
+        background-color: $mid-blue;
+        transform: translateY(-3px);
+      }
+    }
+  
+    &-card {
+      font-weight: $font-semibold;
+      justify-content: space-between;
+      margin-top: 1rem;
+  
+      img {
+        height: 1rem;
+        width: 1rem;
+      }
+    }
+  }

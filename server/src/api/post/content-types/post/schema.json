@@ -35,6 +35,23 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "posts"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "recommended": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "recommended_posts"
     }
   }
 }

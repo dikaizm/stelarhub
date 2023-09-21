@@ -1,17 +1,47 @@
 import { useRef, useState, useEffect } from "react";
 
+import config from "../../../config";
+
+interface CategoryData {
+    id: number;
+    attributes: {
+        name: string;
+        endpoint: string;
+    }
+}
+
+interface ImageData {
+    id: number;
+    attributes: {
+        formats: {
+            small: {
+                url: string;
+            }
+        }
+    }
+}
+
 interface PostAttributes {
     title: string;
     slug: string;
     excerpt: string;
     updatedAt: string;
+    image: {
+        data: ImageData;
+    }
+    category: {
+        data: CategoryData;
+    };
 }
 
 interface PostData {
     data: {
         id: number;
         attributes: PostAttributes;
-    }
+    };
+    isCategoryVisible?: boolean;
+    isDescVisible?: boolean;
+    isDateVisible?: boolean;
 }
 
 function isTextOverflowing(element: HTMLHeadingElement | null): boolean {
@@ -30,9 +60,8 @@ function handleResize(ref: React.RefObject<HTMLHeadingElement>, fn: (overflow: b
     }
 }
 
-const CardPost = ({ data }: PostData) => {
-    const attr = data.attributes
-    const date = new Date(attr.updatedAt);
+function getPublishedDate({ updatedAt }: PostAttributes) {
+    const date = new Date(updatedAt);
 
     const monthNames = [
         'January', 'February', 'March', 'April', 'May', 'June',
@@ -43,7 +72,14 @@ const CardPost = ({ data }: PostData) => {
     const month = monthNames[date.getMonth()];
     const year = date.getFullYear();
 
-    const publishedTime = `${day} ${month} ${year}`;
+    const formattedDate = `${day} ${month} ${year}`;
+    return formattedDate;
+}
+
+const CardPost = ({ data, isCategoryVisible = false, isDescVisible = true, isDateVisible = true }: PostData) => {
+    const attr = data.attributes
+
+    const publishedTime = getPublishedDate(attr)
 
     const titleRef = useRef<HTMLHeadingElement | null>(null);
     const [isOverflowing, setIsOverflowing] = useState(false);
@@ -66,18 +102,18 @@ const CardPost = ({ data }: PostData) => {
             <a href={attr.slug} className="card-container">
                 <div className='card-content'>
                     <div className='wrapper'>
-                        <img className='card-image'
-                            src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        <img className='card-image stories'
+                            src={`${config.rawUrl}${attr.image.data.attributes.formats.small.url}`}
                             alt="" />
+                        {isCategoryVisible && <div className="card-category">{attr.category.data.attributes.name}</div>}
                         <div className='text'>
                             <h2 ref={titleRef} className="card-title">{attr.title}</h2>
-                            <p className="card-desc">{attr.excerpt}</p>
+                            {isDescVisible && <p className="card-desc">{attr.excerpt}</p>}
+                            {isOverflowing && <div className="popup-text">{attr.title}</div>}
                         </div>
                     </div>
-                    <span className='publish-time'>{publishedTime}</span>
+                    {isDateVisible && <span className='publish-time'>{publishedTime}</span>}
                 </div>
-
-                {isOverflowing && <div className="popup-text">{attr.title}</div>}
             </a>
         </>
     )

@@ -1,4 +1,6 @@
 @use "base" as *;
+@use './components/card';
+@use './components/button';
 
 // LAYOUT
 .container {
@@ -32,8 +34,9 @@ hr {
 }
 
 .grid-wrapper {
+  position: relative;
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
   @include grid-auto-fit;
 }
 
@@ -78,67 +81,6 @@ hr {
   }
 }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 0.5rem;
-  border-radius: 9999px;
-  transition: all 200ms;
-  white-space: nowrap;
-
-  &-nav {
-    padding: 0.25rem 1rem;
-    font-weight: $font-semibold;
-    @include text-size(xs);
-    color: white;
-    background-color: $dark-blue;
-
-    &:hover {
-      background-color: $mid-blue;
-      transform: translateY(-3px);
-    }
-  }
-
-  &-primary {
-    padding: 0.75rem 1.5rem;
-    @include text-size(sm);
-    font-weight: $font-semibold;
-    color: white;
-    background-color: $dark-blue;
-
-    &:hover {
-      background-color: $mid-blue;
-      transform: translateY(-3px);
-    }
-  }
-
-  &-secondary {
-    padding: 0.75rem 1.5rem;
-    @include text-size(sm);
-    font-weight: $font-bold;
-    color: white;
-    border: 1px solid $mid-blue;
-
-    &:hover {
-      background-color: $mid-blue;
-      transform: translateY(-3px);
-    }
-  }
-
-  &-card {
-    font-weight: $font-semibold;
-    justify-content: space-between;
-    margin-top: 1rem;
-
-    img {
-      height: 1rem;
-      width: 1rem;
-    }
-  }
-}
-
 .carousel {
   display: grid;
   grid-auto-flow: column;
@@ -146,79 +88,8 @@ hr {
   column-gap: 1rem;
 }
 
-.card {
-  &-container {
-    overflow: hidden;
-    position: relative;
-    padding: 1rem;
-    border-radius: 1.5rem;
-    background-color: cyan;
-    @include transition;
-
-    img.card-image {
-      object-fit: cover;
-      overflow: hidden;
-      background-color: white;
-      width: 100%;
-    }
-  }
-
-  &-container:hover {
-    transform: scale(1.03);
-    filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
-
-    @include responsive($screen-sm) {
-      transform: scale(1.1);
-      transform: translate(-5px, -5px);
-    }
-  }
-
-  &-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    gap: 1.5rem;
-
-    .publish-time {
-      color: $gray-400;
-      font-weight: $font-semibold;
-      @include text-size(xs);
-    }
-
-    .wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-
-      .text {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-    }
-  }
-
-  &-title {
-    @include text-size(xl);
-    font-weight: $font-bold;
-  }
-
-  &-subtitle {
-    margin-top: 0.25rem;
-    @include text-size(sm);
-  }
-
-  &-desc {
-    @include text-size(sm);
-    line-height: 1.5;
-  }
-
-  @include responsive($screen-sm) {
-    &-desc {
-      line-height: 1.75;
-    }
-  }
+.carousel > :nth-child(n + 4) {
+  visibility: hidden;
 }
 
 .section {

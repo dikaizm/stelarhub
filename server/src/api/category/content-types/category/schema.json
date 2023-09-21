@@ -26,6 +26,20 @@
       "relation": "oneToMany",
       "target": "api::post.post",
       "mappedBy": "category"
+    },
+    "recommended_posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post",
+      "mappedBy": "recommended"
+    },
+    "codename": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 3,
+      "minLength": 3,
+      "default": "DEF"
     }
   }
 }
