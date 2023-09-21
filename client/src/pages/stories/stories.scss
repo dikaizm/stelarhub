@@ -1,0 +1,134 @@
+@use "../../styles/base" as *;
+@use "../../styles/layout";
+@include text-colors();
+
+#stories {
+  margin-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+
+  .hero {
+    background-color: yellow;
+  }
+
+  .recommended {
+    background-color: aqua;
+  }
+
+  .collection {
+    .section-title-wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+
+      .flex-col {
+        row-gap: 0.5rem;
+      }
+
+      .section-title {
+        @include text-size(3xl);
+      }
+    }
+
+    .section-content-wrapper {
+        background-color: yellow;
+      position: relative;
+      margin-top: 2rem;
+
+      .card-container {
+        position: relative;
+        
+        img.card-image {
+          height: 12rem;
+          border-radius: 1rem;
+        }
+
+        .card-title {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: normal;
+        }
+
+        .popup-text {
+          visibility: hidden;
+          opacity: 0;
+          position: absolute;
+          width: 70%;
+          bottom: 50%;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: white;
+          color: $gray-400;
+          text-align: center;
+          padding: 10px;
+          border-radius: 16px;
+          z-index: 100;
+          filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.2));
+          @include text-size(xs);
+
+          @include transition;
+        }
+
+        .popup-text::after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          margin-left: -10px;
+          border-width: 0 10px 10px 10px;
+          border-style: solid;
+          border-color: transparent transparent white transparent;
+          transform: rotate(180deg);
+        }
+
+        &:hover .popup-text {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      .slide-btn {
+        position: absolute;
+        top: 45%;
+        height: 3.5rem;
+        width: 3.5rem;
+        border-radius: 9999px;
+        background-color: white;
+        filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.2));
+
+        @include transition;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        .icon-w {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+        }
+
+        &.next {
+          right: -1.5rem;
+
+          img {
+            transform: scale(1.2);
+          }
+        }
+        &.prev {
+          left: -2rem;
+
+          img {
+            transform: scale(-1.2);
+          }
+        }
+      }
+    }
+  }
+}

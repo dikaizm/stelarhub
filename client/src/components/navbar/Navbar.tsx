@@ -131,7 +131,7 @@ const Navbar = () => {
         if (isMenuOpen === false) {
 
             window.addEventListener('scroll', () => {
-                if (window.scrollY >= 10) {
+                if (window.scrollY >= 5) {
                     changeNavColor(true, isMenuOpen);
                 } else {
                     changeNavColor(false, isMenuOpen);
@@ -149,8 +149,6 @@ const Navbar = () => {
             setWindowWidth(window.innerWidth)
         })
     }, [loading, error, data, handleScroll, isMenuOpen])
-
-    console.log(isMenuOpen);
 
     return (
         <header id="navbar" ref={navbarRef} className={`${isNavVisible ? '' : 'navbar-hidden'} ${isNavBgVisible ? 'bg-white' : ''} ${isMenuOpen && windowWidth < maxWindowWidth ? 'bg-white' : ''}`}>
