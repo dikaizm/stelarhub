@@ -25,17 +25,19 @@
   <script src="js/main.js"></script>
 
   {{-- Vite --}}
-  @vite(['resources/scss/app.scss','resources/js/app.js'])
+  @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
 
 <body>
-  @include('partials.nav')
+  <div id="app">
+    @include('partials.nav')
 
-  <main>
-    @yield('container')
-  </main>
+    <main>
+      @yield('container')
+    </main>
 
-  @include('partials.footer')
+    @include('partials.footer')
+  </div>
 </body>
 
 </html>
