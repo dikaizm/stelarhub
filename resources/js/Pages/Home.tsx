@@ -4,9 +4,16 @@ import { PageProps } from '@/types';
 // styles
 import '../../sass/pages/home.scss'
 
+// Assets
+import arrowBtn from '../../assets/icons/arrow-btn.svg'
+import Navbar from '@/Layouts/Components/Navbar';
+
 export default function Home({ auth, laravelVersion, phpVersion }: PageProps<{ laravelVersion: string, phpVersion: string }>) {
     return (
         <>
+            <Head title="Home" />
+
+            <Navbar />
             <main>
                 {/* Hero section */}
                 <section className="s-hero">
@@ -288,7 +295,7 @@ export default function Home({ auth, laravelVersion, phpVersion }: PageProps<{ l
                                     tempor incididunt ut labore et dolore magna aliqua.</p>
                                 <div className="btn btn-card">
                                     <a href="">See case study</a>
-                                    <img src="" alt="" />
+                                    <img src={arrowBtn} alt="" />
                                 </div>
                             </a>
 
@@ -302,7 +309,7 @@ export default function Home({ auth, laravelVersion, phpVersion }: PageProps<{ l
                                 </p>
                                 <div className="btn btn-card">
                                     <a href="">See case study</a>
-                                    <img src="" alt="" />
+                                    <img src={arrowBtn} alt="" />
                                 </div>
                             </a>
 
@@ -316,7 +323,7 @@ export default function Home({ auth, laravelVersion, phpVersion }: PageProps<{ l
                                     tempor incididunt ut labore et dolore magna aliqua.</p>
                                 <div className="btn btn-card">
                                     <a href="">See case study</a>
-                                    <img src="" alt="" />
+                                    <img src={arrowBtn} alt="" />
                                 </div>
                             </a>
                         </div>
