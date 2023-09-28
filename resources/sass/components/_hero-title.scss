@@ -1,0 +1,90 @@
+@use "../base" as *;
+
+.hero-title {
+    @include transition(500ms);
+
+    &-big {
+        @extend .hero-title;
+        font-size: calc(18vw);
+        line-height: 1;
+        font-weight: $font-black;
+        letter-spacing: -0.025em;
+
+        &-top {
+            @extend .hero-title-big;
+            padding-top: 2rem;
+        }
+
+        &-bottom {
+            @extend .hero-title-big;
+            padding-bottom: 2rem;
+        }
+    }
+
+    &-generic {
+        @extend .hero-title;
+        @include text-size(5xl);
+        font-weight: $font-black;
+    }
+
+    @include responsive($screen-xs) {
+        &-big {
+            font-size: calc(18vw);
+        }
+    }
+
+    @include responsive($screen-sm) {
+        &-big {
+            font-size: calc(15vw);
+
+            &-top {
+                padding-top: 8rem;
+            }
+
+            &-bottom {
+                padding-bottom: 6rem;
+            }
+        }
+    }
+
+    @include responsive($screen-lg) {
+        &-big {
+            font-size: calc(14vw);
+        }
+
+        &-generic {
+            @include text-size(6xl);
+        }
+    }
+}
+
+.hero-desc {
+    @include text-size(md);
+    display: block;
+    line-height: 2rem;
+    padding-bottom: 0.5rem;
+
+    &-big {
+        @extend .hero-desc;
+        display: none;
+        max-width: 24rem;
+    }
+
+    &-m {
+        @include text-size(sm);
+        line-height: 1.5rem;
+        display: block;
+    }
+}
+
+@include responsive($screen-sm) {
+    .hero-desc {
+        &-big {
+            display: block;
+        }
+
+        &-m {
+            display: none;
+        }
+    }
+}

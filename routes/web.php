@@ -22,6 +22,11 @@ Route::get('/', function () {
 });
 
 Route::get('/stories', [PostsController::class, 'index']);
+Route::get('/stories/{posts:slug}', [PostsController::class, 'show'])->name('post.show');
+
+Route::get('/about', function () {
+    return Inertia::render('App/About');
+});
 
 Route::get('/insider/dashboard', function () {
     return Inertia::render('Dashboard');

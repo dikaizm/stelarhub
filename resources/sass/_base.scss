@@ -103,6 +103,7 @@ $text-colors: (
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  max-width: fit-content;
 }
 
 // THEME

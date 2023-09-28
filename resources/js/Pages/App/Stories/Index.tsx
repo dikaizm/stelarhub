@@ -3,19 +3,10 @@ import { PageProps } from '@/types';
 import { useCallback, useEffect, useRef, useState } from 'react'
 import Navbar from '@/Layouts/Components/Navbar';
 
-import '../../../sass/pages/stories.scss'
+import '../../../../sass/pages/stories.scss'
 
-import iconSearch from '../../../assets/icons/stories-search.svg'
+import iconSearch from '../../../../assets/icons/stories-search.svg'
 import CardPost from '@/Components/App/Cards/CardPost';
-
-interface CategoryData {
-    id: number;
-    attributes: {
-        name: string;
-        endpoint: string;
-        codename: string;
-    }
-}
 
 interface ImageData {
     id: number;
@@ -25,25 +16,6 @@ interface ImageData {
                 url: string;
             }
         }
-    }
-}
-
-interface PostAttributes {
-    title: string;
-    slug: string;
-    excerpt: string;
-    body: string;
-    updatedAt: string;
-    category: {
-        data: CategoryData;
-    };
-    recommended: {
-        data: {
-            id: number;
-        }
-    }
-    image: {
-        data: ImageData;
     }
 }
 
@@ -64,13 +36,19 @@ interface PostData {
     }
 }
 
-interface PostsData {
-    posts: PostData[];
+interface CategoryData {
+    id: number;
+    name: string;
+    desc: string;
+    codename: string;
 }
 
+interface StoriesProps {
+    posts: PostData[];
+    categories: CategoryData[];
+}
 
-
-export default function Stories({ posts }: PostsData) {
+export default function Stories({ posts, categories }: StoriesProps) {
     const [postsByCategory, setPostsByCategory] = useState<{
         recommended: PostData[];
         website: PostData[];
@@ -80,6 +58,7 @@ export default function Stories({ posts }: PostsData) {
         website: [],
         machine_learning: [],
     });
+    const [categoryDesc, setCategoryDesc] = useState<{ [key: string]: string; }>({})
     const [searchInput, setSearchInput] = useState<string>("")
 
     useEffect(() => {
@@ -96,7 +75,18 @@ export default function Stories({ posts }: PostsData) {
                     machine_learning: machineLearningPosts
                 });
         }
-    }, [posts]);
+
+        if (categories) {
+            const categoryDesc: { [key: string]: any; } = {};
+
+            for (let i = 0; i < categories.length; i++) {
+                const category = categories[i];
+                categoryDesc[category.codename] = category.desc;
+            }
+
+            setCategoryDesc(categoryDesc);
+        }
+    }, [posts, categories]);
 
     return (
         <>
@@ -107,7 +97,7 @@ export default function Stories({ posts }: PostsData) {
                 {/* Hero section */}
                 <section className="container hero">
                     <div className='flex-col hero-title-wrapper'>
-                        <h1 className='hero-title'>Ada Apa di Stelar</h1>
+                        <h1 className='hero-title-generic text-blue-g'>Ada Apa di Stelar</h1>
                         <p className='hero-desc'>Cerita kami, berita seru, dan tips terkini. Baca semua artikel soal Stelar di sini.</p>
                     </div>
 
@@ -192,7 +182,7 @@ export default function Stories({ posts }: PostsData) {
                             <div className='container section-title-wrapper'>
                                 <div className='flex-col'>
                                     <h2 className='section-title'>Website</h2>
-                                    <span className='section-desc'>Supply and allocation algorithms that match users, drivers, and vendors in the real world</span>
+                                    <span className='section-desc'>{categoryDesc.WEB}</span>
                                 </div>
                                 <div className="btn-wrapper">
                                     <a href="#" className="btn btn-primary">VIEW MORE
@@ -218,7 +208,7 @@ export default function Stories({ posts }: PostsData) {
                             <div className='container section-title-wrapper'>
                                 <div className='flex-col'>
                                     <h2 className='section-title'>Machine Learning</h2>
-                                    <span className='section-desc'>Supply and allocation algorithms that match users, drivers, and vendors in the real world</span>
+                                    <span className='section-desc'>{categoryDesc.MLG}</span>
                                 </div>
                                 <div className="btn-wrapper">
                                     <a href="#" className="btn btn-primary">VIEW MORE

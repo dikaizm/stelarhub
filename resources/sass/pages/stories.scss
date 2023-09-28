@@ -1,5 +1,6 @@
 @use "../base" as *;
 @use "../layout";
+@use "../components/hero-title";
 @include text-colors();
 
 #stories {
@@ -25,11 +26,6 @@
 
     .hero-title-wrapper {
       row-gap: 1rem;
-
-      .hero-title {
-        @include text-size(5xl);
-        font-weight: $font-bold;
-      }
     }
 
     .hero-search-wrapper {

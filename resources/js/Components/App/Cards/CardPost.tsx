@@ -1,8 +1,11 @@
 import { useRef, useState, useEffect } from "react";
 import estimateReadingTime from "@/helpers/estimateReadingTime";
+import { Link } from "@inertiajs/react";
+
+import route from 'ziggy-js';
+import { Ziggy } from '../../../ziggy';
 
 import randomImg from '../../../../assets/images/random-image.jpg'
-import { Link } from "@inertiajs/react";
 
 interface CategoryData {
     id: number;
@@ -100,7 +103,7 @@ const CardPost = ({ data, isCategoryVisible = false, isDescVisible = true, isDat
 
     return (
         <>
-            <Link href={`stories${data.slug}`} className="card-container">
+            <Link href={route('post.show', { slug: data.slug })} className="card-container">
                 <div className='card-content'>
                     <div className='wrapper'>
                         <img className='card-image stories'
