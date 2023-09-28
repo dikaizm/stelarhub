@@ -21,7 +21,7 @@ export default function Home({ auth, laravelVersion, phpVersion }: PageProps<{ l
                     <div className="bg-glr-blue"></div>
 
                     <div className="flex-col">
-                        <div className="content-w-big container">
+                        <div className="container content-w-big">
                             <div className="flex-row">
                                 <h1 className="text-blue-g hero-title-big-top">Stellar</h1>
                                 <strong className="hero-desc-big">We craft exceptional digital experiences that bring your brand to success. With
@@ -47,8 +47,8 @@ export default function Home({ auth, laravelVersion, phpVersion }: PageProps<{ l
                                 branding, we combine creativity and technology to bring your vision to life.</strong>
                         </div>
 
-                        <div className="feat-container bg-white">
-                            <div className="grid-wrapper container">
+                        <div className="bg-white feat-container">
+                            <div className="container grid-wrapper">
                                 <div className="feat-item">
                                     <svg className="feat-icon" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor"
                                         aria-hidden="true">
@@ -89,7 +89,7 @@ export default function Home({ auth, laravelVersion, phpVersion }: PageProps<{ l
 
                 {/* Showcase section */}
                 <section className="s-showcase">
-                    <div className="grid-wrapper container">
+                    <div className="container grid-wrapper">
                         <a href="#" className="card-container">
                             <div className="bg-shadow"></div>
 
@@ -220,7 +220,7 @@ export default function Home({ auth, laravelVersion, phpVersion }: PageProps<{ l
                 {/* Service section */}
                 <section className="s-service">
                     <div className="container">
-                        <div className="section-title flex">
+                        <div className="flex section-title">
                             <h2>Every solutions <br /> for your </h2>
                             <h2 className="flex-col">
                                 <span className="rotate-word-5">Analysis</span>
@@ -239,8 +239,8 @@ export default function Home({ auth, laravelVersion, phpVersion }: PageProps<{ l
                             <button className="accordion-item" aria-controls="srv-accordion-{{ $service->slug }}"
                                 data-collapse-toggle="true" aria-expanded="false">
                                 <div className="content-w">
-                                    <div className="content-text flex-col">
-                                        <div className="title-wrapper flex">
+                                    <div className="flex-col content-text">
+                                        <div className="flex title-wrapper">
                                             <svg>
                                                 <use xlink: href="{{ $service->icon }}"></use>
                                             </svg>
@@ -276,7 +276,7 @@ export default function Home({ auth, laravelVersion, phpVersion }: PageProps<{ l
 
                 {/* Portfolio section */}
                 <section className="s-portfolio">
-                    <div className="flex-col container">
+                    <div className="container flex-col">
                         <div className="section-title-wrapper">
                             <h2 className="section-title">Explore what we have done</h2>
                             <p className="section-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit,

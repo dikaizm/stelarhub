@@ -2,6 +2,8 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Menu;
+use App\Models\Submenu;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Tightenco\Ziggy\Ziggy;
@@ -39,6 +41,9 @@ class HandleInertiaRequests extends Middleware
                     'location' => $request->url(),
                 ]);
             },
+            'menus' => Menu::with(['submenus' => function ($query) {
+                $query->select('id', 'name', 'endpoint', 'desc', 'menu_id'); // Select specific fields from Submenu
+            }])->orderBy('rank')->select('id', 'name', 'endpoint')->get(),
         ]);
     }
 }

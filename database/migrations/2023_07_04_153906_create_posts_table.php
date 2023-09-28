@@ -16,8 +16,11 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('body');
-            $table->string('author');
+            $table->unsignedBigInteger('author_id');
             $table->timestamps();
+            $table->softDeletes();
+
+            $table->foreign('author_id')->references('id')->on('users');
         });
     }
 

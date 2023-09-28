@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\App;
 
+use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class PostsController extends Controller
 {
     public function index() {
-        return view('blog', [
-            'title' => 'Blog',
+        return view('stories', [
             'posts' => Post::all()
         ]);
     }

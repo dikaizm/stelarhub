@@ -1,5 +1,6 @@
-import { Link, Head } from '@inertiajs/react';
+import { Link, Head, usePage } from '@inertiajs/react';
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { MenuType } from '@/types/inertia';
 
 // Styles
 import '../../../sass/layouts/components/navbar.scss'
@@ -17,30 +18,10 @@ const images = {
     }
 }
 
-interface MenuItem {
-    id: number;
-    attributes: {
-        submenu: {
-            id: number;
-            title: string;
-            desc: string;
-            endpoint: string;
-        }[] | null;
-        endpoint: string;
-        title: string;
-    };
-}
-
-interface MenuData {
-    menus: {
-        data: MenuItem[]
-    }
-}
-
 export default function Navbar() {
     const currentEndpoint = window.location.href;
 
-    const [menu, setMenu] = useState<MenuItem[]>([])
+    const { menus } = usePage<MenuType>().props;
 
     const [isHovered, setIsHovered] = useState<boolean>(false)
     const [isDropdownVisible, setIsDropdownVisible] = useState<boolean>(false)
@@ -108,8 +89,6 @@ export default function Navbar() {
     }
 
     useEffect(() => {
-    
-
         if (isMenuOpen === false) {
 
             window.addEventListener('scroll', () => {
@@ -159,20 +138,18 @@ export default function Navbar() {
                 {/* Navbar menu */}
                 <div className="menu-w">
 
-                    {menu && menu.map(i => {
-                        const attr = i.attributes
-
-                        if (!attr.submenu) {
+                    {menus && menus?.map(item => {
+                        if (item.submenus.length === 0) {
                             return (
-                                <a key={i.id} href={attr.endpoint} className={`${currentEndpoint === attr.endpoint ? 'item-focus' : ""} item text-gray-400`}>{attr.title}</a>
+                                <a key={item.id} href={item.endpoint} className={`${currentEndpoint === item.endpoint ? 'item-focus' : ""} item text-gray-400`}>{item.name}</a>
                             );
                         } else {
                             return (
-                                <div key={i.id} className={`item-w ${isDropdownVisible ? 'h-full' : delayedClass}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                                <div key={item.id} className={`item-w ${isDropdownVisible ? 'h-full' : delayedClass}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                                     <div className='hover-area'></div>
 
                                     <button className={`item ${isHovered ? '-z-10 text-dark-blue' : 'z-10 text-gray-400'}`}>
-                                        {attr.title}
+                                        {item.name}
                                         <svg className={`${isHovered ? 'rotate-arrow' : ''} menu-icon`} viewBox="0 0 20 20" fill="currentColor">
                                             <path fillRule="evenodd"
                                                 d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
@@ -185,9 +162,9 @@ export default function Navbar() {
                                         {/* <div className="dropdown-arrow"></div> */}
                                         <div className="dropdown-w">
 
-                                            {attr.submenu.map(j => {
+                                            {item.submenus?.map(sub => {
                                                 return (
-                                                    <div className="subitem" key={j.id}>
+                                                    <div className="subitem" key={sub.id}>
                                                         <div className="icon-w">
                                                             <svg className="subitem-icon" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                                                                 stroke="currentColor">
@@ -196,8 +173,8 @@ export default function Navbar() {
                                                             </svg>
                                                         </div>
                                                         <div className="content-w">
-                                                            <a href={`${attr.endpoint}${j.endpoint}`} className="title">{j.title}<span></span></a>
-                                                            <div className="desc">{j.desc}</div>
+                                                            <a href={`${item.endpoint}${sub.endpoint}`} className="title">{sub.name}<span></span></a>
+                                                            <div className="desc">{sub.desc}</div>
                                                         </div>
                                                     </div>
                                                 )
@@ -251,9 +228,9 @@ export default function Navbar() {
                 <div className={`sidebar-bg ${isMenuOpen ? "active" : "inactive"}`}></div>
 
                 <div className={`container ${isMenuOpen ? "active" : "inactive"} bg-white`}>
-                    <div className="mx-auto h-full px-4 lg:px-20 py-10">
-                        <div className="flex flex-col gap-10 items-start whitespace-nowrap">
-                            <ul className="flex flex-col gap-7 items-start text-lg font-bold text-black">
+                    <div className="h-full px-4 py-10 mx-auto lg:px-20">
+                        <div className="flex flex-col items-start gap-10 whitespace-nowrap">
+                            <ul className="flex flex-col items-start text-lg font-bold text-black gap-7">
 
                             </ul>
                         </div>
