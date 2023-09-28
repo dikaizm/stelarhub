@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('slug')->unique();
+            $table->string('endpoint')->unique();
             $table->text('desc_long');
             $table->text('desc_short');
             $table->string('icon');
