@@ -15,12 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
+            $table->string('excerpt');
             $table->text('body');
+            $table->string('image');
             $table->unsignedBigInteger('author_id');
+            $table->unsignedBigInteger('category_id');
             $table->timestamps();
             $table->softDeletes();
 
             $table->foreign('author_id')->references('id')->on('users');
+            $table->foreign('category_id')->references('id')->on('post_categories');
         });
     }
 

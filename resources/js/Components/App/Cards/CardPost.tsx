@@ -1,4 +1,8 @@
 import { useRef, useState, useEffect } from "react";
+import estimateReadingTime from "@/helpers/estimateReadingTime";
+
+import randomImg from '../../../../assets/images/random-image.jpg'
+import { Link } from "@inertiajs/react";
 
 interface CategoryData {
     id: number;
@@ -58,28 +62,25 @@ function handleResize(ref: React.RefObject<HTMLHeadingElement>, fn: (overflow: b
     }
 }
 
-function getPublishedDate({ updatedAt }: PostAttributes) {
-    const date = new Date(updatedAt);
+function getPublishedDate(date) {
+    const newDate = new Date(date);
 
     const monthNames = [
         'January', 'February', 'March', 'April', 'May', 'June',
         'July', 'August', 'September', 'October', 'November', 'December'
     ];
 
-    const day = date.getDate();
-    const month = monthNames[date.getMonth()];
-    const year = date.getFullYear();
+    const day = newDate.getDate();
+    const month = monthNames[newDate.getMonth()];
+    const year = newDate.getFullYear();
 
     const formattedDate = `${day} ${month} ${year}`;
     return formattedDate;
 }
 
-const CardPost = ({ data, isCategoryVisible = false, isDescVisible = true, isDateVisible = true }: PostData) => {
-    const rootUrl = window.location.origin;
-
-    const attr = data.attributes
-
-    const publishedTime = getPublishedDate(attr)
+const CardPost = ({ data, isCategoryVisible = false, isDescVisible = true, isDateVisible = true }) => {
+    const publishedTime = getPublishedDate(data.updated_at)
+    const readingTime = estimateReadingTime(data.body)
 
     const titleRef = useRef<HTMLHeadingElement | null>(null);
     const [isOverflowing, setIsOverflowing] = useState(false);
@@ -99,22 +100,22 @@ const CardPost = ({ data, isCategoryVisible = false, isDescVisible = true, isDat
 
     return (
         <>
-            <a href={attr.slug} className="card-container">
+            <Link href={`stories${data.slug}`} className="card-container">
                 <div className='card-content'>
                     <div className='wrapper'>
                         <img className='card-image stories'
-                            src={`${rootUrl}${attr.image.data.attributes.formats.small.url}`}
+                            src={randomImg}
                             alt="" />
-                        {isCategoryVisible && <div className="card-category">{attr.category.data.attributes.name}</div>}
+                        {isCategoryVisible && <div className="card-category">{data.category.name}</div>}
                         <div className='text'>
-                            <h2 ref={titleRef} className="card-title">{attr.title}</h2>
-                            {isDescVisible && <p className="card-desc">{attr.excerpt}</p>}
-                            {isOverflowing && <div className="popup-text">{attr.title}</div>}
+                            <h2 ref={titleRef} className="card-title">{data.title}</h2>
+                            {isDescVisible && <p className="card-desc">{data.excerpt}</p>}
+                            {isOverflowing && <div className="popup-text">{data.title}</div>}
                         </div>
                     </div>
-                    {isDateVisible && <span className='publish-time'>{publishedTime}</span>}
+                    {isDateVisible && <span className='publish-time'>{publishedTime} • {readingTime} menit</span>}
                 </div>
-            </a>
+            </Link>
         </>
     )
 }

@@ -5,7 +5,7 @@ import Navbar from '@/Layouts/Components/Navbar';
 
 import '../../../sass/pages/stories.scss'
 
-import iconSearch from '../../assets/icons/stories-search.svg'
+import iconSearch from '../../../assets/icons/stories-search.svg'
 import CardPost from '@/Components/App/Cards/CardPost';
 
 interface CategoryData {
@@ -49,25 +49,58 @@ interface PostAttributes {
 
 interface PostData {
     id: number;
-    attributes: PostAttributes;
-}
-
-interface PostsData {
-    posts: {
-        data: PostData[];
+    title: string;
+    slug: string;
+    body: string;
+    author_id: number;
+    author: {
+        id: number;
+        name: string;
+    };
+    category: {
+        id: number;
+        name: string;
+        codename: string;
     }
 }
 
-export default function Stories({ auth, laravelVersion, phpVersion }: PageProps<{ laravelVersion: string, phpVersion: string }>) {
-    
-    const [posts, setPosts] = useState<PostData[]>([])
-    const [recommendedPosts, setRecommendedPosts] = useState<PostData[]>([])
-    const [websitePosts, setWebsitePosts] = useState<PostData[]>([])
-    const [mlPosts, setMLPosts] = useState<PostData[]>([])
+interface PostsData {
+    posts: PostData[];
+}
+
+
+
+export default function Stories({ posts }: PostsData) {
+    const [postsByCategory, setPostsByCategory] = useState<{
+        recommended: PostData[];
+        website: PostData[];
+        machine_learning: PostData[];
+    }>({
+        recommended: [],
+        website: [],
+        machine_learning: [],
+    });
     const [searchInput, setSearchInput] = useState<string>("")
+
+    useEffect(() => {
+        if (posts) {
+            // Filter posts by category
+            const recommendedPosts = posts.filter(post => post.category.codename === 'RCM');
+            const websitePosts = posts.filter(post => post.category.codename === 'WEB');
+            const machineLearningPosts = posts.filter(post => post.category.codename === 'MLG')
+
+            setPostsByCategory(
+                {
+                    recommended: recommendedPosts,
+                    website: websitePosts,
+                    machine_learning: machineLearningPosts
+                });
+        }
+    }, [posts]);
 
     return (
         <>
+            <Head title="Stories" />
             <Navbar />
 
             <main id="stories">
@@ -92,19 +125,19 @@ export default function Stories({ auth, laravelVersion, phpVersion }: PageProps<
                     </div>
                 </section>
 
-                {!loading && !error && data && data.posts && (
+                {posts && (
                     <>
                         {/* Recommended articles */}
                         <section className='container recommended'>
                             {/* Section content */}
                             <div className="section-content-wrapper">
-                                {recommendedPosts.length > 0 && (
+                                {postsByCategory.recommended.length > 0 && (
                                     <div className='grid-wrapper'>
                                         <div className='main-col'>
-                                            <CardPost data={recommendedPosts[0]} isCategoryVisible={true} />
+                                            <CardPost data={postsByCategory.recommended[0]} isCategoryVisible={true} />
                                         </div>
                                         <div className='side-col'>
-                                            {recommendedPosts.slice(1, 5).map((post, index) => (
+                                            {postsByCategory.recommended.slice(1, 5).map((post, index) => (
                                                 <CardPost key={index} data={post} isDescVisible={false} />
                                             ))}
                                         </div>
@@ -138,6 +171,7 @@ export default function Stories({ auth, laravelVersion, phpVersion }: PageProps<
                                     })}
                                 </div>
 
+                                {/* Slider arrow */}
                                 {/* <button className='slide-btn prev'>
                 <div className='icon-w'>
                     <img src={iconArrow} alt="Icon arrow right" />
@@ -170,7 +204,7 @@ export default function Stories({ auth, laravelVersion, phpVersion }: PageProps<
 
                             <div className="container section-content-wrapper">
                                 <div className='carousel'>
-                                    {websitePosts.length > 0 && websitePosts.map((post) => {
+                                    {postsByCategory.website.length > 0 && postsByCategory.website.map((post) => {
                                         return (
                                             <CardPost data={post} key={post.id} />
                                         )
@@ -196,7 +230,7 @@ export default function Stories({ auth, laravelVersion, phpVersion }: PageProps<
 
                             <div className="container section-content-wrapper">
                                 <div className='carousel'>
-                                    {mlPosts.length > 0 && mlPosts.map((post) => {
+                                    {postsByCategory.machine_learning.length > 0 && postsByCategory.machine_learning.map((post) => {
                                         return (
                                             <CardPost data={post} key={post.id} />
                                         )

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\App\PostsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -17,13 +18,10 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Home', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    return Inertia::render('Home');
 });
+
+Route::get('/stories', [PostsController::class, 'index']);
 
 Route::get('/insider/dashboard', function () {
     return Inertia::render('Dashboard');

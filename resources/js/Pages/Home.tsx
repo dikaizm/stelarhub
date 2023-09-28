@@ -8,7 +8,7 @@ import '../../sass/pages/home.scss'
 import arrowBtn from '../../assets/icons/arrow-btn.svg'
 import Navbar from '@/Layouts/Components/Navbar';
 
-export default function Home({ auth, laravelVersion, phpVersion }: PageProps<{ laravelVersion: string, phpVersion: string }>) {
+export default function Home() {
     return (
         <>
             <Head title="Home" />
@@ -294,7 +294,7 @@ export default function Home({ auth, laravelVersion, phpVersion }: PageProps<{ l
                                     eiusmod
                                     tempor incididunt ut labore et dolore magna aliqua.</p>
                                 <div className="btn btn-card">
-                                    <a href="">See case study</a>
+                                    <span>See case study</span>
                                     <img src={arrowBtn} alt="" />
                                 </div>
                             </a>
@@ -308,7 +308,7 @@ export default function Home({ auth, laravelVersion, phpVersion }: PageProps<{ l
                                     eiusmod
                                 </p>
                                 <div className="btn btn-card">
-                                    <a href="">See case study</a>
+                                    <span>See case study</span>
                                     <img src={arrowBtn} alt="" />
                                 </div>
                             </a>
@@ -322,7 +322,7 @@ export default function Home({ auth, laravelVersion, phpVersion }: PageProps<{ l
                                     eiusmod
                                     tempor incididunt ut labore et dolore magna aliqua.</p>
                                 <div className="btn btn-card">
-                                    <a href="">See case study</a>
+                                    <span>See case study</span>
                                     <img src={arrowBtn} alt="" />
                                 </div>
                             </a>
