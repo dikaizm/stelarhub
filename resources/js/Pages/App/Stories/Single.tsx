@@ -3,6 +3,7 @@ import { Head } from "@inertiajs/react";
 import getPublishedDate from "@/helpers/getPublishedDate";
 
 import randomImg from '../../../../assets/images/random-image.jpg'
+import Footer from "@/Layouts/Components/Footer";
 
 export default function SinglePost({ post }) {
     console.log(post);
@@ -39,6 +40,8 @@ export default function SinglePost({ post }) {
 
                 </section>
             </main>
+
+            <Footer />
         </>
     )
 }

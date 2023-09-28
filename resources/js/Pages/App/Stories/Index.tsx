@@ -7,6 +7,7 @@ import '../../../../sass/pages/stories.scss'
 
 import iconSearch from '../../../../assets/icons/stories-search.svg'
 import CardPost from '@/Components/App/Cards/CardPost';
+import Footer from '@/Layouts/Components/Footer';
 
 interface ImageData {
     id: number;
@@ -231,6 +232,8 @@ export default function Stories({ posts, categories }: StoriesProps) {
                     </>
                 )}
             </main>
+
+            <Footer />
         </>
     )
 }

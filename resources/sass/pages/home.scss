@@ -620,9 +620,27 @@
     }
 
     .card-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: 1.2rem;
+
         img.card-image {
             height: 20rem;
             border-radius: 1rem;
+        }
+
+        .wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+    
+          .text {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+          }
         }
     }
 

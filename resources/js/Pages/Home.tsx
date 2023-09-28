@@ -7,6 +7,7 @@ import '../../sass/pages/home.scss'
 // Assets
 import arrowBtn from '../../assets/icons/arrow-btn.svg'
 import Navbar from '@/Layouts/Components/Navbar';
+import Footer from '@/Layouts/Components/Footer';
 
 export default function Home() {
     return (
@@ -286,13 +287,15 @@ export default function Home() {
 
                         <div className="grid-wrapper">
                             <a href="#" className="card-container">
-                                <img className='card-image'
-                                    src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                    alt="" />
-                                <h2 className="card-title">Kargo Technologies</h2>
-                                <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <div className='wrapper'>
+                                    <img className='card-image'
+                                        src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="" />
+                                    <h2 className="card-title">Kargo Technologies</h2>
+                                    <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
                                 <div className="btn btn-card">
                                     <span>See case study</span>
                                     <img src={arrowBtn} alt="" />
@@ -300,13 +303,15 @@ export default function Home() {
                             </a>
 
                             <a href="#" className="card-container">
-                                <img className='card-image'
-                                    src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                    alt="" />
-                                <h2 className="card-title">Kargo Technologies</h2>
-                                <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod
-                                </p>
+                                <div className='wrapper'>
+                                    <img className='card-image'
+                                        src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="" />
+                                    <h2 className="card-title">Kargo Technologies</h2>
+                                    <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        eiusmod
+                                    </p>
+                                </div>
                                 <div className="btn btn-card">
                                     <span>See case study</span>
                                     <img src={arrowBtn} alt="" />
@@ -314,13 +319,15 @@ export default function Home() {
                             </a>
 
                             <a href="#" className="card-container">
-                                <img className='card-image'
-                                    src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                    alt="" />
-                                <h2 className="card-title">Kargo Technologies</h2>
-                                <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <div className='wrapper'>
+                                    <img className='card-image'
+                                        src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                        alt="" />
+                                    <h2 className="card-title">Kargo Technologies</h2>
+                                    <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
                                 <div className="btn btn-card">
                                     <span>See case study</span>
                                     <img src={arrowBtn} alt="" />
@@ -336,6 +343,8 @@ export default function Home() {
                     </div>
                 </section>
             </main>
+
+            <Footer />
         </>
     )
 }

@@ -1,3 +1,4 @@
+import Footer from "@/Layouts/Components/Footer"
 import Navbar from "@/Layouts/Components/Navbar"
 import { Head } from "@inertiajs/react"
 
@@ -59,6 +60,8 @@ export default function About() {
                     </div>
                 </section>
             </main>
+
+            <Footer />
         </>
     )
 }
