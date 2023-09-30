@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import estimateReadingTime from "@/helpers/estimateReadingTime";
+import estimateReadingTime from "@/helpers/getReadingTimeMin";
 import { Link } from "@inertiajs/react";
 
 import route from 'ziggy-js';
@@ -116,7 +116,7 @@ const CardPost = ({ data, isCategoryVisible = false, isDescVisible = true, isDat
                             {isOverflowing && <div className="popup-text">{data.title}</div>}
                         </div>
                     </div>
-                    {isDateVisible && <span className='publish-time'>{publishedTime} • {readingTime} menit</span>}
+                    {isDateVisible && <span className='publish-time'>{publishedTime} • Baca {readingTime} menit</span>}
                 </div>
             </Link>
         </>

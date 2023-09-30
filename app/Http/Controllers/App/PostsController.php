@@ -23,11 +23,20 @@ class PostsController extends Controller
 
     public function show($slug)
     {
+        $post = Post::where('slug', $slug)
+            ->with(['author:id,name', 'category:id,name'])
+            ->select('id', 'title', 'body', 'author_id', 'category_id', 'updated_at')
+            ->firstOrFail();
+
+        $postsByCategory = Post::where('category_id', $post->category->id)
+            ->select('id', 'title', 'slug', 'body', 'excerpt', 'category_id', 'updated_at')
+            ->orderBy('updated_at', 'desc')
+            ->limit(3)
+            ->get();
+
         return Inertia::render('App/Stories/Single', [
-            'post' => Post::where('slug', $slug)
-                ->with(['author:id,name', 'category:id,name'])
-                ->select('id', 'title', 'body', 'author_id', 'category_id', 'updated_at')
-                ->firstOrFail(),
+            'post' => $post,
+            'postsByCategory' => $postsByCategory
         ]);
     }
 }
