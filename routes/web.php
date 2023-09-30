@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\App\PostsController;
+use App\Http\Controllers\App\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -21,12 +21,18 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 
-Route::get('/stories', [PostsController::class, 'index']);
-Route::get('/stories/{posts:slug}', [PostsController::class, 'show'])->name('post.show');
-
 Route::get('/about', function () {
     return Inertia::render('App/About');
 });
+
+Route::get('/solutions');
+Route::get('/solutions/{services:endpoint}');
+
+Route::get('/works', []);
+
+Route::get('/stories', [PostController::class, 'index']);
+Route::get('/stories/{posts:slug}', [PostController::class, 'show'])->name('post.show');
+Route::post('/stories/{id}/like', [PostController::class, 'like'])->name('post.like');
 
 Route::get('/insider/dashboard', function () {
     return Inertia::render('Dashboard');

@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('image');
             $table->unsignedBigInteger('author_id');
             $table->unsignedBigInteger('category_id');
+            $table->integer('like_count')->nullable()->default(0);
+            $table->integer('dislike_count')->nullable()->default(0);
             $table->timestamps();
             $table->softDeletes();
 

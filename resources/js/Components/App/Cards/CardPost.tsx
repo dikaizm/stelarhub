@@ -3,7 +3,6 @@ import estimateReadingTime from "@/helpers/getReadingTimeMin";
 import { Link } from "@inertiajs/react";
 
 import route from 'ziggy-js';
-import { Ziggy } from '../../../ziggy';
 
 import randomImg from '../../../../assets/images/random-image.jpg'
 

@@ -47,15 +47,14 @@ interface CategoryData {
 interface StoriesProps {
     posts: PostData[];
     categories: CategoryData[];
+    recommendations: PostData[];
 }
 
-export default function Stories({ posts, categories }: StoriesProps) {
+export default function Stories({ posts, categories, recommendations }: StoriesProps) {
     const [postsByCategory, setPostsByCategory] = useState<{
-        recommended: PostData[];
         website: PostData[];
         machine_learning: PostData[];
     }>({
-        recommended: [],
         website: [],
         machine_learning: [],
     });
@@ -65,13 +64,11 @@ export default function Stories({ posts, categories }: StoriesProps) {
     useEffect(() => {
         if (posts) {
             // Filter posts by category
-            const recommendedPosts = posts.filter(post => post.category.codename === 'RCM');
             const websitePosts = posts.filter(post => post.category.codename === 'WEB');
             const machineLearningPosts = posts.filter(post => post.category.codename === 'MLG')
 
             setPostsByCategory(
                 {
-                    recommended: recommendedPosts,
                     website: websitePosts,
                     machine_learning: machineLearningPosts
                 });
@@ -122,13 +119,13 @@ export default function Stories({ posts, categories }: StoriesProps) {
                         <section className='container recommended'>
                             {/* Section content */}
                             <div className="section-content-wrapper">
-                                {postsByCategory.recommended.length > 0 && (
+                                {recommendations.length > 0 && (
                                     <div className='grid-wrapper'>
                                         <div className='main-col'>
-                                            <CardPost data={postsByCategory.recommended[0]} isCategoryVisible={true} />
+                                            <CardPost data={recommendations[0]} isCategoryVisible={true} />
                                         </div>
                                         <div className='side-col'>
-                                            {postsByCategory.recommended.slice(1, 5).map((post, index) => (
+                                            {recommendations.slice(1, 5).map((post, index) => (
                                                 <CardPost key={index} data={post} isDescVisible={false} />
                                             ))}
                                         </div>

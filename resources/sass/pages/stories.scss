@@ -5,6 +5,8 @@
 
 .collection {
     .container.section-content-wrapper {
+        position: relative;
+        margin-top: 2rem;
         max-width: 94%;
 
         @include responsive($screen-lg) {
@@ -242,7 +244,6 @@
         width: 100%;
 
         .breadcrumb {
-            border: 1px solid red;
             padding: 2.5rem 0;
 
             @include responsive($screen-sm) {
@@ -254,34 +255,68 @@
             display: inline-block;
         }
 
-        .article-share-fixed {
-            border: 1px solid blue;
+        .article-share-aside {
             white-space: nowrap;
             position: absolute;
             display: none;
+            color: $gray-400;
+            font-weight: $font-semibold;
+            opacity: 1;
+            @include transition(100ms);
+            @include text-size(md);
 
             @include responsive($screen-sm) {
                 display: block;
             }
+
+            &.fixed {
+                position: fixed;
+                top: 116px;
+            }
+
+            &.hide {
+                opacity: 0;
+            }
+
+            .flex-col {
+                gap: 1rem;
+            }
         }
 
         .article-share-row {
-            border: 1px solid blue;
             padding-top: 2rem;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: $font-medium;
-            @include text-size(sm);
+            flex-direction: column;
+            gap: 1rem;
+            color: $gray-400;
+            font-weight: $font-semibold;
+            @include text-size(md);
 
             @include responsive($screen-sm) {
                 @include article-container();
             }
 
-            .feedback {
+            @include responsive($screen-lg + 120px) {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .feedback-wrapper {
                 display: flex;
                 align-items: center;
                 gap: 0.7rem;
+
+                .feedback-message {
+                    white-space: nowrap;
+
+                    &.active {
+                        padding: 8px 14px;
+                        border: 1px solid $gray-300;
+                        border-radius: 8px;
+                    }
+                }
             }
 
             button {
@@ -290,15 +325,21 @@
                 border-radius: 8px;
             }
 
-            .share {
+            .share-wrapper {
                 display: flex;
                 align-items: center;
-                gap: 0.7rem;
+                gap: 1rem;
+
+                .share-icons {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.5rem;
+                    color: $gray-400;
+                }
             }
         }
 
         .article-container {
-            border: 1px solid violet;
             display: flex;
             flex-direction: column;
             row-gap: 5rem;
@@ -308,7 +349,6 @@
             }
 
             .article-header {
-                border: 1px solid blue;
                 display: flex;
                 flex-direction: column;
                 row-gap: 1rem;
@@ -331,7 +371,6 @@
 
                     .article-image {
                         position: relative;
-                        border: 1px solid greenyellow;
                         max-height: 30rem;
                         border-radius: 1.5rem;
                         overflow: hidden;
@@ -348,7 +387,6 @@
             }
 
             .article-content {
-                border: 1px solid greenyellow;
                 @include text-size(lg);
 
                 p {
