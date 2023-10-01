@@ -182,7 +182,7 @@ export default function Navbar() {
                               </svg>
                             </div>
                             <div className="content-w">
-                              <Link href={`${item.endpoint}${sub.endpoint}`} className="title">{sub.name}<span></span></Link>
+                              <Link href={route('service.show', {services: sub.endpoint})} className="title">{sub.name}<span></span></Link>
                               <div className="desc">{sub.desc}</div>
                             </div>
                           </div>

@@ -1,132 +1,186 @@
 @use "../base" as *;
 
 .card {
-  &-container {
-    overflow: hidden;
-    position: relative;
-    padding: 1rem;
-    border-radius: 1.5rem;
-    background-color: white;
-    @include transition;
-
-    img.card-image {
-      object-fit: cover;
-      overflow: hidden;
-      background-color: white;
-      width: 100%;
-    }
-
-    img.card-image.stories {
-      height: 12rem;
-      border-radius: 1rem;
-    }
-
-    .popup-text {
-      visibility: hidden;
-      opacity: 0;
-      position: absolute;
-      width: 70%;
-      bottom: 105%;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: white;
-      color: $gray-400;
-      text-align: center;
-      padding: 10px;
-      border-radius: 16px;
-      z-index: 100;
-      filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.2));
-      @include text-size(xs);
-
-      @include transition;
-    }
-
-    .popup-text::after {
-      content: "";
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      margin-left: -10px;
-      border-width: 0 10px 10px 10px;
-      border-style: solid;
-      border-color: transparent transparent white transparent;
-      transform: rotate(180deg);
-    }
-
-    &:hover .popup-text {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-  &-container:hover {
-    z-index: 10;
-    transform: scale(1.03);
-    filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
-
-    @include responsive($screen-sm) {
-      transform: scale(1.1);
-      transform: translate(-5px, -5px);
-    }
-  }
-
-  &-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    gap: 1.5rem;
-
-    .publish-time {
-      color: $gray-400;
-      font-weight: $font-semibold;
-      @include text-size(xs);
-    }
-
-    .wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-
-      .text {
+    &-container {
+        overflow: hidden;
         position: relative;
+        padding: 1rem;
+        border-radius: 1.5rem;
+        background-color: white;
+        @include transition;
+        z-index: 5;
+
+        img.card-image {
+            object-fit: cover;
+            overflow: hidden;
+            background-color: white;
+            width: 100%;
+        }
+
+        img.card-image.stories {
+            height: 12rem;
+            border-radius: 1rem;
+        }
+
+        .card-thumbnail {
+            border-radius: 1rem;
+            overflow: hidden;
+            position: relative; /* Add this for absolute positioning */
+
+            /* Set a fixed aspect ratio */
+            width: 100%;
+            padding-top: 132%; /* Change this value to set height (4:3 aspect ratio) */
+
+            img.card-image-works {
+                position: absolute; /* Position the image absolutely within the container */
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Maintain aspect ratio and cover the container */
+            }
+
+            .work-category {
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                .category-wrapper {
+                    position: relative;
+                    margin: 0.5rem;
+                    display: inline-flex;
+                    gap: 0.5rem;
+
+                    .category-item {
+                        color: white;
+                        background-color: $mid-blue;
+                        padding: 5px 10px;
+                        border-radius: 9999px;
+
+                        @include text-size(xs);
+                    }
+                }
+            }
+        }
+
+        .popup-text {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            width: 70%;
+            bottom: 105%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            color: $gray-400;
+            text-align: center;
+            padding: 10px;
+            border-radius: 16px;
+            z-index: 100;
+            filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.2));
+            @include text-size(xs);
+
+            @include transition;
+        }
+
+        .popup-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -10px;
+            border-width: 0 10px 10px 10px;
+            border-style: solid;
+            border-color: transparent transparent white transparent;
+            transform: rotate(180deg);
+        }
+
+        &:hover .popup-text {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &-container:hover {
+        z-index: 10;
+        transform: scale(1.03);
+        filter: drop-shadow(20px 25px 30px rgba(0, 0, 0, 0.15));
+
+        @include responsive($screen-sm) {
+            transform: scale(1.1);
+            transform: translate(-5px, -5px);
+        }
+    }
+
+    &-content {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
-      }
+        justify-content: space-between;
+        height: 100%;
+        gap: 1.5rem;
+
+        .publish-time {
+            color: $gray-400;
+            font-weight: $font-semibold;
+            @include text-size(xs);
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+
+            .text {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
     }
-  }
 
-  &-category {
-    font-weight: $font-semibold;
-    text-transform: uppercase;
-    color: $mid-blue;
-  }
+    &-category {
+        font-weight: $font-semibold;
+        text-transform: uppercase;
+        color: $mid-blue;
+    }
 
-  &-title {
-    @include text-size(xl);
-    font-weight: $font-bold;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-  }
+    &-client {
+        font-weight: $font-medium;
+        @include text-size(lg);
+    }
 
-  &-subtitle {
-    margin-top: 0.25rem;
-    @include text-size(sm);
-  }
+    &-title {
+        @include text-size(xl);
+        font-weight: $font-bold;
 
-  &-desc {
-    @include text-size(sm);
-    line-height: 1.5;
-  }
+        &.stories {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+        }
 
-  @include responsive($screen-sm) {
+        &.works {
+            @include text-size(2xl);
+        }
+    }
+
+    &-subtitle {
+        margin-top: 0.25rem;
+        @include text-size(sm);
+    }
+
     &-desc {
-      line-height: 1.75;
+        @include text-size(sm);
+        line-height: 1.5;
     }
-  }
+
+    @include responsive($screen-sm) {
+        &-desc {
+            line-height: 1.75;
+        }
+    }
 }

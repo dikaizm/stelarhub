@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\App\HomeController;
 use App\Http\Controllers\App\PostController;
+use App\Http\Controllers\App\WorkController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -17,18 +19,17 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Home');
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/about', function () {
     return Inertia::render('App/About');
 });
 
 Route::get('/solutions');
-Route::get('/solutions/{services:endpoint}');
+Route::get('/solutions/{services:endpoint}')->name('service.show');
 
-Route::get('/works', []);
+Route::get('/works', [WorkController::class, 'index']);
+Route::get('/works/{works:slug}', [WorkController::class, 'show'])->name('work.show');
 
 Route::get('/stories', [PostController::class, 'index']);
 Route::get('/stories/{posts:slug}', [PostController::class, 'show'])->name('post.show');

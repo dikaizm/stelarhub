@@ -1,0 +1,31 @@
+@use "../base" as *;
+@use "../layout";
+@use "../components/hero-title";
+@include text-colors();
+
+#works {
+    padding: 7rem 0;
+
+    .hero {
+        height: 16rem;
+
+        .hero-title-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            row-gap: 1.5rem;
+
+            .hero-desc {
+                @include text-size(lg);
+            }
+        }
+    }
+
+    .collection {
+        margin-top: 5rem;
+    }
+}
+
+#works_single {
+    
+}

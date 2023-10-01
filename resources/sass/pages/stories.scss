@@ -3,32 +3,6 @@
 @use "../components/hero-title";
 @include text-colors();
 
-.collection {
-    .container.section-content-wrapper {
-        position: relative;
-        margin-top: 2rem;
-        max-width: 94%;
-
-        @include responsive($screen-lg) {
-            max-width: 84%;
-        }
-    }
-
-    .section-title-wrapper {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-
-        .flex-col {
-            row-gap: 0.5rem;
-        }
-
-        .section-title {
-            @include text-size(4xl);
-        }
-    }
-}
-
 #stories {
     padding: 7rem 0;
     display: flex;

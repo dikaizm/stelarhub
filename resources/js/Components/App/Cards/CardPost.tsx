@@ -110,7 +110,7 @@ const CardPost = ({ data, isCategoryVisible = false, isDescVisible = true, isDat
                             alt="" />
                         {isCategoryVisible && <div className="card-category">{data.category.name}</div>}
                         <div className='text'>
-                            <h2 ref={titleRef} className="card-title">{data.title}</h2>
+                            <h2 ref={titleRef} className="card-title stories">{data.title}</h2>
                             {isDescVisible && <p className="card-desc">{data.excerpt}</p>}
                             {isOverflowing && <div className="popup-text">{data.title}</div>}
                         </div>
