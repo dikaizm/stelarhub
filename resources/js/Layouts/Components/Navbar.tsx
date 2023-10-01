@@ -162,12 +162,12 @@ export default function Navbar() {
                   <div className={`item-dropdown nav-dropdown-hide ${isHovered ? 'nav-dropdown-show' : 'nav-dropdown-hide'}`}>
                     {/* <div className="dropdown-arrow"></div> */}
                     <div className='dropdown-header'>
-                      <div className='header-item'>
+                      <Link href='/solutions' className='dropdown-header-item'>
                         <span>Ikhtisar</span>
-                      </div>
-                      <div className='header-item'>
+                      </Link>
+                      <Link href='/contact' className='dropdown-header-item'>
                         <span>Konsultasi Gratis</span>
-                      </div>
+                      </Link>
                     </div>
 
                     <div className="dropdown-w">

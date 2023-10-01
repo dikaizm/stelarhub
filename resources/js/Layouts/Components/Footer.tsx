@@ -10,8 +10,8 @@ export default function Footer() {
                 <div className="cta-w">
                     <h2 className="section-title">Have an awesome project for your brand?</h2>
                     <div className="btn-w">
-                        <a className="btn-primary btn" href="">START A PROJECT</a>
-                        <a className="btn-secondary btn" href="">SEE OUR WORKS</a>
+                        <a className="btn-primary btn" href="/contact">START A PROJECT</a>
+                        <a className="btn-secondary btn" href="/works">SEE OUR WORKS</a>
                     </div>
                 </div>
                 <ul>

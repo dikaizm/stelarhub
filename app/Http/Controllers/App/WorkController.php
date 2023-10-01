@@ -21,7 +21,7 @@ class WorkController extends Controller
 
     public function show($slug)
     {
-        $work = Work::where('slug', $slug)->firstOrFail();
+        $work = Work::where('slug', $slug)->with('categories:id,name')->firstOrFail();
 
         return Inertia::render('App/Works/Single', [
             'work' => $work

@@ -24,6 +24,7 @@ return new class extends Migration
             $table->text('body_background')->nullable();
             $table->text('body_challenge')->nullable();
             $table->text('body_brief')->nullable();
+            $table->json('body_workscope')->nullable();
             $table->json('body_features')->nullable();
             $table->string('image_thumbnail');
             $table->string('image_cover');

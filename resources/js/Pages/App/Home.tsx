@@ -95,7 +95,7 @@ export default function Home({ latestWorks, recommendedWorks }) {
           <div className="container grid-wrapper">
             {recommendedWorks && recommendedWorks.length > 0 && recommendedWorks.map((work, index) => {
               const n = recommendedWorks.length;
-
+              
               return (
                 <CardWorkShowcase key={work.id} data={work} className={`${index % 2 !== 0 ? 'item-down' : ''} ${index === n - 1 ? 'item-end' : ''}`} />
               )
