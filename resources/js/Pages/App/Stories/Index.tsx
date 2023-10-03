@@ -1,6 +1,6 @@
 import { Link, Head } from '@inertiajs/react';
-import { PageProps } from '@/types';
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { PostData, StoriesProps } from '@/types';
+import { useEffect, useState } from 'react'
 import Navbar from '@/Layouts/Components/Navbar';
 
 import '../../../../sass/pages/stories.scss'
@@ -8,47 +8,6 @@ import '../../../../sass/pages/stories.scss'
 import iconSearch from '../../../../assets/icons/stories-search.svg'
 import CardPost from '@/Components/App/Cards/CardPost';
 import Footer from '@/Layouts/Components/Footer';
-
-interface ImageData {
-  id: number;
-  attributes: {
-    formats: {
-      small: {
-        url: string;
-      }
-    }
-  }
-}
-
-interface PostData {
-  id: number;
-  title: string;
-  slug: string;
-  body: string;
-  author_id: number;
-  author: {
-    id: number;
-    name: string;
-  };
-  category: {
-    id: number;
-    name: string;
-    codename: string;
-  }
-}
-
-interface CategoryData {
-  id: number;
-  name: string;
-  desc: string;
-  codename: string;
-}
-
-interface StoriesProps {
-  posts: PostData[];
-  categories: CategoryData[];
-  recommendations: PostData[];
-}
 
 export default function Stories({ posts, categories, recommendations }: StoriesProps) {
   const [postsByCategory, setPostsByCategory] = useState<{
@@ -119,7 +78,7 @@ export default function Stories({ posts, categories, recommendations }: StoriesP
             <section className='container recommended'>
               {/* Section content */}
               <div className="section-content-wrapper">
-                {recommendations.length > 0 && (
+                {recommendations && recommendations.length > 0 && (
                   <div className='grid-wrapper'>
                     <div className='main-col'>
                       <CardPost data={recommendations[0]} isCategoryVisible={true} />

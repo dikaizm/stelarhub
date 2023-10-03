@@ -5,44 +5,10 @@ import { Link } from "@inertiajs/react";
 import route from 'ziggy-js';
 
 import randomImg from '../../../../assets/images/random-image.jpg'
+import { PostData } from "@/types";
 
-interface CategoryData {
-    id: number;
-    attributes: {
-        name: string;
-        endpoint: string;
-    }
-}
-
-interface ImageData {
-    id: number;
-    attributes: {
-        formats: {
-            small: {
-                url: string;
-            }
-        }
-    }
-}
-
-interface PostAttributes {
-    title: string;
-    slug: string;
-    excerpt: string;
-    updatedAt: string;
-    image: {
-        data: ImageData;
-    }
-    category: {
-        data: CategoryData;
-    };
-}
-
-interface PostData {
-    data: {
-        id: number;
-        attributes: PostAttributes;
-    };
+interface PostProps {
+    data: PostData;
     isCategoryVisible?: boolean;
     isDescVisible?: boolean;
     isDateVisible?: boolean;
@@ -64,7 +30,7 @@ function handleResize(ref: React.RefObject<HTMLHeadingElement>, fn: (overflow: b
     }
 }
 
-function getPublishedDate(date) {
+function getPublishedDate(date: string) {
     const newDate = new Date(date);
 
     const monthNames = [
@@ -80,7 +46,7 @@ function getPublishedDate(date) {
     return formattedDate;
 }
 
-const CardPost = ({ data, isCategoryVisible = false, isDescVisible = true, isDateVisible = true }) => {
+const CardPost = ({ data, isCategoryVisible = false, isDescVisible = true, isDateVisible = true }: PostProps) => {
     const publishedTime = getPublishedDate(data.updated_at)
     const readingTime = estimateReadingTime(data.body)
 

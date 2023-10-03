@@ -1,12 +1,13 @@
 import Footer from "@/Layouts/Components/Footer";
 import Navbar from "@/Layouts/Components/Navbar";
 import { Head } from "@inertiajs/react";
+import { WorksProps } from "@/types";
 
 import '../../../../sass/pages/works.scss'
 import CardWork from "@/Components/App/Cards/CardWork";
 import TestimonialSection from "@/Layouts/Components/TestimonialSection";
 
-export default function Works({ works }) {
+export default function Works({ works }: WorksProps) {
 
     return (
         <>

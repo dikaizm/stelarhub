@@ -1,8 +1,9 @@
 import { Link } from "@inertiajs/react";
+import { PostData } from "@/types";
 
 import icon from '../../../../assets/icons/service-website.svg'
 
-const CardService = ({ data }) => {
+const CardService = ({ data }: { data: { name: string } }) => {
 
   return (
     <>

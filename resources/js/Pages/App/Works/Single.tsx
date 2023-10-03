@@ -1,17 +1,21 @@
 import Navbar from '@/Layouts/Components/Navbar';
 import Footer from '@/Layouts/Components/Footer';
 import { Head } from '@inertiajs/react';
+import { Work } from '@/types';
 
 import '../../../../sass/pages/works.scss'
 import React from 'react';
 
 import randomImg from '../../../../assets/images/random-image.jpg'
 
-export default function SingleWork({ work }) {
+export default function SingleWork({ work }: { work: Work }) {
+  let imageGallery, bodyWorkscope, bodyFeatures;
 
-  const imageGallery = JSON.parse(work.image_gallery)
-  const bodyWorkscope = JSON.parse(work.body_workscope)
-  const bodyFeatures = JSON.parse(work.body_features)
+  if (work) {
+    imageGallery = JSON.parse(work.image_gallery)
+    bodyWorkscope = JSON.parse(work.body_workscope)
+    bodyFeatures = JSON.parse(work.body_features)
+  }
 
   return (
     <>
@@ -107,7 +111,7 @@ export default function SingleWork({ work }) {
           </div>
 
           <div className='image-filler'>
-            {work && imageGallery && imageGallery.intro && imageGallery.intro.map((img, index) => {
+            {work && imageGallery && imageGallery.intro && imageGallery.intro.map((img: string, index: number) => {
 
               return (
                 <React.Fragment key={`img-intro-${index}`}>
@@ -125,7 +129,10 @@ export default function SingleWork({ work }) {
               <div className='body-wrapper'>
                 <div className='body-content'>
                   <h3>Pendekatan Kami</h3>
-                  {work && bodyWorkscope && bodyWorkscope.map((body, index) => {
+                  {work && bodyWorkscope && bodyWorkscope.map((body: {
+                    title: string;
+                    body: string
+                  }, index: number) => {
                     return (
                       <React.Fragment key={`workscope-${index}`}>
 
@@ -143,7 +150,11 @@ export default function SingleWork({ work }) {
             </div>
 
             <div className='body-feature-wrapper'>
-              {work && bodyFeatures && bodyFeatures.map((body, index) => {
+              {work && bodyFeatures && bodyFeatures.map((body: {
+                title: string;
+                body: string;
+                image: string;
+              }, index: number) => {
                 const reverseGridOrder = index % 2 !== 0;
 
                 return (
@@ -163,7 +174,7 @@ export default function SingleWork({ work }) {
             </div>
 
             <div className='image-filler'>
-              {work && imageGallery && imageGallery.intro && imageGallery.intro.map((img, index) => {
+              {work && imageGallery && imageGallery.intro && imageGallery.intro.map((img: string, index: number) => {
 
                 return (
                   <React.Fragment key={`img-filler-${index}`}>

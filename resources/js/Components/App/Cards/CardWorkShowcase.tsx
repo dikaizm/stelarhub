@@ -1,9 +1,10 @@
+import { Work } from "@/types";
 import { Link } from "@inertiajs/react";
 import React from "react";
 
 import route from 'ziggy-js';
 
-export default function CardWorkShowcase({ data, className }) {
+export default function CardWorkShowcase({ data, className }: { data: Work, className: string }) {
 
     return (
         <Link href={route('work.show', { slug: data.slug })} className={`card-container ${className}`}>

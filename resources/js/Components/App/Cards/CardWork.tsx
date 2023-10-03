@@ -1,41 +1,10 @@
 import { useRef, useState, useEffect } from "react";
 import { Link } from "@inertiajs/react";
+import { Work, WorksProps } from "@/types";
 
 import route from 'ziggy-js';
 
 import randomImg from '../../../../assets/images/random-image3.jpg'
-
-interface CategoryData {
-  id: number;
-  attributes: {
-    name: string;
-    endpoint: string;
-  }
-}
-
-interface ImageData {
-  id: number;
-  attributes: {
-    formats: {
-      small: {
-        url: string;
-      }
-    }
-  }
-}
-
-interface PostAttributes {
-  title: string;
-  slug: string;
-  excerpt: string;
-  updatedAt: string;
-  image: {
-    data: ImageData;
-  }
-  category: {
-    data: CategoryData;
-  };
-}
 
 function isTextOverflowing(element: HTMLHeadingElement | null): boolean {
   if (!element) return false;
@@ -53,7 +22,8 @@ function handleResize(ref: React.RefObject<HTMLHeadingElement>, fn: (overflow: b
   }
 }
 
-const CardWork = ({ data }) => {
+const CardWork = ({ data }: { data: Work }) => {
+
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const [isOverflowing, setIsOverflowing] = useState(false);
 

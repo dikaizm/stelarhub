@@ -16,8 +16,9 @@ import Footer from "@/Layouts/Components/Footer";
 import getReadingTimeMin from "@/helpers/getReadingTimeMin";
 import CardPost from "@/Components/App/Cards/CardPost";
 import { IconContext } from "react-icons";
+import { PostData } from "@/types";
 
-export default function SinglePost({ post, postsByCategory }) {
+export default function SinglePost({ post, postsByCategory }: {post: PostData, postsByCategory: PostData[]}) {
   const STICKY_SCROLL_THRESHOLD = 80;
   const HIDE_ASIDE_THRESHOLD = 250;
 
@@ -26,10 +27,10 @@ export default function SinglePost({ post, postsByCategory }) {
   const [feedbackType, setFeedbackType] = useState("default")
   const [isSticky, setIsSticky] = useState(false);
   const [isHideShare, setIsHideShare] = useState(false)
-  const [articleWrapperHeight, setArticleWrapperHeight] = useState(0);
-  const articleWrapperRef = useRef(null)
+  const [articleWrapperHeight, setArticleWrapperHeight] = useState<number | null>(0);
+  const articleWrapperRef = useRef<HTMLElement | null>(null);
 
-  const handleLike = (isLike) => {
+  const handleLike = (isLike: boolean) => {
     axios.post(route('post.like', { id: post.id, isLike: isLike }))
       .then(response => {
         if (response.data.feedbackType === '1') setFeedbackType("like")
@@ -48,9 +49,8 @@ export default function SinglePost({ post, postsByCategory }) {
   }
 
   useEffect(() => {
-    const articleWrapperElement = articleWrapperRef.current;
-    if (articleWrapperElement) {
-      const height = articleWrapperElement.clientHeight;
+    if (articleWrapperRef.current) {
+      const height = articleWrapperRef.current.clientHeight;
       setArticleWrapperHeight(height);
 
       // Calculate hideShare based on the height
@@ -171,7 +171,7 @@ export default function SinglePost({ post, postsByCategory }) {
 
           <div className="container section-content-wrapper">
             <div className='carousel'>
-              {postsByCategory.length > 0 && postsByCategory.map((post) => {
+              {postsByCategory && postsByCategory.length > 0 && postsByCategory.map((post: PostData) => {
                 return (
                   <CardPost data={post} key={post.id} />
                 )

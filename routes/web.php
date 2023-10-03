@@ -25,8 +25,12 @@ Route::get('/about', function () {
     return Inertia::render('App/About');
 });
 
-Route::get('/solutions');
-Route::get('/solutions/{services:endpoint}')->name('service.show');
+Route::get('/solutions', function () {
+    return Inertia::render('App/Solutions/Index');
+});
+Route::get('/solutions/{services:endpoint}', function () {
+    return Inertia::render('App/Solutions/Single');
+})->name('service.show');
 
 Route::get('/works', [WorkController::class, 'index']);
 Route::get('/works/{works:slug}', [WorkController::class, 'show'])->name('work.show');
@@ -34,6 +38,10 @@ Route::get('/works/{works:slug}', [WorkController::class, 'show'])->name('work.s
 Route::get('/stories', [PostController::class, 'index']);
 Route::get('/stories/{posts:slug}', [PostController::class, 'show'])->name('post.show');
 Route::post('/stories/{id}/like', [PostController::class, 'like'])->name('post.like');
+
+Route::get('/contact', function () {
+    return Inertia::render('App/Contact');
+});
 
 Route::get('/insider/dashboard', function () {
     return Inertia::render('Dashboard');

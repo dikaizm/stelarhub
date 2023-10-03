@@ -1,5 +1,5 @@
 import { Link, Head } from '@inertiajs/react';
-import { PageProps } from '@/types';
+import { HomeProps } from '@/types';
 
 // styles
 import '../../../sass/pages/home.scss'
@@ -12,7 +12,7 @@ import CardWorkShowcase from '@/Components/App/Cards/CardWorkShowcase';
 import CardService from '@/Components/App/Cards/CardService';
 import TestimonialSection from '@/Layouts/Components/TestimonialSection';
 
-export default function Home({ latestWorks, recommendedWorks }) {
+export default function Home({ latestWorks, recommendedWorks }: HomeProps) {
 
   return (
     <>
@@ -149,7 +149,7 @@ export default function Home({ latestWorks, recommendedWorks }) {
             </div>
 
             <div className="grid-wrapper">
-              <a href="#" className="card-container">
+              <Link href="#" className="card-container">
                 <div className='wrapper'>
                   <img className='card-image'
                     src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
@@ -163,9 +163,9 @@ export default function Home({ latestWorks, recommendedWorks }) {
                   <span>See case study</span>
                   <img src={arrowBtn} alt="" />
                 </div>
-              </a>
+              </Link>
 
-              <a href="#" className="card-container">
+              <Link href="#" className="card-container">
                 <div className='wrapper'>
                   <img className='card-image'
                     src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
@@ -179,9 +179,9 @@ export default function Home({ latestWorks, recommendedWorks }) {
                   <span>See case study</span>
                   <img src={arrowBtn} alt="" />
                 </div>
-              </a>
+              </Link>
 
-              <a href="#" className="card-container">
+              <Link href="#" className="card-container">
                 <div className='wrapper'>
                   <img className='card-image'
                     src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
@@ -195,13 +195,13 @@ export default function Home({ latestWorks, recommendedWorks }) {
                   <span>See case study</span>
                   <img src={arrowBtn} alt="" />
                 </div>
-              </a>
+              </Link>
             </div>
 
             <div className="btn-wrapper">
-              <a href="#" className="btn btn-primary">SEE
+              <Link href="/works" className="btn btn-primary">SEE
                 OUR WORKS
-              </a>
+              </Link>
             </div>
           </div>
         </section>
