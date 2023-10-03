@@ -1,5 +1,9 @@
+import FeatureCountdown from "@/Layouts/Components/FeatureCountdown";
+
 export default function SingleSolution() {
   return (
-    <div>This is single solution</div>
+    <>
+      <FeatureCountdown targetDate={'2023-10-10T23:59:59'} />
+    </>
   )
 }

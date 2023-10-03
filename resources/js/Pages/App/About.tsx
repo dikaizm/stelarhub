@@ -1,3 +1,4 @@
+import FeatureCountdown from "@/Layouts/Components/FeatureCountdown"
 import Footer from "@/Layouts/Components/Footer"
 import Navbar from "@/Layouts/Components/Navbar"
 import { Head } from "@inertiajs/react"
@@ -7,6 +8,8 @@ export default function About() {
         <>
             <Head title="About" />
             <Navbar />
+
+            <FeatureCountdown targetDate={'2023-10-07T23:59:59'} />
 
             <main>
                 <section>
