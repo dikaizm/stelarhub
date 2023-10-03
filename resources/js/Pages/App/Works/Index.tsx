@@ -4,6 +4,7 @@ import { Head } from "@inertiajs/react";
 
 import '../../../../sass/pages/works.scss'
 import CardWork from "@/Components/App/Cards/CardWork";
+import TestimonialSection from "@/Layouts/Components/TestimonialSection";
 
 export default function Works({ works }) {
 
@@ -30,8 +31,10 @@ export default function Works({ works }) {
                         </div>
                     </div>
                 </section>
+
             </main>
 
+            <TestimonialSection />
             <Footer />
         </>
     )

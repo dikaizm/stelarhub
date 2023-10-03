@@ -9,6 +9,8 @@ import arrowBtn from '../../../assets/icons/arrow-btn.svg'
 import Navbar from '@/Layouts/Components/Navbar';
 import Footer from '@/Layouts/Components/Footer';
 import CardWorkShowcase from '@/Components/App/Cards/CardWorkShowcase';
+import CardService from '@/Components/App/Cards/CardService';
+import TestimonialSection from '@/Layouts/Components/TestimonialSection';
 
 export default function Home({ latestWorks, recommendedWorks }) {
 
@@ -95,7 +97,7 @@ export default function Home({ latestWorks, recommendedWorks }) {
           <div className="container grid-wrapper">
             {recommendedWorks && recommendedWorks.length > 0 && recommendedWorks.map((work, index) => {
               const n = recommendedWorks.length;
-              
+
               return (
                 <CardWorkShowcase key={work.id} data={work} className={`${index % 2 !== 0 ? 'item-down' : ''} ${index === n - 1 ? 'item-end' : ''}`} />
               )
@@ -118,45 +120,20 @@ export default function Home({ latestWorks, recommendedWorks }) {
               </h2>
             </div>
 
-            <div className="accordion-wrapper">
+            <div className='service-container'>
+              <div className='service-wrapper'>
 
-              <hr />
+                <div className='flex-col'>
+                  <CardService data={{ name: "Website Development" }} />
+                  <CardService data={{ name: "Analisis Data" }} />
+                </div>
 
-              {/* {  (<section>
-                            <button className="accordion-item" aria-controls="srv-accordion-{{ $service->slug }}"
-                                data-collapse-toggle="true" aria-expanded="false">
-                                <div className="content-w">
-                                    <div className="flex-col content-text">
-                                        <div className="flex title-wrapper">
-                                            <svg>
-                                                <use xlink: href="{{ $service->icon }}"></use>
-                                            </svg>
-                                            <h3 className="accordion-title">{{ $service-> name}}</h3>
-                                        </div>
-                                        <div className="list-collapse-hide srv-accordion-{{ $service->slug }} subcontent-w flex-col">
-                                            <p className="desc">{{ $service-> desc_long}}</p>
-                                            <a href="{{ $service->slug }}" className="btn btn-primary">LEARN
-                                                MORE</a>
-                                        </div>
-                                    </div>
-                                    <div className="list-collapse-hide srv-accordion-{{ $service->slug }} content-image">
-                                        <img src="{{ $service->image }}" alt="" />
-                                    </div>
-                                </div>
-                                <div className="btn-toggle">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path className="accordion-btn" d="M12 8L12 16" strokeLinecap="round" />
-                                        <path d="M16 12L8 12" strokeLinecap="round" />
-                                        <circle cx="12" cy="12" r="11" />
-                                    </svg>
-                                </div>
-                            </button>
-                        </section>
+                <div className='flex-col'>
+                  <CardService data={{ name: "Branding & Desain" }} />
+                  <CardService data={{ name: "ERP Development" }} />
+                </div>
 
-                        <hr>)} */}
-
-
+              </div>
             </div>
           </div>
         </section>
@@ -228,6 +205,8 @@ export default function Home({ latestWorks, recommendedWorks }) {
             </div>
           </div>
         </section>
+
+        <TestimonialSection />
       </main>
 
       <Footer />

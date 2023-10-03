@@ -1,6 +1,7 @@
 @use "base" as *;
 @use "./components/card";
 @use "./components/button";
+@use "./layouts/components/testimonial.scss";
 
 // LAYOUT
 .container {

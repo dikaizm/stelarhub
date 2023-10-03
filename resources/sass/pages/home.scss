@@ -450,19 +450,26 @@
 
 .s-service {
     position: relative;
-    margin-top: 4rem;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
     height: fit-content;
 
+    .container {
+        display: flex;
+        gap: 3rem;
+    }
+
     .section-title.flex {
+        flex: 1 0 0;
         flex-direction: column;
         user-select: none;
 
+        @include responsive($screen-ml) {
+            @include text-size(5xl);
+        }
+
         br {
             display: inline;
-
-            @include responsive($screen-md) {
-                display: none;
-            }
         }
 
         > .flex-col {
@@ -471,137 +478,16 @@
         }
     }
 
-    @include responsive($screen-md) {
-        margin-top: -2rem;
+    .service-container {
+        flex: 2 0 0;
 
-        .section-title.flex {
-            font-size: calc(5.25vw);
-
-            flex-direction: row;
-            align-items: flex-end;
-            gap: 0.5rem;
-        }
-    }
-
-    @include responsive($screen-ml) {
-        .section-title.flex {
-            @include text-size(5xl);
-        }
-    }
-
-    .accordion-wrapper {
-        margin-top: -7rem;
-
-        @include responsive($screen-md) {
-            margin-top: 5rem;
-        }
-
-        .accordion-item {
-            padding: 1rem 0;
-            z-index: 30;
-
-            @include responsive($screen-sm) {
-                padding: 1.5rem 0;
-            }
-        }
-
-        .content-w {
-            height: min-content;
-            width: 100%;
-            overflow: hidden;
-
-            @include responsive($screen-sm) {
-                flex-direction: row;
-                gap: 2rem;
-            }
-        }
-
-        .content-text {
-            width: fit-content;
-            max-width: 32rem;
-            margin-top: 0.75rem;
-            row-gap: 1rem;
-
-            .title-wrapper {
-                align-items: center;
-                column-gap: 0.75rem;
-                background-color: white;
-                z-index: 10;
-
-                svg {
-                    width: 3rem;
-                    height: 3rem;
-                    color: $dark-blue;
-                }
-
-                .accordion-title {
-                    @include text-size(2xl);
-                    font-weight: $font-bold;
-                    color: $dark-blue;
-
-                    @include responsive($screen-sm) {
-                        @include text-size(4xl);
-                    }
-                }
-            }
-
-            .subcontent-w.flex-col {
-                row-gap: 2rem;
-            }
-
-            .desc {
-                text-align: left;
-                @include text-size(sm);
-                line-height: 1.5;
-            }
-
-            .btn {
-                margin-bottom: 2.5rem;
-            }
-        }
-
-        .content-image {
+        .service-wrapper {
             display: flex;
-            width: 100%;
-            justify-content: center;
-            align-self: center;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
 
-            img {
-                height: 18rem;
-                width: 100%;
-                border-radius: 1.5rem;
-                object-fit: cover;
-                @include transition;
-
-                @include responsive($screen-sm) {
-                    width: 50vw;
-                }
-
-                @include responsive($screen-lg) {
-                    width: 30vw;
-                }
-            }
-        }
-
-        .btn-toggle {
-            position: absolute;
-            right: 0;
-            z-index: 20;
-            margin-top: 1.25rem;
-            align-self: flex-start;
-            color: $dark-blue;
-
-            @include responsive($screen-sm) {
-                position: relative;
-            }
-
-            .accordion-btn-show {
-                display: none;
-            }
-
-            svg {
-                width: 2.5rem;
-                height: 2.5rem;
+            .flex-col {
+                gap: 1.5rem;
             }
         }
     }
@@ -609,7 +495,7 @@
 
 .s-portfolio {
     position: relative;
-    margin-top: 4rem;
+    padding-bottom: 4rem;
 
     @include responsive($screen-sm) {
         margin-top: 6rem;
