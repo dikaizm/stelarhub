@@ -1,10 +1,9 @@
 import { Link } from "@inertiajs/react";
-import { PostData } from "@/types";
+import { PostData, Service } from "@/types";
 
 import icon from '../../../../assets/icons/service-website.svg'
 
-const CardService = ({ data }: { data: { name: string } }) => {
-
+const CardService = ({ data }: { data: Service }) => {
   return (
     <>
       <Link href="" className="card-container type-service">
@@ -13,8 +12,8 @@ const CardService = ({ data }: { data: { name: string } }) => {
             <img className="icon" src={icon} alt="" />
           </div>
           <div className='text'>
-            <h2 className="card-title works">{data?.name}</h2>
-            <p className="card-desc">Bambambimbim blyaat adasbdaj asdj asd asdna asd sadasd</p>
+            <h2 className="card-title works">{data.name}</h2>
+            <p className="card-desc">{data.desc}</p>
           </div>
           <div className="arrow-icon">
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="5"

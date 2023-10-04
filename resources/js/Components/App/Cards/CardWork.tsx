@@ -4,6 +4,7 @@ import { Work, WorksProps } from "@/types";
 
 import route from 'ziggy-js';
 
+import arrowBtn from '../../../../assets/icons/arrow-btn.svg'
 import randomImg from '../../../../assets/images/random-image3.jpg'
 
 function isTextOverflowing(element: HTMLHeadingElement | null): boolean {
@@ -22,7 +23,7 @@ function handleResize(ref: React.RefObject<HTMLHeadingElement>, fn: (overflow: b
   }
 }
 
-const CardWork = ({ data }: { data: Work }) => {
+const CardWork = ({ data, desc = false, button = false }: { data: Work, desc?: boolean, button?: boolean }) => {
 
   const titleRef = useRef<HTMLHeadingElement | null>(null);
   const [isOverflowing, setIsOverflowing] = useState(false);
@@ -63,11 +64,18 @@ const CardWork = ({ data }: { data: Work }) => {
             <div className='text'>
               <span className="card-client">{data.client_name}</span>
               <h2 ref={titleRef} className="card-title works">{data.title}</h2>
-              {/* <p className="card-desc">{data.excerpt}</p> */}
+              <p className="card-desc">{data.excerpt}</p>
 
               {/* Popup title when overflows */}
               {isOverflowing && <div className="popup-text">{data.title}</div>}
             </div>
+
+            {button && (
+              <div className="btn btn-card">
+                <span>See case study</span>
+                <img src={arrowBtn} alt="" />
+              </div>
+            )}
           </div>
         </div>
       </Link>

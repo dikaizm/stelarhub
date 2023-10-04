@@ -46,7 +46,7 @@ export default function Navbar() {
     setIsHovered(false)
     setTimeout(() => {
       setIsDropdownVisible(false)
-      setDelayedClass('h-fit')
+      setDelayedClass('hover-area-stretch')
     }, 300)
   }
 
@@ -99,11 +99,11 @@ export default function Navbar() {
         }
       })
 
-      // window.addEventListener('scroll', handleScroll)
+      window.addEventListener('scroll', handleScroll)
 
-      // return (
-      //     window.addEventListener('scroll', handleScroll)
-      // )
+      return (
+        window.addEventListener('scroll', handleScroll)
+      )
     }
 
     window.addEventListener('resize', () => {
@@ -140,14 +140,14 @@ export default function Navbar() {
 
           {menus && menus?.map(item => {
             if (item.submenus.length === 0) {
-              
+
               return (
                 <Link key={item.id} href={item.endpoint} className={`${currentEndpoint === item.endpoint.split('/')[1] ? 'item-focus' : ""} item text-gray-400`}>{item.name}</Link>
               );
             } else {
               return (
-                <div key={item.id} className={`item-w ${isDropdownVisible ? 'h-full' : delayedClass}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                  <div className='hover-area'></div>
+                <div key={item.id} className='item-w' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                  <div className={`hover-area ${isDropdownVisible ? delayedClass : ''}`}></div>
 
                   <button className={`item ${isHovered ? '-z-10 text-dark-blue' : 'z-10 text-gray-400'}`}>
                     {item.name}
@@ -159,7 +159,7 @@ export default function Navbar() {
                   </button>
 
                   {/* Dropdown */}
-                  <div className={`item-dropdown nav-dropdown-hide ${isHovered ? 'nav-dropdown-show' : 'nav-dropdown-hide'}`}>
+                  <div className={`item-dropdown nav-dropdown-hide ${isHovered ? 'nav-dropdown-show' : ''}`}>
                     {/* <div className="dropdown-arrow"></div> */}
                     <div className='dropdown-header'>
                       <Link href='/solutions' className='dropdown-header-item'>
@@ -182,7 +182,7 @@ export default function Navbar() {
                               </svg>
                             </div>
                             <div className="content-w">
-                              <Link href={route('service.show', {services: sub.endpoint})} className="title">{sub.name}<span></span></Link>
+                              <Link href={route('service.show', { services: sub.endpoint })} className="title">{sub.name}<span></span></Link>
                               <div className="desc">{sub.desc}</div>
                             </div>
                           </div>

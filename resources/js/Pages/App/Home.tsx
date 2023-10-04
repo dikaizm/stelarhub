@@ -1,5 +1,5 @@
 import { Link, Head } from '@inertiajs/react';
-import { HomeProps } from '@/types';
+import { HomeProps, Service } from '@/types';
 
 // styles
 import '../../../sass/pages/home.scss'
@@ -11,8 +11,21 @@ import Footer from '@/Layouts/Components/Footer';
 import CardWorkShowcase from '@/Components/App/Cards/CardWorkShowcase';
 import CardService from '@/Components/App/Cards/CardService';
 import TestimonialSection from '@/Layouts/Components/TestimonialSection';
+import CardWork from '@/Components/App/Cards/CardWork';
 
-export default function Home({ latestWorks, recommendedWorks }: HomeProps) {
+function splitArrayHalf(arr: Service[] | undefined) {
+  let middle, firstHalf, secondHalf;
+  if (arr) {
+    middle = Math.floor(arr.length / 2);
+    firstHalf = arr.slice(0, middle);
+    secondHalf = arr.slice(middle);
+  }
+  return [firstHalf, secondHalf];
+}
+
+export default function Home({ latestWorks = [], recommendedWorks = [], services = [] }: HomeProps) {
+
+  const [servicesFirstHalf, servicesSecondHalf] = splitArrayHalf(services)
 
   return (
     <>
@@ -120,21 +133,31 @@ export default function Home({ latestWorks, recommendedWorks }: HomeProps) {
               </h2>
             </div>
 
-            <div className='service-container'>
-              <div className='service-wrapper'>
+            {services && services.length > 0 && (
+              <div className='service-container'>
+                <div className='service-wrapper'>
 
-                <div className='flex-col'>
-                  <CardService data={{ name: "Website Development" }} />
-                  <CardService data={{ name: "Analisis Data" }} />
+                  <div className='flex-col'>
+                    {servicesFirstHalf && servicesFirstHalf.map((service: Service) => {
+                      return (
+                        <CardService key={service.id} data={service} />
+                      )
+                    })
+                    }
+                  </div>
+
+                  <div className='flex-col'>
+                    {servicesSecondHalf && servicesSecondHalf.map((service: Service) => {
+                      return (
+                        <CardService key={service.id} data={service} />
+                      )
+                    })
+                    }
+                  </div>
+
                 </div>
-
-                <div className='flex-col'>
-                  <CardService data={{ name: "Branding & Desain" }} />
-                  <CardService data={{ name: "ERP Development" }} />
-                </div>
-
               </div>
-            </div>
+            )}
           </div>
         </section>
 
@@ -149,53 +172,11 @@ export default function Home({ latestWorks, recommendedWorks }: HomeProps) {
             </div>
 
             <div className="grid-wrapper">
-              <Link href="#" className="card-container">
-                <div className='wrapper'>
-                  <img className='card-image'
-                    src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                    alt="" />
-                  <h2 className="card-title">Kargo Technologies</h2>
-                  <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div className="btn btn-card">
-                  <span>See case study</span>
-                  <img src={arrowBtn} alt="" />
-                </div>
-              </Link>
-
-              <Link href="#" className="card-container">
-                <div className='wrapper'>
-                  <img className='card-image'
-                    src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                    alt="" />
-                  <h2 className="card-title">Kargo Technologies</h2>
-                  <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod
-                  </p>
-                </div>
-                <div className="btn btn-card">
-                  <span>See case study</span>
-                  <img src={arrowBtn} alt="" />
-                </div>
-              </Link>
-
-              <Link href="#" className="card-container">
-                <div className='wrapper'>
-                  <img className='card-image'
-                    src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                    alt="" />
-                  <h2 className="card-title">Kargo Technologies</h2>
-                  <p className="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div className="btn btn-card">
-                  <span>See case study</span>
-                  <img src={arrowBtn} alt="" />
-                </div>
-              </Link>
+              {latestWorks && latestWorks.length > 0 && latestWorks.map((work) => {
+                return (
+                  <CardWork data={work} desc={true} button={true} />
+                )
+              })}
             </div>
 
             <div className="btn-wrapper">

@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('endpoint')->unique();
-            $table->text('caption');
-            $table->string('icon');
-            $table->string('image');
+            $table->string('desc');
+            $table->string('icon')->nullable();
+            $table->integer('rank')->default(0);
             $table->timestamps();
         });
     }

@@ -64,9 +64,18 @@ export interface CategoryData {
     codename: string;
 }
 
+export interface Service {
+    id: number;
+    name: string;
+    endpoint: string;
+    desc: string;
+    icon: string;
+}
+
 export type HomeProps = {
     recommendedWorks?: Work[];
     latestWorks?: Work[];
+    services?: Service[];
 }
 
 export type StoriesProps = {
