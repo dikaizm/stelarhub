@@ -6,7 +6,7 @@ import icon from '../../../../assets/icons/service-website.svg'
 const CardService = ({ data }: { data: Service }) => {
   return (
     <>
-      <Link href="" className="card-container type-service">
+      <Link href={route('service.show', {services: data.endpoint})} className="card-container type-service">
         <div className='card-content'>
           <div className="icon-wrapper">
             <img className="icon" src={icon} alt="" />
