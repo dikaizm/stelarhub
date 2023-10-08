@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\App\HomeController;
 use App\Http\Controllers\App\PostController;
+use App\Http\Controllers\App\ServiceController;
 use App\Http\Controllers\App\WorkController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -28,9 +29,7 @@ Route::get('/about', function () {
 Route::get('/solutions', function () {
     return Inertia::render('App/Solutions/Index');
 });
-Route::get('/solutions/{services:endpoint}', function () {
-    return Inertia::render('App/Solutions/Single');
-})->name('service.show');
+Route::get('/solutions/{services:endpoint}', [ServiceController::class, 'show'])->name('service.show');
 
 Route::get('/works', [WorkController::class, 'index']);
 Route::get('/works/{works:slug}', [WorkController::class, 'show'])->name('work.show');
@@ -52,5 +51,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// Error route handler
+Route::get('/{any}', function () {
+    return Inertia::render('Error');
+})->where('any', '.*');
 
 require __DIR__.'/auth.php';

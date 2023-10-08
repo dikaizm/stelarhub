@@ -1,1 +1,0 @@
-import{a as t,F as r}from"./app-84fbb9be.js";import{F as o}from"./FeatureCountdown-71a4d984.js";/* empty css            */function i(){return t(r,{children:t(o,{targetDate:"2023-10-10T23:59:59"})})}export{i as default};

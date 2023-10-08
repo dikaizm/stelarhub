@@ -1,0 +1,1 @@
+import{j as a,F as r,a as t}from"./app-df876f9b.js";import{F as o}from"./FeatureCountdown-69741ae6.js";/* empty css            */function i(){return a(r,{children:[t("div",{children:"This is Contact"}),t(o,{targetDate:"2023-10-09T23:59:59"})]})}export{i as default};

@@ -1,0 +1,23 @@
+@use "../base" as *;
+
+.s-error {
+    height: 100vh;
+
+    .flex-col {
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 1rem;
+
+        h1 {
+            color: red;
+            font-size: 3.75rem;
+            line-height: 1;
+            font-weight: $font-black;
+        }
+
+        p {
+            color: $gray-400;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('app')
 
 @section('container')
 <section class="container s-error">

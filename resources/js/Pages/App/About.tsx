@@ -27,20 +27,6 @@ export default function About() {
                 </section>
 
                 <section>
-                    <h3>Our Solutions</h3>
-                    <div>
-                        <h4>Web Development: Crafting Digital Experiences</h4>
-                        <p>Our web development services are at the heart of what we do. We understand that your website is often the first point of interaction with your audience. That's why we focus on creating stunning, user-friendly, and responsive websites that not only captivate but also convert. From e-commerce platforms to corporate websites, our team of expert developers has you covered.</p>
-
-                        <h4>Branding: Shaping Your Digital Identity</h4>
-                        <p>Your brand is your story, and we are here to help you tell it. Our branding experts will work closely with you to define and refine your brand's identity, creating a unique and memorable presence in the digital sphere. Whether you're starting from scratch or looking for a brand refresh, we'll ensure your brand shines brightly.</p>
-
-                        <h4>Data Analytics: Driving Informed Decisions</h4>
-                        <p>In today's data-driven world, success hinges on your ability to harness the power of information. Stelar's data analytics services offer deep insights into customer behavior, trends, and opportunities. We transform raw data into actionable intelligence, enabling you to make informed decisions that drive your business forward.</p>
-                    </div>
-                </section>
-
-                <section>
                     <h3>What Sets Us Apart</h3>
                     <div>
                         <h4>Expertise</h4>
@@ -62,6 +48,21 @@ export default function About() {
                         <p>We are committed to delivering high-quality work, on time and within budget.</p>
                     </div>
                 </section>
+
+                <section>
+                    <h3>Our Solutions</h3>
+                    <div>
+                        <h4>Web Development: Crafting Digital Experiences</h4>
+                        <p>Our web development services are at the heart of what we do. We understand that your website is often the first point of interaction with your audience. That's why we focus on creating stunning, user-friendly, and responsive websites that not only captivate but also convert. From e-commerce platforms to corporate websites, our team of expert developers has you covered.</p>
+
+                        <h4>Branding: Shaping Your Digital Identity</h4>
+                        <p>Your brand is your story, and we are here to help you tell it. Our branding experts will work closely with you to define and refine your brand's identity, creating a unique and memorable presence in the digital sphere. Whether you're starting from scratch or looking for a brand refresh, we'll ensure your brand shines brightly.</p>
+
+                        <h4>Data Analytics: Driving Informed Decisions</h4>
+                        <p>In today's data-driven world, success hinges on your ability to harness the power of information. Stelar's data analytics services offer deep insights into customer behavior, trends, and opportunities. We transform raw data into actionable intelligence, enabling you to make informed decisions that drive your business forward.</p>
+                    </div>
+                </section>
+
             </main>
 
             <Footer />

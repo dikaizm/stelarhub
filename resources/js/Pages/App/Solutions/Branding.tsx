@@ -6,7 +6,7 @@ import { Head } from "@inertiajs/react";
 //@ts-ignore
 import ReactRotatingText from 'react-rotating-text';
 
-export default function SingleSolution({ data }: { data: Service }) {
+export default function Branding({ data }: { data: Service }) {
   return (
     <>
       <Head title="" />
