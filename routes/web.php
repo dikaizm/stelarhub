@@ -52,9 +52,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+require __DIR__.'/auth.php';
+
 // Error route handler
 Route::get('/{any}', function () {
     return Inertia::render('Error');
 })->where('any', '.*');
-
-require __DIR__.'/auth.php';

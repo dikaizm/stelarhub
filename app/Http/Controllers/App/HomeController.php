@@ -12,15 +12,15 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $latestWorks = Work::select('id', 'client_name', 'excerpt', 'slug', 'image_thumbnail')->orderBy('updated_at', 'desc')->limit(3)->get();
+        $latestWorks = Work::select('id', 'client_name', 'title', 'excerpt', 'slug', 'image_thumbnail')->orderBy('updated_at', 'desc')->limit(3)->get();
 
         $recommendedWorks = Work::with('categories:id,name')
-        ->join('work_recommendations', 'works.id', '=', 'work_recommendations.work_id')
-        ->select('works.id', 'works.title', 'works.excerpt', 'works.slug', 'works.image_thumbnail')
-        ->limit(4)
-        ->get();
+            ->join('work_recommendations', 'works.id', '=', 'work_recommendations.work_id')
+            ->select('works.id', 'works.title', 'works.excerpt', 'works.slug', 'works.image_thumbnail')
+            ->limit(4)
+            ->get();
 
-        $services = Service::select('id', 'name', 'desc','endpoint', 'icon')->orderBy('rank', 'asc')->get();
+        $services = Service::select('id', 'name', 'desc', 'endpoint', 'icon')->orderBy('rank', 'asc')->get();
 
         return Inertia::render('App/Home', [
             'latestWorks' => $latestWorks,

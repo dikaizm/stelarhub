@@ -1,10 +1,14 @@
 import FeatureCountdown from "@/Layouts/Components/FeatureCountdown";
+import Navbar from "@/Layouts/Components/Navbar";
+import { Head } from "@inertiajs/react";
 
 export default function Contact() {
   return (
     <>
-      <div>This is Contact</div>
-      <FeatureCountdown targetDate={'2023-10-09T23:59:59'} />
+      <Head title="About" />
+      <Navbar />
+
+      <FeatureCountdown targetDate={'2023-10-23T23:59:59'} />
     </>
   )
 }

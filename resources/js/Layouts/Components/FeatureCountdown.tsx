@@ -1,4 +1,8 @@
+import '../../../sass/layouts/components/feature-countdown.scss'
+
 import React, { useState, useEffect } from 'react';
+
+import imgWorkInProgress from '../../../assets/images/work-in-progress.svg'
 
 export default function FeatureCountdown({ targetDate }: { targetDate: string }) {
 
@@ -16,10 +20,15 @@ export default function FeatureCountdown({ targetDate }: { targetDate: string })
   function calculateTimeLeft(targetTime: number): { days: number, hours: number, minutes: number, seconds: number } {
     const now = new Date().getTime();
     const difference = targetTime - now;
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    let [days, hours, minutes, seconds] = [0, 0, 0, 0];
+
+    if (difference > 0) {
+      days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    }
 
     return {
       days,
@@ -30,30 +39,37 @@ export default function FeatureCountdown({ targetDate }: { targetDate: string })
   }
 
   return (
-    <section>
-      <div>
-        <h1>Kami akan segera hadir.</h1>
-        <p>Our website is under construction. We'll be here soon with our new awesome site, subscribe to be notified.</p>
-      </div>
-      <div>
-        <div>
-          <span>{timeLeft.days}</span>
-          <span>Hari</span>
+    <section className='s-feature-countdown'>
+      <div className='container'>
+        <div className='image-container'>
+          <img src={imgWorkInProgress} alt="Work in progress..." />
         </div>
+        <div className='content-wrapper'>
+          <div className='content-head'>
+            <h1>Kami akan segera hadir.</h1>
+            <p>Our website is under construction. We'll be here soon with our new awesome site, subscribe to be notified.</p>
+          </div>
+          <div className='timer-wrapper'>
+            <div className='timer-item'>
+              <span className='timer-num'>{timeLeft.days}</span>
+              <span className='timer-label'>Hari</span>
+            </div>
 
-        <div>
-          <span>{timeLeft.hours}</span>
-          <span>Jam</span>
-        </div>
+            <div className='timer-item'>
+              <span className='timer-num'>{timeLeft.hours}</span>
+              <span className='timer-label'>Jam</span>
+            </div>
 
-        <div>
-          <span>{timeLeft.minutes}</span>
-          <span>Menit</span>
-        </div>
+            <div className='timer-item'>
+              <span className='timer-num'>{timeLeft.minutes}</span>
+              <span className='timer-label'>Menit</span>
+            </div>
 
-        <div>
-          <span>{timeLeft.seconds}</span>
-          <span>Detik</span>
+            <div className='timer-item'>
+              <span className='timer-num'>{timeLeft.seconds}</span>
+              <span className='timer-label'>Detik</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

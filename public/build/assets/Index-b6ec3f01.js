@@ -1,0 +1,1 @@
+import{j as r,F as t,a,b as o}from"./app-a963bc04.js";import{F as e}from"./FeatureCountdown-b2fdbbc0.js";import{F as i}from"./Footer-ffa9d059.js";import{N as s}from"./Navbar-8cd4d75d.js";/* empty css            */function p(){return r(t,{children:[a(o,{title:"Solusi Kami"}),a(s,{}),a("main",{children:a(e,{targetDate:"2023-10-23T23:59:59"})}),a(i,{})]})}export{p as default};

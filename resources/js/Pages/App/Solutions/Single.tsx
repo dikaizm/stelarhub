@@ -12,7 +12,7 @@ export default function SingleSolution({ data }: { data: Service }) {
       <Head title="" />
       <Navbar />
 
-      <FeatureCountdown targetDate={'2023-10-10T23:59:59'} />
+      <FeatureCountdown targetDate={'2023-10-18T23:59:59'} />
 
       <div>
         <ReactRotatingText items={['first', 'second', 'third']} />

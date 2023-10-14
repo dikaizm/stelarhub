@@ -12,12 +12,7 @@ export default function Branding({ data }: { data: Service }) {
       <Head title="" />
       <Navbar />
 
-      <FeatureCountdown targetDate={'2023-10-10T23:59:59'} />
-
-      <div>
-        <ReactRotatingText items={['first', 'second', 'third']} />
-        <span>.com</span>
-      </div>
+      <FeatureCountdown targetDate={'2023-10-27T23:59:59'} />
     </>
   )
 }

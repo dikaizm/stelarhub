@@ -1,0 +1,69 @@
+@use "../../base" as *;
+
+.s-feature-countdown {
+    margin: 10rem auto;
+
+    .container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .image-container {
+        position: relative;
+        width: 80%;
+        height: auto;
+
+        img {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3rem;
+        padding: 0 4rem;
+
+        .content-head {
+            h1 {
+                margin-bottom: 1rem;
+                color: $mid-blue;
+                font-weight: $font-bold;
+                @include text-size(4xl);
+            }
+            p {
+                @include text-size(md);
+            }
+        }
+
+        .timer-wrapper {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: start;
+
+            .timer-item {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .timer-num {
+                color: $dark-blue;
+                font-weight: $font-semibold;
+                @include text-size(3xl);
+            }
+
+            .timer-label {
+                color: $gray-500;
+                font-weight: $font-semibold;
+                @include text-size(lg);
+            }
+        }
+    }
+}

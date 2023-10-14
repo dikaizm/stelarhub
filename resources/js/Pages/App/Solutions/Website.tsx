@@ -16,12 +16,14 @@ export default function Website({ data }: { data: Service }) {
             <Head title={data.name} />
             <Navbar />
 
-            <FeatureCountdown targetDate={'2023-10-10T23:59:59'} />
+            <main>
+                <FeatureCountdown targetDate={'2023-10-16T23:59:59'} />
 
-            <div>
-                <span>www.</span>
-                <ReactRotatingText items={randomDomainList} />
-            </div>
+                {/* <div>
+                    <span>www.</span>
+                    <ReactRotatingText items={randomDomainList} />
+                </div> */}
+            </main>
 
             <Footer />
         </>
