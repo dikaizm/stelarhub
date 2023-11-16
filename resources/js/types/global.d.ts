@@ -8,4 +8,8 @@ declare global {
 
     var route: typeof ziggyRoute;
     var Ziggy: ZiggyConfig;
+
+    interface IconProps {
+        className?: string;
+    }
 }

@@ -32,7 +32,7 @@ export default function Home({ latestWorks = [], recommendedWorks = [], services
       <Head title="Home" />
 
       <Navbar />
-      <main>
+      <main id='home'>
         {/* Hero section */}
         <section className="s-hero">
 

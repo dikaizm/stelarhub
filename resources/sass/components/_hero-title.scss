@@ -21,6 +21,15 @@
         }
     }
 
+    &-medium {
+        @extend .hero-title;
+        font-size: calc(10vw);
+        line-height: 1;
+        letter-spacing: -0.025em;
+
+        font-weight: $font-black;
+    }
+
     &-generic {
         @extend .hero-title;
         @include text-size(5xl);
@@ -45,6 +54,10 @@
                 padding-bottom: 6rem;
             }
         }
+
+        &-medium {
+            font-size: calc(8vw);
+        }
     }
 
     @include responsive($screen-lg) {
@@ -54,6 +67,10 @@
 
         &-generic {
             @include text-size(6xl);
+        }
+
+        &-medium {
+            font-size: calc(6vw);
         }
     }
 }

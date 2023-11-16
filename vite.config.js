@@ -11,4 +11,9 @@ export default defineConfig({
         }),
         react(),
     ],
+    resolve: {
+        alias: {
+            '@sass': './resources/sass'
+        }
+    }
 });

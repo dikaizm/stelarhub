@@ -1,0 +1,133 @@
+@use "../base" as *;
+@import "../components/hero-title";
+
+#about {
+    .s-hero {
+        padding: 8rem 0;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            .hero-heading {
+                max-width: 48rem;
+
+                .hero-desc {
+                    margin-top: 2rem;
+                    @include text-size(lg);
+                }
+            }
+
+            .hero-collage {
+                margin-top: 6rem;
+                display: grid;
+                gap: 0.5rem;
+                height: 16rem;
+                @include grid-auto-fit(2);
+
+                @include responsive($screen-ml) {
+                    @include grid-auto-fit();
+                }
+
+                .img-wrapper {
+                    border-radius: 1rem;
+                    overflow: hidden;
+                    position: relative;
+                    width: 100%;
+
+                    &:nth-child(3) {
+                        display: none;
+                    }
+
+                    @include responsive($screen-ml) {
+                        &:nth-child(3) {
+                            display: block;
+                        }
+                    }
+
+                    img {
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+
+    .s-mission {
+        padding: 6rem 0;
+
+        .container {
+            display: flex;
+            align-items: start;
+            gap: 3rem;
+
+            h4 {
+                @include text-size(3xl);
+                line-height: 2.75rem;
+            }
+
+            .icon-w {
+                min-width: 12rem;
+                color: $mid-blue;
+            }
+        }
+    }
+
+    .s-team {
+        background-color: $gray-blue;
+        padding: 8rem 0;
+
+        .container {
+            .team-wrapper {
+                margin-top: 2rem;
+                display: grid;
+                @include grid-auto-fit(4);
+                gap: 4rem;
+
+                .profile-wrapper {
+                    .profile-avatar {
+                        padding: 2rem 2rem 1rem 2rem;
+
+                        .avatar-wrapper {
+                            overflow: hidden;
+                            border-radius: 50%;
+                            width: 100%;
+                            padding-bottom: 100%; // Maintain aspect ratio
+                            position: relative;
+
+                            img {
+                                position: absolute;
+                                inset: 0;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+
+                    .profile-desc {
+                        text-align: center;
+
+                        .profile-name {
+                            font-weight: $font-semibold;
+                            @include text-size(xl);
+                        }
+
+                        .profile-role {
+                            color: $gray-400;
+                            @include text-size(lg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

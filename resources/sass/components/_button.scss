@@ -3,7 +3,7 @@
 .btn {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
     gap: 0.5rem;
     border-radius: 9999px;
@@ -11,7 +11,7 @@
     white-space: nowrap;
   
     &-nav {
-      padding: 0.25rem 1rem;
+      padding: 0.5rem 1rem;
       font-weight: $font-semibold;
       @include text-size(xs);
       color: white;
@@ -24,7 +24,7 @@
     }
   
     &-primary {
-      padding: 0.75rem 1.5rem;
+      padding: 0.75rem 1.25rem;
       @include text-size(sm);
       font-weight: $font-semibold;
       color: white;
@@ -37,7 +37,7 @@
     }
   
     &-secondary {
-      padding: 0.75rem 1.5rem;
+      padding: 0.75rem 1.25rem;
       @include text-size(sm);
       font-weight: $font-bold;
       color: white;

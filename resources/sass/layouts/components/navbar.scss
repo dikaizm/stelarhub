@@ -171,6 +171,7 @@ header {
             }
 
             .item {
+                z-index: 10;
                 display: flex;
                 width: fit-content;
                 font-weight: $font-semibold;
@@ -211,48 +212,37 @@ header {
                 margin-top: 1rem;
                 background-color: white;
                 width: 100vw;
-                max-width: 24rem;
+                max-width: 22rem;
                 border-radius: 1rem;
+                box-sizing: border-box;
                 box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
                     0 4px 6px -2px rgba(0, 0, 0, 0.05);
                 @include transition(300ms);
                 @include text-size(sm);
 
-                .dropdown-header {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    column-gap: 0.5rem;
+                .dropdown-banner {
                     width: 100%;
-                    background-color: $mid-blue;
-                    padding: 0.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 1rem;
+                    background-color: $gray-blue;
+                    padding: 1.5rem;
                     box-sizing: border-box;
 
-                    .dropdown-header-item {
-                        overflow: hidden;
-                        border-radius: 9999px;
-                        width: 100%;
-                        display: flex;
-                        justify-content: center;
-                        color: white;
-                        font-weight: $font-semibold;
-                        padding: 0.5rem;
-                        @include transition();
-
-                        &:hover {
-                            background-color: white;
-                            color: $mid-blue;
-                        }
+                    .banner-desc {
+                        max-width: 80%;
+                        color: $gray-500;
+                        font-weight: $font-medium;
                     }
                 }
 
                 .dropdown-w {
-                    padding: 0.5rem;
+                    padding: 0.8rem;
 
                     .subitem {
                         display: flex;
                         position: relative;
-                        padding: 0.5rem;
+                        padding: 0.8rem;
                         align-items: center;
                         border-radius: 0.5rem;
                         column-gap: 1.5rem;
