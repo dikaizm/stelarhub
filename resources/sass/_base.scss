@@ -84,6 +84,11 @@ $bg-colors: (
         background-image: transparent,
     ),
 
+    gray-600: (
+        background-color: $gray-600,
+        background-image: transparent,
+    ),
+
     glr-blue: (
         background-color: transparent,
         background-image: linear-gradient(to right, $light-blue, white),
@@ -91,6 +96,12 @@ $bg-colors: (
 );
 
 $text-colors: (
+    white: (
+        color: white,
+    ),
+    gray-100: (
+        color: $gray-100,
+    ),
     gray-400: (
         color: $gray-400,
     ),

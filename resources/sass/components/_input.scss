@@ -1,0 +1,78 @@
+@use "../base" as *;
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+input::placeholder,
+input:-moz-placeholder,
+input::-webkit-input-placeholder,
+textarea::placeholder,
+textarea:-moz-placeholder,
+textarea::-webkit-input-placeholder {
+    color: $gray-300;
+}
+
+.input-box {
+    label {
+        @include text-size(lg);
+        font-weight: $font-medium;
+        color: $gray-400;
+    }
+
+    input:focus,
+    textarea:focus {
+        border: 1.5px solid $mid-blue;
+    }
+
+    textarea {
+        resize: vertical;
+        height: auto;
+        min-height: 7rem;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    input {
+        &.default {
+            border: 1.5px solid $gray-200;
+        }
+
+        &.error {
+            border: 1.5px solid red;
+        }
+    }
+}
+
+.form-wrapper :where(.input-box input, .input-box textarea) {
+    position: relative;
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    width: 100%;
+    color: $gray-500;
+    border-radius: 0.5rem;
+    outline: none;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    font-weight: $font-medium;
+    @include text-size(lg);
+}
+
+.response {
+    margin-top: 0.5rem;
+    @include text-size(sm);
+
+    &.error {
+        color: red;
+    }
+
+    &.success {
+        color: greenyellow;
+    }
+}

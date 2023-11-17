@@ -15,7 +15,7 @@ export default function AppLayout({ children, head, id, theme = 'light', footer 
     return (
         <>
             <Head title={head} />
-            <Navbar />
+            <Navbar theme={theme} />
 
             <main id={id}>{children}</main>
 

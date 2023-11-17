@@ -6,21 +6,28 @@ import { MenuType } from '@/types/inertia';
 import '../../../sass/layouts/components/navbar.scss'
 
 // Asset images
-import logoStelar1 from '../../../assets/logo/stelar-logo-color.svg'
-import logoStelar2 from '../../../assets/logo/stelar-logo-white.svg'
-import logoStelar3 from '../../../assets/logo/stelar-logo-color-mobile.svg'
+import logoStelarColor from '../../../assets/logo/stelar-logo-color.svg'
+import logoStelarWhiteType from '../../../assets/logo/stelar-logo-white-type.svg'
+import logoStelarWhite from '../../../assets/logo/stelar-logo-white.svg'
+import logoStelarMobile from '../../../assets/logo/stelar-logo-color-mobile.svg'
+
 import { NavButton } from '@/Components/App/Buttons/Button';
 import { ArrowR, WhatsApp } from '@/assets/icons';
 
 const images = {
   logo: {
-    stelarColor: logoStelar1,
-    stelarWhite: logoStelar2,
-    stelarMobile: logoStelar3
+    stelarColor: logoStelarColor,
+    stelarWhiteType: logoStelarWhiteType,
+    stelarWhite: logoStelarWhite,
+    stelarMobile: logoStelarMobile
   }
 }
 
-export default function Navbar() {
+type NavbarProps = {
+  theme?: string;
+}
+
+export default function Navbar({ theme = "light" }: NavbarProps) {
   const currentEndpoint = window.location.pathname.split('/')[1];
 
   const { menus } = usePage<MenuType>().props;
@@ -114,13 +121,20 @@ export default function Navbar() {
   }, [handleScroll, isMenuOpen])
 
   return (
-    <header id="navbar" ref={navbarRef} className={`${isNavVisible ? '' : 'navbar-hidden'} ${isNavBgVisible ? 'bg-white' : ''} ${isMenuOpen && windowWidth < maxWindowWidth ? 'bg-white' : ''}`}>
+    <header
+      id="navbar"
+      ref={navbarRef}
+      className={`${isNavVisible ? '' : 'navbar-hidden'} ${isNavBgVisible ? (theme === "light" ? 'bg-white' : 'bg-gray-600') : ''} ${isMenuOpen && windowWidth < maxWindowWidth ? (theme === "light" ? 'bg-white' : 'bg-gray-600') : ''}`}>
 
       <nav className="container" id='navbar-menu'>
         <div>
           <Link href="/">
             <span className="sr-only">Stelar</span>
-            <img className="logo-full" src={images.logo.stelarColor} alt="Logo" />
+            {theme === "light" ? (
+              <img className="logo-full" src={images.logo.stelarColor} alt="Logo" />
+            ) : theme === "dark" ? (
+              <img className="logo-full" src={images.logo.stelarWhiteType} alt="Logo" />
+            ) : null}
             <img className="logo-icon" src={images.logo.stelarMobile} alt="Logo" />
           </Link>
         </div>
@@ -144,14 +158,13 @@ export default function Navbar() {
             if (item.submenus.length === 0) {
 
               return (
-                <Link key={item.id} href={item.endpoint} className={`${currentEndpoint === item.endpoint.split('/')[1] ? 'item-focus' : ""} item text-gray-400`}>{item.name}</Link>
+                <Link key={item.id} href={item.endpoint} className={`${currentEndpoint === item.endpoint.split('/')[1] ? 'item-focus' : ""} item ${theme === "light" ? 'text-gray-400' : 'text-gray-100'}`}>{item.name}</Link>
               );
             } else {
               return (
                 <div key={item.id} className='item-w' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
 
-
-                  <Link href={item.endpoint} className={`item ${isHovered || currentEndpoint === item.endpoint.split('/')[1] ? 'item-focus' : 'text-gray-400'}`}>
+                  <Link href={item.endpoint} className={`item ${isHovered || currentEndpoint === item.endpoint.split('/')[1] ? 'item-focus' : (theme === "light" ? 'text-gray-400' : 'text-gray-100')}`}>
                     {item.name}
                     <svg className={`${isHovered ? 'rotate-arrow' : ''} menu-icon`} viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd"
