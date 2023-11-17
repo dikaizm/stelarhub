@@ -12,8 +12,9 @@
         "noEmit": true,
         "paths": {
             "@/*": ["./resources/js/*"],
-            "@sass/*": ["./resources/sass/*"]
+            "@sass/*": ["./resources/sass/*"],
+            "@assets/*": ["./resources/assets/*"]
         }
     },
-    "include": ["resources/js/**/*.ts", "resources/js/**/*.tsx", "resources/js/**/*.d.ts"]
+    "include": ["resources/js/**/*.ts", "resources/js/**/*.tsx", "resources/js/**/*.d.ts", "resources/js/Pages/Auth/VerifyEmail.bak", "resources/js/Pages/Auth/ResetPassword.bak", "resources/js/Pages/Auth/Register.bak", "resources/js/Pages/Auth/Login.bak", "resources/js/Pages/Auth/ForgotPassword.bak", "resources/js/Pages/Auth/ConfirmPassword.bak"]
 }

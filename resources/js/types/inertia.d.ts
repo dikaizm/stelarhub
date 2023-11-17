@@ -11,6 +11,7 @@ export interface MenuType extends PageProps {
             endpoint: string;
             desc: string;
             menu_id: number;
+            is_active: boolean;
         }[];
     }[];
 }

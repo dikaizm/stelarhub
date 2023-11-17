@@ -1,1 +1,0 @@
-import{j as r,F as e,a,b as o}from"./app-a963bc04.js";import{F as s}from"./FeatureCountdown-b2fdbbc0.js";import{N as m}from"./Navbar-8cd4d75d.js";/* empty css            */function u({data:t}){return r(e,{children:[a(o,{title:t.name}),a(m,{}),a(s,{targetDate:"2023-10-30T23:59:59"})]})}export{u as default};

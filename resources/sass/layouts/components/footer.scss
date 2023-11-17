@@ -31,6 +31,10 @@ footer {
         border: 0.5px solid $gray-500;
     }
 
+    .hidden {
+        display: none !important;
+    }
+
     .s-cta {
         display: flex;
         flex-direction: column;

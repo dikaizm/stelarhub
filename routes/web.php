@@ -26,9 +26,7 @@ Route::get('/about', function () {
     return Inertia::render('App/About');
 });
 
-Route::get('/solutions', function () {
-    return Inertia::render('App/Solutions/Index');
-});
+Route::get('/solutions', [ServiceController::class,'index']);
 Route::get('/solutions/{services:endpoint}', [ServiceController::class, 'show'])->name('service.show');
 
 Route::get('/works', [WorkController::class, 'index']);

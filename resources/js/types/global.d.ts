@@ -12,4 +12,10 @@ declare global {
     interface IconProps {
         className?: string;
     }
+
+    type AboutValuesProps = {
+        title: string,
+        desc: string,
+        icon: React.FC<React.SVGProps<SVGSVGElement>>
+    }
 }

@@ -9,15 +9,10 @@ use Inertia\Inertia;
 
 class ServiceController extends Controller
 {
-    // public function index()
-    // {
-    //     return Inertia::render('App/Works/Index', [
-    //         'works' => Work::with('categories:id,name')
-    //             ->select('id', 'client_name', 'excerpt', 'title', 'slug')
-    //             ->orderBy('updated_at', 'desc')
-    //             ->get(),
-    //     ]);
-    // }
+    public function index()
+    {
+        return Inertia::render('App/Solutions/Index');
+    }
 
     public function show($endpoint)
     {

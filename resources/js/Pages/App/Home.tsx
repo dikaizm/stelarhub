@@ -42,9 +42,9 @@ export default function Home({ latestWorks = [], recommendedWorks = [], services
             <div className="container content-w-big">
               <div className="flex-row">
                 <h1 className="text-blue-g hero-title-big-top">Stellar</h1>
-                <strong className="hero-desc-big">We craft exceptional digital experiences that bring your brand to success. With
+                <p className="hero-desc-big">We craft exceptional digital experiences that bring your brand to success. With
                   expertise in websites, apps, and
-                  branding, we combine creativity and technology to bring your vision to life.</strong>
+                  branding, we combine creativity and technology to bring your vision to life.</p>
               </div>
 
               <div className="flex-row">
@@ -172,9 +172,9 @@ export default function Home({ latestWorks = [], recommendedWorks = [], services
             </div>
 
             <div className="grid-wrapper">
-              {latestWorks && latestWorks.length > 0 && latestWorks.map((work) => {
+              {latestWorks && latestWorks.length > 0 && latestWorks.map((work, idx) => {
                 return (
-                  <CardWork data={work} desc={true} button={true} />
+                  <CardWork key={"work" + idx} data={work} desc={true} button={true} />
                 )
               })}
             </div>

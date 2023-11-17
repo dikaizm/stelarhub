@@ -42,7 +42,7 @@ class HandleInertiaRequests extends Middleware
                 ]);
             },
             'menus' => Menu::with(['submenus' => function ($query) {
-                $query->select('id', 'name', 'endpoint', 'desc', 'menu_id'); // Select specific fields from Submenu
+                $query->select('id', 'name', 'endpoint', 'desc', 'menu_id', 'is_active'); // Select specific fields from Submenu
             }])->orderBy('rank')->select('id', 'name', 'endpoint')->get(),
         ]);
     }

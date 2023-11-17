@@ -239,6 +239,12 @@ header {
                 .dropdown-w {
                     padding: 0.8rem;
 
+                    .inactive {
+                        pointer-events: none;
+                        cursor: not-allowed;
+                        color: $gray-200 !important;
+                    }
+
                     .subitem {
                         display: flex;
                         position: relative;

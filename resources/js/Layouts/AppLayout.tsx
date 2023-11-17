@@ -1,5 +1,4 @@
-import ApplicationLogo from '@/Components/ApplicationLogo';
-import { Head, Link } from '@inertiajs/react';
+import { Head } from '@inertiajs/react';
 import { PropsWithChildren } from 'react';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
@@ -7,9 +6,12 @@ import Footer from './Components/Footer';
 interface AppLayoutProps extends PropsWithChildren {
     head: string;
     id: string;
+    theme?: string;
+    footer?: string;
 }
 
-export default function AppLayout({ children, head, id }: AppLayoutProps) {
+export default function AppLayout({ children, head, id, theme = 'light', footer = "full" }: AppLayoutProps) {
+
     return (
         <>
             <Head title={head} />
@@ -17,7 +19,7 @@ export default function AppLayout({ children, head, id }: AppLayoutProps) {
 
             <main id={id}>{children}</main>
 
-            <Footer />
+            <Footer style={footer} />
         </>
     )
 }

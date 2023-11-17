@@ -169,17 +169,17 @@ export default function Navbar() {
                     <div className="dropdown-w">
                       {item.submenus?.map(sub => {
                         return (
-                          <div className="subitem" key={sub.id}>
-                            <div className="icon-w">
-                              <svg className="subitem-icon" fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
+                          <div className={"subitem " + (!sub.is_active ? "inactive" : "")} key={sub.id}>
+                            <div className={"icon-w"}>
+                              <svg className={"subitem-icon " + (!sub.is_active ? "inactive" : "")} fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
                                 stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
                               </svg>
                             </div>
                             <div className="content-w">
-                              <Link href={route('service.show', { services: sub.endpoint })} className="title">{sub.name}<span></span></Link>
-                              <div className="desc">{sub.desc}</div>
+                              <Link href={route('service.show', { services: sub.endpoint })} className={"title " + (!sub.is_active ? "inactive" : "")}>{sub.name}<span></span></Link>
+                              <div className={"desc " + (!sub.is_active ? "inactive" : "")}>{sub.desc}</div>
                             </div>
                           </div>
                         )

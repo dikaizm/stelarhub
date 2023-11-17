@@ -13,7 +13,8 @@ export default defineConfig({
     ],
     resolve: {
         alias: {
-            '@sass': './resources/sass'
+            '@sass': './resources/sass',
+            '@assets': './resources/assets'
         }
     }
 });

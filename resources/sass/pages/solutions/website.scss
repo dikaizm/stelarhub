@@ -84,8 +84,105 @@
         }
     }
 
+    .s-techstack {
+        padding: 3rem 0 0 0;
+        background-color: $gray-50;
+
+        .title-wrapper {
+            @include text-size(xl);
+            font-weight: $font-semibold;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .techstack-carousel {
+            $animationSpeed: 18s;
+            $itemWidth: 200px;
+            $itemCount: 16;
+
+            @mixin white-gradient {
+                background: linear-gradient(
+                    to right,
+                    $gray-50 0%,
+                    rgba(255, 255, 255, 0) 100%
+                );
+            }
+    
+            // Animation
+            @keyframes scroll_inf {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc((-1* $itemWidth) * ($itemCount / 2)));
+                }
+            }
+
+            // Properties
+            height: 100px;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+            max-width: 100%;
+
+            &::before,
+            &::after {
+                @include white-gradient;
+                content: "";
+                height: 100%;
+                position: absolute;
+                width: 20vh;
+                z-index: 2;
+            }
+
+            &::after {
+                right: 0;
+                top: 0;
+                transform: rotateZ(180deg);
+            }
+
+            &::before {
+                left: 0;
+                top: 0;
+            }
+
+            .slide-track {
+                animation: scroll_inf $animationSpeed linear infinite;
+                display: flex;
+                align-items: center;
+                width: calc($itemWidth * $itemCount);
+
+                .item-wrapper {
+                    height: 100%;
+                    padding: 0 2rem;
+                    width: $itemWidth;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+
     .s-product-type {
         margin: 10rem auto;
+
+        .product-type-wrapper {
+            margin-top: 4rem;
+            gap: 2rem;
+            @include grid-auto-fit(1);
+
+            @include responsive($screen-sm) {
+                @include grid-auto-fit(2);
+            }
+
+            @include responsive($screen-ml) {
+                @include grid-auto-fit(3);
+            }
+        }
 
         .card-container {
             height: 34rem;

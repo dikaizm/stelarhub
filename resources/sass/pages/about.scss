@@ -24,7 +24,7 @@
             .hero-collage {
                 margin-top: 6rem;
                 display: grid;
-                gap: 0.5rem;
+                gap: 0.8rem;
                 height: 16rem;
                 @include grid-auto-fit(2);
 
@@ -66,12 +66,12 @@
 
         .container {
             display: flex;
-            align-items: start;
+            align-items: flex-start;
             gap: 3rem;
 
             h4 {
                 @include text-size(3xl);
-                line-height: 2.75rem;
+                line-height: 2.8rem;
             }
 
             .icon-w {
@@ -86,8 +86,13 @@
         padding: 8rem 0;
 
         .container {
+            .section-title-wrapper {
+                text-align: left;
+                align-items: flex-start;
+            }
+
             .team-wrapper {
-                margin-top: 2rem;
+                margin-top: 3rem;
                 display: grid;
                 @include grid-auto-fit(4);
                 gap: 4rem;
@@ -124,6 +129,67 @@
                         .profile-role {
                             color: $gray-400;
                             @include text-size(lg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .s-values {
+        padding: 8rem 0;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .section-title-wrapper {
+                max-width: 48rem;
+            }
+
+            .values-wrapper {
+                margin-top: 5rem;
+                display: grid;
+                @include grid-auto-fit(1);
+                gap: 3.5rem 2rem;
+
+                @include responsive($screen-sm) {
+                    @include grid-auto-fit(2);
+                }
+
+                @include responsive($screen-ml) {
+                    padding: 0 4rem;
+                    gap: 3.5rem 4.5rem;
+                }
+
+                @include responsive($screen-xl) {
+                    padding: 0 8rem;
+                }
+
+                .value-item-w {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 1.25rem;
+
+                    .icon-w {
+                        min-width: 3.5rem;
+                    }
+
+                    .content-w {
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 1rem;
+
+                        .value-title {
+                            @include text-size(xl);
+                            font-weight: $font-semibold;
+                        }
+
+                        .value-desc {
+                            color: $gray-400;
+                            @include text-size(md);
                         }
                     }
                 }
