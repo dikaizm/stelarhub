@@ -10,7 +10,7 @@ import { Service } from "@/types";
 import ReactRotatingText from 'react-rotating-text';
 
 // Assets
-import { ArrowR, Search } from '@/assets/icons';
+import { ArrowR, Search } from '@/assets/IconInline';
 import imgHero from '../../../../assets/images/hero-sol-web.svg'
 import { PrimaryButton } from '@/Components/App/Buttons/Button';
 import { TechStack, websiteData } from '@/assets/contents';

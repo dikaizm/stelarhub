@@ -94,7 +94,11 @@
 
         /* Set a fixed aspect ratio */
         width: 100%;
-        padding-top: 132%; /* Change this value to set height (4:3 aspect ratio) */
+        padding-top: 100%; /* Change this value to set height (1:1 aspect ratio) */
+
+        @include responsive($screen-sm) {
+            padding-top: 132%; /* Change this value to set height (4:3 aspect ratio) */
+        }
 
         img.card-image-works {
             position: absolute; /* Position the image absolutely within the container */

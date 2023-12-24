@@ -12,7 +12,7 @@ import logoStelarWhite from '../../../assets/logo/stelar-logo-white.svg'
 import logoStelarMobile from '../../../assets/logo/stelar-logo-color-mobile.svg'
 
 import { NavButton } from '@/Components/App/Buttons/Button';
-import { ArrowR, WhatsApp } from '@/assets/icons';
+import { ArrowR, WhatsApp } from '@/assets/IconInline';
 
 const images = {
   logo: {
@@ -37,7 +37,6 @@ export default function Navbar({ theme = "light" }: NavbarProps) {
   const [delayedClass, setDelayedClass] = useState<string>("")
 
   const navbarRef = useRef<HTMLDivElement | null>(null);
-  const sidebarRef = useRef<HTMLDivElement | null>(null);
 
   const [isNavVisible, setIsNavVisible] = useState<boolean>(true);
   const [prevScrollPos, setPrevScrollPos] = useState<number>(0);
@@ -59,36 +58,6 @@ export default function Navbar({ theme = "light" }: NavbarProps) {
     }, 300)
   }
 
-  const handleScroll = useCallback(() => {
-    if (isMenuOpen === false) {
-
-      const currentScrollPos = window.scrollY;
-
-      if (prevScrollPos > currentScrollPos) {
-        // Scrolling up
-        if (!isNavVisible) {
-          setIsNavVisible(true);
-        }
-      } else {
-        // Scrolling down
-        const navbarHeight: number = navbarRef.current?.offsetHeight || 0;
-
-        if (isNavVisible && currentScrollPos > navbarHeight) {
-          setIsNavVisible(false);
-        }
-      }
-
-      setPrevScrollPos(currentScrollPos);
-
-      if (window.scrollY >= 10) {
-        changeNavColor(true, isMenuOpen);
-      } else {
-        changeNavColor(false, isMenuOpen);
-      }
-    }
-
-  }, [isNavVisible, prevScrollPos, isMenuOpen])
-
   function changeNavColor(state: boolean, menuState: boolean) {
     if (state && !menuState) {
       setIsNavBgVisible(true)
@@ -98,27 +67,26 @@ export default function Navbar({ theme = "light" }: NavbarProps) {
   }
 
   useEffect(() => {
-    if (isMenuOpen === false) {
+    const handleScroll = () => {
+      if (window.scrollY >= 10) {
+        changeNavColor(true, isMenuOpen);
+      } else {
+        changeNavColor(false, isMenuOpen);
+      }
+    };
 
-      window.addEventListener('scroll', () => {
-        if (window.scrollY >= 5) {
-          changeNavColor(true, isMenuOpen);
-        } else {
-          changeNavColor(false, isMenuOpen);
-        }
-      })
-
-      window.addEventListener('scroll', handleScroll)
-
-      return (
-        window.addEventListener('scroll', handleScroll)
-      )
+    if (!isMenuOpen) {
+      window.addEventListener('scroll', handleScroll);
     }
 
     window.addEventListener('resize', () => {
       setWindowWidth(window.innerWidth)
     })
-  }, [handleScroll, isMenuOpen])
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isMenuOpen]);
 
   return (
     <header
@@ -240,26 +208,125 @@ export default function Navbar({ theme = "light" }: NavbarProps) {
         </div>
       </nav>
 
-      {/* Sidebar Menu */}
-      <nav
-        ref={sidebarRef}
-        id='sidebar-menu'
-        onWheel={(event) => {
-          event.stopPropagation()
-        }}>
-        <div className={`sidebar-bg ${isMenuOpen ? "active" : "inactive"}`}></div>
-
-        <div className={`container ${isMenuOpen ? "active" : "inactive"} bg-white`}>
-          <div className="h-full px-4 py-10 mx-auto lg:px-20">
-            <div className="flex flex-col items-start gap-10 whitespace-nowrap">
-              <ul className="flex flex-col items-start text-lg font-bold text-black gap-7">
-
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
+      {/* Mobile Sidebar Menu */}
+      <MobileSidebar
+        isMenuOpen={isMenuOpen}
+        data={{ menus }}
+        endpoint={currentEndpoint}
+        theme={theme}
+      />
     </header>
 
+  )
+}
+
+type MobileSidebarProps = {
+  isMenuOpen: boolean;
+  data: MenuType;
+  endpoint: string;
+  theme: string;
+}
+
+function MobileSidebar({ isMenuOpen, data, endpoint, theme }: MobileSidebarProps) {
+  const menus = data.menus
+
+  return (
+    <nav
+      id='sidebar-menu'
+      onWheel={(event) => {
+        event.stopPropagation()
+      }}>
+      <div className={`sidebar-bg ${isMenuOpen ? "active" : "inactive"}`}></div>
+
+      <div className={`nav-container ${isMenuOpen ? "active" : "inactive"} bg-white`}>
+        <div className="menu-group">
+
+          {menus && menus?.map(item => {
+            if (item.submenus.length === 0) {
+              return (
+                <Link key={item.id} href={item.endpoint} className={"menu-item " + (`${endpoint === item.endpoint.split('/')[1] ? 'item-focus' : ""} item ${theme === "light" ? 'text-gray-600' : 'text-gray-100'}`)}>{item.name}</Link>
+              );
+            } else {
+              const [isItemOpen, setisItemOpen] = useState<boolean>(false);
+
+              return (
+                <div
+                  key={item.id}
+                  onClick={() => {
+                    setisItemOpen(!isItemOpen)
+                  }}
+                >
+
+                  <button className={`menu-item ${isItemOpen || endpoint === item.endpoint.split('/')[1] ? 'item-focus' : (theme === "light" ? 'text-gray-600' : 'text-gray-100')}`}>
+                    {item.name}
+                    <svg className={`${isItemOpen ? 'rotate-arrow' : ''} menu-icon`} viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                        clipRule="evenodd" />
+                    </svg>
+                  </button>
+
+                  <div className={`item-dropdown nav-dropdown-hide ${isItemOpen ? 'nav-dropdown-show' : ''}`}>
+
+                    <div className="dropdown-w">
+                      <div className={"subitem "}>
+                        <div className={"icon-w"}>
+                          <svg className={"subitem-icon "} fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
+                            stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                          </svg>
+                        </div>
+                        <div className="content-w">
+                          <Link href={item.endpoint} className={"title "}>Ikhtisar<span></span></Link>
+                          <div className={"desc "}>Lihat semua solusi kami</div>
+                        </div>
+                      </div>
+
+                      {item.submenus?.map(sub => {
+                        return (
+                          <div className={"subitem " + (!sub.is_active ? "inactive" : "")} key={sub.id}>
+                            <div className={"icon-w"}>
+                              <svg className={"subitem-icon " + (!sub.is_active ? "inactive" : "")} fill="none" viewBox="0 0 24 24" strokeWidth="1.5"
+                                stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                              </svg>
+                            </div>
+                            <div className="content-w">
+                              <Link href={route('service.show', { services: sub.endpoint })} className={"title " + (!sub.is_active ? "inactive" : "")}>{sub.name}<span></span></Link>
+                              <div className={"desc " + (!sub.is_active ? "inactive" : "")}>{sub.desc}</div>
+                            </div>
+                          </div>
+                        )
+                      })}
+
+                    </div>
+
+                    <div className='dropdown-banner'>
+                      <p className='banner-desc'>Diskusi gratis untuk solusi terbaik bersama tim kami!</p>
+                      <NavButton href='/contact'>
+                        <span>KONSULTASI GRATIS</span>
+                        <ArrowR />
+                      </NavButton>
+                    </div>
+                  </div>
+                </div>
+              )
+            }
+          })}
+
+          <div className='btn-wrapper'>
+            <NavButton className='btn-full' href='/contact'>
+              <span>LET'S TALK</span>
+              <WhatsApp />
+            </NavButton>
+          </div>
+        </div>
+
+
+
+      </div>
+    </nav>
   )
 }

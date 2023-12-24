@@ -3,7 +3,7 @@ import "@sass/pages/about.scss"
 import AppLayout from "@/Layouts/AppLayout"
 
 import randomImg from "../../../assets/images/random-image.jpg"
-import { GuidingStar } from "@/assets/icons"
+import { GuidingStar } from "@/assets/IconInline"
 import { AboutValues } from "@/assets/contents"
 
 type TeamsProps = {

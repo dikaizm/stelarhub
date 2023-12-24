@@ -1,4 +1,4 @@
-import { WhatsApp } from "./icons";
+import { WhatsApp } from "./IconInline";
 
 export function websiteData() {
     const data = {

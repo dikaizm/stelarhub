@@ -1,7 +1,7 @@
 import "@sass/pages/contact.scss"
 
 import AppLayout from "@/Layouts/AppLayout";
-import { Checkmark, WhatsApp } from "@/assets/icons";
+import { Checkmark, WhatsApp } from "@/assets/IconInline";
 import { PrimaryButton } from "@/Components/App/Buttons/Button";
 import { useEffect, useState } from "react";
 import TextInput from "@/Components/App/Input/TextInput";
@@ -20,15 +20,19 @@ const fields = {
   BODY: "body",
 }
 
+const formDefault = {
+  name: "",
+  email: "",
+  company: "",
+  body: "",
+}
+
 const LOCAL_STORAGE_FORM = "contact_form"
 
 export default function Contact() {
-  const [formData, setFormData] = useState<FormDataProps>({
-    name: "",
-    email: "",
-    company: "",
-    body: "",
-  })
+
+  const [formData, setFormData] = useState<FormDataProps>(formDefault)
+  const [isFormFilled, setIsFormFilled] = useState<boolean>(false)
 
   const [error, setError] = useState<FormDataProps>({
     name: "test error",
@@ -52,6 +56,43 @@ export default function Contact() {
   const handleClickLink = (url: string, target: string) => {
     window.open(url, target)
   }
+
+  const handleSubmitForm = () => {
+    try {
+      const success = true
+
+      if (success) {
+        localStorage.removeItem(LOCAL_STORAGE_FORM)
+        setFormData(formDefault)
+        return
+      }
+    } catch (error) {
+
+    }
+  }
+
+  const handleBeforeUnload = (e: Event) => {
+    if (isFormFilled) {
+      const msg = 'Form Anda belum tersimpan, apakah Anda yakin ingin menutup halaman ini?'
+
+      alert(msg)
+      return msg
+    }
+  }
+
+  // Salah
+  useEffect(() => {
+    const isFilled = Object.values(formData).some(v => v !== '')
+    setIsFormFilled(isFilled)
+  }, [formData])
+
+  useEffect(() => {
+    window.addEventListener('beforeunload', (e) => handleBeforeUnload(e))
+
+    return () => window.addEventListener('beforeunload', (e) => handleBeforeUnload(e))
+  }, [isFormFilled])
+  // Salah
+
 
   useEffect(() => {
     const storedForm = localStorage.getItem(LOCAL_STORAGE_FORM)

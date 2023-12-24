@@ -135,7 +135,7 @@ $text-colors: (
 
 @mixin text-colors {
     @each $color, $properties in $text-colors {
-        .text-#{$color} {
+        .text-#{"" + $color} {
             color: map-get($properties, color);
         }
     }
