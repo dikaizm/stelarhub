@@ -35,7 +35,7 @@ const config: Config = {
     container: {
       screens: {
         sm: "100%",
-        md: "100%",
+        md: "900px",
         lg: "1024px",
         xl: "1280px",
         '2xl': "1440px",
@@ -44,6 +44,7 @@ const config: Config = {
       padding: {
         DEFAULT: '1rem',
         sm: '2rem',
+        md: '3rem',
         lg: '4rem',
         xl: '7rem',
         '2xl': '9rem',
