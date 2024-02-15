@@ -32,7 +32,7 @@ const HeaderNav = () => {
   const pathname = usePathname()
 
   return (
-    <nav className='hidden lg:block'>
+    <nav className='hidden md:block'>
       <ul className='flex gap-10 items-center font-semibold'>
         {HeaderNavData && HeaderNavData.map((nav) => {
           const isActive = pathname === nav.url
