@@ -19,7 +19,7 @@ const Header = () => {
         <HeaderNav />
         <PrimaryButton
           label='Buat Website'
-          link='/contact'
+          link='https://wa.me/6285600809354'
           icon={<RiRocket2Fill className='w-6 h-6 rotate-45' />}
           iconPosition='right'
         />
