@@ -16,7 +16,7 @@ const Header = () => {
         <a href='/' className='h-8 w-auto'>
           <Image className='w-full h-full bg-contain' src={stelarLogo} alt="logo" />
         </a>
-        <HeaderNav />
+        {/* <HeaderNav /> */}
         <PrimaryButton
           label='Buat Website'
           link='https://wa.me/6285600809354'
