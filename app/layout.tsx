@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Layouts/Header";
+import Head from "next/head";
 
-const font = Plus_Jakarta_Sans({ 
+const font = Plus_Jakarta_Sans({
   weight: "variable",
   style: ["normal", "italic"],
-  subsets: ["latin"] });
+  subsets: ["latin"]
+});
 
 export const metadata: Metadata = {
   title: "Stelar - Digital Agency",
@@ -22,6 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <meta key="pinterest-verify" name="p:domain_verify" content="dd2c41d877d64116fb94ff00bef2c212" />
+      </Head>
+
       <body className={`${font.className} bg-dark text-white`}>
         <Header />
         {children}
