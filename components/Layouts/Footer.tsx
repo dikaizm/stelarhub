@@ -15,7 +15,7 @@ export default function Footer() {
           © 2024 All rights reserved
         </p>
         <p className='text-sm text-gray-400'>
-          Made with ❤️ by <a href='https://www.instagram.com/stelar.hub' target='_blank' className='text-primary'>@stelarhub</a>
+          Made with ❤️ by <a href='https://www.instagram.com/stelar.hub' target='_blank' className='text-primary'>@stelar.hub</a>
         </p>
       </div>
 
