@@ -6,9 +6,9 @@ import { RiRocket2Fill } from "react-icons/ri"
 export default function ValueSection() {
   return (
     <div className="w-full py-16 container text-dark rounded-t-[2rem]">
-      <h2 className="text-3xl font-extrabold text-[#0049A3]">Nilai yang Kami Pegang</h2>
+      <h2 className="text-3xl sm:text-4xl font-bold text-dark">Nilai yang kami pegang</h2>
 
-      <div className="mt-8 flex flex-col sm:flex-row gap-4">
+      <div className="mt-12 flex flex-col sm:flex-row gap-4">
         <CardValue
           title="LOVE"
           description="Kami menekankan pentingnya mencintai pekerjaan yang dilakukan, peduli pada klien, dan berkomitmen untuk menciptakan solusi yang bermanfaat."
