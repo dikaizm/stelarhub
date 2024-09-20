@@ -1,6 +1,6 @@
 import { CardPortfolioProps } from "../PortfolioSection";
 
-import satuDnaImg from '@/assets/images/portfolio/satudna.jpeg'
+import satuDnaImg from '@/assets/images/portfolio/satudna.png'
 import fiveElementsImg from '@/assets/images/portfolio/five-elements.png'
 import mataFutsalImg from '@/assets/images/portfolio/matafutsal.png'
 import optiGuardImg from '@/assets/images/portfolio/optiguard.jpeg'
