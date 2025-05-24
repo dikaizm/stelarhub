@@ -1,9 +1,26 @@
 import React from 'react'
 
-const PrimaryButton = ({ label, className, icon, iconPosition = 'left', onClick, link }: ButtonProps) => {
+/**
+ * @usage: 
+ * <PrimaryButton label="Next" icon={<FiArrowRight />} iconPosition="right" variant="outline" onClick={() => console.log('Next step')} />
+ */
+const PrimaryButton = ({
+  label,
+  className = '',
+  icon,
+  iconPosition = 'left', // 'left' | 'right'
+  onClick,
+  link,
+  variant = 'solid' // 'solid' | 'outline'
+}: ButtonProps) => {
   if (link && onClick) throw new Error('PrimaryButton cannot have both link and onClick props')
 
-  const buttonStyle = `flex gap-2 justify-between font-semibold items-center w-fit bg-primary px-5 py-3 rounded-full transition-colors hover:bg-primary-hover duration-300 ${className}`
+  const baseStyle = `flex gap-2 justify-between items-center w-fit px-5 py-3 rounded-lg transition duration-300 ${className}`
+
+  const solidStyle = `bg-primary text-white border border-gray-800 hover:bg-gray-600`
+  const outlineStyle = `border border-gray-800 hover:bg-primary-light/10`
+
+  const buttonStyle = `${baseStyle} ${variant === 'outline' ? outlineStyle : solidStyle}`
 
   return (
     <>

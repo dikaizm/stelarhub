@@ -11,17 +11,15 @@ import { usePathname } from 'next/navigation'
 
 const Header = () => {
   return (
-    <header className='mx-auto fixed top-0 inset-0 z-50 bg-dark h-fit'>
+    <header className='mx-auto fixed top-0 inset-0 z-50 bg-dark border-b border-gray-800 h-fit'>
       <div className='flex items-center justify-between gap-4 py-5 container'>
-        <a href='/' className='h-8 w-auto'>
+        <a href='/' className='h-7 w-auto'>
           <Image className='w-full h-full bg-contain' src={stelarLogo} alt="logo" />
         </a>
-        {/* <HeaderNav /> */}
+        <HeaderNav />
         <PrimaryButton
-          label='Buat Website'
+          label='Hubungi Kami'
           link='https://wa.me/6285600809354'
-          icon={<RiRocket2Fill className='w-6 h-6 rotate-45' />}
-          iconPosition='right'
         />
       </div>
     </header>
@@ -33,7 +31,7 @@ const HeaderNav = () => {
 
   return (
     <nav className='hidden md:block'>
-      <ul className='flex gap-10 items-center font-semibold'>
+      <ul className='flex gap-10 items-center'>
         {HeaderNavData && HeaderNavData.map((nav) => {
           const isActive = pathname === nav.url
 

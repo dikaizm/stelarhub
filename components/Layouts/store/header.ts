@@ -3,22 +3,22 @@ import { HeaderNavType } from "@/types/HeaderNav";
 export const HeaderNavData: HeaderNavType[] = [
     {
         id: 2,
-        label: "Jasa",
+        label: "Services",
         url: "/services",
     },
     {
         id: 3,
-        label: "Paket & Harga",
-        url: "/packages",
+        label: "Platform",
+        url: "/platform",
     },
     {
         id: 4,
-        label: "Portofolio",
+        label: "Portfolio",
         url: "/portfolio",
     },
     {
         id: 5,
-        label: "Blog",
-        url: "/blog",
+        label: "Stories",
+        url: "/stories",
     }
 ]

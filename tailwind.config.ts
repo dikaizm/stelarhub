@@ -1,10 +1,14 @@
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
 
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  safelist: [
+    "container"
   ],
   theme: {
     extend: {
@@ -18,12 +22,16 @@ const config: Config = {
           DEFAULT: "#22A8E0",
           hover: "#178EC0",
           light: "#72D0F6",
-          dark: "#1E5DAB",
+          dark: "#0F1016",
         },
         gray: {
           blue: "#EDF4FA"
         },
-        dark: "#14283F"
+        dark: {
+          DEFAULT: "#0F1016",
+          "10": "#1C1D24",
+          "15": "#2B2D38"
+        }
       },
       dropShadow: {
         glow: [
@@ -46,18 +54,19 @@ const config: Config = {
         sm: '2rem',
         md: '3rem',
         lg: '4rem',
-        xl: '7rem',
-        '2xl': '9rem',
+        xl: '4rem',
+        '2xl': '5rem',
       },
     },
     borderRadius: {
       'none': '0',
-      DEFAULT: '0.25rem',
+      'sm': '0.25rem',
+      DEFAULT: '0.75rem',
       'md': '1rem',
       'lg': '2.5rem',
       'full': '9999px',
     }
   },
-  plugins: [],
+  plugins: [typography],
 };
 export default config;

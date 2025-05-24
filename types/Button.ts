@@ -1,4 +1,5 @@
 interface ButtonProps {
+    variant?: 'solid' | 'outline'
     label: string
     className?: string
     icon?: React.ReactNode
