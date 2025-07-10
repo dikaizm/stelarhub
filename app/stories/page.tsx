@@ -1,6 +1,47 @@
 import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Stories & Insights AI - Artikel Terbaru Teknologi AI",
+  description: "Jelajahi kumpulan artikel, insight, dan case study terbaru tentang AI, machine learning, dan teknologi digital dari para ahli Stelarea.",
+  keywords: [
+    "AI stories",
+    "artificial intelligence insights", 
+    "teknologi AI",
+    "machine learning artikel",
+    "digital transformation",
+    "AI case study",
+    "bisnis AI",
+    "inovasi teknologi",
+    "Stelarea insights",
+    "AI trends Indonesia"
+  ],
+  openGraph: {
+    title: "Stories & Insights AI - Artikel Terbaru Teknologi AI | Stelarea",
+    description: "Jelajahi kumpulan artikel, insight, dan case study terbaru tentang AI, machine learning, dan teknologi digital dari para ahli Stelarea.",
+    type: "website",
+    url: "https://stelarea.com/stories",
+    images: [
+      {
+        url: "/og-stories.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Stelarea Stories - AI Insights & Articles",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Stories & Insights AI - Artikel Terbaru Teknologi AI | Stelarea",
+    description: "Jelajahi kumpulan artikel, insight, dan case study terbaru tentang AI, machine learning, dan teknologi digital dari para ahli Stelarea.",
+    images: ["/og-stories.jpg"],
+  },
+  alternates: {
+    canonical: "/stories",
+  },
+};
 
 const stories = [
   {

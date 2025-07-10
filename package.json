@@ -1,6 +1,7 @@
 {
-  "name": "stelarhub",
+  "name": "stelarea",
   "version": "0.2.0",
+  "description": "Stelarea - Solusi AI & Digital Terdepan untuk Bisnis Modern. Agensi digital yang menyediakan layanan AI, machine learning, web development, dan digital marketing.",
   "private": true,
   "scripts": {
     "dev": "next dev",

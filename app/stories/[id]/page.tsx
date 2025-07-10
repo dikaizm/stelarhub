@@ -1,6 +1,65 @@
 import FooterSection from '@/components/Layouts/Footer';
 import Image from 'next/image';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import type { Metadata } from 'next';
+
+type Props = {
+  params: { id: string }
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // In a real app, you'd fetch the article data based on params.id
+  const article = {
+    id: params.id,
+    title: 'AI Revolutionizes Business: The Next Big Leap',
+    subtitle: 'How artificial intelligence is transforming industries and driving innovation in companies worldwide.',
+    author: 'Stelarea Team',
+    date: 'May 25, 2025',
+    cover: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80',
+  };
+
+  return {
+    title: article.title,
+    description: article.subtitle,
+    keywords: [
+      "AI revolution",
+      "artificial intelligence business",
+      "teknologi AI",
+      "transformasi digital",
+      "inovasi bisnis",
+      "machine learning",
+      "AI industry trends",
+      "business automation",
+      "Stelarea insights"
+    ],
+    authors: [{ name: article.author }],
+    openGraph: {
+      title: `${article.title} | Stelarea Stories`,
+      description: article.subtitle,
+      type: "article",
+      url: `https://stelarea.com/stories/${params.id}`,
+      images: [
+        {
+          url: article.cover,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+      publishedTime: article.date,
+      authors: [article.author],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${article.title} | Stelarea Stories`,
+      description: article.subtitle,
+      images: [article.cover],
+    },
+    alternates: {
+      canonical: `/stories/${params.id}`,
+    },
+  };
+}
 
 export default function StoryArticlePage() {
   // Demo data
@@ -65,7 +124,7 @@ export default function StoryArticlePage() {
                 getUrl: (url: string, title: string) => `https://wa.me/?text=${encodeURIComponent(title + ' ' + url)}`
               },
             ].map((btn, idx) => {
-              const url = typeof window !== 'undefined' ? window.location.href : 'https://stelarhub.com/stories/1';
+              const url = typeof window !== 'undefined' ? window.location.href : 'https://stelarea.com/stories/1';
               return (
                 <a
                   key={btn.label}

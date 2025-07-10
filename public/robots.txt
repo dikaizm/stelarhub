@@ -1,3 +1,22 @@
 User-agent: *
 Allow: /
-Sitemap: https://stelarhub.com/sitemap.xml 
+
+# Block access to admin and private directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_next/
+Disallow: /api/
+
+# Allow common crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay for general bots
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://stelarea.com/sitemap.xml
+Sitemap: https://stelarea.com/rss.xml 
