@@ -7,80 +7,25 @@ import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa'
 export default function FooterSection() {
   return (
     <>
-      <CTASection />
+      {/* <CTASection /> */}
 
       <footer className="w-full border-t border-gray-800 pt-16 pb-4 px-4 sm:px-12">
-        <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-12 md:gap-8 justify-between items-start md:items-stretch">
-          {/* Left: Logo & Newsletter */}
-          <div className="flex flex-col gap-6 md:w-1/4">
+        <div className="w-full max-w-7xl mx-auto flex flex-col md:justify-center md:flex-row gap-12 md:gap-8">
+          {/* Left: Logo & Brand */}
+          <div className="flex flex-col items-center gap-6">
             <div className="flex items-center gap-2">
               <a href="/" className="h-12 w-auto">
-                <Image className="w-full h-full bg-contain" src={stelarLogo} alt="logo" />
+                <Image className="w-full h-full bg-contain" src={stelarLogo} alt="Stelarea" />
               </a>
             </div>
-            <form className="flex items-center bg-[#18181C] rounded-lg px-4 py-2 w-full max-w-xs border border-gray-800">
-              <span className="text-gray-400 mr-2">
-                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" fill="none" /><path d="M22 6l-10 7L2 6" /></svg>
-              </span>
-              <input type="email" placeholder="Enter Your Email" className="bg-transparent outline-none text-white flex-1 placeholder:text-gray-400" />
-              <button type="submit" className="ml-2 text-primary hover:text-primary-light">
-                <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M22 2L11 13" /><path d="M22 2l-7 20-4-9-9-4 20-7z" /></svg>
-              </button>
-            </form>
-          </div>
-          {/* Center: Navigation Columns */}
-          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
-            <div>
-              <h4 className="text-white font-semibold mb-3">Beranda</h4>
-              <ul className="text-gray-300 space-y-2 text-sm">
-                <li><a href="#" className="hover:text-primary">Home</a></li>
-                <li><a href="#" className="hover:text-primary">Tentang Kami</a></li>
-                <li><a href="#" className="hover:text-primary">Tim Kami</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-3">Layanan AI</h4>
-              <ul className="text-gray-300 space-y-2 text-sm">
-                <li><a href="#" className="hover:text-primary">Solusi AI untuk Bisnis</a></li>
-                <li><a href="#" className="hover:text-primary">Konsultasi AI</a></li>
-                <li><a href="#" className="hover:text-primary">Implementasi & Integrasi</a></li>
-                <li><a href="#" className="hover:text-primary">Pelatihan AI</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-3">Insight & Berita</h4>
-              <ul className="text-gray-300 space-y-2 text-sm">
-                <li><a href="#" className="hover:text-primary">Artikel AI</a></li>
-                <li><a href="#" className="hover:text-primary">Berita Teknologi</a></li>
-                <li><a href="#" className="hover:text-primary">Studi Kasus</a></li>
-                <li><a href="#" className="hover:text-primary">Event & Webinar</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-3">Portofolio</h4>
-              <ul className="text-gray-300 space-y-2 text-sm">
-                <li><a href="#" className="hover:text-primary">Proyek AI</a></li>
-                <li><a href="#" className="hover:text-primary">Testimoni Klien</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-3">Kontak</h4>
-              <ul className="text-gray-300 space-y-2 text-sm">
-                <li><a href="#" className="hover:text-primary">Hubungi Kami</a></li>
-                <li><a href="#" className="hover:text-primary">FAQ</a></li>
-              </ul>
-            </div>
+            <p className="text-gray-400 text-sm">
+              Building the future with code and creativity.
+            </p>
           </div>
         </div>
         {/* Bottom Bar */}
-        <div className="w-full border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 px-4 sm:px-8">
-          <div className="text-gray-400 text-xs">©2024 Stelarhub. All Rights Reserved. <span className="mx-2">·</span> <a href="#" className="hover:text-primary">Terms & Conditions</a></div>
-          <div className="flex gap-4">
-            <a href="#" className="bg-[#18181C] hover:bg-primary/20 text-white rounded-full p-2"><FaFacebookF className="w-4 h-4" /></a>
-            <a href="#" className="bg-[#18181C] hover:bg-primary/20 text-white rounded-full p-2"><FaLinkedinIn className="w-4 h-4" /></a>
-            <a href="#" className="bg-[#18181C] hover:bg-primary/20 text-white rounded-full p-2"><FaTwitter className="w-4 h-4" /></a>
-            <a href="#" className="bg-[#18181C] hover:bg-primary/20 text-white rounded-full p-2"><FaYoutube className="w-4 h-4" /></a>
-          </div>
+        <div className="w-full border-t border-gray-800 mt-10 pt-6 gap-4 px-4 sm:px-8">
+          <div className="text-gray-400 text-xs text-center">© 2025 Stelarea. All rights reserved.</div>
         </div>
       </footer>
     </>

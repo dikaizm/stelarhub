@@ -89,6 +89,9 @@ export const metadata: Metadata = {
     yandex: "your-yandex-verification-code",
     yahoo: "your-yahoo-verification-code",
   },
+  other: {
+    "p:domain_verify": "dd2c41d877d64116fb94ff00bef2c212",
+  },
 };
 
 export default function RootLayout({
