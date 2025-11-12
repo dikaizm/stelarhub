@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Urbanist } from "next/font/google";
+import { Urbanist, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Layouts/Header";
 
-const font = Urbanist({
+const font = Plus_Jakarta_Sans({
   weight: "variable",
   style: ["normal", "italic"],
   subsets: ["latin"]

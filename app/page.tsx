@@ -11,6 +11,13 @@ import { useState } from 'react';
 import heroImg from '@/assets/images/light-ray.png'
 import stelarLogo from '@/assets/logo/stelar.svg';
 import FooterSection from "@/components/Layouts/Footer";
+import { Urbanist } from "next/font/google";
+
+const displayFont = Urbanist({
+  weight: "variable",
+  style: ["normal", "italic"],
+  subsets: ["latin"]
+});
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
@@ -45,7 +52,7 @@ export default function Home() {
           <div className="w-full h-full flex flex-col sm:flex-row justify-center sm:items-center">
             <div className="w-full sm:h-fit flex flex-col text-center items-center gap-8 sm:gap-12 px-4 sm:px-8 lg:px-24 pt-16 sm:pt-24 sm:py-16 overflow-hidden">
               <div>
-                <h1 className="text-4xl text-center sm:text-5xl lg:text-6xl font-bold">Building the Future with<br /> Code and Creativity</h1>
+                <h1 className={`"text-4xl text-center sm:text-5xl lg:text-6xl font-bold ${displayFont.className}`}>Building the Future with<br /> Code and Creativity</h1>
                 <p className="text-base sm:text-lg text-gray-400 mt-4 sm:mt-8">We craft scalable web experiences and intelligent AI systems.</p>
               </div>
 
@@ -251,7 +258,7 @@ function ServiceSection() {
   return (
     <section className="w-full py-16 sm:py-24 border-t border-gray-800">
       <div className="container mx-auto flex flex-col items-center">
-        <h2 className="text-white text-2xl sm:text-3xl font-bold mb-2 text-center">What We Do</h2>
+        <h2 className={`text-white text-2xl sm:text-3xl font-bold mb-2 text-center ${displayFont.className}`}>What We Do</h2>
         <p className="text-neutral-400 text-base sm:text-lg mb-10 text-center max-w-2xl">
           Our expertise spans across web development and AI engineering, delivering comprehensive digital solutions.
         </p>
@@ -425,7 +432,7 @@ function PortfolioSection({ id, onShowMeClick }: { id?: string, onShowMeClick: (
   return (
     <section id={id} className="w-full py-16 sm:py-24 border-t border-gray-800 bg-[#10131A]">
       <div className="container mx-auto w-full sm:px-16 flex flex-col items-center">
-        <h2 className="text-white text-2xl sm:text-3xl font-bold mb-2 text-center">Featured Projects</h2>
+        <h2 className={`${displayFont.className} text-white text-2xl sm:text-3xl font-bold mb-2 text-center`}>Featured Projects</h2>
         <p className="text-neutral-400 text-base sm:text-lg mb-10 text-center max-w-2xl">
           Demonstrating our capabilities across AI engineering and web development.
         </p>
@@ -485,7 +492,7 @@ function AboutSection() {
   return (
     <section className="w-full py-16 sm:py-24 border-t border-gray-800">
       <div className="container mx-auto px-4 flex flex-col items-center">
-        <h2 className="text-white text-2xl sm:text-3xl font-bold mb-2 text-center">The Team</h2>
+        <h2 className={`${displayFont.className} text-white text-2xl sm:text-3xl font-bold mb-2 text-center`}>The Team</h2>
         <p className="text-neutral-400 text-base sm:text-lg mb-12 text-center max-w-2xl">
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           We're a small powerhouse merging engineering precision and visual storytelling.
@@ -531,7 +538,7 @@ function ContactSection({ id }: { id?: string }) {
     <section id={id} className="w-full py-16 sm:py-24 border-t border-gray-800 bg-[#1A2236]">
       <div className="container mx-auto px-4 flex flex-col items-center">
         {/* eslint-disable-next-line react/no-unescaped-entities */}
-        <h2 className="text-white text-2xl sm:text-3xl font-bold mb-2 text-center">Let's Build Something</h2>
+        <h2 className={`${displayFont.className} text-white text-2xl sm:text-3xl font-bold mb-2 text-center`}>Let's Build Something</h2>
         <p className="text-neutral-400 text-base sm:text-lg mb-8 text-center max-w-2xl">
           {/* eslint-disable-next-line react/no-unescaped-entities */}
           We're open for freelance projects, research collaborations, or creative partnerships.
