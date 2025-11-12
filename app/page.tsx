@@ -49,7 +49,7 @@ export default function Home() {
                 <p className="text-base sm:text-lg text-gray-400 mt-4 sm:mt-8">We craft scalable web experiences and intelligent AI systems.</p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col items-center sm:flex-row gap-4">
                 <PrimaryButton
                   className="px-4 sm:px-5 py-2.5 sm:py-3 text-sm sm:text-base"
                   label="Explore Our Work"
@@ -112,7 +112,6 @@ export default function Home() {
                   width={1200}
                   height={750}
                   className="w-full h-full object-contain"
-                  unoptimized
                 />
               </div>
 
@@ -251,7 +250,7 @@ const services = [
 function ServiceSection() {
   return (
     <section className="w-full py-16 sm:py-24 border-t border-gray-800">
-      <div className="container mx-auto px-4 flex flex-col items-center">
+      <div className="container mx-auto flex flex-col items-center">
         <h2 className="text-white text-2xl sm:text-3xl font-bold mb-2 text-center">What We Do</h2>
         <p className="text-neutral-400 text-base sm:text-lg mb-10 text-center max-w-2xl">
           Our expertise spans across web development and AI engineering, delivering comprehensive digital solutions.
@@ -312,7 +311,7 @@ function ConsultingStepsSection() {
 
   return (
     <section className="w-full py-16 sm:py-24 border-t border-gray-800 mt-8">
-      <div className="container mx-auto px-4 flex flex-col items-center">
+      <div className="container mx-auto flex flex-col items-center">
         <h2 className="text-white text-2xl sm:text-3xl font-bold mb-2 text-center">Langkah Konsultasi AI untuk Perusahaan Anda</h2>
         <p className="text-neutral-400 text-base sm:text-lg mb-10 text-center max-w-2xl">
           Ikuti langkah mudah berikut untuk mendapatkan solusi AI yang tepat dan berdampak bagi bisnis Anda.
@@ -424,8 +423,8 @@ function PortfolioSection({ id, onShowMeClick }: { id?: string, onShowMeClick: (
   };
 
   return (
-    <section id={id} className="w-full py-16 sm:py-24 border-t border-gray-800 bg-[#10131A] container">
-      <div className="w-full px-4 sm:px-16 flex flex-col items-center">
+    <section id={id} className="w-full py-16 sm:py-24 border-t border-gray-800 bg-[#10131A]">
+      <div className="container mx-auto w-full sm:px-16 flex flex-col items-center">
         <h2 className="text-white text-2xl sm:text-3xl font-bold mb-2 text-center">Featured Projects</h2>
         <p className="text-neutral-400 text-base sm:text-lg mb-10 text-center max-w-2xl">
           Demonstrating our capabilities across AI engineering and web development.
@@ -435,7 +434,7 @@ function PortfolioSection({ id, onShowMeClick }: { id?: string, onShowMeClick: (
             {portfolios.map((item, idx) => (
               <div key={idx} className="min-w-[340px] sm:min-w-[520px] max-w-[700px] bg-white/5 border border-gray-800 rounded-2xl shadow-lg flex flex-col h-full overflow-hidden transition hover:border-primary/60 w-full">
                 <div className="w-full aspect-[16/9] bg-gray-900">
-                  <Image src={item.images[0]} alt={item.title} width={800} height={450} className="w-full h-full object-cover rounded-t-2xl" unoptimized />
+                  <Image src={item.images[0]} alt={item.title} width={800} height={450} className="w-full h-full object-cover rounded-t-2xl" />
                 </div>
                 <div className="flex flex-col flex-1 p-6">
                   <div className="mb-2">
@@ -493,7 +492,7 @@ function AboutSection() {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
           <div className="bg-white/5 border border-gray-800 rounded-2xl p-8 flex flex-col items-center text-center">
-            <Image width={200} height={200} className="w-24 h-24 rounded-full border-2 border-gray-800 mb-4" src="/assets/team-01.png" alt="Izzulhaq Mahardika" unoptimized />
+            <Image width={200} height={200} className="w-24 h-24 rounded-full border-2 border-gray-800 mb-4" src="/assets/team-01.png" alt="Izzulhaq Mahardika" />
             <h3 className="text-white text-xl font-semibold mb-2">Izzulhaq Mahardika</h3>
             <p className="text-primary text-sm mb-4">Tech Wizard</p>
             <p className="text-gray-300 text-base mb-4">
@@ -508,7 +507,7 @@ function AboutSection() {
             </div>
           </div>
           <div className="bg-white/5 border border-gray-800 rounded-2xl p-8 flex flex-col items-center text-center">
-            <Image width={200} height={200} className="w-24 h-24 rounded-full border-2 border-gray-800 mb-4" src="/assets/team-02.png" alt="Mazir Muhammad" unoptimized />
+            <Image width={200} height={200} className="w-24 h-24 rounded-full border-2 border-gray-800 mb-4" src="/assets/team-02.png" alt="Mazir Muhammad" />
             <h3 className="text-white text-xl font-semibold mb-2">Mazir Muhammad</h3>
             <p className="text-primary text-sm mb-4">Visual Crafter</p>
             <p className="text-gray-300 text-base mb-4">
