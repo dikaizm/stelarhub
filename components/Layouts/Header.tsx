@@ -8,19 +8,25 @@ import stelarLogo from '@/assets/logo/stelar.svg'
 import { HeaderNavData } from './store/header'
 import PrimaryButton from '@/components/Buttons/PrimaryButton'
 import { usePathname } from 'next/navigation'
+import LanguageSwitcher from '@/components/LanguageSwitcher'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const Header = () => {
+  const { t } = useLanguage()
+
   return (
     <header className='mx-auto fixed top-0 inset-0 z-50 bg-dark border-b border-gray-800 h-fit'>
       <div className='flex items-center justify-between gap-4 py-5 container'>
         <a href='/' className='h-7 w-auto'>
           <Image className='w-full h-full bg-contain' src={stelarLogo} alt="logo" />
         </a>
-        {/* <HeaderNav /> */}
-        <PrimaryButton
-          label='Hubungi Kami'
-          link='https://wa.me/6285600809354'
-        />
+        <div className='flex items-center gap-4'>
+          <LanguageSwitcher />
+          <PrimaryButton
+            label={t('header.contactUs')}
+            link='https://wa.me/6285600809354'
+          />
+        </div>
       </div>
     </header>
   )

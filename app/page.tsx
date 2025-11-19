@@ -7,6 +7,7 @@ import SectionItem from "@/components/Layouts/SectionItem";
 import { IoArrowForward, IoCheckmark } from "react-icons/io5";
 import { FaStore, FaChartLine, FaUsers, FaLightbulb, FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
 import { useState } from 'react';
+import React from 'react';
 
 import heroImg from '@/assets/images/light-ray.png'
 import stelarLogo from '@/assets/logo/stelar.svg';
@@ -19,7 +20,10 @@ const displayFont = Urbanist({
   subsets: ["latin"]
 });
 
+import { useLanguage } from '@/contexts/LanguageContext'
+
 export default function Home() {
+  const { t } = useLanguage()
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -52,14 +56,19 @@ export default function Home() {
           <div className="w-full h-full flex flex-col sm:flex-row justify-center sm:items-center">
             <div className="w-full sm:h-fit flex flex-col text-center items-center gap-8 sm:gap-12 px-4 sm:px-8 lg:px-24 pt-16 sm:pt-24 sm:py-16 overflow-hidden">
               <div>
-                <h1 className={`"text-4xl text-center sm:text-5xl lg:text-6xl font-bold ${displayFont.className}`}>Building the Future with<br /> Code and Creativity</h1>
-                <p className="text-base sm:text-lg text-gray-400 mt-4 sm:mt-8">We craft scalable web experiences and intelligent AI systems.</p>
+                <h1 className={`"text-4xl text-center sm:text-5xl lg:text-6xl font-bold ${displayFont.className}`}>{t('hero.title').split('<br />').map((line, i) => (
+                  <React.Fragment key={i}>
+                    {line}
+                    {i < t('hero.title').split('<br />').length - 1 && <br />}
+                  </React.Fragment>
+                ))}</h1>
+                <p className="text-base sm:text-lg text-gray-400 mt-4 sm:mt-8">{t('hero.subtitle')}</p>
               </div>
 
               <div className="flex flex-col items-center sm:flex-row gap-4">
                 <PrimaryButton
                   className="px-4 sm:px-5 py-2.5 sm:py-3 text-sm sm:text-base"
-                  label="Explore Our Work"
+                  label={t('hero.exploreWork')}
                   iconPosition="right"
                   icon={<IoArrowForward className="text-lg sm:text-xl -rotate-45" />}
                   onClick={() => {
@@ -69,7 +78,7 @@ export default function Home() {
                 />
                 <PrimaryButton
                   className="px-4 sm:px-5 py-2.5 sm:py-3 text-sm sm:text-base"
-                  label="Get in Touch"
+                  label={t('hero.getInTouch')}
                   variant="outline"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 />
@@ -95,94 +104,105 @@ export default function Home() {
 
       {/* Image Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden border border-gray-700">
-            {/* Modal Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-700">
-              <h3 className="text-white text-xl font-semibold">{selectedProject.title}</h3>
-              <button
-                onClick={closeModal}
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-
-            {/* Image Slider */}
-            <div className="relative">
-              <div className="aspect-[16/10] bg-gray-800 flex items-center justify-center">
-                <Image
-                  src={selectedProject.images[currentImageIndex]}
-                  alt={`${selectedProject.title} - Image ${currentImageIndex + 1}`}
-                  width={1200}
-                  height={750}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-
-              {/* Navigation Arrows */}
-              <button
-                onClick={prevImage}
-                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-3 transition-colors"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-
-              <button
-                onClick={nextImage}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-3 transition-colors"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-
-              {/* Image Indicators */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-                {selectedProject.images.map((_: any, index: number) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-colors ${index === currentImageIndex ? 'bg-primary' : 'bg-gray-600'
-                      }`}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* Modal Footer */}
-            <div className="p-6 border-t border-gray-700">
-              <div className="flex flex-col justify-between gap-4">
-                <div>
-                  <p className="text-gray-300 text-sm mb-2">{selectedProject.description}</p>
-                  <div className="flex flex-wrap gap-1">
-                    {selectedProject.tech.split(', ').map((tech: string, index: number) => (
-                      <span key={index} className="text-xs px-2 py-1 bg-primary/10 text-primary rounded border border-primary/20">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                {selectedProject.link !== '#' && (
-                  <PrimaryButton
-                    label="Visit Site"
-                    icon={<IoArrowForward className="text-lg -rotate-45 text-primary" />}
-                    iconPosition="right"
-                    variant="outline"
-                    onClick={() => window.open(selectedProject.link, '_blank')}
-                  />
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
+        <ProjectModal selectedProject={selectedProject} currentImageIndex={currentImageIndex} onClose={closeModal} onNext={nextImage} onPrev={prevImage} onImageClick={setCurrentImageIndex} />
       )}
     </>
   );
+}
+
+function ProjectModal({ selectedProject, currentImageIndex, onClose, onNext, onPrev, onImageClick }: any) {
+  const { t } = useLanguage()
+
+  return (
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+      <div className="bg-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden border border-gray-700">
+        {/* Modal Header */}
+        <div className="flex items-center justify-between p-6 border-b border-gray-700">
+          <h3 className="text-white text-xl font-semibold">{selectedProject.title}</h3>
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-white transition-colors"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Image Slider */}
+        <div className="relative">
+          <div className="aspect-[16/10] bg-gray-800 flex items-center justify-center">
+            <Image
+              src={selectedProject.images[currentImageIndex]}
+              alt={`${selectedProject.title} - Image ${currentImageIndex + 1}`}
+              width={1200}
+              height={750}
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={onPrev}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-3 transition-colors"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <button
+            onClick={onNext}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-3 transition-colors"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Image Indicators */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+            {selectedProject.images.map((_: any, index: number) => (
+              <button
+                key={index}
+                onClick={() => onImageClick(index)}
+                className={`w-2 h-2 rounded-full transition-colors ${index === currentImageIndex ? 'bg-primary' : 'bg-gray-600'
+                  }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Modal Footer */}
+        <div className="p-6 border-t border-gray-700">
+          <div className="flex flex-col justify-between gap-4">
+            <div>
+              <p className="text-gray-300 text-sm mb-2">{selectedProject.description}</p>
+              <div className="flex flex-wrap gap-1">
+                <span className="text-xs px-2 py-1 bg-primary/10 text-primary rounded border border-primary/20">
+                  {t('modal.techStack')}
+                </span>
+                {selectedProject.tech.split(', ').map((tech: string, index: number) => (
+                  <span key={index} className="text-xs px-2 py-1 bg-primary/10 text-primary rounded border border-primary/20">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+            {selectedProject.link !== '#' && (
+              <PrimaryButton
+                label={t('modal.visitSite')}
+                icon={<IoArrowForward className="text-lg -rotate-45 text-primary" />}
+                iconPosition="right"
+                variant="outline"
+                onClick={() => window.open(selectedProject.link, '_blank')}
+              />
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 function Tag({ label, showIcon = true, className }: { label: string, showIcon?: boolean, className?: string }) {
@@ -255,12 +275,29 @@ const services = [
 ];
 
 function ServiceSection() {
+  const { t } = useLanguage()
+  
+  const services = [
+    {
+      title: t('services.webDevelopment.title'),
+      description: t('services.webDevelopment.description'),
+      image: "https://placehold.co/353x255",
+      tags: ['Frontend', 'Backend', 'API Design', 'Database']
+    },
+    {
+      title: t('services.aiEngineering.title'),
+      description: t('services.aiEngineering.description'),
+      image: "https://placehold.co/353x255",
+      tags: ['Machine Learning', 'Computer Vision', 'NLP', 'TensorFlow']
+    },
+  ]
+
   return (
     <section className="w-full py-16 sm:py-24 border-t border-gray-800">
       <div className="container mx-auto flex flex-col items-center">
-        <h2 className={`text-white text-2xl sm:text-3xl font-bold mb-2 text-center ${displayFont.className}`}>What We Do</h2>
+        <h2 className={`text-white text-2xl sm:text-3xl font-bold mb-2 text-center ${displayFont.className}`}>{t('services.title')}</h2>
         <p className="text-neutral-400 text-base sm:text-lg mb-10 text-center max-w-2xl">
-          Our expertise spans across web development and AI engineering, delivering comprehensive digital solutions.
+          {t('services.subtitle')}
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-6xl">
           {services.map((service, index) => (
@@ -270,9 +307,6 @@ function ServiceSection() {
               style={{ overflow: 'hidden' }}
             >
               <div className="relative z-10 flex flex-col gap-4 h-full">
-                {/* <div className="relative w-full aspect-[4/3] mb-2">
-                  <img src={service.image} alt={service.title} className="rounded-[10px] w-full h-full object-cover" />
-                </div> */}
                 <h3 className="text-white text-xl font-semibold mb-1">{service.title}</h3>
                 <p className="text-gray-300 text-base sm:text-lg mb-4 flex-1">{service.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -280,13 +314,6 @@ function ServiceSection() {
                     <Tag key={index} label={tag} showIcon={false} className="border-dark-15 border text-xs sm:text-sm" />
                   ))}
                 </div>
-                {/* <PrimaryButton
-                  label="Selengkapnya"
-                  icon={<IoArrowForward className="text-lg -rotate-45 text-primary" />}
-                  iconPosition="right"
-                  variant="outline"
-                  className="text-base font-semibold mt-auto"
-                /> */}
               </div>
             </div>
           ))}
@@ -344,6 +371,8 @@ function ConsultingStepsSection() {
 }
 
 function PortfolioSection({ id, onShowMeClick }: { id?: string, onShowMeClick: (project: any) => void }) {
+  const { t } = useLanguage()
+
   const portfolios = [
     {
       images: [
@@ -351,11 +380,10 @@ function PortfolioSection({ id, onShowMeClick }: { id?: string, onShowMeClick: (
         '/assets/portfolio/matafutsal/2.png',
         '/assets/portfolio/matafutsal/3.png'
       ],
-      tag: 'Company Profile',
-      title: 'MataFutsal',
-      description:
-        'Modern landing page for a futsal technology company. Designed to showcase products, services, and brand identity in a clean, responsive layout.',
-      button: 'Visit Site',
+      tag: t('portfolio.projects.matafutsal.tag'),
+      title: t('portfolio.projects.matafutsal.title'),
+      description: t('portfolio.projects.matafutsal.description'),
+      button: t('portfolio.visitSite'),
       link: 'https://matafutsal.com/',
       tech: 'React.js'
     },
@@ -368,11 +396,10 @@ function PortfolioSection({ id, onShowMeClick }: { id?: string, onShowMeClick: (
         '/assets/portfolio/rokade/5.png',
         '/assets/portfolio/rokade/6.png'
       ],
-      tag: 'Cybersecurity Platform',
-      title: 'Rokade',
-      description:
-        'Company profile website integrated with a smart AI DFR platform. Features LLM-based intelligence for document understanding and deployment automation.',
-      button: 'Visit Site',
+      tag: t('portfolio.projects.rokade.tag'),
+      title: t('portfolio.projects.rokade.title'),
+      description: t('portfolio.projects.rokade.description'),
+      button: t('portfolio.visitSite'),
       link: 'https://rokade.co.id/',
       tech: 'React.js, FastAPI, Qwen LLM (self-deployed)'
     },
@@ -384,12 +411,11 @@ function PortfolioSection({ id, onShowMeClick }: { id?: string, onShowMeClick: (
         '/assets/portfolio/cortex-lidm/4.png',
         '/assets/portfolio/cortex-lidm/5.png'
       ],
-      tag: 'AI Education Platform',
-      title: 'Cortex',
-      description:
-        'AI-powered platform for generating educational videos. Combines multimodal AI for script generation, voice synthesis, and video assembly.',
-      button: 'Visit Site',
-      link: 'https://cortex.stelarea.com/',
+      tag: t('portfolio.projects.cortex.tag'),
+      title: t('portfolio.projects.cortex.title'),
+      description: t('portfolio.projects.cortex.description'),
+      button: t('portfolio.visitSite'),
+      link: 'https://cortexapp.id',
       tech: 'React.js, FastAPI, Gemini, ElevenLabs'
     },
     {
@@ -399,42 +425,21 @@ function PortfolioSection({ id, onShowMeClick }: { id?: string, onShowMeClick: (
         '/assets/portfolio/brin-llm-eval/3.png',
         '/assets/portfolio/brin-llm-eval/4.png'
       ],
-      tag: 'Research Dashboard',
-      title: 'BRIN LLM Evaluator',
-      description:
-        'Dashboard system for evaluating large language model dialogues in psychology research. Provides analytical visualization and structured evaluation workflows.',
+      tag: t('portfolio.projects.brin.tag'),
+      title: t('portfolio.projects.brin.title'),
+      description: t('portfolio.projects.brin.description'),
       button: 'Private Project',
       link: '#',
       tech: 'React.js, FastAPI'
     }
   ];
 
-  const [startIdx, setStartIdx] = useState(0);
-  const visibleCount = 2;
-  const total = portfolios.length;
-
-  const getVisible = () => {
-    // Infinite loop logic
-    const arr = [];
-    for (let i = 0; i < visibleCount; i++) {
-      arr.push(portfolios[(startIdx + i) % total]);
-    }
-    return arr;
-  };
-
-  const handlePrev = () => {
-    setStartIdx((prev) => (prev - 1 + total) % total);
-  };
-  const handleNext = () => {
-    setStartIdx((prev) => (prev + 1) % total);
-  };
-
   return (
     <section id={id} className="w-full py-16 sm:py-24 border-t border-gray-800 bg-[#10131A]">
       <div className="container mx-auto w-full sm:px-16 flex flex-col items-center">
-        <h2 className={`${displayFont.className} text-white text-2xl sm:text-3xl font-bold mb-2 text-center`}>Featured Projects</h2>
+        <h2 className={`${displayFont.className} text-white text-2xl sm:text-3xl font-bold mb-2 text-center`}>{t('portfolio.title')}</h2>
         <p className="text-neutral-400 text-base sm:text-lg mb-10 text-center max-w-2xl">
-          Demonstrating our capabilities across AI engineering and web development.
+          {t('portfolio.subtitle')}
         </p>
         <div className="w-full flex items-center justify-center mb-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -471,7 +476,7 @@ function PortfolioSection({ id, onShowMeClick }: { id?: string, onShowMeClick: (
                     )}
 
                     <PrimaryButton
-                      label="Show Me"
+                      label={t('portfolio.showMe')}
                       iconPosition="right"
                       variant="outline"
                       className="text-base font-semibold mt-auto"
@@ -489,22 +494,22 @@ function PortfolioSection({ id, onShowMeClick }: { id?: string, onShowMeClick: (
 }
 
 function AboutSection() {
+  const { t } = useLanguage()
+
   return (
     <section className="w-full py-16 sm:py-24 border-t border-gray-800">
       <div className="container mx-auto px-4 flex flex-col items-center">
-        <h2 className={`${displayFont.className} text-white text-2xl sm:text-3xl font-bold mb-2 text-center`}>The Team</h2>
+        <h2 className={`${displayFont.className} text-white text-2xl sm:text-3xl font-bold mb-2 text-center`}>{t('about.title')}</h2>
         <p className="text-neutral-400 text-base sm:text-lg mb-12 text-center max-w-2xl">
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          We're a small powerhouse merging engineering precision and visual storytelling.
+          {t('about.subtitle')}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
           <div className="bg-white/5 border border-gray-800 rounded-2xl p-8 flex flex-col items-center text-center">
-            <Image width={200} height={200} className="w-24 h-24 rounded-full border-2 border-gray-800 mb-4" src="/assets/team-01.png" alt="Izzulhaq Mahardika" />
-            <h3 className="text-white text-xl font-semibold mb-2">Izzulhaq Mahardika</h3>
-            <p className="text-primary text-sm mb-4">Tech Wizard</p>
+            <Image width={200} height={200} className="w-24 h-24 rounded-full border-2 border-gray-800 mb-4" src="/assets/team-01.png" alt={t('about.izzulhaq.name')} />
+            <h3 className="text-white text-xl font-semibold mb-2">{t('about.izzulhaq.name')}</h3>
+            <p className="text-primary text-sm mb-4">{t('about.izzulhaq.role')}</p>
             <p className="text-gray-300 text-base mb-4">
-              Backend engineer specializing in scalable systems, AI automation, and machine learning.
-              Passionate about building robust architectures that power intelligent applications.
+              {t('about.izzulhaq.description')}
             </p>
             <div className="flex flex-wrap gap-2 justify-center">
               <span className="text-xs px-2 py-1 bg-gray-800 rounded">FastAPI</span>
@@ -514,12 +519,11 @@ function AboutSection() {
             </div>
           </div>
           <div className="bg-white/5 border border-gray-800 rounded-2xl p-8 flex flex-col items-center text-center">
-            <Image width={200} height={200} className="w-24 h-24 rounded-full border-2 border-gray-800 mb-4" src="/assets/team-02.png" alt="Mazir Muhammad" />
-            <h3 className="text-white text-xl font-semibold mb-2">Mazir Muhammad</h3>
-            <p className="text-primary text-sm mb-4">Visual Crafter</p>
+            <Image width={200} height={200} className="w-24 h-24 rounded-full border-2 border-gray-800 mb-4" src="/assets/team-02.png" alt={t('about.mazir.name')} />
+            <h3 className="text-white text-xl font-semibold mb-2">{t('about.mazir.name')}</h3>
+            <p className="text-primary text-sm mb-4">{t('about.mazir.role')}</p>
             <p className="text-gray-300 text-base mb-4">
-              Design systems expert focused on UX/UI and visual identity.
-              Transforming complex ideas into beautiful, intuitive digital experiences.
+              {t('about.mazir.description')}
             </p>
             <div className="flex flex-wrap gap-2 justify-center">
               <span className="text-xs px-2 py-1 bg-gray-800 rounded">Figma</span>
@@ -534,25 +538,25 @@ function AboutSection() {
 }
 
 function ContactSection({ id }: { id?: string }) {
+  const { t } = useLanguage()
+
   return (
     <section id={id} className="w-full py-16 sm:py-24 border-t border-gray-800 bg-[#1A2236]">
       <div className="container mx-auto px-4 flex flex-col items-center">
-        {/* eslint-disable-next-line react/no-unescaped-entities */}
-        <h2 className={`${displayFont.className} text-white text-2xl sm:text-3xl font-bold mb-2 text-center`}>Let's Build Something</h2>
+        <h2 className={`${displayFont.className} text-white text-2xl sm:text-3xl font-bold mb-2 text-center`}>{t('contact.title')}</h2>
         <p className="text-neutral-400 text-base sm:text-lg mb-8 text-center max-w-2xl">
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          We're open for freelance projects, research collaborations, or creative partnerships.
+          {t('contact.subtitle')}
         </p>
         <div className="flex flex-col sm:flex-row gap-6 items-center">
           <PrimaryButton
-            label="dikaizm@gmail.com"
+            label={t('contact.email')}
             icon={<IoArrowForward className="text-lg -rotate-45 text-primary" />}
             iconPosition="right"
             variant="outline"
             onClick={() => window.location.href = 'mailto:dikaizm@gmail.com'}
           />
           <PrimaryButton
-            label="WhatsApp Me"
+            label={t('contact.whatsapp')}
             icon={<IoArrowForward className="text-lg -rotate-45 text-primary" />}
             iconPosition="right"
             variant="outline"

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Urbanist, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Layouts/Header";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const font = Plus_Jakarta_Sans({
   weight: "variable",
@@ -159,8 +160,10 @@ export default function RootLayout({
         />
       </head>
       <body className={`${font.className} bg-dark text-white`}>
-        <Header />
-        {children}
+        <LanguageProvider>
+          <Header />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
