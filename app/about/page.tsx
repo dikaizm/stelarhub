@@ -50,7 +50,7 @@ export default function AboutPage() {
                     <div className="mb-16 px-4">
                         <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">Our Approach</h2>
                         <p className="text-xl text-text-secondary max-w-2xl">
-                            We don't just build software; we build solutions that fit your business context.
+                            We don&apos;t just build software; we build solutions that fit your business context.
                         </p>
                     </div>
 
@@ -61,7 +61,7 @@ export default function AboutPage() {
                         <ApproachCard
                             step="01"
                             title="Understand"
-                            description="We listen to your challenges and define what 'success' looks like for your business."
+                            description="We listen to your challenges and define what &lsquo;success&rsquo; looks like for your business."
                         />
                         <ApproachCard
                             step="02"
@@ -96,7 +96,7 @@ export default function AboutPage() {
                     <ValueCard
                         icon={<Code2 className="w-8 h-8 text-primary" />}
                         title="Results over Output"
-                        description="It’s not about how much we build, but how much value we create."
+                        description="It&apos;s not about how much we build, but how much value we create."
                     />
                     <ValueCard
                         icon={<HeartHandshake className="w-8 h-8 text-rose-500" />}
