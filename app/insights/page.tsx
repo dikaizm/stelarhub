@@ -3,8 +3,15 @@ import Section from '@/components/Section'
 import Card from '@/components/Card'
 import { ArrowRight, Calendar } from 'lucide-react'
 import { FilterButton } from '../case-studies/page'
+import { getAllPosts, InsightPost } from '@/lib/insights'
+import Link from 'next/link'
+import BlogCard from '@/components/BlogCard'
 
 export default function InsightsPage() {
+    const posts = getAllPosts()
+    const featuredPost = posts[0]
+    const recentPosts = posts.slice(1)
+
     return (
         <main className="pt-16 min-h-screen bg-background">
             <Section className="!pb-0 text-center">
@@ -20,27 +27,35 @@ export default function InsightsPage() {
 
             <Section background="white">
                 {/* Featured Article */}
-                <div className="mb-16">
-                    <div className="grid md:grid-cols-2 gap-8 items-center overflow-hidden rounded-2xl bg-slate-50 p-4">
-                        <div className="h-64 rounded-xl md:h-full bg-background-subtle flex items-center justify-center text-text-muted min-h-[300px]">
-                            Featured Image
-                        </div>
-                        <div className="px-12 py-20">
-                            <div className="flex items-center gap-4 text-sm text-text-secondary mb-4">
-                                <span className="text-primary font-semibold">AI Strategy</span>
-                                <span>•</span>
-                                <span className="flex items-center gap-1"><Calendar size={14} /> Oct 24, 2024</span>
+                {featuredPost && (
+                    <div className="mb-16">
+                        <Link href={`/insights/${featuredPost.slug}`} className="block group">
+                            <div className="grid md:grid-cols-2 gap-8 items-center overflow-hidden rounded-2xl bg-slate-50 p-4 hover:bg-slate-100 transition-all">
+                                <div className="h-64 rounded-xl md:h-full bg-background-subtle flex items-center justify-center text-text-muted min-h-[300px]">
+                                    {featuredPost.image ? (
+                                        <div className="w-full h-full flex items-center justify-center text-sm">{featuredPost.image}</div>
+                                    ) : (
+                                        "Featured Image"
+                                    )}
+                                </div>
+                                <div className="px-6 py-8 md:px-12 md:py-20">
+                                    <div className="flex items-center gap-4 text-sm text-text-secondary mb-4">
+                                        <span className="text-primary font-semibold">{featuredPost.category}</span>
+                                        <span>•</span>
+                                        <span className="flex items-center gap-1"><Calendar size={14} /> {featuredPost.date}</span>
+                                    </div>
+                                    <h3 className="text-3xl font-bold text-text mb-4 group-hover:text-primary transition-colors">{featuredPost.title}</h3>
+                                    <p className="text-text-secondary mb-6 leading-relaxed line-clamp-3">
+                                        {featuredPost.excerpt}
+                                    </p>
+                                    <span className="text-primary font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+                                        Read Full Article <ArrowRight size={18} />
+                                    </span>
+                                </div>
                             </div>
-                            <h3 className="text-3xl font-bold text-text mb-4">Applying AI to Real-World Business Workflows</h3>
-                            <p className="text-text-secondary mb-6 leading-relaxed">
-                                Artificial Intelligence is more than just a buzzword. Learn how practical AI agents can automate up to 40% of routine tasks in your operations today.
-                            </p>
-                            <button className="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all">
-                                Read Full Article <ArrowRight size={18} />
-                            </button>
-                        </div>
+                        </Link>
                     </div>
-                </div>
+                )}
 
                 <div className="flex flex-wrap justify-center gap-4 mb-16">
                     <FilterButton label="All Projects" active />
@@ -51,47 +66,18 @@ export default function InsightsPage() {
 
                 {/* Recent Articles */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <BlogCard
-                        category="Product Design"
-                        title="Designing Digital Products for Scale"
-                        excerpt="Why starting with a design system is crucial for long-term product health."
-                    />
-                    <BlogCard
-                        category="User Experience"
-                        title="Understanding the ROI of User Experience"
-                        excerpt="How better UX translates directly to improved bottom-line revenue."
-                    />
-                    <BlogCard
-                        category="Data Analytics"
-                        title="Making Better Decisions with Data"
-                        excerpt="Moving from reactive reporting to proactive predictive analytics."
-                    />
+                    {recentPosts.length > 0 ? (
+                        recentPosts.map((post) => (
+                            <BlogCard key={post.slug} post={post} />
+                        ))
+                    ) : (
+                        // Fallback placeholders if no extra posts exist yet
+                        <>
+                            {!featuredPost && <div className="col-span-full text-center text-text-secondary">No insights found.</div>}
+                        </>
+                    )}
                 </div>
             </Section>
         </main>
-    )
-}
-
-function BlogCard({ category, title, excerpt }: { category: string, title: string, excerpt: string }) {
-    return (
-        <Card className="h-full flex flex-col group cursor-pointer hover:border-primary/50">
-            <div className="h-48 bg-background-subtle rounded-lg mb-6 flex items-center justify-center text-text-muted border border-border">
-                Image
-            </div>
-            <div className='p-2 pt-0'>
-                <div className="flex items-center gap-4 text-xs text-text-secondary mb-3">
-                    <span className="text-primary font-semibold uppercase">{category}</span>
-                    <span>•</span>
-                    <span>5 min read</span>
-                </div>
-                <h3 className="text-xl font-bold text-text mb-3 group-hover:text-primary transition-colors">{title}</h3>
-                <p className="text-text-secondary text-sm leading-relaxed mb-6 flex-1">
-                    {excerpt}
-                </p>
-                <div className="flex items-center text-primary text-sm font-semibold mt-auto">
-                    Read More <ArrowRight size={16} className="ml-2" />
-                </div>
-            </div>
-        </Card>
     )
 }

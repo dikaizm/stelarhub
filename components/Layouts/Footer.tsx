@@ -29,10 +29,8 @@ export default function Footer() {
               {t('footer.description')}
             </p>
             <div className="flex items-center gap-4">
-              <SocialLink href="https://linkedin.com" icon={<Linkedin size={18} />} />
-              <SocialLink href="https://twitter.com" icon={<Twitter size={18} />} />
-              <SocialLink href="https://instagram.com" icon={<Instagram size={18} />} />
-              <SocialLink href="https://github.com" icon={<Github size={18} />} />
+              <SocialLink href="https://twitter.com/stelarealab" icon={<Twitter size={18} />} />
+              <SocialLink href="https://instagram.com/stelarealab" icon={<Instagram size={18} />} />
             </div>
           </div>
 

@@ -19,7 +19,7 @@ export default function AboutPage() {
             </Section>
 
             {/* Vision & Mission */}
-            <Section className="border-y border-border" background="paper">
+            <Section>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
                     <div>
                         <div className="flex items-center gap-3 mb-6">
@@ -45,43 +45,45 @@ export default function AboutPage() {
             </Section>
 
             {/* Our Approach */}
-            <Section background="white">
-                <div className="mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">Our Approach</h2>
-                    <p className="text-xl text-text-secondary max-w-2xl">
-                        We don't just build software; we build solutions that fit your business context.
-                    </p>
-                </div>
+            <section className="w-full pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+                <div className="relative w-full rounded-3xl overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 py-16 sm:py-24 flex flex-col items-center text-center">
+                    <div className="mb-16 px-4">
+                        <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">Our Approach</h2>
+                        <p className="text-xl text-text-secondary max-w-2xl">
+                            We don't just build software; we build solutions that fit your business context.
+                        </p>
+                    </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-                    {/* Connector Line (Desktop) */}
-                    <div className="hidden lg:block absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/20 to-secondary/20 -z-10" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative container">
+                        {/* Connector Line (Desktop) */}
+                        <div className="hidden lg:block absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/20 to-secondary/20 -z-10" />
 
-                    <ApproachCard
-                        step="01"
-                        title="Understand"
-                        description="We listen to your challenges and define what 'success' looks like for your business."
-                    />
-                    <ApproachCard
-                        step="02"
-                        title="Design"
-                        description="We map out a strategy that fits your current needs and future ambitions."
-                    />
-                    <ApproachCard
-                        step="03"
-                        title="Build & Launch"
-                        description="We create the system, ensuring it is user-friendly and reliable from day one."
-                    />
-                    <ApproachCard
-                        step="04"
-                        title="Support & Evolve"
-                        description="We help you adopt the new tools and improve them as your business changes."
-                    />
+                        <ApproachCard
+                            step="01"
+                            title="Understand"
+                            description="We listen to your challenges and define what 'success' looks like for your business."
+                        />
+                        <ApproachCard
+                            step="02"
+                            title="Design"
+                            description="We map out a strategy that fits your current needs and future ambitions."
+                        />
+                        <ApproachCard
+                            step="03"
+                            title="Build & Launch"
+                            description="We create the system, ensuring it is user-friendly and reliable from day one."
+                        />
+                        <ApproachCard
+                            step="04"
+                            title="Support & Evolve"
+                            description="We help you adopt the new tools and improve them as your business changes."
+                        />
+                    </div>
                 </div>
-            </Section>
+            </section>
 
             {/* Our Values */}
-            <Section className="border-t border-border" background="paper">
+            <Section>
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">Our Values</h2>
                 </div>
@@ -120,7 +122,7 @@ function MissionItem({ title, description }: { title: string, description: strin
 
 function ApproachCard({ step, title, description }: { step: string, title: string, description: string }) {
     return (
-        <Card className="h-full" variant="paper">
+        <Card className="h-full !bg-white hover:!bg-slate-50">
             <div className="text-4xl font-bold text-primary/20 mb-4">{step}</div>
             <h3 className="text-xl font-bold text-text mb-3">{title}</h3>
             <p className="text-text-secondary text-sm leading-relaxed">{description}</p>
@@ -130,7 +132,7 @@ function ApproachCard({ step, title, description }: { step: string, title: strin
 
 function ValueCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
     return (
-        <div className="flex flex-col items-center text-center p-8 rounded-2xl bg-white border border-border shadow-soft hover:shadow-card transition-all">
+        <div className="flex flex-col items-center text-center p-8 rounded-2xl bg-slate-50 hover:bg-slate-100 transition-all">
             <div className="w-16 h-16 rounded-full bg-background-subtle flex items-center justify-center mb-6">
                 {icon}
             </div>

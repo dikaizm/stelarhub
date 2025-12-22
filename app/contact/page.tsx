@@ -45,7 +45,7 @@ export default function ContactPage() {
                                 <div>
                                     <h3 className="text-lg font-semibold text-text mb-1">Office</h3>
                                     <p className="text-text-secondary">
-                                        Jakarta, Indonesia
+                                        Bandung, Indonesia
                                     </p>
                                 </div>
                             </div>
