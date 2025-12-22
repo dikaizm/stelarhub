@@ -15,11 +15,11 @@ const LanguageSwitcher: React.FC = () => {
   return (
     <button
       onClick={toggleLanguage}
-      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 border border-gray-700 transition-colors duration-200 text-sm font-medium"
+      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 border border-gray-200 transition-colors duration-200 text-sm font-medium"
       title={`Switch to ${language === 'id' ? 'English' : 'Indonesia'}`}
     >
-      <Globe className="w-5 h-5 text-gray-300" />
-      <span className="text-white">{language === 'id' ? 'ID' : 'EN'}</span>
+      <Globe className="w-5 h-5 text-gray-500" />
+      <span className="text-gray-500">{language === 'id' ? 'ID' : 'EN'}</span>
     </button>
   )
 }

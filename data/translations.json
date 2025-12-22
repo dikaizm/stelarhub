@@ -21,12 +21,22 @@
       "webDevelopment": {
         "title": "Web Development",
         "description": "Kami merancang arsitektur frontend dan backend yang cepat, aman, dan scalable. Dengan API design yang solid dan database optimization, kami membangun fondasi digital yang siap tumbuh bersama bisnis Anda.",
-        "tags": ["Frontend", "Backend", "API Design", "Database"]
+        "tags": [
+          "Frontend",
+          "Backend",
+          "API Design",
+          "Database"
+        ]
       },
       "aiEngineering": {
         "title": "AI Engineering",
         "description": "Kami mengembangkan machine learning models untuk project NLP dan computer vision, serta mengintegrasikan AI langsung ke dalam aplikasi Anda agar lebih cerdas, efisien, dan otomatis.",
-        "tags": ["Machine Learning", "Computer Vision", "NLP", "TensorFlow"]
+        "tags": [
+          "Machine Learning",
+          "Computer Vision",
+          "NLP",
+          "TensorFlow"
+        ]
       }
     },
     "portfolio": {
@@ -106,14 +116,112 @@
         "description": "Kami mendampingi integrasi solusi AI hingga optimal, lengkap dengan pelatihan dan dukungan teknis berkelanjutan."
       }
     },
+    "homepage": {
+      "hero": {
+        "title": "Digital Systems",
+        "titleSuffix": "Yang Mendukung Bisnis Modern",
+        "description": "Stelarea menerjemahkan tujuan bisnis Anda menjadi alat digital yang cerdas. Kami membangun sistem yang Anda butuhkan untuk merampingkan operasi, melayani pelanggan dengan lebih baik, dan berkembang tanpa hambatan.",
+        "getDemo": "Dapatkan Demo",
+        "customerStories": "Cerita Pelanggan"
+      },
+      "about": {
+        "title": "Kami Adalah Stelarea",
+        "description": "Agensi digital yang berdedikasi untuk menyederhanakan yang kompleks. Kami menggabungkan desain kreatif dengan teknologi cerdas untuk membangun solusi yang membantu bisnis Anda tumbuh secara alami.",
+        "aboutUs": "Tentang Kami",
+        "values": {
+          "businessFirst": {
+            "title": "Pendekatan Bisnis Pertama",
+            "description": "Kami tidak memulai dengan teknologi; kami memulai dengan tujuan dan hambatan bisnis Anda. Setiap baris kode melayani tujuan operasional yang spesifik."
+          },
+          "beyondHype": {
+            "title": "Melampaui Hype",
+            "description": "Kami mengimplementasikan AI dan alat digital untuk memecahkan masalah nyata, bukan hanya mengikuti tren. Kepraktisan adalah prioritas kami."
+          },
+          "builtForGrowth": {
+            "title": "Dibangun untuk Pertumbuhan",
+            "description": "Solusi kami dirancang untuk menangani kesuksesan Anda, berkembang dengan mudah saat Anda berkembang dari 100 hingga 1 juta pengguna."
+          },
+          "partnership": {
+            "title": "Kemitraan, Bukan Hanya Produksi",
+            "description": "Kami tetap berinvestasi dalam kesuksesan jangka panjang dari sistem yang kami bangun. Kami adalah mitra teknis Anda untuk jangka panjang."
+          }
+        }
+      },
+      "services": {
+        "title": "Apa yang Kami Lakukan",
+        "description": "Kami bermitra dengan organisasi untuk memodernisasi cara mereka bekerja. Kami mengganti proses manual dan alat yang ketinggalan zaman dengan solusi digital terintegrasi yang mendorong nilai nyata.",
+        "cards": {
+          "platforms": {
+            "title": "Platform Digital",
+            "description": "Alat khusus yang menjalankan operasi inti Anda.",
+            "learnMore": "Pelajari lebih lanjut"
+          },
+          "design": {
+            "title": "Desain Pengalaman",
+            "description": "Produk yang intuitif untuk tim dan pelanggan Anda.",
+            "learnMore": "Pelajari lebih lanjut"
+          },
+          "automation": {
+            "title": "Otomasi Cerdas",
+            "description": "Solusi AI yang mengurangi beban kerja manual.",
+            "learnMore": "Pelajari lebih lanjut"
+          },
+          "strategy": {
+            "title": "Strategi Data",
+            "description": "Mengubah angka yang tersebar menjadi arah yang jelas.",
+            "learnMore": "Pelajari lebih lanjut"
+          }
+        }
+      },
+      "featuredWork": {
+        "title": "Karya Unggulan",
+        "description": "Lihat bagaimana kami membantu organisasi mengubah tantangan menjadi keuntungan.",
+        "viewStories": "Lihat Cerita Sukses",
+        "projects": {
+          "brin": {
+            "brand": "BRIN",
+            "title": "Platform Evaluasi LLM",
+            "description": "Platform komprehensif untuk mengevaluasi Model Bahasa Besar khusus untuk bahasa Indonesia."
+          },
+          "lidm": {
+            "brand": "LIDM",
+            "title": "Manajemen Pembelajaran Cortex",
+            "description": "Sistem manajemen pembelajaran canggih yang dirancang untuk institusi pendidikan modern."
+          },
+          "matafutsal": {
+            "brand": "Matafutsal",
+            "title": "Pemesanan Venue Olahraga",
+            "description": "Pengalaman pemesanan yang mulus untuk venue olahraga dan acara komunitas."
+          }
+        }
+      },
+      "cta": {
+        "title": "Siap memodernisasi operasi Anda?",
+        "description": "Mari rancang solusi yang bekerja sekeras Anda.",
+        "button": "Mulai Transformasi Anda"
+      }
+    },
     "footer": {
-      "description": "Membangun pengalaman web yang scalable dan solusi AI yang cerdas.",
-      "quickLinks": "Tautan Cepat",
-      "services": "Layanan",
-      "portfolio": "Portofolio",
-      "stories": "Cerita",
-      "contact": "Kontak",
-      "rights": "Hak Cipta © 2024 Stelarhub. Semua hak dilindungi."
+      "description": "Stelarea menerjemahkan tujuan bisnis Anda menjadi alat digital yang cerdas. Kami membangun sistem yang Anda butuhkan untuk merampingkan operasi dan berkembang tanpa hambatan.",
+      "sections": {
+        "services": "Layanan",
+        "company": "Perusahaan",
+        "contact": "Kontak"
+      },
+      "links": {
+        "webPlatform": "Web & Platform",
+        "uxuiDesign": "Desain UX/UI",
+        "aiAutomation": "AI & Otomasi",
+        "dataStrategy": "Strategi Data",
+        "aboutUs": "Tentang Kami",
+        "caseStudies": "Studi Kasus",
+        "insights": "Wawasan",
+        "contact": "Kontak"
+      },
+      "location": "Jakarta, Indonesia",
+      "rights": "© {year} Stelarea. Semua hak dilindungi.",
+      "privacyPolicy": "Kebijakan Privasi",
+      "termsOfService": "Ketentuan Layanan"
     },
     "notFound": {
       "title": "Halaman Tidak Ditemukan",
@@ -125,7 +233,6 @@
       "visitSite": "Kunjungi Situs"
     }
   },
-
   "en": {
     "header": {
       "contactUs": "Contact Us",
@@ -148,12 +255,22 @@
       "webDevelopment": {
         "title": "Web Development",
         "description": "We architect fast, secure, and scalable frontend and backend systems. With solid API design and optimized databases, we build digital foundations that grow with your business.",
-        "tags": ["Frontend", "Backend", "API Design", "Database"]
+        "tags": [
+          "Frontend",
+          "Backend",
+          "API Design",
+          "Database"
+        ]
       },
       "aiEngineering": {
         "title": "AI Engineering",
         "description": "We develop machine learning models for NLP and computer vision projects, and integrate AI directly into your applications for smarter and more efficient workflows.",
-        "tags": ["Machine Learning", "Computer Vision", "NLP", "TensorFlow"]
+        "tags": [
+          "Machine Learning",
+          "Computer Vision",
+          "NLP",
+          "TensorFlow"
+        ]
       }
     },
     "portfolio": {
@@ -233,14 +350,112 @@
         "description": "We support the integration of AI solutions end-to-end, including training and ongoing technical assistance."
       }
     },
+    "homepage": {
+      "hero": {
+        "title": "Digital Systems",
+        "titleSuffix": "That Power Modern Business",
+        "description": "Stelarea translates your business goals into intelligent digital tools. We build the systems you need to streamline operations, serve customers better, and scale without friction.",
+        "getDemo": "Get a demo",
+        "customerStories": "Customer stories"
+      },
+      "about": {
+        "title": "We Are Stelarea",
+        "description": "A digital agency dedicated to simplifying the complex. We combine creative design with smart technology to build solutions that help your business grow naturally.",
+        "aboutUs": "About Us",
+        "values": {
+          "businessFirst": {
+            "title": "Business-First Approach",
+            "description": "We don't start with technology; we start with your business goals and bottlenecks. Every line of code serves a specific operational purpose."
+          },
+          "beyondHype": {
+            "title": "Beyond the Hype",
+            "description": "We implement AI and digital tools to solve actual problems, not just to follow trends. Practicality is our priority."
+          },
+          "builtForGrowth": {
+            "title": "Built for Growth",
+            "description": "Our solutions are designed to handle your success, scaling effortlessly as you expand from 100 to 1 million users."
+          },
+          "partnership": {
+            "title": "Partnership, Not Just Production",
+            "description": "We stay invested in the long-term success of the systems we build. We are your technical partner for the long haul."
+          }
+        }
+      },
+      "services": {
+        "title": "What We Do",
+        "description": "We partner with organizations to modernize how they work. We replace manual processes and outdated tools with integrated digital solutions that drive real value.",
+        "cards": {
+          "platforms": {
+            "title": "Digital Platforms",
+            "description": "Custom tools that run your core operations.",
+            "learnMore": "Learn more"
+          },
+          "design": {
+            "title": "Experience Design",
+            "description": "Products that are intuitive for your team and customers.",
+            "learnMore": "Learn more"
+          },
+          "automation": {
+            "title": "Intelligent Automation",
+            "description": "AI solutions that reduce manual workload.",
+            "learnMore": "Learn more"
+          },
+          "strategy": {
+            "title": "Data Strategy",
+            "description": "Transforming scattered numbers into clear direction.",
+            "learnMore": "Learn more"
+          }
+        }
+      },
+      "featuredWork": {
+        "title": "Featured Work",
+        "description": "See how we help organizations turn challenges into advantages.",
+        "viewStories": "View Success Stories",
+        "projects": {
+          "brin": {
+            "brand": "BRIN",
+            "title": "LLM Evaluation Platform",
+            "description": "A comprehensive platform for evaluating Large Language Models specifically for Indonesian languages."
+          },
+          "lidm": {
+            "brand": "LIDM",
+            "title": "Cortex Learning Management",
+            "description": "Advanced learning management system designed for modern educational institutions."
+          },
+          "matafutsal": {
+            "brand": "Matafutsal",
+            "title": "Sports Venue Booking",
+            "description": "A seamless booking experience for sports venues and community events."
+          }
+        }
+      },
+      "cta": {
+        "title": "Ready to modernize your operations?",
+        "description": "Let's design a solution that works as hard as you do.",
+        "button": "Start Your Transformation"
+      }
+    },
     "footer": {
-      "description": "Crafting scalable web experiences and intelligent AI systems.",
-      "quickLinks": "Quick Links",
-      "services": "Services",
-      "portfolio": "Portfolio",
-      "stories": "Stories",
-      "contact": "Contact",
-      "rights": "Copyright © 2024 Stelarhub. All rights reserved."
+      "description": "Stelarea translates your business goals into intelligent digital tools. We build the systems you need to streamline operations and scale without friction.",
+      "sections": {
+        "services": "Services",
+        "company": "Company",
+        "contact": "Contact"
+      },
+      "links": {
+        "webPlatform": "Web & Platform",
+        "uxuiDesign": "UX/UI Design",
+        "aiAutomation": "AI & Automation",
+        "dataStrategy": "Data Strategy",
+        "aboutUs": "About Us",
+        "caseStudies": "Case Studies",
+        "insights": "Insights",
+        "contact": "Contact"
+      },
+      "location": "Jakarta, Indonesia",
+      "rights": "© {year} Stelarea. All rights reserved.",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service"
     },
     "notFound": {
       "title": "Page Not Found",

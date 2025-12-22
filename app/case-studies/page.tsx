@@ -1,13 +1,18 @@
+'use client'
+
 import React from 'react'
 import Section from '@/components/Section'
 import Card from '@/components/Card'
 import { ArrowRight } from 'lucide-react'
 import CaseStudyCard from '@/components/CaseStudyCard'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function CaseStudiesPage() {
+    const { t } = useLanguage()
+
     return (
-        <main className="pt-24 min-h-screen bg-background">
-            <Section className="pb-12 text-center">
+        <main className="pt-16 min-h-screen bg-background">
+            <Section className="!pb-0 text-center">
                 <div className="max-w-4xl mx-auto">
                     <h1 className="text-4xl md:text-6xl font-bold text-text mb-6">
                         Impact in Action
@@ -30,22 +35,25 @@ export default function CaseStudiesPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Placeholders for now */}
                     <CaseStudyCard
-                        brand="BRIN"
-                        title="LLM Evaluation Platform"
-                        description="A comprehensive platform for evaluating Large Language Models specifically for Indonesian languages."
+                        brand={t('homepage.featuredWork.projects.brin.brand')}
+                        title={t('homepage.featuredWork.projects.brin.title')}
+                        description={t('homepage.featuredWork.projects.brin.description')}
                         image="/assets/portfolio/brin-llm-eval/1.png"
+                        href="/case-studies/brin-llm-eval"
                     />
                     <CaseStudyCard
-                        brand="LIDM"
-                        title="Cortex Learning Management"
-                        description="Advanced learning management system designed for modern educational institutions."
+                        brand={t('homepage.featuredWork.projects.lidm.brand')}
+                        title={t('homepage.featuredWork.projects.lidm.title')}
+                        description={t('homepage.featuredWork.projects.lidm.description')}
                         image="/assets/portfolio/cortex-lidm/1.png"
+                        href="/case-studies/cortex-lidm"
                     />
                     <CaseStudyCard
-                        brand="Matafutsal"
-                        title="Sports Venue Booking"
-                        description="A seamless booking experience for sports venues and community events."
+                        brand={t('homepage.featuredWork.projects.matafutsal.brand')}
+                        title={t('homepage.featuredWork.projects.matafutsal.title')}
+                        description={t('homepage.featuredWork.projects.matafutsal.description')}
                         image="/assets/portfolio/matafutsal/1.png"
+                        href="/case-studies/matafutsal"
                     />
                 </div>
             </Section>

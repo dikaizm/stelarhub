@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Monitor, Users, Cpu, BarChart3, CheckCircle2 } from "lucide-react";
@@ -5,8 +7,11 @@ import Section from "@/components/Section";
 import PrimaryButton from "@/components/Buttons/PrimaryButton";
 import Card from "@/components/Card";
 import CaseStudyCard from "@/components/CaseStudyCard";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Home() {
+    const { t } = useLanguage();
+
     return (
         <main className="flex min-h-screen flex-col items-center justify-between">
             {/* Hero Section */}
@@ -21,23 +26,23 @@ export default function Home() {
 
                     <div className="relative z-10 max-w-4xl px-4">
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 text-balance">
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Digital Systems</span> That Power Modern Business
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">{t('homepage.hero.title')}</span> {t('homepage.hero.titleSuffix')}
                         </h1>
 
                         <p className="text-lg sm:text-xl text-gray-300 mb-10 max-w-2xl mx-auto text-balance font-light leading-relaxed">
-                            Stelarea translates your business goals into intelligent digital tools. We build the systems you need to streamline operations, serve customers better, and scale without friction.
+                            {t('homepage.hero.description')}
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
                             <PrimaryButton
-                                label="Get a demo"
+                                label={t('homepage.hero.getDemo')}
                                 link="/contact"
                                 icon={<ArrowRight size={18} />}
                                 iconPosition="right"
                                 className="w-full sm:w-auto bg-primary hover:bg-primary-hover text-white border-0 !rounded-full !px-6 !py-2.5"
                             />
                             <button className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full font-semibold transition-all duration-300 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm border border-white/10 ring-1 ring-white/10">
-                                <span>Customer stories</span>
+                                <span>{t('homepage.hero.customerStories')}</span>
                                 <ArrowRight size={18} />
                             </button>
                         </div>
@@ -47,31 +52,31 @@ export default function Home() {
 
             {/* Why Stelarea Section */}
             <Section>
-                <div className="flex flex-col lg:flex-row gap-16 items-start">
+                <div className="flex flex-col lg:flex-row gap-16 md:gap-32 items-start">
                     <div className="lg:w-1/3 sticky top-32">
-                        <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">We Are Stelarea</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">{t('homepage.about.title')}</h2>
                         <p className="text-text-secondary text-lg mb-8">
-                            A digital agency dedicated to simplifying the complex. We combine creative design with smart technology to build solutions that help your business grow naturally.
+                            {t('homepage.about.description')}
                         </p>
-                        <PrimaryButton label="About Us" link="/about" variant="outline" icon={<ArrowRight size={18} />} iconPosition="right" />
+                        <PrimaryButton label={t('homepage.about.aboutUs')} link="/about" variant="outline" icon={<ArrowRight size={18} />} iconPosition="right" />
                     </div>
 
                     <div className="lg:w-2/3 grid grid-cols-1 gap-12">
                         <ValueProp
-                            title="Business-First Approach"
-                            description="We don’t start with technology; we start with your business goals and bottlenecks. Every line of code serves a specific operational purpose."
+                            title={t('homepage.about.values.businessFirst.title')}
+                            description={t('homepage.about.values.businessFirst.description')}
                         />
                         <ValueProp
-                            title="Beyond the Hype"
-                            description="We implement AI and digital tools to solve actual problems, not just to follow trends. Practicality is our priority."
+                            title={t('homepage.about.values.beyondHype.title')}
+                            description={t('homepage.about.values.beyondHype.description')}
                         />
                         <ValueProp
-                            title="Built for Growth"
-                            description="Our solutions are designed to handle your success, scaling effortlessly as you expand from 100 to 1 million users."
+                            title={t('homepage.about.values.builtForGrowth.title')}
+                            description={t('homepage.about.values.builtForGrowth.description')}
                         />
                         <ValueProp
-                            title="Partnership, Not Just Production"
-                            description="We stay invested in the long-term success of the systems we build. We are your technical partner for the long haul."
+                            title={t('homepage.about.values.partnership.title')}
+                            description={t('homepage.about.values.partnership.description')}
                         />
                     </div>
                 </div>
@@ -87,34 +92,38 @@ export default function Home() {
                     {/* Section Header - Centered */}
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            What We Do
+                            {t('homepage.services.title')}
                         </h2>
                         <p className="text-white/90 max-w-3xl mx-auto">
-                            We partner with organizations to modernize how they work. We replace manual processes and outdated tools with integrated digital solutions that drive real value.
+                            {t('homepage.services.description')}
                         </p>
                     </div>
 
                     {/* Service Cards Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <ServiceCard
-                            title="Digital Platforms"
-                            description="Custom tools that run your core operations."
+                            title={t('homepage.services.cards.platforms.title')}
+                            description={t('homepage.services.cards.platforms.description')}
                             mockupType="platforms"
+                            learnMore={t('homepage.services.cards.platforms.learnMore')}
                         />
                         <ServiceCard
-                            title="Experience Design"
-                            description="Products that are intuitive for your team and customers."
+                            title={t('homepage.services.cards.design.title')}
+                            description={t('homepage.services.cards.design.description')}
                             mockupType="design"
+                            learnMore={t('homepage.services.cards.design.learnMore')}
                         />
                         <ServiceCard
-                            title="Intelligent Automation"
-                            description="AI solutions that reduce manual workload."
+                            title={t('homepage.services.cards.automation.title')}
+                            description={t('homepage.services.cards.automation.description')}
                             mockupType="automation"
+                            learnMore={t('homepage.services.cards.automation.learnMore')}
                         />
                         <ServiceCard
-                            title="Data Strategy"
-                            description="Transforming scattered numbers into clear direction."
+                            title={t('homepage.services.cards.strategy.title')}
+                            description={t('homepage.services.cards.strategy.description')}
                             mockupType="strategy"
+                            learnMore={t('homepage.services.cards.strategy.learnMore')}
                         />
                     </div>
                 </div>
@@ -124,40 +133,42 @@ export default function Home() {
             <Section background="white">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12">
                     <div>
-                        <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">Featured Work</h2>
-                        <p className="text-text-secondary">See how we help organizations turn challenges into advantages.</p>
+                        <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">{t('homepage.featuredWork.title')}</h2>
+                        <p className="text-text-secondary">{t('homepage.featuredWork.description')}</p>
                     </div>
                     <Link href="/case-studies" className="hidden md:flex items-center gap-2 text-primary hover:text-primary-dark transition-colors mt-4 md:mt-0 font-semibold">
-                        View Success Stories <ArrowRight size={18} />
+                        {t('homepage.featuredWork.viewStories')} <ArrowRight size={18} />
                     </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {/* Placeholders for Case Study Cards */}
                     {/* Case Study Cards */}
                     <CaseStudyCard
-                        brand="BRIN"
-                        title="LLM Evaluation Platform"
-                        description="A comprehensive platform for evaluating Large Language Models specifically for Indonesian languages."
+                        brand={t('homepage.featuredWork.projects.brin.brand')}
+                        title={t('homepage.featuredWork.projects.brin.title')}
+                        description={t('homepage.featuredWork.projects.brin.description')}
                         image="/assets/portfolio/brin-llm-eval/1.png"
+                        href="/case-studies/brin-llm-eval"
                     />
                     <CaseStudyCard
-                        brand="LIDM"
-                        title="Cortex Learning Management"
-                        description="Advanced learning management system designed for modern educational institutions."
+                        brand={t('homepage.featuredWork.projects.lidm.brand')}
+                        title={t('homepage.featuredWork.projects.lidm.title')}
+                        description={t('homepage.featuredWork.projects.lidm.description')}
                         image="/assets/portfolio/cortex-lidm/1.png"
+                        href="/case-studies/cortex-lidm"
                     />
                     <CaseStudyCard
-                        brand="Matafutsal"
-                        title="Sports Venue Booking"
-                        description="A seamless booking experience for sports venues and community events."
+                        brand={t('homepage.featuredWork.projects.matafutsal.brand')}
+                        title={t('homepage.featuredWork.projects.matafutsal.title')}
+                        description={t('homepage.featuredWork.projects.matafutsal.description')}
                         image="/assets/portfolio/matafutsal/1.png"
+                        href="/case-studies/matafutsal"
                     />
                 </div>
 
                 <div className="mt-8 md:hidden">
                     <Link href="/case-studies" className="flex items-center gap-2 text-primary hover:text-primary-dark transition-colors font-semibold">
-                        View Success Stories <ArrowRight size={18} />
+                        {t('homepage.featuredWork.viewStories')} <ArrowRight size={18} />
                     </Link>
                 </div>
             </Section>
@@ -166,12 +177,12 @@ export default function Home() {
             <Section className="py-16 md:py-24 bg-background-paper relative overflow-hidden">
                 <div className="absolute inset-0 bg-primary/5 mask-fade pointer-events-none" />
                 <div className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto">
-                    <h2 className="text-4xl md:text-5xl font-bold text-text mb-6">Ready to modernize your operations?</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold text-text mb-6">{t('homepage.cta.title')}</h2>
                     <p className="text-xl text-text-secondary mb-10">
-                        Let’s design a solution that works as hard as you do.
+                        {t('homepage.cta.description')}
                     </p>
                     <PrimaryButton
-                        label="Start Your Transformation"
+                        label={t('homepage.cta.button')}
                         link="/contact"
                     />
                 </div>
@@ -180,7 +191,7 @@ export default function Home() {
     );
 }
 
-function ServiceCard({ title, description, mockupType }: { title: string, description: string, mockupType: string }) {
+function ServiceCard({ title, description, mockupType, learnMore }: { title: string, description: string, mockupType: string, learnMore: string }) {
     return (
         <div className="group rounded-2xl bg-slate-800/60 backdrop-blur-md border border-white/10 overflow-hidden hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
             {/* Mockup Image Container */}
@@ -213,7 +224,7 @@ function ServiceCard({ title, description, mockupType }: { title: string, descri
                     href="#"
                     className="inline-flex items-center gap-2 text-white/90 hover:text-white font-semibold text-sm transition-colors group-hover:gap-3 duration-300"
                 >
-                    Learn more
+                    {learnMore}
                     <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                 </Link>
             </div>
