@@ -66,8 +66,8 @@ const config: Config = {
         sm: "100%",
         md: "900px",
         lg: "1024px",
-        xl: "1140px",
-        '2xl': "1140px",
+        xl: "1280px",
+        '2xl': "1280px",
       },
       center: true,
       padding: {

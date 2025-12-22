@@ -13,14 +13,13 @@ const Card = ({ children, className = '', hover = true, variant = 'white' }: Car
     return (
         <div
             className={`
-        relative overflow-hidden rounded-2xl border border-border 
-        shadow-card
+        relative overflow-hidden bg-slate-50 rounded-2xl
         ${bgClass}
-        ${hover ? 'transition-all duration-300 hover:shadow-float hover:-translate-y-1 hover:border-primary/30' : ''}
+        ${hover ? 'transition-all duration-300 hover:bg-slate-100' : ''}
         ${className}
       `}
         >
-            <div className="relative p-6 sm:p-8">
+            <div className="relative p-4">
                 {children}
             </div>
         </div>

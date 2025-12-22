@@ -18,7 +18,7 @@ const Section = ({ children, className = '', id, background = 'transparent' }: S
         <section
             id={id}
             className={`
-        w-full py-16 sm:py-24 lg:py-32 relative
+        w-full py-16 sm:py-20 relative
         ${bgClasses[background]}
         ${className}
       `}

@@ -7,12 +7,12 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="w-full bg-background-paper border-t border-border pt-16 pb-8">
+    <footer className="w-full bg-background-paper pt-16 pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="flex flex-col lg:flex-row gap-16 mb-16">
 
           {/* Brand Column */}
-          <div className="space-y-6">
+          <div className="space-y-6 w-3/5">
             <Link href="/" className="block w-32">
               <Image
                 src={stelarLogo}
@@ -31,42 +31,45 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services Column */}
-          <div>
-            <h3 className="text-text font-semibold mb-6">Services</h3>
-            <ul className="space-y-4">
-              <FooterLink href="/services#web-development">Web & Platform</FooterLink>
-              <FooterLink href="/services#experience-design">UX/UI Design</FooterLink>
-              <FooterLink href="/services#ai-automation">AI & Automation</FooterLink>
-              <FooterLink href="/services#data-strategy">Data Strategy</FooterLink>
-            </ul>
+          <div className='flex gap-4 justify-between bg-gradient-to-br from-[#1e293b] via-[#334155] to-[#0f172a] p-10 rounded-2xl overflow-hidden w-full'>
+            {/* Services Column */}
+            <div>
+              <h3 className="text-text font-semibold mb-6 text-white/50">Services</h3>
+              <ul className="space-y-4">
+                <FooterLink href="/services#web-development">Web & Platform</FooterLink>
+                <FooterLink href="/services#experience-design">UX/UI Design</FooterLink>
+                <FooterLink href="/services#ai-automation">AI & Automation</FooterLink>
+                <FooterLink href="/services#data-strategy">Data Strategy</FooterLink>
+              </ul>
+            </div>
+
+            {/* Company Column */}
+            <div>
+              <h3 className="text-text font-semibold mb-6 text-white/50">Company</h3>
+              <ul className="space-y-4">
+                <FooterLink href="/about">About Us</FooterLink>
+                <FooterLink href="/case-studies">Case Studies</FooterLink>
+                <FooterLink href="/insights">Insights</FooterLink>
+                <FooterLink href="/contact">Contact</FooterLink>
+              </ul>
+            </div>
+
+            {/* Contact Column */}
+            <div>
+              <h3 className="text-text font-semibold mb-6 text-white/50">Contact</h3>
+              <ul className="space-y-4 text-sm text-text-secondary">
+                <li>
+                  <a href="mailto:hello@stelarea.com" className="text-white hover:text-primary transition-colors">
+                    hello@stelarea.com
+                  </a>
+                </li>
+                <li className="text-white">
+                  Jakarta, Indonesia
+                </li>
+              </ul>
+            </div>
           </div>
 
-          {/* Company Column */}
-          <div>
-            <h3 className="text-text font-semibold mb-6">Company</h3>
-            <ul className="space-y-4">
-              <FooterLink href="/about">About Us</FooterLink>
-              <FooterLink href="/case-studies">Case Studies</FooterLink>
-              <FooterLink href="/insights">Insights</FooterLink>
-              <FooterLink href="/contact">Contact</FooterLink>
-            </ul>
-          </div>
-
-          {/* Contact Column */}
-          <div>
-            <h3 className="text-text font-semibold mb-6">Contact</h3>
-            <ul className="space-y-4 text-sm text-text-secondary">
-              <li>
-                <a href="mailto:hello@stelarea.com" className="hover:text-primary transition-colors">
-                  hello@stelarea.com
-                </a>
-              </li>
-              <li>
-                Jakarta, Indonesia
-              </li>
-            </ul>
-          </div>
         </div>
 
         {/* Bottom Bar */}
@@ -106,7 +109,7 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
     <li>
       <Link
         href={href}
-        className="text-sm text-text-secondary hover:text-primary transition-colors inline-block"
+        className="text-sm text-white hover:text-primary transition-colors inline-block"
       >
         {children}
       </Link>

@@ -2,22 +2,38 @@ import React from 'react'
 import Section from '@/components/Section'
 import Card from '@/components/Card'
 import PrimaryButton from '@/components/Buttons/PrimaryButton'
-import { Code, Layout, Bot, LineChart, Check } from 'lucide-react'
+import {
+    Code, Layout, Bot, LineChart, Check,
+    Globe, Building2, Plug, Shield,
+    Users, Palette, TestTube, FileText,
+    Zap, Brain, MessageSquare, Activity,
+    Database, BarChart3, TrendingUp, Target
+} from 'lucide-react'
 
 export default function ServicesPage() {
     return (
         <main className="pt-24 min-h-screen bg-background">
             {/* Hero */}
-            <Section className="pb-12 text-center">
-                <div className="max-w-4xl mx-auto">
-                    <h1 className="text-4xl md:text-6xl font-bold text-text mb-6">
-                        Services Built for <span className="text-primary">Scale & Intelligence</span>
-                    </h1>
-                    <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-                        We provide the end-to-end capabilities you need to modernize your business, from the underlying systems to the user interface and the intelligence that powers it all.
-                    </p>
+            <section className="w-full pb-12 px-4 sm:px-6 lg:px-8">
+                <div className="relative w-full rounded-3xl overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 py-16 sm:py-24 flex flex-col items-center text-center">
+
+                    {/* Subtle Background Effects */}
+                    <div className="absolute inset-0 w-full h-full pointer-events-none opacity-40">
+                        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/2" />
+                        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px] -translate-x-1/3 translate-y-1/2" />
+                    </div>
+
+                    <div className="relative z-10 max-w-4xl px-4">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6 text-balance">
+                            Services Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Scale & Intelligence</span>
+                        </h1>
+
+                        <p className="text-lg sm:text-xl text-gray-600 mb-10 max-w-2xl mx-auto text-balance font-light leading-relaxed">
+                            We provide the end-to-end capabilities you need to modernize your business, from the underlying systems to the user interface and the intelligence that powers it all.
+                        </p>
+                    </div>
                 </div>
-            </Section>
+            </section>
 
             {/* Web & Platform Solutions */}
             <ServiceSection
@@ -26,13 +42,12 @@ export default function ServicesPage() {
                 description="We build secure, scalable web platforms that become the foundation of your digital operations."
                 icon={<Code className="w-10 h-10 text-primary" />}
                 whatWeDeliver={[
-                    "Custom web applications",
-                    "Company profile & enterprise systems",
-                    "Headless CMS & API integration",
-                    "Performance and security optimization"
+                    { icon: <Globe className="w-5 h-5" />, text: "Custom web applications" },
+                    { icon: <Building2 className="w-5 h-5" />, text: "Company profile & enterprise systems" },
+                    { icon: <Plug className="w-5 h-5" />, text: "Headless CMS & API integration" },
+                    { icon: <Shield className="w-5 h-5" />, text: "Performance and security optimization" }
                 ]}
                 outcome="A reliable digital platform built for growth."
-                altBackground={true}
             />
 
             {/* UX/UI */}
@@ -42,10 +57,10 @@ export default function ServicesPage() {
                 description="We design experiences that make complex systems easy to use. A powerful system is useless if your team can't use it."
                 icon={<Layout className="w-10 h-10 text-secondary" />}
                 whatWeDeliver={[
-                    "UX research & user journey mapping",
-                    "Interface design & design systems",
-                    "Prototyping and usability testing",
-                    "Wireframing & Information Architecture"
+                    { icon: <Users className="w-5 h-5" />, text: "UX research & user journey mapping" },
+                    { icon: <Palette className="w-5 h-5" />, text: "Interface design & design systems" },
+                    { icon: <TestTube className="w-5 h-5" />, text: "Prototyping and usability testing" },
+                    { icon: <FileText className="w-5 h-5" />, text: "Wireframing & Information Architecture" }
                 ]}
                 outcome="Higher engagement, better usability, and improved conversion."
                 align="right"
@@ -58,13 +73,12 @@ export default function ServicesPage() {
                 description="We develop intelligent systems that automate tasks and support decision-making. Free your team from repetitive tasks."
                 icon={<Bot className="w-10 h-10 text-primary" />}
                 whatWeDeliver={[
-                    "AI agents & workflow automation",
-                    "Machine learning models (prediction, NLP, CV)",
-                    "LLM integration for internal tools",
-                    "Model deployment & monitoring"
+                    { icon: <Zap className="w-5 h-5" />, text: "AI agents & workflow automation" },
+                    { icon: <Brain className="w-5 h-5" />, text: "Machine learning models (prediction, NLP, CV)" },
+                    { icon: <MessageSquare className="w-5 h-5" />, text: "LLM integration for internal tools" },
+                    { icon: <Activity className="w-5 h-5" />, text: "Model deployment & monitoring" }
                 ]}
                 outcome="Smarter operations and data-driven decisions."
-                altBackground={true}
             />
 
             {/* Data Analytics */}
@@ -74,10 +88,10 @@ export default function ServicesPage() {
                 description="We transform raw data into insights that drive action. Stop guessing and start knowing."
                 icon={<LineChart className="w-10 h-10 text-indigo-500" />}
                 whatWeDeliver={[
-                    "Data pipelines & integration",
-                    "Dashboards & BI solutions",
-                    "Advanced analytics & forecasting",
-                    "KPI & metrics frameworks"
+                    { icon: <Database className="w-5 h-5" />, text: "Data pipelines & integration" },
+                    { icon: <BarChart3 className="w-5 h-5" />, text: "Dashboards & BI solutions" },
+                    { icon: <TrendingUp className="w-5 h-5" />, text: "Advanced analytics & forecasting" },
+                    { icon: <Target className="w-5 h-5" />, text: "KPI & metrics frameworks" }
                 ]}
                 outcome="Clear insights for faster, better decisions."
                 align="right"
@@ -92,12 +106,17 @@ export default function ServicesPage() {
     )
 }
 
+interface DeliveryItem {
+    icon: React.ReactNode
+    text: string
+}
+
 interface ServiceSectionProps {
     id: string
     title: string
     description: string
     icon: React.ReactNode
-    whatWeDeliver: string[]
+    whatWeDeliver: DeliveryItem[]
     outcome: string
     align?: 'left' | 'right'
     altBackground?: boolean
@@ -110,35 +129,37 @@ function ServiceSection({ id, title, description, icon, whatWeDeliver, outcome, 
 
                 {/* Content Side */}
                 <div className="flex-1">
-                    <div className="mb-6 w-16 h-16 rounded-2xl bg-white border border-border flex items-center justify-center shadow-md">
+
+                    <div className="lg:hidden mb-6 w-16 h-16 rounded-2xl bg-white border border-border flex items-center justify-center shadow-md">
                         {icon}
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">{title}</h2>
-                    <p className="text-lg text-text-secondary mb-8 leading-relaxed">
+                    <p className="text-xl text-text font-medium mb-6">{outcome}</p>
+
+                    <p className="text-text-secondary mb-8 leading-relaxed">
                         {description}
                     </p>
 
-                    <div className="bg-white rounded-xl p-8 border border-border mb-8 shadow-sm">
-                        <h3 className="text-sm font-semibold text-text-secondary uppercase tracking-wider mb-4 border-b border-border pb-2">What We Deliver</h3>
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            {whatWeDeliver.map((item, index) => (
-                                <li key={index} className="flex items-start gap-3 text-text-secondary">
-                                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                                    <span>{item}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
 
-                    <div>
-                        <h3 className="text-sm font-semibold text-text-secondary uppercase tracking-wider mb-2">The Outcome</h3>
-                        <p className="text-xl text-text font-medium">{outcome}</p>
-                    </div>
+                    <ul className="flex flex-col gap-4">
+                        {whatWeDeliver.map((item, index) => (
+                            <li key={index} className="flex items-start gap-3 text-text-secondary">
+                                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                                    {item.icon}
+                                </div>
+                                <span className="flex-1 pt-2">{item.text}</span>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
 
                 {/* Visual Side */}
-                <div className="flex-1 w-full">
-                    <Card className="aspect-video flex items-center justify-center bg-background-subtle border-dashed border-border" variant="paper">
+                <div className="flex-1 w-full relative">
+                    <div className="hidden lg:flex absolute -top-8 -left-8 w-16 h-16 rounded-2xl bg-white border border-border items-center justify-center shadow-xl z-10">
+                        {icon}
+                    </div>
+
+                    <Card className="flex aspect-square items-center justify-center bg-background-subtle border-dashed border-border" variant="paper">
                         <span className="text-text-muted font-mono">System Visualization for {title}</span>
                     </Card>
                 </div>

@@ -2,11 +2,12 @@ import React from 'react'
 import Section from '@/components/Section'
 import Card from '@/components/Card'
 import { ArrowRight, Calendar } from 'lucide-react'
+import { FilterButton } from '../case-studies/page'
 
 export default function InsightsPage() {
     return (
-        <main className="pt-24 min-h-screen bg-background">
-            <Section className="pb-12 text-center">
+        <main className="pt-16 min-h-screen bg-background">
+            <Section className="!pb-0 text-center">
                 <div className="max-w-4xl mx-auto">
                     <h1 className="text-4xl md:text-6xl font-bold text-text mb-6">
                         Insights & Perspectives
@@ -20,12 +21,11 @@ export default function InsightsPage() {
             <Section background="white">
                 {/* Featured Article */}
                 <div className="mb-16">
-                    <h2 className="text-2xl font-bold text-text mb-8">Featured Article</h2>
-                    <Card className="grid md:grid-cols-2 gap-8 items-center p-0 overflow-hidden" hover={false}>
-                        <div className="h-64 md:h-full bg-background-subtle flex items-center justify-center text-text-muted min-h-[300px]">
+                    <div className="grid md:grid-cols-2 gap-8 items-center overflow-hidden rounded-2xl bg-slate-50 p-4">
+                        <div className="h-64 rounded-xl md:h-full bg-background-subtle flex items-center justify-center text-text-muted min-h-[300px]">
                             Featured Image
                         </div>
-                        <div className="p-8">
+                        <div className="px-12 py-20">
                             <div className="flex items-center gap-4 text-sm text-text-secondary mb-4">
                                 <span className="text-primary font-semibold">AI Strategy</span>
                                 <span>•</span>
@@ -39,11 +39,17 @@ export default function InsightsPage() {
                                 Read Full Article <ArrowRight size={18} />
                             </button>
                         </div>
-                    </Card>
+                    </div>
+                </div>
+
+                <div className="flex flex-wrap justify-center gap-4 mb-16">
+                    <FilterButton label="All Projects" active />
+                    <FilterButton label="Web & Platform" />
+                    <FilterButton label="AI & Automation" />
+                    <FilterButton label="Data Analytics" />
                 </div>
 
                 {/* Recent Articles */}
-                <h2 className="text-2xl font-bold text-text mb-8">Recent Insights</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <BlogCard
                         category="Product Design"
@@ -72,17 +78,19 @@ function BlogCard({ category, title, excerpt }: { category: string, title: strin
             <div className="h-48 bg-background-subtle rounded-lg mb-6 flex items-center justify-center text-text-muted border border-border">
                 Image
             </div>
-            <div className="flex items-center gap-4 text-xs text-text-secondary mb-3">
-                <span className="text-primary font-semibold uppercase">{category}</span>
-                <span>•</span>
-                <span>5 min read</span>
-            </div>
-            <h3 className="text-xl font-bold text-text mb-3 group-hover:text-primary transition-colors">{title}</h3>
-            <p className="text-text-secondary text-sm leading-relaxed mb-6 flex-1">
-                {excerpt}
-            </p>
-            <div className="flex items-center text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">
-                Read More <ArrowRight size={16} className="ml-2" />
+            <div className='p-2 pt-0'>
+                <div className="flex items-center gap-4 text-xs text-text-secondary mb-3">
+                    <span className="text-primary font-semibold uppercase">{category}</span>
+                    <span>•</span>
+                    <span>5 min read</span>
+                </div>
+                <h3 className="text-xl font-bold text-text mb-3 group-hover:text-primary transition-colors">{title}</h3>
+                <p className="text-text-secondary text-sm leading-relaxed mb-6 flex-1">
+                    {excerpt}
+                </p>
+                <div className="flex items-center text-primary text-sm font-semibold mt-auto">
+                    Read More <ArrowRight size={16} className="ml-2" />
+                </div>
             </div>
         </Card>
     )
