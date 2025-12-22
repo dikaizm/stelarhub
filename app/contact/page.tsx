@@ -4,7 +4,7 @@ import React from 'react'
 import Section from '@/components/Section'
 import Card from '@/components/Card'
 import PrimaryButton from '@/components/Buttons/PrimaryButton'
-import { Mail, MapPin, Instagram, Linkedin, Twitter, ArrowRight } from 'lucide-react'
+import { Mail, MapPin, Phone, Instagram, Linkedin, Twitter, ArrowRight } from 'lucide-react'
 
 export default function ContactPage() {
     return (
@@ -21,48 +21,56 @@ export default function ContactPage() {
             </Section>
 
             <Section className="pb-24">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+                <div className="flex flex-col justify-between md:flex-row gap-12 md:gap-24">
                     {/* Contact Info */}
-                    <div>
+                    <div className="w-full md:w-1/2">
                         <h2 className="text-2xl font-bold text-text mb-8">Get in Touch</h2>
                         <div className="space-y-8">
-                            <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                                    <Mail size={24} />
-                                </div>
-                                <div>
-                                    <h3 className="text-lg font-semibold text-text mb-1">Email</h3>
-                                    <a href="mailto:hello@stelarea.com" className="text-text-secondary hover:text-primary transition-colors">
-                                        hello@stelarea.com
-                                    </a>
-                                </div>
-                            </div>
+                            <ContactInfoItem
+                                icon={<Mail size={24} />}
+                                title="Email"
+                                iconBgColor="bg-primary/10"
+                                iconColor="text-primary"
+                            >
+                                <a href="mailto:hello@stelarea.com" className="text-text-secondary hover:text-primary transition-colors">
+                                    hello@stelarea.com
+                                </a>
+                            </ContactInfoItem>
 
-                            <div className="flex items-start gap-4">
-                                <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
-                                    <MapPin size={24} />
-                                </div>
-                                <div>
-                                    <h3 className="text-lg font-semibold text-text mb-1">Office</h3>
-                                    <p className="text-text-secondary">
-                                        Bandung, Indonesia
-                                    </p>
-                                </div>
-                            </div>
+                            <ContactInfoItem
+                                icon={<Phone size={24} />}
+                                title="WhatsApp"
+                                iconBgColor="bg-green-500/10"
+                                iconColor="text-green-500"
+                            >
+                                <a href="https://wa.me/6285600809354" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-green-500 transition-colors">
+                                    +62 856-0080-9354
+                                </a>
+                            </ContactInfoItem>
+
+                            <ContactInfoItem
+                                icon={<MapPin size={24} />}
+                                title="Office"
+                                iconBgColor="bg-secondary/10"
+                                iconColor="text-secondary"
+                            >
+                                <p className="text-text-secondary">
+                                    Bandung, Indonesia
+                                </p>
+                            </ContactInfoItem>
 
                             <div className="pt-8 border-t border-border">
                                 <h3 className="text-lg font-semibold text-text mb-4">Connect with us</h3>
                                 <div className="flex gap-4">
-                                    <SocialIcon icon={<Linkedin size={20} />} />
-                                    <SocialIcon icon={<Instagram size={20} />} />
-                                    <SocialIcon icon={<Twitter size={20} />} />
+                                    <SocialIcon href="https://instagram.com/stelarealab" icon={<Instagram size={20} />} />
+                                    <SocialIcon href="https://twitter.com/stelarealab" icon={<Twitter size={20} />} />
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     {/* Contact Form */}
-                    <Card className="bg-white border-border" variant="white">
+                    <Card className="w-full">
                         <form className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <InputGroup label="Name" placeholder="Your name" />
@@ -105,9 +113,34 @@ function InputGroup({ label, type = "text", placeholder }: { label: string, type
     )
 }
 
-function SocialIcon({ icon }: { icon: React.ReactNode }) {
+function ContactInfoItem({ icon, title, iconBgColor, iconColor, children }: {
+    icon: React.ReactNode
+    title: string
+    iconBgColor: string
+    iconColor: string
+    children: React.ReactNode
+}) {
     return (
-        <a href="#" className="w-10 h-10 rounded-full bg-background-subtle border border-border flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all">
+        <div className="flex items-start gap-4">
+            <div className={`w-12 h-12 rounded-full ${iconBgColor} flex items-center justify-center ${iconColor}`}>
+                {icon}
+            </div>
+            <div>
+                <h3 className="text-lg font-semibold text-text mb-1">{title}</h3>
+                {children}
+            </div>
+        </div>
+    )
+}
+
+function SocialIcon({ href, icon }: { href: string; icon: React.ReactNode }) {
+    return (
+        <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-10 h-10 rounded-full bg-background-subtle border border-border flex items-center justify-center text-text-secondary hover:bg-primary hover:text-white hover:border-primary transition-all"
+        >
             {icon}
         </a>
     )

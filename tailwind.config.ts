@@ -8,7 +8,9 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   safelist: [
-    "container"
+    "container",
+    "bg-background-paper",
+    "bg-background-subtle"
   ],
   theme: {
     extend: {

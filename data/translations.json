@@ -10,17 +10,17 @@
       }
     },
     "hero": {
-      "title": "Membangun Masa Depan dengan Kode dan Kreativitas",
-      "subtitle": "Kami menghadirkan pengalaman web yang scalable dan solusi AI cerdas untuk mempercepat transformasi digital bisnis Anda.",
-      "exploreWork": "Lihat Portofolio",
+      "title": "Mewujudkan Masa Depan Lewat Kode dan Kreativitas",
+      "subtitle": "Kami menciptakan pengalaman web yang scalable dan solusi AI cerdas untuk mengakselerasi transformasi digital bisnis Anda.",
+      "exploreWork": "Lihat Karya Kami",
       "getInTouch": "Hubungi Kami"
     },
     "services": {
-      "title": "Apa yang Kami Lakukan",
-      "subtitle": "Kami menggabungkan web development dan AI engineering untuk menghadirkan solusi digital premium yang siap scale dan siap produksi.",
+      "title": "Layanan Kami",
+      "subtitle": "Memadukan pengembangan web dan rekayasa AI untuk menghadirkan solusi digital premium yang siap produksi.",
       "webDevelopment": {
         "title": "Web Development",
-        "description": "Kami merancang arsitektur frontend dan backend yang cepat, aman, dan scalable. Dengan API design yang solid dan database optimization, kami membangun fondasi digital yang siap tumbuh bersama bisnis Anda.",
+        "description": "Kami merancang arsitektur frontend dan backend yang cepat, aman, dan scalable. Dengan desain API yang solid dan optimasi database, kami membangun fondasi digital yang tumbuh bersama bisnis Anda.",
         "tags": [
           "Frontend",
           "Backend",
@@ -30,7 +30,7 @@
       },
       "aiEngineering": {
         "title": "AI Engineering",
-        "description": "Kami mengembangkan machine learning models untuk project NLP dan computer vision, serta mengintegrasikan AI langsung ke dalam aplikasi Anda agar lebih cerdas, efisien, dan otomatis.",
+        "description": "Kami mengembangkan model machine learning untuk NLP dan computer vision, serta mengintegrasikan AI langsung ke aplikasi Anda agar lebih cerdas, efisien, dan otomatis.",
         "tags": [
           "Machine Learning",
           "Computer Vision",
@@ -40,25 +40,25 @@
       }
     },
     "portfolio": {
-      "title": "Proyek Unggulan",
-      "subtitle": "Hasil kerja kami mencerminkan standar engineering dan desain kelas enterprise.",
+      "title": "Karya Pilihan",
+      "subtitle": "Dedikasi kami pada standar engineering dan desain kelas dunia.",
       "visitSite": "Kunjungi Situs",
       "showMe": "Tunjukkan",
       "projects": {
         "matafutsal": {
           "tag": "Company Profile",
           "title": "MataFutsal",
-          "description": "Landing page modern untuk perusahaan teknologi futsal, menampilkan product lineup, layanan utama, dan brand identity dalam tampilan yang bersih, responsif, dan profesional."
+          "description": "Landing page modern untuk perusahaan teknologi futsal, menampilkan lini produk, layanan utama, dan identitas brand dalam tampilan bersih, responsif, dan profesional."
         },
         "rokade": {
           "tag": "Platform Keamanan Siber",
           "title": "Rokade",
-          "description": "Company profile yang terhubung dengan platform AI DFR. Menampilkan LLM-based intelligence untuk document understanding dan deployment automation bagi kebutuhan enterprise security."
+          "description": "Company profile yang terintegrasi dengan platform AI DFR. Menampilkan kecerdasan berbasis LLM untuk pemahaman dokumen dan otomatisasi deployment bagi keamanan enterprise."
         },
         "cortex": {
           "tag": "Platform Pendidikan AI",
           "title": "Cortex",
-          "description": "Platform berbasis AI untuk menghasilkan video edukasi otomatis. Menggabungkan multimodal AI untuk script generation, voice synthesis, dan video assembly dalam satu workflow terpadu."
+          "description": "Platform berbasis AI untuk video edukasi otomatis. Menggabungkan AI multimodal untuk pembuatan naskah, sintesis suara, dan perakitan video dalam satu alur kerja."
         },
         "brin": {
           "tag": "Dashboard Penelitian",
@@ -69,7 +69,7 @@
     },
     "about": {
       "title": "Tim Kami",
-      "subtitle": "Tim kecil dengan kemampuan besar—menggabungkan engineering excellence dan visual storytelling untuk menciptakan solusi digital kelas premium.",
+      "subtitle": "Tim kecil dengan dampak besar—memadukan keunggulan teknis dan visual storytelling untuk menciptakan pengalaman digital premium.",
       "izzulhaq": {
         "name": "Izzulhaq Mahardika",
         "role": "Tech Wizard",
@@ -87,14 +87,14 @@
       }
     },
     "contact": {
-      "title": "Mari Bangun Solusi untuk Masa Depan",
-      "subtitle": "Terbuka untuk proyek freelance, kolaborasi riset, dan kemitraan teknologi. Kami siap membantu Anda membangun solusi digital yang berdampak.",
+      "title": "Mari Bangun Masa Depan Bersama",
+      "subtitle": "Terbuka untuk kolaborasi proyek, riset, dan kemitraan teknologi. Kami siap membantu Anda mewujudkan solusi digital yang berdampak.",
       "email": "dikaizm@gmail.com",
       "whatsapp": "WhatsApp Saya"
     },
     "insights": {
-      "title": "Insight AI untuk Bisnis",
-      "subtitle": "Jelajahi tren dan praktik AI yang dapat meningkatkan efisiensi, mempercepat pertumbuhan, dan membuka peluang baru bagi bisnis Anda.",
+      "title": "Wawasan AI & Bisnis",
+      "subtitle": "Temukan tren dan penerapan AI yang mampu meningkatkan efisiensi, mempercepat pertumbuhan, dan membuka peluang baru bagi bisnis Anda.",
       "workflowAutomation": "Otomatisasi Alur Kerja",
       "predictiveAnalysis": "Analisis Prediktif",
       "customerInteraction": "Peningkatan Interaksi Pelanggan",
@@ -123,91 +123,91 @@
     },
     "homepage": {
       "hero": {
-        "title": "Digital Systems",
-        "titleSuffix": "Yang Mendukung Bisnis Modern",
-        "description": "Stelarea menerjemahkan tujuan bisnis Anda menjadi alat digital yang cerdas. Kami membangun sistem yang Anda butuhkan untuk merampingkan operasi, melayani pelanggan dengan lebih baik, dan berkembang tanpa hambatan.",
-        "getDemo": "Dapatkan Demo",
-        "customerStories": "Cerita Pelanggan"
+        "title": "Sistem Digital",
+        "titleSuffix": "Penggerak Bisnis Modern",
+        "description": "Stelarea mengubah visi bisnis Anda menjadi solusi digital cerdas. Kami membangun sistem untuk merampingkan operasional, meningkatkan layanan pelanggan, dan mendukung ekspansi tanpa hambatan.",
+        "getDemo": "Minta Demo",
+        "customerStories": "Kisah Sukses"
       },
       "about": {
-        "title": "Kami Adalah Stelarea",
-        "description": "Agensi digital yang berdedikasi untuk menyederhanakan yang kompleks. Kami menggabungkan desain kreatif dengan teknologi cerdas untuk membangun solusi yang membantu bisnis Anda tumbuh secara alami.",
+        "title": "Mengenal Stelarea",
+        "description": "Agensi digital yang berdedikasi menyederhanakan kompleksitas. Kami memadukan desain kreatif dan teknologi cerdas untuk membangun solusi yang mendorong pertumbuhan bisnis secara organik.",
         "aboutUs": "Tentang Kami",
         "values": {
           "businessFirst": {
-            "title": "Pendekatan Bisnis Pertama",
-            "description": "Kami tidak memulai dengan teknologi; kami memulai dengan tujuan dan hambatan bisnis Anda. Setiap baris kode melayani tujuan operasional yang spesifik."
+            "title": "Fokus pada Nilai Bisnis",
+            "description": "Kami mulai dari tujuan dan tantangan bisnis Anda, bukan sekadar teknologi. Setiap baris kode memiliki tujuan operasional yang jelas."
           },
           "beyondHype": {
-            "title": "Melampaui Hype",
-            "description": "Kami mengimplementasikan AI dan alat digital untuk memecahkan masalah nyata, bukan hanya mengikuti tren. Kepraktisan adalah prioritas kami."
+            "title": "Lebih dari Sekadar Tren",
+            "description": "Kami menerapkan AI dan perangkat digital untuk solusi nyata, bukan sekadar mengikuti tren. Utilitas adalah prioritas kami."
           },
           "builtForGrowth": {
-            "title": "Dibangun untuk Pertumbuhan",
-            "description": "Solusi kami dirancang untuk menangani kesuksesan Anda, berkembang dengan mudah saat Anda berkembang dari 100 hingga 1 juta pengguna."
+            "title": "Siap untuk Skala Besar",
+            "description": "Solusi kami dirancang untuk mengakomodasi pertumbuhan Anda, beradaptasi mulus dari ratusan hingga jutaan pengguna."
           },
           "partnership": {
-            "title": "Kemitraan, Bukan Hanya Produksi",
-            "description": "Kami tetap berinvestasi dalam kesuksesan jangka panjang dari sistem yang kami bangun. Kami adalah mitra teknis Anda untuk jangka panjang."
+            "title": "Mitra, Bukan Sekadar Vendor",
+            "description": "Kami berinvestasi pada kesuksesan jangka panjang sistem yang kami bangun. Kami adalah mitra teknis strategis Anda."
           }
         }
       },
       "services": {
-        "title": "Apa yang Kami Lakukan",
-        "description": "Kami bermitra dengan organisasi untuk memodernisasi cara mereka bekerja. Kami mengganti proses manual dan alat yang ketinggalan zaman dengan solusi digital terintegrasi yang mendorong nilai nyata.",
+        "title": "Solusi Kami",
+        "description": "Kami bermitra dengan organisasi untuk memodernisasi cara kerja. Menggantikan proses manual dengan solusi digital terintegrasi yang memberikan nilai nyata.",
         "cards": {
           "platforms": {
             "title": "Platform Digital",
-            "description": "Alat khusus yang menjalankan operasi inti Anda.",
+            "description": "Aplikasi custom untuk operasional inti bisnis.",
             "learnMore": "Pelajari lebih lanjut"
           },
           "design": {
-            "title": "Desain Pengalaman",
-            "description": "Produk yang intuitif untuk tim dan pelanggan Anda.",
+            "title": "Desain Pengalaman (UX)",
+            "description": "Produk intuitif bagi tim dan pelanggan Anda.",
             "learnMore": "Pelajari lebih lanjut"
           },
           "automation": {
             "title": "Otomasi Cerdas",
-            "description": "Solusi AI yang mengurangi beban kerja manual.",
+            "description": "Solusi AI yang memangkas beban kerja manual.",
             "learnMore": "Pelajari lebih lanjut"
           },
           "strategy": {
             "title": "Strategi Data",
-            "description": "Mengubah angka yang tersebar menjadi arah yang jelas.",
+            "description": "Mengubah data mentah menjadi panduan strategis.",
             "learnMore": "Pelajari lebih lanjut"
           }
         }
       },
       "featuredWork": {
-        "title": "Karya Unggulan",
-        "description": "Lihat bagaimana kami membantu organisasi mengubah tantangan menjadi keuntungan.",
-        "viewStories": "Lihat Cerita Sukses",
+        "title": "Portofolio Unggulan",
+        "description": "Lihat bagaimana kami mengubah tantangan menjadi keunggulan kompetitif.",
+        "viewStories": "Lihat Studi Kasus",
         "projects": {
           "brin": {
             "brand": "BRIN",
             "title": "Platform Evaluasi LLM",
-            "description": "Platform komprehensif untuk mengevaluasi Model Bahasa Besar khusus untuk bahasa Indonesia."
+            "description": "Platform evaluasi komprehensif untuk Model Bahasa Besar (LLM) berbahasa Indonesia."
           },
           "lidm": {
             "brand": "LIDM",
             "title": "Manajemen Pembelajaran Cortex",
-            "description": "Sistem manajemen pembelajaran canggih yang dirancang untuk institusi pendidikan modern."
+            "description": "Sistem manajemen pembelajaran (LMS) modern yang dirancang untuk institusi pendidikan masa depan."
           },
           "matafutsal": {
             "brand": "Matafutsal",
             "title": "Pemesanan Venue Olahraga",
-            "description": "Pengalaman pemesanan yang mulus untuk venue olahraga dan acara komunitas."
+            "description": "Platform booking venue olahraga yang seamless untuk komunitas."
           }
         }
       },
       "cta": {
-        "title": "Siap memodernisasi operasi Anda?",
+        "title": "Siap Modernisasi Bisnis Anda?",
         "description": "Mari rancang solusi yang bekerja sekeras Anda.",
-        "button": "Mulai Transformasi Anda"
+        "button": "Mulai Transformasi"
       }
     },
     "footer": {
-      "description": "Stelarea menerjemahkan tujuan bisnis Anda menjadi alat digital yang cerdas. Kami membangun sistem yang Anda butuhkan untuk merampingkan operasi dan berkembang tanpa hambatan.",
+      "description": "Stelarea mengubah visi bisnis Anda menjadi solusi digital cerdas. Kami membangun sistem untuk merampingkan operasional dan mendukung ekspansi tanpa hambatan.",
       "sections": {
         "services": "Layanan",
         "company": "Perusahaan",
@@ -224,7 +224,7 @@
         "contact": "Kontak"
       },
       "location": "Bandung, Indonesia",
-      "rights": "© {year} Stelarea. Semua hak dilindungi.",
+      "rights": "© {year} Stelarea. Hak cipta dilindungi.",
       "privacyPolicy": "Kebijakan Privasi",
       "termsOfService": "Ketentuan Layanan"
     },

@@ -11,8 +11,8 @@ interface BlogCardProps {
 export default function BlogCard({ post }: BlogCardProps) {
     return (
         <Link href={`/insights/${post.slug}`} className="block h-full">
-            <Card className="h-full flex flex-col group cursor-pointer hover:border-primary/50 transition-all">
-                <div className="h-48 bg-background-subtle rounded-lg mb-6 flex items-center justify-center text-text-muted border border-border">
+            <Card variant='paper' className="h-full flex flex-col group cursor-pointer transition-all">
+                <div className="h-48 bg-background-subtle rounded-lg mb-6 flex items-center justify-center text-text-muted">
                     {post.image || "Image"}
                 </div>
                 <div className='p-2 pt-0 flex flex-col flex-1'>

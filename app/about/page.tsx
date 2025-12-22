@@ -120,7 +120,7 @@ export default function AboutPage() {
                         {t('about.subtitle')}
                     </p>
                 </div>
-                <div className="flex gap-4 overflow-x-auto pb-4 md:w-fit md:mx-auto items-stretch snap-x snap-mandatory">
+                <div className="grid grid-flow-col auto-cols-[280px] md:grid-flow-row md:grid-cols-3 md:auto-cols-auto gap-4 overflow-x-auto md:overflow-visible pb-4 md:w-fit md:mx-auto snap-x snap-mandatory md:snap-none">
                     <TeamCard
                         name={t('about.izzulhaq.name')}
                         role={t('about.izzulhaq.role')}
@@ -182,8 +182,8 @@ function ValueCard({ icon, title, description }: { icon: React.ReactNode, title:
 
 function TeamCard({ name, role, description, image }: { name: string, role: string, description: string, image: string }) {
     return (
-        <Card className="h-full !p-0 overflow-hidden group transition-all duration-300 w-[280px] flex-shrink-0 snap-center">
-            <div className="relative w-full rounded-xl aspect-square overflow-hidden bg-slate-100">
+        <Card variant='paper' className="h-full !p-0 overflow-hidden group transition-all duration-300 flex-shrink-0 snap-center md:snap-align-none">
+            <div className="relative w-full rounded-xl aspect-square overflow-hidden bg-background-subtle">
                 <Image
                     src={image}
                     alt={name}

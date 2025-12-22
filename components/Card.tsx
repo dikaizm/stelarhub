@@ -7,15 +7,15 @@ interface CardProps {
     variant?: 'white' | 'paper'
 }
 
-const Card = ({ children, className = '', hover = true, variant = 'white' }: CardProps) => {
+const Card = ({ children, className = '', hover = true, variant = 'paper' }: CardProps) => {
     const bgClass = variant === 'white' ? 'bg-white' : 'bg-background-paper'
 
     return (
         <div
             className={`
-        relative overflow-hidden bg-slate-50 rounded-2xl
+        relative overflow-hidden rounded-2xl 
         ${bgClass}
-        ${hover ? 'transition-all duration-300 hover:bg-slate-100' : ''}
+        ${hover ? 'transition-all duration-300 hover:bg-background-subtle' : ''}
         ${className}
       `}
         >
