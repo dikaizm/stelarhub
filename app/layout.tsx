@@ -3,6 +3,7 @@ import { Urbanist, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Layouts/Header";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import Footer from "@/components/Layouts/Footer";
 
 const font = Plus_Jakarta_Sans({
   weight: "variable",
@@ -18,20 +19,20 @@ export const metadata: Metadata = {
   description: "Stelarea adalah agensi digital terdepan yang menyediakan solusi AI, machine learning, dan pengembangan web untuk mengoptimalkan bisnis modern Anda dengan teknologi terbaru.",
   applicationName: "Stelarea",
   keywords: [
-    "Stelarea", 
-    "AI", 
-    "Artificial Intelligence", 
+    "Stelarea",
+    "AI",
+    "Artificial Intelligence",
     "Machine Learning",
-    "Solusi AI", 
-    "Jasa AI", 
-    "Digital Agency", 
+    "Solusi AI",
+    "Jasa AI",
+    "Digital Agency",
     "Agensi Digital",
-    "Bisnis Digital", 
-    "Teknologi AI", 
-    "Web Development", 
-    "Web Design", 
-    "SEO", 
-    "Digital Marketing", 
+    "Bisnis Digital",
+    "Teknologi AI",
+    "Web Development",
+    "Web Design",
+    "SEO",
+    "Digital Marketing",
     "Branding",
     "Data Analytics",
     "Computer Vision",
@@ -163,6 +164,7 @@ export default function RootLayout({
         <LanguageProvider>
           <Header />
           {children}
+          <Footer />
         </LanguageProvider>
       </body>
     </html>

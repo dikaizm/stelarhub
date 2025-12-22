@@ -2,27 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .mask-fade {
-    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0));
-    mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0));
-  }
+:root {
+  --font-plus-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
+  --foreground-rgb: 17, 24, 39; /* Gray 900 */
+  --background-rgb: 255, 255, 255; /* White */
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: var(--font-plus-jakarta-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer utilities {
-  .hide-scrollbar {
-    scrollbar-width: none; /* Firefox */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .mask-fade {
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   }
 
-  .hide-scrollbar::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
 
-  .snap-x {
-    scroll-snap-type: x mandatory;
-  }
-
-  .snap-center {
-    scroll-snap-align: center;
-  }
+html {
+  scroll-behavior: smooth;
 }

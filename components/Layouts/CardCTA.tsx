@@ -1,4 +1,4 @@
-import { RiRocket2Fill } from "react-icons/ri";
+import { Rocket } from "lucide-react";
 import Image from "next/image";
 
 import ctaImg from "@/assets/images/cta-girl-business.png";
@@ -26,7 +26,7 @@ export default function CardCTA() {
 
           <a href="https://wa.me/6285600809354" className="mt-8 w-fit bg-white text-[#F96666] flex items-center gap-2 py-3 px-5 rounded-full">
             <span className="font-semibold">Mari Kita Mulai!</span>
-            <RiRocket2Fill className="w-5 h-5 rotate-45" />
+            <Rocket className="w-5 h-5 rotate-45" />
           </a>
         </div>
 
