@@ -6,6 +6,7 @@ import Card from '@/components/Card'
 import { ArrowRight } from 'lucide-react'
 import CaseStudyCard from '@/components/CaseStudyCard'
 import { useLanguage } from '@/contexts/LanguageContext'
+import FilterButton from '@/components/FilterButton'
 
 export default function CaseStudiesPage() {
     const { t } = useLanguage()
@@ -58,18 +59,5 @@ export default function CaseStudiesPage() {
                 </div>
             </Section>
         </main>
-    )
-}
-
-export function FilterButton({ label, active = false }: { label: string, active?: boolean }) {
-    return (
-        <button
-            className={`px-6 py-2 rounded-full text-sm font-medium transition-colors border ${active
-                ? 'bg-primary text-white border-primary'
-                : 'bg-white text-text-secondary border-border hover:border-primary hover:text-primary'
-                }`}
-        >
-            {label}
-        </button>
     )
 }

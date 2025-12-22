@@ -1,9 +1,8 @@
 import React from 'react'
 import Section from '@/components/Section'
-import Card from '@/components/Card'
 import { ArrowRight, Calendar } from 'lucide-react'
-import { FilterButton } from '../case-studies/page'
-import { getAllPosts, InsightPost } from '@/lib/insights'
+import FilterButton from '@/components/FilterButton'
+import { getAllPosts } from '@/lib/insights'
 import Link from 'next/link'
 import BlogCard from '@/components/BlogCard'
 
