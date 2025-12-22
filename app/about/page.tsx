@@ -1,9 +1,15 @@
+'use client'
+
 import React from 'react'
 import Section from '@/components/Section'
 import Card from '@/components/Card'
 import { Target, Compass, Zap, Layers, Code2, HeartHandshake } from 'lucide-react'
+import Image from 'next/image'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function AboutPage() {
+    const { t } = useLanguage()
+
     return (
         <main className="pt-24 min-h-screen bg-background">
             {/* Hero / Intro */}
@@ -105,6 +111,36 @@ export default function AboutPage() {
                     />
                 </div>
             </Section>
+
+            {/* Team Section */}
+            <Section>
+                <div className="text-center mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">{t('about.title')}</h2>
+                    <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+                        {t('about.subtitle')}
+                    </p>
+                </div>
+                <div className="flex gap-4 overflow-x-auto pb-4 md:w-fit md:mx-auto items-stretch snap-x snap-mandatory">
+                    <TeamCard
+                        name={t('about.izzulhaq.name')}
+                        role={t('about.izzulhaq.role')}
+                        description={t('about.izzulhaq.description')}
+                        image="/assets/team-01.png"
+                    />
+                    <TeamCard
+                        name={t('about.mazir.name')}
+                        role={t('about.mazir.role')}
+                        description={t('about.mazir.description')}
+                        image="/assets/team-02.png"
+                    />
+                    <TeamCard
+                        name={t('about.sekar.name')}
+                        role={t('about.sekar.role')}
+                        description={t('about.sekar.description')}
+                        image="/assets/team-03.png"
+                    />
+                </div>
+            </Section>
         </main>
     )
 }
@@ -139,5 +175,27 @@ function ValueCard({ icon, title, description }: { icon: React.ReactNode, title:
             <h3 className="text-xl font-bold text-text mb-3">{title}</h3>
             <p className="text-text-secondary">{description}</p>
         </div>
+    )
+}
+
+
+
+function TeamCard({ name, role, description, image }: { name: string, role: string, description: string, image: string }) {
+    return (
+        <Card className="h-full !p-0 overflow-hidden group transition-all duration-300 w-[280px] flex-shrink-0 snap-center">
+            <div className="relative w-full rounded-xl aspect-square overflow-hidden bg-slate-100">
+                <Image
+                    src={image}
+                    alt={name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                />
+            </div>
+            <div className="p-3">
+                <h3 className="text-xl font-bold text-text mb-1">{name}</h3>
+                <p className="text-primary font-medium mb-4">{role}</p>
+                <p className="text-text-secondary text-sm leading-relaxed">{description}</p>
+            </div>
+        </Card>
     )
 }

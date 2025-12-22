@@ -73,12 +73,17 @@
       "izzulhaq": {
         "name": "Izzulhaq Mahardika",
         "role": "Tech Wizard",
-        "description": "Backend engineer yang berfokus pada sistem scalable, AI automation, dan machine learning. Berkomitmen merancang arsitektur kuat untuk aplikasi dan platform cerdas."
+        "description": "Software developer berfokus pada sistem scalable, AI automation, dan machine learning."
       },
       "mazir": {
         "name": "Mazir Muhammad",
         "role": "Visual Crafter",
-        "description": "Design systems specialist dengan fokus pada UX/UI dan visual identity. Mengubah ide kompleks menjadi pengalaman digital yang intuitif, presisi, dan penuh karakter."
+        "description": "Design systems specialist di bidang UX/UI dan visual identity."
+      },
+      "sekar": {
+        "name": "Dewi Sekar",
+        "role": "Business Development",
+        "description": "Spesialis pengembangan bisnis dengan fokus strategi dan pemasaran."
       }
     },
     "contact": {
@@ -307,12 +312,17 @@
       "izzulhaq": {
         "name": "Izzulhaq Mahardika",
         "role": "Tech Wizard",
-        "description": "Backend engineer specializing in scalable systems, AI automation, and machine learning. Dedicated to designing strong architectures for intelligent applications."
+        "description": "Software developer focused on scalable systems, AI automation, and machine learning."
       },
       "mazir": {
         "name": "Mazir Muhammad",
         "role": "Visual Crafter",
-        "description": "Design systems specialist focused on UX/UI and visual identity, transforming complex concepts into intuitive and expressive digital experiences."
+        "description": "UX/UI and design systems specialist crafting intuitive digital experiences."
+      },
+      "sekar": {
+        "name": "Dewi Sekar",
+        "role": "Business Development",
+        "description": "Business development specialist focused on strategy and marketing."
       }
     },
     "contact": {

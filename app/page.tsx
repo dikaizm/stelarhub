@@ -52,8 +52,8 @@ export default function Home() {
 
             {/* Why Stelarea Section */}
             <Section>
-                <div className="flex flex-col lg:flex-row gap-16 md:gap-32 items-start">
-                    <div className="lg:w-1/3 sticky top-32">
+                <div className="flex flex-col md:flex-row gap-16 md:gap-32 items-start">
+                    <div className="md:w-1/3 md:sticky top-32">
                         <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">{t('homepage.about.title')}</h2>
                         <p className="text-text-secondary text-lg mb-8">
                             {t('homepage.about.description')}
@@ -61,7 +61,7 @@ export default function Home() {
                         <PrimaryButton label={t('homepage.about.aboutUs')} link="/about" variant="outline" icon={<ArrowRight size={18} />} iconPosition="right" />
                     </div>
 
-                    <div className="lg:w-2/3 grid grid-cols-1 gap-12">
+                    <div className="md:w-2/3 grid grid-cols-1 gap-12">
                         <ValueProp
                             title={t('homepage.about.values.businessFirst.title')}
                             description={t('homepage.about.values.businessFirst.description')}

@@ -34,7 +34,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className='flex gap-4 justify-between bg-gradient-to-br from-[#1e293b] via-[#334155] to-[#0f172a] p-10 rounded-2xl overflow-hidden w-full'>
+          <div className='grid grid-cols-2 md:grid-cols-3 gap-12 justify-between bg-gradient-to-br from-[#1e293b] via-[#334155] to-[#0f172a] p-10 rounded-2xl overflow-hidden w-full'>
             {/* Services Column */}
             <div>
               <h3 className="text-text font-semibold mb-6 text-white/50">{t('footer.sections.services')}</h3>
