@@ -83,12 +83,12 @@ export default function Home() {
             </Section>
 
             {/* What We Do Section */}
-            <section className="w-full px-6 sm:px-8 py-20 md:py-32 relative overflow-hidden">
+            <section className="w-full py-20 md:py-32 relative overflow-hidden">
                 {/* Vibrant Gradient Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary to-blue-900" />
 
                 {/* Content Container */}
-                <div className="relative z-10 max-w-[1280px] mx-auto">
+                <div className="relative z-10 container mx-auto px-6 sm:px-8 w-full">
                     {/* Section Header - Centered */}
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
