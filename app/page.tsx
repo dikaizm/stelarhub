@@ -39,10 +39,10 @@ export default async function Home() {
                                 iconPosition="right"
                                 className="w-full sm:w-auto bg-primary hover:bg-primary-hover text-white border-0 !rounded-full !px-6 !py-2.5"
                             />
-                            <button className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full font-semibold transition-all duration-300 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm border border-white/10 ring-1 ring-white/10">
+                            <Link href="/case-studies" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full font-semibold transition-all duration-300 bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm border border-white/10 ring-1 ring-white/10">
                                 <span>{t('homepage.hero.customerStories')}</span>
                                 <ArrowRight size={18} />
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -98,30 +98,34 @@ export default async function Home() {
                     </div>
 
                     {/* Service Cards Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         <ServiceCard
                             title={t('homepage.services.cards.platforms.title')}
                             description={t('homepage.services.cards.platforms.description')}
                             mockupType="platforms"
                             learnMore={t('homepage.services.cards.platforms.learnMore')}
+                            link="/services#web-development"
                         />
                         <ServiceCard
                             title={t('homepage.services.cards.design.title')}
                             description={t('homepage.services.cards.design.description')}
                             mockupType="design"
                             learnMore={t('homepage.services.cards.design.learnMore')}
+                            link="/services#experience-design"
                         />
                         <ServiceCard
                             title={t('homepage.services.cards.automation.title')}
                             description={t('homepage.services.cards.automation.description')}
                             mockupType="automation"
                             learnMore={t('homepage.services.cards.automation.learnMore')}
+                            link="/services#ai-automation"
                         />
                         <ServiceCard
                             title={t('homepage.services.cards.strategy.title')}
                             description={t('homepage.services.cards.strategy.description')}
                             mockupType="strategy"
                             learnMore={t('homepage.services.cards.strategy.learnMore')}
+                            link="/services#data-strategy"
                         />
                     </div>
                 </div>
@@ -189,7 +193,7 @@ export default async function Home() {
     );
 }
 
-function ServiceCard({ title, description, mockupType, learnMore }: { title: string, description: string, mockupType: string, learnMore: string }) {
+function ServiceCard({ title, description, mockupType, learnMore, link }: { title: string, description: string, mockupType: string, learnMore: string, link: string }) {
     return (
         <div className="group rounded-2xl bg-slate-800/60 backdrop-blur-md border border-white/10 overflow-hidden hover:bg-slate-800/80 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl">
             {/* Mockup Image Container */}
@@ -219,7 +223,7 @@ function ServiceCard({ title, description, mockupType, learnMore }: { title: str
 
                 {/* Learn More Link */}
                 <Link
-                    href="#"
+                    href={link}
                     className="inline-flex items-center gap-2 text-white/90 hover:text-white font-semibold text-sm transition-colors group-hover:gap-3 duration-300"
                 >
                     {learnMore}
