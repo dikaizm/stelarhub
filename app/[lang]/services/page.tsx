@@ -1,6 +1,5 @@
-'use client'
-
 import React from 'react'
+import Image from 'next/image'
 import Section from '@/components/Section'
 import Card from '@/components/Card'
 import PrimaryButton from '@/components/Buttons/PrimaryButton'
@@ -12,10 +11,12 @@ import {
     Database, BarChart3, TrendingUp, Target
 } from 'lucide-react'
 
-import { useLanguage } from '@/contexts/LanguageContext'
+import { getDictionary, Language } from '@/lib/translations'
 
-export default function ServicesPage() {
-    const { t } = useLanguage()
+export default async function ServicesPage({ params }: { params: Promise<{ lang: Language }> }) {
+    const { lang } = await params;
+    const dict = getDictionary(lang);
+
     return (
         <main className="pt-24 min-h-screen bg-background">
             {/* Hero */}
@@ -30,11 +31,11 @@ export default function ServicesPage() {
 
                     <div className="relative z-10 max-w-4xl px-4">
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6 text-balance">
-                            {t('servicesPage.hero.title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">{t('servicesPage.hero.titleHighlight')}</span>
+                            {dict.servicesPage.hero.title} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">{dict.servicesPage.hero.titleHighlight}</span>
                         </h1>
 
                         <p className="text-lg sm:text-xl text-gray-600 mb-10 max-w-2xl mx-auto text-balance font-light leading-relaxed">
-                            {t('servicesPage.hero.subtitle')}
+                            {dict.servicesPage.hero.subtitle}
                         </p>
                     </div>
                 </div>
@@ -43,69 +44,73 @@ export default function ServicesPage() {
             {/* Web & Platform Solutions */}
             <ServiceSection
                 id="web-development"
-                title={t('servicesPage.webDevelopment.title')}
-                description={t('servicesPage.webDevelopment.description')}
+                title={dict.servicesPage.webDevelopment.title}
+                description={dict.servicesPage.webDevelopment.description}
                 icon={<Code className="w-10 h-10 text-primary" />}
+                image="/images/service-webdev.webp"
                 whatWeDeliver={[
-                    { icon: <Globe className="w-5 h-5" />, text: t('servicesPage.webDevelopment.features.customApps') },
-                    { icon: <Building2 className="w-5 h-5" />, text: t('servicesPage.webDevelopment.features.companySystems') },
-                    { icon: <Plug className="w-5 h-5" />, text: t('servicesPage.webDevelopment.features.cmsApi') },
-                    { icon: <Shield className="w-5 h-5" />, text: t('servicesPage.webDevelopment.features.performance') }
+                    { icon: <Globe className="w-5 h-5" />, text: dict.servicesPage.webDevelopment.features.customApps },
+                    { icon: <Building2 className="w-5 h-5" />, text: dict.servicesPage.webDevelopment.features.companySystems },
+                    { icon: <Plug className="w-5 h-5" />, text: dict.servicesPage.webDevelopment.features.cmsApi },
+                    { icon: <Shield className="w-5 h-5" />, text: dict.servicesPage.webDevelopment.features.performance }
                 ]}
-                outcome={t('servicesPage.webDevelopment.outcome')}
+                outcome={dict.servicesPage.webDevelopment.outcome}
             />
 
             {/* UX/UI */}
             <ServiceSection
                 id="experience-design"
-                title={t('servicesPage.experienceDesign.title')}
-                description={t('servicesPage.experienceDesign.description')}
+                title={dict.servicesPage.experienceDesign.title}
+                description={dict.servicesPage.experienceDesign.description}
                 icon={<Layout className="w-10 h-10 text-secondary" />}
+                image="/images/service-ux.webp"
                 whatWeDeliver={[
-                    { icon: <Users className="w-5 h-5" />, text: t('servicesPage.experienceDesign.features.uxResearch') },
-                    { icon: <Palette className="w-5 h-5" />, text: t('servicesPage.experienceDesign.features.interfaceDesign') },
-                    { icon: <TestTube className="w-5 h-5" />, text: t('servicesPage.experienceDesign.features.prototyping') },
-                    { icon: <FileText className="w-5 h-5" />, text: t('servicesPage.experienceDesign.features.wireframing') }
+                    { icon: <Users className="w-5 h-5" />, text: dict.servicesPage.experienceDesign.features.uxResearch },
+                    { icon: <Palette className="w-5 h-5" />, text: dict.servicesPage.experienceDesign.features.interfaceDesign },
+                    { icon: <TestTube className="w-5 h-5" />, text: dict.servicesPage.experienceDesign.features.prototyping },
+                    { icon: <FileText className="w-5 h-5" />, text: dict.servicesPage.experienceDesign.features.wireframing }
                 ]}
-                outcome={t('servicesPage.experienceDesign.outcome')}
+                outcome={dict.servicesPage.experienceDesign.outcome}
                 align="right"
             />
 
             {/* AI & Automation */}
             <ServiceSection
                 id="ai-automation"
-                title={t('servicesPage.aiAutomation.title')}
-                description={t('servicesPage.aiAutomation.description')}
+                title={dict.servicesPage.aiAutomation.title}
+                description={dict.servicesPage.aiAutomation.description}
                 icon={<Bot className="w-10 h-10 text-primary" />}
+                image="/images/service-ai.webp"
                 whatWeDeliver={[
-                    { icon: <Zap className="w-5 h-5" />, text: t('servicesPage.aiAutomation.features.aiAgents') },
-                    { icon: <Brain className="w-5 h-5" />, text: t('servicesPage.aiAutomation.features.mlModels') },
-                    { icon: <MessageSquare className="w-5 h-5" />, text: t('servicesPage.aiAutomation.features.llmIntegration') },
-                    { icon: <Activity className="w-5 h-5" />, text: t('servicesPage.aiAutomation.features.deployment') }
+                    { icon: <Zap className="w-5 h-5" />, text: dict.servicesPage.aiAutomation.features.aiAgents },
+                    { icon: <Brain className="w-5 h-5" />, text: dict.servicesPage.aiAutomation.features.mlModels },
+                    { icon: <MessageSquare className="w-5 h-5" />, text: dict.servicesPage.aiAutomation.features.llmIntegration },
+                    { icon: <Activity className="w-5 h-5" />, text: dict.servicesPage.aiAutomation.features.deployment }
                 ]}
-                outcome={t('servicesPage.aiAutomation.outcome')}
+                outcome={dict.servicesPage.aiAutomation.outcome}
             />
 
             {/* Data Analytics */}
             <ServiceSection
                 id="data-strategy"
-                title={t('servicesPage.dataStrategy.title')}
-                description={t('servicesPage.dataStrategy.description')}
+                title={dict.servicesPage.dataStrategy.title}
+                description={dict.servicesPage.dataStrategy.description}
                 icon={<LineChart className="w-10 h-10 text-indigo-500" />}
+                image="/images/service-data.webp"
                 whatWeDeliver={[
-                    { icon: <Database className="w-5 h-5" />, text: t('servicesPage.dataStrategy.features.pipelines') },
-                    { icon: <BarChart3 className="w-5 h-5" />, text: t('servicesPage.dataStrategy.features.dashboards') },
-                    { icon: <TrendingUp className="w-5 h-5" />, text: t('servicesPage.dataStrategy.features.analytics') },
-                    { icon: <Target className="w-5 h-5" />, text: t('servicesPage.dataStrategy.features.metrics') }
+                    { icon: <Database className="w-5 h-5" />, text: dict.servicesPage.dataStrategy.features.pipelines },
+                    { icon: <BarChart3 className="w-5 h-5" />, text: dict.servicesPage.dataStrategy.features.dashboards },
+                    { icon: <TrendingUp className="w-5 h-5" />, text: dict.servicesPage.dataStrategy.features.analytics },
+                    { icon: <Target className="w-5 h-5" />, text: dict.servicesPage.dataStrategy.features.metrics }
                 ]}
-                outcome={t('servicesPage.dataStrategy.outcome')}
+                outcome={dict.servicesPage.dataStrategy.outcome}
                 align="right"
             />
 
             {/* CTA */}
             <Section className="py-24 text-center">
-                <h2 className="text-3xl font-bold text-text mb-8">{t('servicesPage.cta.title')}</h2>
-                <PrimaryButton label={t('servicesPage.cta.button')} link="/contact" className="mx-auto" />
+                <h2 className="text-3xl font-bold text-text mb-8">{dict.servicesPage.cta.title}</h2>
+                <PrimaryButton label={dict.servicesPage.cta.button} link={`/${lang}/contact`} className="mx-auto" />
             </Section>
         </main>
     )
@@ -121,13 +126,14 @@ interface ServiceSectionProps {
     title: string
     description: string
     icon: React.ReactNode
+    image: string
     whatWeDeliver: DeliveryItem[]
     outcome: string
     align?: 'left' | 'right'
     altBackground?: boolean
 }
 
-function ServiceSection({ id, title, description, icon, whatWeDeliver, outcome, align = 'left', altBackground = false }: ServiceSectionProps) {
+function ServiceSection({ id, title, description, icon, image, whatWeDeliver, outcome, align = 'left', altBackground = false }: ServiceSectionProps) {
     return (
         <Section id={id} background={altBackground ? 'paper' : 'white'} className={altBackground ? 'border-y border-border' : ''}>
             <div className={`flex flex-col lg:flex-row gap-12 lg:gap-20 items-center ${align === 'right' ? 'lg:flex-row-reverse' : ''}`}>
@@ -164,9 +170,14 @@ function ServiceSection({ id, title, description, icon, whatWeDeliver, outcome, 
                         {icon}
                     </div>
 
-                    <Card className="flex aspect-square items-center justify-center bg-background-subtle border-dashed border-border" variant="paper">
-                        <span className="text-text-muted font-mono">System Visualization for {title}</span>
-                    </Card>
+                    <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-slate-100">
+                        <Image
+                            src={image}
+                            alt={`${title} visualization`}
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
                 </div>
 
             </div>

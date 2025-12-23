@@ -1,32 +1,78 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function middleware(request: NextRequest) {
-    // Check if language cookie exists
-    const language = request.cookies.get('language');
+const SUPPORTED_LANGUAGES = ['en', 'id'];
+const DEFAULT_LANGUAGE = 'en';
 
-    // If no language cookie is set, set default to 'id'
-    if (!language) {
-        const response = NextResponse.next();
-        response.cookies.set('language', 'id', {
-            path: '/',
-            maxAge: 60 * 60 * 24 * 365, // 1 year
-        });
-        return response;
+/**
+ * Get preferred language from request
+ */
+function getPreferredLanguage(request: NextRequest): string {
+    // 1. Check for saved language preference in cookie
+    const savedLang = request.cookies.get('language')?.value;
+    if (savedLang && SUPPORTED_LANGUAGES.includes(savedLang)) {
+        return savedLang;
     }
 
-    return NextResponse.next();
+    // 2. Check query parameter
+    const langParam = request.nextUrl.searchParams.get('lang');
+    if (langParam && SUPPORTED_LANGUAGES.includes(langParam)) {
+        return langParam;
+    }
+
+    // 3. Check browser Accept-Language header
+    const acceptLanguage = request.headers.get('accept-language');
+    if (acceptLanguage) {
+        const languages = acceptLanguage.split(',').map(lang => {
+            const [code] = lang.trim().split(';');
+            return code.split('-')[0].toLowerCase();
+        });
+
+        for (const lang of languages) {
+            if (SUPPORTED_LANGUAGES.includes(lang)) {
+                return lang;
+            }
+        }
+    }
+
+    return DEFAULT_LANGUAGE;
+}
+
+export function middleware(request: NextRequest) {
+    const { pathname } = request.nextUrl;
+
+    // Skip middleware for static files and API routes
+    if (
+        pathname.startsWith('/_next') ||
+        pathname.startsWith('/api') ||
+        pathname.startsWith('/assets') ||
+        pathname.includes('.') // Static files like .png, .ico, etc.
+    ) {
+        return NextResponse.next();
+    }
+
+    // Check if pathname already has a supported language prefix
+    const pathnameHasLang = SUPPORTED_LANGUAGES.some(
+        lang => pathname.startsWith(`/${lang}/`) || pathname === `/${lang}`
+    );
+
+    if (pathnameHasLang) {
+        return NextResponse.next();
+    }
+
+    // For paths without language prefix, rewrite to include the detected language
+    const detectedLang = getPreferredLanguage(request);
+
+    // Rewrite the URL to include the language (without redirect)
+    const newUrl = new URL(`/${detectedLang}${pathname}`, request.url);
+    newUrl.search = request.nextUrl.search;
+
+    return NextResponse.rewrite(newUrl);
 }
 
 export const config = {
     matcher: [
-        /*
-         * Match all request paths except for the ones starting with:
-         * - api (API routes)
-         * - _next/static (static files)
-         * - _next/image (image optimization files)
-         * - favicon.ico (favicon file)
-         */
-        '/((?!api|_next/static|_next/image|favicon.ico).*)',
+        // Match all paths except static files
+        '/((?!_next/static|_next/image|favicon.ico).*)',
     ],
 };

@@ -5,6 +5,7 @@ import Section from '@/components/Section';
 import { caseStudies, getCaseStudyBySlug } from '@/lib/caseStudies';
 import ImageSlider from '@/components/ImageSlider';
 import SimpleChart from '@/components/SimpleChart';
+import { Language } from '@/lib/translations';
 
 export function generateStaticParams() {
     return caseStudies.map((study) => ({
@@ -12,8 +13,9 @@ export function generateStaticParams() {
     }));
 }
 
-export default function CaseStudyDetail({ params }: { params: { slug: string } }) {
-    const study = getCaseStudyBySlug(params.slug);
+export default async function CaseStudyDetail({ params }: { params: Promise<{ lang: Language; slug: string }> }) {
+    const { lang, slug } = await params;
+    const study = getCaseStudyBySlug(slug);
 
     if (!study) {
         notFound();
@@ -25,9 +27,9 @@ export default function CaseStudyDetail({ params }: { params: { slug: string } }
             <Section className="!pb-0">
                 <div className="max-w-7xl mx-auto">
                     <div className="flex items-center gap-2 text-sm text-text-secondary mb-8">
-                        <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+                        <Link href={`/${lang}`} className="hover:text-primary transition-colors">Home</Link>
                         <ChevronRight size={14} />
-                        <Link href="/case-studies" className="hover:text-primary transition-colors">Case Studies</Link>
+                        <Link href={`/${lang}/case-studies`} className="hover:text-primary transition-colors">Case Studies</Link>
                         <ChevronRight size={14} />
                         <span className="text-text-primary font-medium truncate">{study.brand}</span>
                     </div>
@@ -224,10 +226,10 @@ export default function CaseStudyDetail({ params }: { params: { slug: string } }
             <Section>
                 <div className="border-t border-gray-200 pt-12 max-w-7xl mx-auto">
                     <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
-                        <Link href="/case-studies" className="font-semibold text-text hover:text-primary transition-colors order-2 sm:order-1">
+                        <Link href={`/${lang}/case-studies`} className="font-semibold text-text hover:text-primary transition-colors order-2 sm:order-1">
                             Browse all case studies
                         </Link>
-                        <Link href="/contact" className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full font-bold hover:bg-primary-hover transition-all shadow-lg hover:shadow-primary/30 order-1 sm:order-2">
+                        <Link href={`/${lang}/contact`} className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full font-bold hover:bg-primary-hover transition-all shadow-lg hover:shadow-primary/30 order-1 sm:order-2">
                             Transform your business
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                         </Link>

@@ -1,24 +1,24 @@
-'use client'
-
 import React from 'react'
 import Section from '@/components/Section'
 import Card from '@/components/Card'
 import PrimaryButton from '@/components/Buttons/PrimaryButton'
 import { Mail, MapPin, Phone, Instagram, Linkedin, Twitter, ArrowRight } from 'lucide-react'
+import ContactForm from '@/components/ContactForm'
+import { getDictionary, Language } from '@/lib/translations'
 
-import { useLanguage } from '@/contexts/LanguageContext'
+export default async function ContactPage({ params }: { params: Promise<{ lang: Language }> }) {
+    const { lang } = await params;
+    const dict = getDictionary(lang);
 
-export default function ContactPage() {
-    const { t } = useLanguage()
     return (
         <main className="pt-24 min-h-screen bg-background">
             <Section className="pb-12 text-center">
                 <div className="max-w-4xl mx-auto">
                     <h1 className="text-4xl md:text-6xl font-bold text-text mb-6">
-                        {t('contactPage.hero.title')}
+                        {dict.contactPage.hero.title}
                     </h1>
                     <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-                        {t('contactPage.hero.subtitle')}
+                        {dict.contactPage.hero.subtitle}
                     </p>
                 </div>
             </Section>
@@ -27,11 +27,11 @@ export default function ContactPage() {
                 <div className="flex flex-col justify-between md:flex-row gap-12 md:gap-24">
                     {/* Contact Info */}
                     <div className="w-full md:w-1/2">
-                        <h2 className="text-2xl font-bold text-text mb-8">{t('contactPage.touch.title')}</h2>
+                        <h2 className="text-2xl font-bold text-text mb-8">{dict.contactPage.touch.title}</h2>
                         <div className="space-y-8">
                             <ContactInfoItem
                                 icon={<Mail size={24} />}
-                                title={t('contactPage.touch.email')}
+                                title={dict.contactPage.touch.email}
                                 iconBgColor="bg-primary/10"
                                 iconColor="text-primary"
                             >
@@ -42,7 +42,7 @@ export default function ContactPage() {
 
                             <ContactInfoItem
                                 icon={<Phone size={24} />}
-                                title={t('contactPage.touch.whatsapp')}
+                                title={dict.contactPage.touch.whatsapp}
                                 iconBgColor="bg-green-500/10"
                                 iconColor="text-green-500"
                             >
@@ -53,17 +53,17 @@ export default function ContactPage() {
 
                             <ContactInfoItem
                                 icon={<MapPin size={24} />}
-                                title={t('contactPage.touch.office')}
+                                title={dict.contactPage.touch.office}
                                 iconBgColor="bg-secondary/10"
                                 iconColor="text-secondary"
                             >
                                 <p className="text-text-secondary">
-                                    {t('contactPage.touch.location')}
+                                    {dict.contactPage.touch.location}
                                 </p>
                             </ContactInfoItem>
 
                             <div className="pt-8 border-t border-border">
-                                <h3 className="text-lg font-semibold text-text mb-4">{t('contactPage.touch.connect')}</h3>
+                                <h3 className="text-lg font-semibold text-text mb-4">{dict.contactPage.touch.connect}</h3>
                                 <div className="flex gap-4">
                                     <SocialIcon href="https://instagram.com/stelarealab" icon={<Instagram size={20} />} />
                                     <SocialIcon href="https://twitter.com/stelarealab" icon={<Twitter size={20} />} />
@@ -73,46 +73,23 @@ export default function ContactPage() {
                     </div>
 
                     {/* Contact Form */}
-                    <Card className="w-full">
-                        <form className="space-y-6">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <InputGroup label={t('contactPage.form.name')} placeholder={t('contactPage.form.namePlaceholder')} />
-                                <InputGroup label={t('contactPage.form.company')} placeholder={t('contactPage.form.companyPlaceholder')} />
-                            </div>
-                            <InputGroup label={t('contactPage.form.email')} type="email" placeholder={t('contactPage.form.emailPlaceholder')} />
-                            <div className="space-y-2">
-                                <label className="text-sm font-medium text-text">{t('contactPage.form.message')}</label>
-                                <textarea
-                                    rows={4}
-                                    className="w-full bg-background-subtle border border-border rounded-lg px-4 py-3 text-text placeholder-text-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none"
-                                    placeholder={t('contactPage.form.messagePlaceholder')}
-                                />
-                            </div>
-                            <PrimaryButton
-                                label={t('contactPage.form.submit')}
-                                fullWidth
-                                icon={<ArrowRight size={18} />}
-                                iconPosition="right"
-                                onClick={() => alert(t('contactPage.form.success'))}
-                            />
-                        </form>
-                    </Card>
+                    <ContactForm
+                        translations={{
+                            name: dict.contactPage.form.name,
+                            namePlaceholder: dict.contactPage.form.namePlaceholder,
+                            company: dict.contactPage.form.company,
+                            companyPlaceholder: dict.contactPage.form.companyPlaceholder,
+                            email: dict.contactPage.form.email,
+                            emailPlaceholder: dict.contactPage.form.emailPlaceholder,
+                            message: dict.contactPage.form.message,
+                            messagePlaceholder: dict.contactPage.form.messagePlaceholder,
+                            submit: dict.contactPage.form.submit,
+                            success: dict.contactPage.form.success
+                        }}
+                    />
                 </div>
             </Section>
         </main>
-    )
-}
-
-function InputGroup({ label, type = "text", placeholder }: { label: string, type?: string, placeholder?: string }) {
-    return (
-        <div className="space-y-2">
-            <label className="text-sm font-medium text-text">{label}</label>
-            <input
-                type={type}
-                className="w-full bg-background-subtle border border-border rounded-lg px-4 py-3 text-text placeholder-text-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
-                placeholder={placeholder}
-            />
-        </div>
     )
 }
 

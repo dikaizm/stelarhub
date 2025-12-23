@@ -1,69 +1,40 @@
-'use client'
-
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Section from '@/components/Section'
-import { getPostData, getAllPosts, InsightPost } from '@/lib/insights'
+import { getPostData, getAllPosts } from '@/lib/insights'
 import ReactMarkdown from 'react-markdown'
 import { notFound } from 'next/navigation'
-import { ArrowLeft, Calendar, User, Tag } from 'lucide-react'
+import { Calendar, User, Tag } from 'lucide-react'
 import Link from 'next/link'
 import BlogCard from '@/components/BlogCard'
-import { useLanguage } from '@/contexts/LanguageContext'
+import { getDictionary, Language } from '@/lib/translations'
 
 interface Props {
-    params: {
+    params: Promise<{
+        lang: Language
         slug: string
-    }
+    }>
 }
 
-export default function ArticlePage({ params }: Props) {
-    const { language } = useLanguage()
-    const [post, setPost] = useState<InsightPost | null>(null)
-    const [relatedPosts, setRelatedPosts] = useState<InsightPost[]>([])
-    const [loading, setLoading] = useState(true)
+export default async function ArticlePage({ params }: Props) {
+    const { lang, slug } = await params;
+    const dict = getDictionary(lang);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            setLoading(true)
-            try {
-                const postData = await getPostData(params.slug, language)
-                if (postData) {
-                    setPost(postData)
-
-                    // Fetch all posts for related section
-                    const allPosts = await getAllPosts(language)
-                    const related = allPosts
-                        .filter(p => p.category === postData.category && p.slug !== postData.slug)
-                        .slice(0, 3)
-                    setRelatedPosts(related)
-                } else {
-                    setPost(null)
-                }
-            } catch (error) {
-                console.error("Error fetching post data", error)
-            } finally {
-                setLoading(false)
-            }
-        }
-        fetchData()
-    }, [params.slug, language])
-
-    if (loading) {
-        return (
-            <main className="pt-8 min-h-screen bg-background flex items-center justify-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-            </main>
-        )
-    }
+    const post = await getPostData(slug, lang);
 
     if (!post) {
         return (
             <main className="pt-8 min-h-screen bg-background flex flex-col items-center justify-center text-center p-4">
                 <h1 className="text-2xl font-bold text-text mb-4">Post not found</h1>
-                <Link href="/insights" className="text-primary hover:underline">Back to Insights</Link>
+                <Link href={`/${lang}/insights`} className="text-primary hover:underline">Back to Insights</Link>
             </main>
         )
     }
+
+    // Fetch all posts for related section
+    const allPosts = await getAllPosts(lang);
+    const relatedPosts = allPosts
+        .filter(p => p.category === post.category && p.slug !== post.slug)
+        .slice(0, 3);
 
     return (
         <main className="pt-8 min-h-screen bg-background text-text">
@@ -72,9 +43,9 @@ export default function ArticlePage({ params }: Props) {
                 <div className="max-w-3xl mx-auto">
                     {/* Breadcrumb */}
                     <nav className="flex items-center text-sm text-text-secondary mb-8">
-                        <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+                        <Link href={`/${lang}`} className="hover:text-primary transition-colors">Home</Link>
                         <span className="mx-2">/</span>
-                        <Link href="/insights" className="hover:text-primary transition-colors">Insights</Link>
+                        <Link href={`/${lang}/insights`} className="hover:text-primary transition-colors">Insights</Link>
                         <span className="mx-2">/</span>
                         <span className="text-text font-medium truncate max-w-[200px]">{post.title}</span>
                     </nav>
@@ -134,7 +105,7 @@ export default function ArticlePage({ params }: Props) {
                             </p>
                         </div>
                         <Link
-                            href="/contact"
+                            href={`/${lang}/contact`}
                             className="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-lg transition-colors whitespace-nowrap"
                         >
                             Get in Touch

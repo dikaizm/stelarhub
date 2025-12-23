@@ -1,14 +1,13 @@
-'use client'
-
 import React from 'react'
 import Section from '@/components/Section'
 import Card from '@/components/Card'
 import { Target, Compass, Zap, Layers, Code2, HeartHandshake } from 'lucide-react'
 import Image from 'next/image'
-import { useLanguage } from '@/contexts/LanguageContext'
+import { getDictionary, Language } from '@/lib/translations'
 
-export default function AboutPage() {
-    const { t } = useLanguage()
+export default async function AboutPage({ params }: { params: Promise<{ lang: Language }> }) {
+    const { lang } = await params;
+    const dict = getDictionary(lang);
 
     return (
         <main className="pt-24 min-h-screen bg-background">
@@ -16,10 +15,10 @@ export default function AboutPage() {
             <Section className="pb-12">
                 <div className="max-w-4xl">
                     <h1 className="text-4xl md:text-6xl font-bold text-text mb-8">
-                        {t('aboutPage.hero.title')} <span className="text-primary">{t('aboutPage.hero.titleHighlight')}</span>
+                        {dict.aboutPage.hero.title} <span className="text-primary">{dict.aboutPage.hero.titleHighlight}</span>
                     </h1>
                     <p className="text-xl text-text-secondary leading-relaxed max-w-2xl text-balance">
-                        {t('aboutPage.hero.subtitle')}
+                        {dict.aboutPage.hero.subtitle}
                     </p>
                 </div>
             </Section>
@@ -30,21 +29,21 @@ export default function AboutPage() {
                     <div>
                         <div className="flex items-center gap-3 mb-6">
                             <Compass className="text-primary w-8 h-8" />
-                            <h2 className="text-3xl font-bold text-text">{t('aboutPage.vision.title')}</h2>
+                            <h2 className="text-3xl font-bold text-text">{dict.aboutPage.vision.title}</h2>
                         </div>
                         <p className="text-lg text-text-secondary">
-                            {t('aboutPage.vision.text')}
+                            {dict.aboutPage.vision.text}
                         </p>
                     </div>
                     <div>
                         <div className="flex items-center gap-3 mb-6">
                             <Target className="text-primary w-8 h-8" />
-                            <h2 className="text-3xl font-bold text-text">{t('aboutPage.mission.title')}</h2>
+                            <h2 className="text-3xl font-bold text-text">{dict.aboutPage.mission.title}</h2>
                         </div>
                         <ul className="space-y-6">
-                            <MissionItem title={t('aboutPage.mission.simplify.title')} description={t('aboutPage.mission.simplify.desc')} />
-                            <MissionItem title={t('aboutPage.mission.build.title')} description={t('aboutPage.mission.build.desc')} />
-                            <MissionItem title={t('aboutPage.mission.empower.title')} description={t('aboutPage.mission.empower.desc')} />
+                            <MissionItem title={dict.aboutPage.mission.simplify.title} description={dict.aboutPage.mission.simplify.desc} />
+                            <MissionItem title={dict.aboutPage.mission.build.title} description={dict.aboutPage.mission.build.desc} />
+                            <MissionItem title={dict.aboutPage.mission.empower.title} description={dict.aboutPage.mission.empower.desc} />
                         </ul>
                     </div>
                 </div>
@@ -54,9 +53,9 @@ export default function AboutPage() {
             <section className="w-full pt-20 pb-12 px-4 sm:px-6 lg:px-8">
                 <div className="relative w-full rounded-3xl overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 py-16 sm:py-24 flex flex-col items-center text-center">
                     <div className="mb-16 px-4">
-                        <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">{t('aboutPage.approach.title')}</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">{dict.aboutPage.approach.title}</h2>
                         <p className="text-xl text-text-secondary max-w-2xl">
-                            {t('aboutPage.approach.subtitle')}
+                            {dict.aboutPage.approach.subtitle}
                         </p>
                     </div>
 
@@ -66,23 +65,23 @@ export default function AboutPage() {
 
                         <ApproachCard
                             step="01"
-                            title={t('aboutPage.approach.steps.understand.title')}
-                            description={t('aboutPage.approach.steps.understand.desc')}
+                            title={dict.aboutPage.approach.steps.understand.title}
+                            description={dict.aboutPage.approach.steps.understand.desc}
                         />
                         <ApproachCard
                             step="02"
-                            title={t('aboutPage.approach.steps.design.title')}
-                            description={t('aboutPage.approach.steps.design.desc')}
+                            title={dict.aboutPage.approach.steps.design.title}
+                            description={dict.aboutPage.approach.steps.design.desc}
                         />
                         <ApproachCard
                             step="03"
-                            title={t('aboutPage.approach.steps.build.title')}
-                            description={t('aboutPage.approach.steps.build.desc')}
+                            title={dict.aboutPage.approach.steps.build.title}
+                            description={dict.aboutPage.approach.steps.build.desc}
                         />
                         <ApproachCard
                             step="04"
-                            title={t('aboutPage.approach.steps.support.title')}
-                            description={t('aboutPage.approach.steps.support.desc')}
+                            title={dict.aboutPage.approach.steps.support.title}
+                            description={dict.aboutPage.approach.steps.support.desc}
                         />
                     </div>
                 </div>
@@ -91,23 +90,23 @@ export default function AboutPage() {
             {/* Our Values */}
             <Section>
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">{t('aboutPage.values.title')}</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">{dict.aboutPage.values.title}</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <ValueCard
                         icon={<Zap className="w-8 h-8 text-yellow-500" />}
-                        title={t('aboutPage.values.clarity.title')}
-                        description={t('aboutPage.values.clarity.desc')}
+                        title={dict.aboutPage.values.clarity.title}
+                        description={dict.aboutPage.values.clarity.desc}
                     />
                     <ValueCard
                         icon={<Code2 className="w-8 h-8 text-primary" />}
-                        title={t('aboutPage.values.results.title')}
-                        description={t('aboutPage.values.results.desc')}
+                        title={dict.aboutPage.values.results.title}
+                        description={dict.aboutPage.values.results.desc}
                     />
                     <ValueCard
                         icon={<HeartHandshake className="w-8 h-8 text-rose-500" />}
-                        title={t('aboutPage.values.longTerm.title')}
-                        description={t('aboutPage.values.longTerm.desc')}
+                        title={dict.aboutPage.values.longTerm.title}
+                        description={dict.aboutPage.values.longTerm.desc}
                     />
                 </div>
             </Section>
@@ -115,28 +114,28 @@ export default function AboutPage() {
             {/* Team Section */}
             <Section>
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">{t('about.title')}</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">{dict.about.title}</h2>
                     <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-                        {t('about.subtitle')}
+                        {dict.about.subtitle}
                     </p>
                 </div>
                 <div className="grid grid-flow-col auto-cols-[280px] md:grid-flow-row md:grid-cols-3 md:auto-cols-auto gap-4 overflow-x-auto md:overflow-visible pb-4 md:w-fit md:mx-auto snap-x snap-mandatory md:snap-none">
                     <TeamCard
-                        name={t('about.izzulhaq.name')}
-                        role={t('about.izzulhaq.role')}
-                        description={t('about.izzulhaq.description')}
+                        name={dict.about.izzulhaq.name}
+                        role={dict.about.izzulhaq.role}
+                        description={dict.about.izzulhaq.description}
                         image="/assets/team-01.png"
                     />
                     <TeamCard
-                        name={t('about.mazir.name')}
-                        role={t('about.mazir.role')}
-                        description={t('about.mazir.description')}
+                        name={dict.about.mazir.name}
+                        role={dict.about.mazir.role}
+                        description={dict.about.mazir.description}
                         image="/assets/team-02.png"
                     />
                     <TeamCard
-                        name={t('about.sekar.name')}
-                        role={t('about.sekar.role')}
-                        description={t('about.sekar.description')}
+                        name={dict.about.sekar.name}
+                        role={dict.about.sekar.role}
+                        description={dict.about.sekar.description}
                         image="/assets/team-03.png"
                     />
                 </div>
