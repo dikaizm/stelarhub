@@ -1,5 +1,3 @@
-'use client'
-
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Monitor, Users, Cpu, BarChart3, CheckCircle2 } from "lucide-react";
@@ -7,10 +5,10 @@ import Section from "@/components/Section";
 import PrimaryButton from "@/components/Buttons/PrimaryButton";
 import Card from "@/components/Card";
 import CaseStudyCard from "@/components/CaseStudyCard";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { getTranslations } from "@/lib/translations";
 
-export default function Home() {
-    const { t } = useLanguage();
+export default async function Home() {
+    const { t } = await getTranslations();
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-between">
