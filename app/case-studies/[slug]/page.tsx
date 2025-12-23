@@ -35,7 +35,7 @@ export default function CaseStudyDetail({ params }: { params: { slug: string } }
                     <div className='flex items-center gap-4'>
                         <div>
                             <div className="mb-4">
-                                <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary font-bold tracking-wider uppercase">
+                                <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary font-bold tracking-wider uppercase text-sm">
                                     {study.brand}
                                 </span>
                             </div>

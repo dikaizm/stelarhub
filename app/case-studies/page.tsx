@@ -16,10 +16,10 @@ export default function CaseStudiesPage() {
             <Section className="!pb-0 text-center">
                 <div className="max-w-4xl mx-auto">
                     <h1 className="text-4xl md:text-6xl font-bold text-text mb-6">
-                        Impact in Action
+                        {t('caseStudiesPage.hero.title')}
                     </h1>
                     <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-                        Explore how Stelarea helps businesses overcome barriers and achieve their goals through intelligent systems.
+                        {t('caseStudiesPage.hero.subtitle')}
                     </p>
                 </div>
             </Section>
@@ -27,10 +27,10 @@ export default function CaseStudiesPage() {
             <Section background="white">
                 {/* Filters (Visual only) */}
                 <div className="flex flex-wrap justify-center gap-4 mb-16">
-                    <FilterButton label="All Projects" active />
-                    <FilterButton label="Web & Platform" />
-                    <FilterButton label="AI & Automation" />
-                    <FilterButton label="Data Analytics" />
+                    <FilterButton label={t('caseStudiesPage.filters.all')} active />
+                    <FilterButton label={t('caseStudiesPage.filters.web')} />
+                    <FilterButton label={t('caseStudiesPage.filters.ai')} />
+                    <FilterButton label={t('caseStudiesPage.filters.data')} />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

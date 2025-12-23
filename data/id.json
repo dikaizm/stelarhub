@@ -1,0 +1,403 @@
+{
+    "header": {
+        "contactUs": "Hubungi Kami",
+        "nav": {
+            "services": "Layanan",
+            "platform": "Platform",
+            "portfolio": "Portofolio",
+            "stories": "Cerita"
+        }
+    },
+    "hero": {
+        "title": "Mewujudkan Masa Depan Lewat Kode dan Kreativitas",
+        "subtitle": "Kami menciptakan pengalaman web yang scalable dan solusi AI cerdas untuk mengakselerasi transformasi digital bisnis Anda.",
+        "exploreWork": "Lihat Karya Kami",
+        "getInTouch": "Hubungi Kami"
+    },
+    "services": {
+        "title": "Layanan Kami",
+        "subtitle": "Memadukan pengembangan web dan rekayasa AI untuk menghadirkan solusi digital premium yang siap produksi.",
+        "webDevelopment": {
+            "title": "Web Development",
+            "description": "Kami merancang arsitektur frontend dan backend yang cepat, aman, dan scalable. Dengan desain API yang solid dan optimasi database, kami membangun fondasi digital yang tumbuh bersama bisnis Anda.",
+            "tags": [
+                "Frontend",
+                "Backend",
+                "API Design",
+                "Database"
+            ]
+        },
+        "aiEngineering": {
+            "title": "AI Engineering",
+            "description": "Kami mengembangkan model machine learning untuk NLP dan computer vision, serta mengintegrasikan AI langsung ke aplikasi Anda agar lebih cerdas, efisien, dan otomatis.",
+            "tags": [
+                "Machine Learning",
+                "Computer Vision",
+                "NLP",
+                "TensorFlow"
+            ]
+        }
+    },
+    "portfolio": {
+        "title": "Karya Pilihan",
+        "subtitle": "Dedikasi kami pada standar engineering dan desain kelas dunia.",
+        "visitSite": "Kunjungi Situs",
+        "showMe": "Tunjukkan",
+        "projects": {
+            "matafutsal": {
+                "tag": "Company Profile",
+                "title": "MataFutsal",
+                "description": "Landing page modern untuk perusahaan teknologi futsal, menampilkan lini produk, layanan utama, dan identitas brand dalam tampilan bersih, responsif, dan profesional."
+            },
+            "rokade": {
+                "tag": "Platform Keamanan Siber",
+                "title": "Rokade",
+                "description": "Company profile yang terintegrasi dengan platform AI DFR. Menampilkan kecerdasan berbasis LLM untuk pemahaman dokumen dan otomatisasi deployment bagi keamanan enterprise."
+            },
+            "cortex": {
+                "tag": "Platform Pendidikan AI",
+                "title": "Cortex",
+                "description": "Platform berbasis AI untuk video edukasi otomatis. Menggabungkan AI multimodal untuk pembuatan naskah, sintesis suara, dan perakitan video dalam satu alur kerja."
+            },
+            "brin": {
+                "tag": "Dashboard Penelitian",
+                "title": "BRIN LLM Evaluator",
+                "description": "Dashboard untuk mengevaluasi dialog LLM dalam penelitian psikologi. Dilengkapi analytical visualization dan workflow evaluasi yang presisi, sesuai standar riset tingkat nasional."
+            }
+        }
+    },
+    "about": {
+        "title": "Tim Kami",
+        "subtitle": "Tim kecil dengan dampak besar—memadukan keunggulan teknis dan visual storytelling untuk menciptakan pengalaman digital premium.",
+        "izzulhaq": {
+            "name": "Izzulhaq Mahardika",
+            "role": "Tech Wizard",
+            "description": "Software developer berfokus pada sistem scalable, AI automation, dan machine learning."
+        },
+        "mazir": {
+            "name": "Mazir Muhammad",
+            "role": "Visual Crafter",
+            "description": "Design systems specialist di bidang UX/UI dan visual identity."
+        },
+        "sekar": {
+            "name": "Dewi Sekar",
+            "role": "Business Development",
+            "description": "Spesialis pengembangan bisnis dengan fokus strategi dan pemasaran."
+        }
+    },
+    "contact": {
+        "title": "Mari Bangun Masa Depan Bersama",
+        "subtitle": "Terbuka untuk kolaborasi proyek, riset, dan kemitraan teknologi. Kami siap membantu Anda mewujudkan solusi digital yang berdampak.",
+        "email": "dikaizm@gmail.com",
+        "whatsapp": "WhatsApp Saya"
+    },
+    "insights": {
+        "title": "Wawasan AI & Bisnis",
+        "subtitle": "Temukan tren dan penerapan AI yang mampu meningkatkan efisiensi, mempercepat pertumbuhan, dan membuka peluang baru bagi bisnis Anda.",
+        "workflowAutomation": "Otomatisasi Alur Kerja",
+        "predictiveAnalysis": "Analisis Prediktif",
+        "customerInteraction": "Peningkatan Interaksi Pelanggan",
+        "dataStrategy": "Strategi Berbasis Data",
+        "viewDetails": "Lihat Detail"
+    },
+    "consulting": {
+        "title": "Langkah Konsultasi AI",
+        "subtitle": "Kami membantu Anda mengidentifikasi, merancang, dan mengeksekusi solusi AI yang memberikan value nyata bagi bisnis.",
+        "step1": {
+            "title": "Konsultasi Awal",
+            "description": "Diskusikan kebutuhan dan tantangan bisnis Anda untuk mengidentifikasi peluang AI yang paling relevan dan berdampak."
+        },
+        "step2": {
+            "title": "Analisis & Rekomendasi",
+            "description": "Kami menganalisis proses bisnis dan menyusun rekomendasi solusi AI yang dapat langsung diimplementasikan."
+        },
+        "step3": {
+            "title": "Perencanaan & Penawaran",
+            "description": "Terima rencana implementasi yang detail dan transparan, termasuk estimasi waktu, biaya, dan roadmap eksekusi."
+        },
+        "step4": {
+            "title": "Implementasi & Dukungan",
+            "description": "Kami mendampingi integrasi solusi AI hingga optimal, lengkap dengan pelatihan dan dukungan teknis berkelanjutan."
+        }
+    },
+    "homepage": {
+        "hero": {
+            "title": "Sistem Digital",
+            "titleSuffix": "Penggerak Bisnis Modern",
+            "description": "Stelarea mengubah visi bisnis Anda menjadi solusi digital cerdas. Kami membangun sistem untuk merampingkan operasional, meningkatkan layanan pelanggan, dan mendukung ekspansi tanpa hambatan.",
+            "getDemo": "Minta Demo",
+            "customerStories": "Kisah Sukses"
+        },
+        "about": {
+            "title": "Mengenal Stelarea",
+            "description": "Agensi digital yang berdedikasi menyederhanakan kompleksitas. Kami memadukan desain kreatif dan teknologi cerdas untuk membangun solusi yang mendorong pertumbuhan bisnis secara organik.",
+            "aboutUs": "Tentang Kami",
+            "values": {
+                "businessFirst": {
+                    "title": "Fokus pada Nilai Bisnis",
+                    "description": "Kami mulai dari tujuan dan tantangan bisnis Anda, bukan sekadar teknologi. Setiap baris kode memiliki tujuan operasional yang jelas."
+                },
+                "beyondHype": {
+                    "title": "Lebih dari Sekadar Tren",
+                    "description": "Kami menerapkan AI dan perangkat digital untuk solusi nyata, bukan sekadar mengikuti tren. Utilitas adalah prioritas kami."
+                },
+                "builtForGrowth": {
+                    "title": "Siap untuk Skala Besar",
+                    "description": "Solusi kami dirancang untuk mengakomodasi pertumbuhan Anda, beradaptasi mulus dari ratusan hingga jutaan pengguna."
+                },
+                "partnership": {
+                    "title": "Mitra, Bukan Sekadar Vendor",
+                    "description": "Kami berinvestasi pada kesuksesan jangka panjang sistem yang kami bangun. Kami adalah mitra teknis strategis Anda."
+                }
+            }
+        },
+        "services": {
+            "title": "Solusi Kami",
+            "description": "Kami bermitra dengan organisasi untuk memodernisasi cara kerja. Menggantikan proses manual dengan solusi digital terintegrasi yang memberikan nilai nyata.",
+            "cards": {
+                "platforms": {
+                    "title": "Platform Digital",
+                    "description": "Aplikasi custom untuk operasional inti bisnis.",
+                    "learnMore": "Pelajari lebih lanjut"
+                },
+                "design": {
+                    "title": "Desain Pengalaman (UX)",
+                    "description": "Produk intuitif bagi tim dan pelanggan Anda.",
+                    "learnMore": "Pelajari lebih lanjut"
+                },
+                "automation": {
+                    "title": "Otomasi Cerdas",
+                    "description": "Solusi AI yang memangkas beban kerja manual.",
+                    "learnMore": "Pelajari lebih lanjut"
+                },
+                "strategy": {
+                    "title": "Strategi Data",
+                    "description": "Mengubah data mentah menjadi panduan strategis.",
+                    "learnMore": "Pelajari lebih lanjut"
+                }
+            }
+        },
+        "featuredWork": {
+            "title": "Portofolio Unggulan",
+            "description": "Lihat bagaimana kami mengubah tantangan menjadi keunggulan kompetitif.",
+            "viewStories": "Lihat Studi Kasus",
+            "projects": {
+                "brin": {
+                    "brand": "BRIN",
+                    "title": "Platform Evaluasi LLM",
+                    "description": "Platform evaluasi komprehensif untuk Model Bahasa Besar (LLM) berbahasa Indonesia."
+                },
+                "lidm": {
+                    "brand": "LIDM",
+                    "title": "Manajemen Pembelajaran Cortex",
+                    "description": "Sistem manajemen pembelajaran (LMS) modern yang dirancang untuk institusi pendidikan masa depan."
+                },
+                "matafutsal": {
+                    "brand": "Matafutsal",
+                    "title": "Pemesanan Venue Olahraga",
+                    "description": "Platform booking venue olahraga yang seamless untuk komunitas."
+                }
+            }
+        },
+        "cta": {
+            "title": "Siap Modernisasi Bisnis Anda?",
+            "description": "Mari rancang solusi yang bekerja sekeras Anda.",
+            "button": "Mulai Transformasi"
+        }
+    },
+    "footer": {
+        "description": "Stelarea mengubah visi bisnis Anda menjadi solusi digital cerdas. Kami membangun sistem untuk merampingkan operasional dan mendukung ekspansi tanpa hambatan.",
+        "sections": {
+            "services": "Layanan",
+            "company": "Perusahaan",
+            "contact": "Kontak"
+        },
+        "links": {
+            "webPlatform": "Web & Platform",
+            "uxuiDesign": "Desain UX/UI",
+            "aiAutomation": "AI & Otomasi",
+            "dataStrategy": "Strategi Data",
+            "aboutUs": "Tentang Kami",
+            "caseStudies": "Studi Kasus",
+            "insights": "Wawasan",
+            "contact": "Kontak"
+        },
+        "location": "Bandung, Indonesia",
+        "rights": "© {year} Stelarea. Hak cipta dilindungi.",
+        "privacyPolicy": "Kebijakan Privasi",
+        "termsOfService": "Ketentuan Layanan"
+    },
+    "notFound": {
+        "title": "Halaman Tidak Ditemukan",
+        "description": "Ups! Halaman yang Anda cari tidak tersedia. Saya siap membantu Anda kembali ke beranda atau menjelajahi insight lainnya.",
+        "backHome": "Kembali ke Beranda"
+    },
+    "modal": {
+        "techStack": "Teknologi",
+        "visitSite": "Kunjungi Situs"
+    },
+    "aboutPage": {
+        "hero": {
+            "title": "Menjembatani bisnis Anda saat ini dengan ",
+            "titleHighlight": "masa depan teknologi.",
+            "subtitle": "Stelarea adalah agensi transformasi digital yang berfokus pada dampak. Kami percaya sistem digital terbaik adalah yang bekerja mulus di latar belakang—memungkinkan tim Anda fokus pada hal terpenting: mengembangkan bisnis dan melayani pelanggan."
+        },
+        "vision": {
+            "title": "Visi Kami",
+            "text": "Memberdayakan organisasi untuk beroperasi lebih cerdas melalui lingkungan digital yang andal dan cerdas."
+        },
+        "mission": {
+            "title": "Misi Kami",
+            "simplify": {
+                "title": "Sederhanakan",
+                "desc": "tantangan bisnis kompleks melalui strategi cerdas."
+            },
+            "build": {
+                "title": "Bangun",
+                "desc": "alat andal yang mendukung pertumbuhan jangka panjang."
+            },
+            "empower": {
+                "title": "Berdayakan",
+                "desc": "pemimpin dengan kejelasan berbasis data."
+            }
+        },
+        "approach": {
+            "title": "Pendekatan Kami",
+            "subtitle": "Kami tidak sekadar membuat software; kami membangun solusi yang sesuai konteks bisnis Anda.",
+            "steps": {
+                "understand": {
+                    "title": "Pahami",
+                    "desc": "Kami mendengar tantangan Anda dan mendefinisikan arti 'sukses' bagi bisnis Anda."
+                },
+                "design": {
+                    "title": "Desain",
+                    "desc": "Kami merancang strategi yang sesuai dengan kebutuhan saat ini dan ambisi masa depan Anda."
+                },
+                "build": {
+                    "title": "Bangun & Luncurkan",
+                    "desc": "Kami menciptakan sistem yang user-friendly dan andal sejak hari pertama."
+                },
+                "support": {
+                    "title": "Dukung & Kembangkan",
+                    "desc": "Kami membantu Anda mengadopsi alat baru dan meningkatkannya seiring perubahan bisnis."
+                }
+            }
+        },
+        "values": {
+            "title": "Nilai Kami",
+            "clarity": {
+                "title": "Kejelasan di atas Kompleksitas",
+                "desc": "Kami membuat teknologi mudah dipahami dan digunakan."
+            },
+            "results": {
+                "title": "Hasil di atas Output",
+                "desc": "Bukan tentang seberapa banyak yang kami buat, tapi seberapa besar nilai yang kami ciptakan."
+            },
+            "longTerm": {
+                "title": "Berpikir Jangka Panjang",
+                "desc": "Kami membangun solusi yang dirancang untuk bertahan lama."
+            }
+        }
+    },
+    "caseStudiesPage": {
+        "hero": {
+            "title": "Dampak Nyata",
+            "subtitle": "Jelajahi bagaimana Stelarea membantu bisnis mengatasi hambatan dan mencapai tujuan melalui sistem cerdas."
+        },
+        "filters": {
+            "all": "Semua Proyek",
+            "web": "Web & Platform",
+            "ai": "AI & Otomasi",
+            "data": "Analitik Data"
+        }
+    },
+    "contactPage": {
+        "hero": {
+            "title": "Mari Diskusikan Tujuan Anda",
+            "subtitle": "Ceritakan tantangan yang Anda hadapi. Kami akan membantu Anda menemukan solusi digital yang tepat."
+        },
+        "touch": {
+            "title": "Hubungi Kami",
+            "email": "Email",
+            "whatsapp": "WhatsApp",
+            "office": "Kantor",
+            "location": "Bandung, Indonesia",
+            "connect": "Terhubung dengan kami"
+        },
+        "form": {
+            "name": "Nama",
+            "namePlaceholder": "Nama Anda",
+            "company": "Perusahaan",
+            "companyPlaceholder": "Nama perusahaan Anda",
+            "email": "Email",
+            "emailPlaceholder": "email@anda.com",
+            "message": "Bagaimana kami bisa membantu Anda?",
+            "messagePlaceholder": "Ceritakan sedikit tentang proyek atau tantangan Anda...",
+            "submit": "Kirim Pesan",
+            "success": "Pesan terkirim! (Ini adalah demo)"
+        }
+    },
+    "insightsPage": {
+        "hero": {
+            "title": "Wawasan & Perspektif",
+            "subtitle": "Saran praktis dalam menavigasi transformasi digital, memanfaatkan AI, dan mengelola sistem bisnis modern."
+        },
+        "readFull": "Baca Selengkapnya",
+        "noInsights": "Belum ada wawasan yang ditemukan."
+    },
+    "servicesPage": {
+        "hero": {
+            "title": "Layanan untuk",
+            "titleHighlight": "Skala & Kecerdasan",
+            "subtitle": "Kami menyediakan kemampuan end-to-end yang Anda butuhkan untuk memodernisasi bisnis, mulai dari sistem dasar hingga antarmuka pengguna dan kecerdasan yang menggerakkan semuanya."
+        },
+        "cta": {
+            "title": "Tidak yakin apa yang Anda butuhkan?",
+            "button": "Jadwalkan Konsultasi"
+        },
+        "webDevelopment": {
+            "title": "Pengembangan Web & Platform",
+            "description": "Kami membangun platform web aman dan scalable yang menjadi fondasi operasional digital Anda.",
+            "outcome": "Platform digital andal yang dibangun untuk pertumbuhan.",
+            "features": {
+                "customApps": "Aplikasi web kustom",
+                "companySystems": "Sistem perusahaan & company profile",
+                "cmsApi": "Headless CMS & integrasi API",
+                "performance": "Optimasi performa dan keamanan"
+            }
+        },
+        "experienceDesign": {
+            "title": "Pengalaman Pengguna (UX/UI)",
+            "description": "Kami merancang pengalaman yang membuat sistem kompleks mudah digunakan. Sistem canggih tidak berguna jika tim Anda tidak bisa menggunakannya.",
+            "outcome": "Keterlibatan lebih tinggi, kemudahan penggunaan lebih baik, dan konversi meningkat.",
+            "features": {
+                "uxResearch": "Riset UX & pemetaan perjalanan pengguna",
+                "interfaceDesign": "Desain antarmuka & sistem desain",
+                "prototyping": "Pembuatan prototipe dan uji kegunaan",
+                "wireframing": "Wireframing & Arsitektur Informasi"
+            }
+        },
+        "aiAutomation": {
+            "title": "Agen AI & Machine Learning",
+            "description": "Kami mengembangkan sistem cerdas yang mengotomatisasi tugas dan mendukung pengambilan keputusan. Bebaskan tim Anda dari tugas berulang.",
+            "outcome": "Operasional lebih cerdas dan keputusan berbasis data.",
+            "features": {
+                "aiAgents": "Agen AI & otomatisasi alur kerja",
+                "mlModels": "Model machine learning (prediksi, NLP, CV)",
+                "llmIntegration": "Integrasi LLM untuk alat internal",
+                "deployment": "Deployment & pemantauan model"
+            }
+        },
+        "dataStrategy": {
+            "title": "Analitik Data & Intelijen",
+            "description": "Kami mengubah data mentah menjadi wawasan yang mendorong tindakan. Berhenti menebak dan mulai mengetahui.",
+            "outcome": "Wawasan jelas untuk keputusan lebih cepat dan lebih baik.",
+            "features": {
+                "pipelines": "Pipeline & integrasi data",
+                "dashboards": "Dashboard & solusi BI",
+                "analytics": "Analitik lanjut & peramalan",
+                "metrics": "Kerangka kerja KPI & metrik"
+            }
+        }
+    }
+}

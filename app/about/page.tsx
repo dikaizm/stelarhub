@@ -16,10 +16,10 @@ export default function AboutPage() {
             <Section className="pb-12">
                 <div className="max-w-4xl">
                     <h1 className="text-4xl md:text-6xl font-bold text-text mb-8">
-                        Bridging the gap between where your business is today and where <span className="text-primary">technology can take it tomorrow.</span>
+                        {t('aboutPage.hero.title')} <span className="text-primary">{t('aboutPage.hero.titleHighlight')}</span>
                     </h1>
                     <p className="text-xl text-text-secondary leading-relaxed max-w-2xl text-balance">
-                        Stelarea is a digital transformation agency focused on impact. We believe that the best digital systems fade into the background—they just work, enabling your team to focus on what matters: growing the business and serving customers.
+                        {t('aboutPage.hero.subtitle')}
                     </p>
                 </div>
             </Section>
@@ -30,21 +30,21 @@ export default function AboutPage() {
                     <div>
                         <div className="flex items-center gap-3 mb-6">
                             <Compass className="text-primary w-8 h-8" />
-                            <h2 className="text-3xl font-bold text-text">Our Vision</h2>
+                            <h2 className="text-3xl font-bold text-text">{t('aboutPage.vision.title')}</h2>
                         </div>
                         <p className="text-lg text-text-secondary">
-                            To enable organizations to operate smarter through reliable, intelligent digital environments.
+                            {t('aboutPage.vision.text')}
                         </p>
                     </div>
                     <div>
                         <div className="flex items-center gap-3 mb-6">
                             <Target className="text-primary w-8 h-8" />
-                            <h2 className="text-3xl font-bold text-text">Our Mission</h2>
+                            <h2 className="text-3xl font-bold text-text">{t('aboutPage.mission.title')}</h2>
                         </div>
                         <ul className="space-y-6">
-                            <MissionItem title="Simplify" description="complex business challenges through smart strategy." />
-                            <MissionItem title="Build" description="reliable tools that support long-term growth." />
-                            <MissionItem title="Empower" description="leaders with data-driven clarity." />
+                            <MissionItem title={t('aboutPage.mission.simplify.title')} description={t('aboutPage.mission.simplify.desc')} />
+                            <MissionItem title={t('aboutPage.mission.build.title')} description={t('aboutPage.mission.build.desc')} />
+                            <MissionItem title={t('aboutPage.mission.empower.title')} description={t('aboutPage.mission.empower.desc')} />
                         </ul>
                     </div>
                 </div>
@@ -54,9 +54,9 @@ export default function AboutPage() {
             <section className="w-full pt-20 pb-12 px-4 sm:px-6 lg:px-8">
                 <div className="relative w-full rounded-3xl overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 py-16 sm:py-24 flex flex-col items-center text-center">
                     <div className="mb-16 px-4">
-                        <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">Our Approach</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">{t('aboutPage.approach.title')}</h2>
                         <p className="text-xl text-text-secondary max-w-2xl">
-                            We don&apos;t just build software; we build solutions that fit your business context.
+                            {t('aboutPage.approach.subtitle')}
                         </p>
                     </div>
 
@@ -66,23 +66,23 @@ export default function AboutPage() {
 
                         <ApproachCard
                             step="01"
-                            title="Understand"
-                            description="We listen to your challenges and define what &lsquo;success&rsquo; looks like for your business."
+                            title={t('aboutPage.approach.steps.understand.title')}
+                            description={t('aboutPage.approach.steps.understand.desc')}
                         />
                         <ApproachCard
                             step="02"
-                            title="Design"
-                            description="We map out a strategy that fits your current needs and future ambitions."
+                            title={t('aboutPage.approach.steps.design.title')}
+                            description={t('aboutPage.approach.steps.design.desc')}
                         />
                         <ApproachCard
                             step="03"
-                            title="Build & Launch"
-                            description="We create the system, ensuring it is user-friendly and reliable from day one."
+                            title={t('aboutPage.approach.steps.build.title')}
+                            description={t('aboutPage.approach.steps.build.desc')}
                         />
                         <ApproachCard
                             step="04"
-                            title="Support & Evolve"
-                            description="We help you adopt the new tools and improve them as your business changes."
+                            title={t('aboutPage.approach.steps.support.title')}
+                            description={t('aboutPage.approach.steps.support.desc')}
                         />
                     </div>
                 </div>
@@ -91,23 +91,23 @@ export default function AboutPage() {
             {/* Our Values */}
             <Section>
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">Our Values</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-text mb-6">{t('aboutPage.values.title')}</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <ValueCard
                         icon={<Zap className="w-8 h-8 text-yellow-500" />}
-                        title="Clarity over Complexity"
-                        description="We make technology easy to understand and use."
+                        title={t('aboutPage.values.clarity.title')}
+                        description={t('aboutPage.values.clarity.desc')}
                     />
                     <ValueCard
                         icon={<Code2 className="w-8 h-8 text-primary" />}
-                        title="Results over Output"
-                        description="It&apos;s not about how much we build, but how much value we create."
+                        title={t('aboutPage.values.results.title')}
+                        description={t('aboutPage.values.results.desc')}
                     />
                     <ValueCard
                         icon={<HeartHandshake className="w-8 h-8 text-rose-500" />}
-                        title="Long-Term Thinking"
-                        description="We build solutions meant to last."
+                        title={t('aboutPage.values.longTerm.title')}
+                        description={t('aboutPage.values.longTerm.desc')}
                     />
                 </div>
             </Section>

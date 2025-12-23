@@ -13,11 +13,11 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-background-paper pt-16 pb-8">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-6 sm:px-8">
         <div className="flex flex-col lg:flex-row gap-16 mb-16">
 
           {/* Brand Column */}
-          <div className="space-y-6 w-3/5">
+          <div className="space-y-6 md:w-3/5">
             <Link href="/" className="block w-32">
               <Image
                 src={stelarLogo}
@@ -34,7 +34,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className='grid grid-cols-2 md:grid-cols-3 gap-12 justify-between bg-gradient-to-br from-[#1e293b] via-[#334155] to-[#0f172a] p-10 rounded-2xl overflow-hidden w-full'>
+          <div className='grid grid-cols-2 md:grid-cols-3 gap-12 justify-between bg-gradient-to-br from-[#1e293b] via-[#334155] to-[#0f172a] p-6 md:p-10 rounded-2xl overflow-hidden md:w-full'>
             {/* Services Column */}
             <div>
               <h3 className="text-text font-semibold mb-6 text-white/50">{t('footer.sections.services')}</h3>

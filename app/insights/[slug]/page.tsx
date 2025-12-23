@@ -1,12 +1,14 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect, useState } from 'react'
 import Section from '@/components/Section'
-import { getPostData, getAllPosts } from '@/lib/insights'
+import { getPostData, getAllPosts, InsightPost } from '@/lib/insights'
 import ReactMarkdown from 'react-markdown'
 import { notFound } from 'next/navigation'
 import { ArrowLeft, Calendar, User, Tag } from 'lucide-react'
 import Link from 'next/link'
-import { Metadata } from 'next'
 import BlogCard from '@/components/BlogCard'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 interface Props {
     params: {
@@ -14,36 +16,57 @@ interface Props {
     }
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const post = getPostData(params.slug)
-
-    if (!post) {
-        return {
-            title: 'Not Found',
-        }
-    }
-
-    return {
-        title: `${post.title} - Stelarea Insights`,
-        description: post.excerpt,
-    }
-}
-
 export default function ArticlePage({ params }: Props) {
-    const post = getPostData(params.slug)
+    const { language } = useLanguage()
+    const [post, setPost] = useState<InsightPost | null>(null)
+    const [relatedPosts, setRelatedPosts] = useState<InsightPost[]>([])
+    const [loading, setLoading] = useState(true)
 
-    if (!post) {
-        notFound()
+    useEffect(() => {
+        const fetchData = async () => {
+            setLoading(true)
+            try {
+                const postData = await getPostData(params.slug, language)
+                if (postData) {
+                    setPost(postData)
+
+                    // Fetch all posts for related section
+                    const allPosts = await getAllPosts(language)
+                    const related = allPosts
+                        .filter(p => p.category === postData.category && p.slug !== postData.slug)
+                        .slice(0, 3)
+                    setRelatedPosts(related)
+                } else {
+                    setPost(null)
+                }
+            } catch (error) {
+                console.error("Error fetching post data", error)
+            } finally {
+                setLoading(false)
+            }
+        }
+        fetchData()
+    }, [params.slug, language])
+
+    if (loading) {
+        return (
+            <main className="pt-8 min-h-screen bg-background flex items-center justify-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+            </main>
+        )
     }
 
-    // Get related articles (same category, excluding current)
-    const allPosts = getAllPosts()
-    const relatedPosts = allPosts
-        .filter(p => p.category === post.category && p.slug !== post.slug)
-        .slice(0, 3)
+    if (!post) {
+        return (
+            <main className="pt-8 min-h-screen bg-background flex flex-col items-center justify-center text-center p-4">
+                <h1 className="text-2xl font-bold text-text mb-4">Post not found</h1>
+                <Link href="/insights" className="text-primary hover:underline">Back to Insights</Link>
+            </main>
+        )
+    }
 
     return (
-        <main className="pt-24 min-h-screen bg-background text-text">
+        <main className="pt-8 min-h-screen bg-background text-text">
             {/* Header Section */}
             <Section className="!pb-0">
                 <div className="max-w-3xl mx-auto">

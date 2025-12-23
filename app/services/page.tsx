@@ -10,7 +10,10 @@ import {
     Database, BarChart3, TrendingUp, Target
 } from 'lucide-react'
 
+import { useLanguage } from '@/contexts/LanguageContext'
+
 export default function ServicesPage() {
+    const { t } = useLanguage()
     return (
         <main className="pt-24 min-h-screen bg-background">
             {/* Hero */}
@@ -25,11 +28,11 @@ export default function ServicesPage() {
 
                     <div className="relative z-10 max-w-4xl px-4">
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6 text-balance">
-                            Services Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Scale & Intelligence</span>
+                            {t('servicesPage.hero.title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">{t('servicesPage.hero.titleHighlight')}</span>
                         </h1>
 
                         <p className="text-lg sm:text-xl text-gray-600 mb-10 max-w-2xl mx-auto text-balance font-light leading-relaxed">
-                            We provide the end-to-end capabilities you need to modernize your business, from the underlying systems to the user interface and the intelligence that powers it all.
+                            {t('servicesPage.hero.subtitle')}
                         </p>
                     </div>
                 </div>
@@ -38,69 +41,69 @@ export default function ServicesPage() {
             {/* Web & Platform Solutions */}
             <ServiceSection
                 id="web-development"
-                title="Web & Platform Development"
-                description="We build secure, scalable web platforms that become the foundation of your digital operations."
+                title={t('servicesPage.webDevelopment.title')}
+                description={t('servicesPage.webDevelopment.description')}
                 icon={<Code className="w-10 h-10 text-primary" />}
                 whatWeDeliver={[
-                    { icon: <Globe className="w-5 h-5" />, text: "Custom web applications" },
-                    { icon: <Building2 className="w-5 h-5" />, text: "Company profile & enterprise systems" },
-                    { icon: <Plug className="w-5 h-5" />, text: "Headless CMS & API integration" },
-                    { icon: <Shield className="w-5 h-5" />, text: "Performance and security optimization" }
+                    { icon: <Globe className="w-5 h-5" />, text: t('servicesPage.webDevelopment.features.customApps') },
+                    { icon: <Building2 className="w-5 h-5" />, text: t('servicesPage.webDevelopment.features.companySystems') },
+                    { icon: <Plug className="w-5 h-5" />, text: t('servicesPage.webDevelopment.features.cmsApi') },
+                    { icon: <Shield className="w-5 h-5" />, text: t('servicesPage.webDevelopment.features.performance') }
                 ]}
-                outcome="A reliable digital platform built for growth."
+                outcome={t('servicesPage.webDevelopment.outcome')}
             />
 
             {/* UX/UI */}
             <ServiceSection
                 id="experience-design"
-                title="User Experience (UX/UI)"
-                description="We design experiences that make complex systems easy to use. A powerful system is useless if your team can't use it."
+                title={t('servicesPage.experienceDesign.title')}
+                description={t('servicesPage.experienceDesign.description')}
                 icon={<Layout className="w-10 h-10 text-secondary" />}
                 whatWeDeliver={[
-                    { icon: <Users className="w-5 h-5" />, text: "UX research & user journey mapping" },
-                    { icon: <Palette className="w-5 h-5" />, text: "Interface design & design systems" },
-                    { icon: <TestTube className="w-5 h-5" />, text: "Prototyping and usability testing" },
-                    { icon: <FileText className="w-5 h-5" />, text: "Wireframing & Information Architecture" }
+                    { icon: <Users className="w-5 h-5" />, text: t('servicesPage.experienceDesign.features.uxResearch') },
+                    { icon: <Palette className="w-5 h-5" />, text: t('servicesPage.experienceDesign.features.interfaceDesign') },
+                    { icon: <TestTube className="w-5 h-5" />, text: t('servicesPage.experienceDesign.features.prototyping') },
+                    { icon: <FileText className="w-5 h-5" />, text: t('servicesPage.experienceDesign.features.wireframing') }
                 ]}
-                outcome="Higher engagement, better usability, and improved conversion."
+                outcome={t('servicesPage.experienceDesign.outcome')}
                 align="right"
             />
 
             {/* AI & Automation */}
             <ServiceSection
                 id="ai-automation"
-                title="AI Agent & Machine Learning"
-                description="We develop intelligent systems that automate tasks and support decision-making. Free your team from repetitive tasks."
+                title={t('servicesPage.aiAutomation.title')}
+                description={t('servicesPage.aiAutomation.description')}
                 icon={<Bot className="w-10 h-10 text-primary" />}
                 whatWeDeliver={[
-                    { icon: <Zap className="w-5 h-5" />, text: "AI agents & workflow automation" },
-                    { icon: <Brain className="w-5 h-5" />, text: "Machine learning models (prediction, NLP, CV)" },
-                    { icon: <MessageSquare className="w-5 h-5" />, text: "LLM integration for internal tools" },
-                    { icon: <Activity className="w-5 h-5" />, text: "Model deployment & monitoring" }
+                    { icon: <Zap className="w-5 h-5" />, text: t('servicesPage.aiAutomation.features.aiAgents') },
+                    { icon: <Brain className="w-5 h-5" />, text: t('servicesPage.aiAutomation.features.mlModels') },
+                    { icon: <MessageSquare className="w-5 h-5" />, text: t('servicesPage.aiAutomation.features.llmIntegration') },
+                    { icon: <Activity className="w-5 h-5" />, text: t('servicesPage.aiAutomation.features.deployment') }
                 ]}
-                outcome="Smarter operations and data-driven decisions."
+                outcome={t('servicesPage.aiAutomation.outcome')}
             />
 
             {/* Data Analytics */}
             <ServiceSection
                 id="data-strategy"
-                title="Data Analytics & Intelligence"
-                description="We transform raw data into insights that drive action. Stop guessing and start knowing."
+                title={t('servicesPage.dataStrategy.title')}
+                description={t('servicesPage.dataStrategy.description')}
                 icon={<LineChart className="w-10 h-10 text-indigo-500" />}
                 whatWeDeliver={[
-                    { icon: <Database className="w-5 h-5" />, text: "Data pipelines & integration" },
-                    { icon: <BarChart3 className="w-5 h-5" />, text: "Dashboards & BI solutions" },
-                    { icon: <TrendingUp className="w-5 h-5" />, text: "Advanced analytics & forecasting" },
-                    { icon: <Target className="w-5 h-5" />, text: "KPI & metrics frameworks" }
+                    { icon: <Database className="w-5 h-5" />, text: t('servicesPage.dataStrategy.features.pipelines') },
+                    { icon: <BarChart3 className="w-5 h-5" />, text: t('servicesPage.dataStrategy.features.dashboards') },
+                    { icon: <TrendingUp className="w-5 h-5" />, text: t('servicesPage.dataStrategy.features.analytics') },
+                    { icon: <Target className="w-5 h-5" />, text: t('servicesPage.dataStrategy.features.metrics') }
                 ]}
-                outcome="Clear insights for faster, better decisions."
+                outcome={t('servicesPage.dataStrategy.outcome')}
                 align="right"
             />
 
             {/* CTA */}
             <Section className="py-24 text-center">
-                <h2 className="text-3xl font-bold text-text mb-8">Not sure what you need?</h2>
-                <PrimaryButton label="Book a Consultation" link="/contact" className="mx-auto" />
+                <h2 className="text-3xl font-bold text-text mb-8">{t('servicesPage.cta.title')}</h2>
+                <PrimaryButton label={t('servicesPage.cta.button')} link="/contact" className="mx-auto" />
             </Section>
         </main>
     )

@@ -32,7 +32,7 @@ export default function ImageSlider({ images, alt }: ImageSliderProps) {
 
     if (images.length === 1) {
         return (
-            <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative w-full aspect-video rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                     src={images[0]}
                     alt={alt}
@@ -45,7 +45,7 @@ export default function ImageSlider({ images, alt }: ImageSliderProps) {
     }
 
     return (
-        <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl group">
+        <div className="relative w-full aspect-video rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl group">
             <div
                 className="w-full h-full relative transition-transform duration-500 ease-out"
             // style={{ transform: `translateX(-${currentIndex * 100}%)` }} // Can use this for sliding track, but replacing image is simpler for basic slider
