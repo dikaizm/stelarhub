@@ -7,13 +7,27 @@ import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
 import stelarLogo from '@/public/logo/stelarea.svg'
-import { HeaderNavData } from './store/header'
 import PrimaryButton from '@/components/Buttons/PrimaryButton'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const Header = () => {
   const pathname = usePathname()
+  const { t } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  // Extract current language from pathname
+  const segments = pathname.split('/').filter(Boolean)
+  const currentLang = (segments[0] === 'en' || segments[0] === 'id') ? segments[0] : 'id'
+
+  // Navigation data with translations
+  const navItems = [
+    { id: 1, label: t('footer.links.aboutUs'), url: `/${currentLang}/about` },
+    { id: 2, label: t('footer.sections.services'), url: `/${currentLang}/services` },
+    { id: 3, label: t('footer.links.caseStudies'), url: `/${currentLang}/case-studies` },
+    { id: 4, label: t('footer.links.insights'), url: `/${currentLang}/insights` },
+    { id: 5, label: t('footer.links.contact'), url: `/${currentLang}/contact` },
+  ]
 
   // Handle scroll effect
   useEffect(() => {
@@ -40,7 +54,7 @@ const Header = () => {
         <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='flex items-center justify-between'>
             {/* Logo */}
-            <Link href='/' className='relative h-8 w-auto flex-shrink-0'>
+            <Link href={`/${currentLang}`} className='relative h-8 w-auto flex-shrink-0'>
               <Image
                 src={stelarLogo}
                 alt="Stelarea"
@@ -53,7 +67,7 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className='hidden md:flex items-center gap-8'>
-              {HeaderNavData.map((nav) => {
+              {navItems.map((nav) => {
                 const isActive = pathname === nav.url
                 return (
                   <Link
@@ -73,10 +87,10 @@ const Header = () => {
             {/* CTA & Mobile Toggle */}
             <div className='flex items-center gap-4'>
               <Link
-                href="/contact"
+                href={`/${currentLang}/contact`}
                 className="hidden md:inline-flex items-center justify-center px-5 py-2 text-sm font-semibold text-white transition-all duration-200 bg-primary hover:bg-primary-hover rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/30 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-white"
               >
-                Start Project
+                {t('header.contactUs')}
               </Link>
 
               {/* Mobile Menu Button */}
@@ -104,7 +118,7 @@ const Header = () => {
         </div>
 
         <nav className='flex flex-col items-center justify-start h-full gap-8 px-6'>
-          {HeaderNavData.map((nav) => {
+          {navItems.map((nav) => {
             const isActive = pathname === nav.url
             return (
               <Link
@@ -118,8 +132,8 @@ const Header = () => {
             )
           })}
           <PrimaryButton
-            label="Start Project"
-            link="/contact"
+            label={t('header.contactUs')}
+            link={`/${currentLang}/contact`}
             fullWidth
             className="mt-4"
           />

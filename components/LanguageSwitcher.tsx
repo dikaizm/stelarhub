@@ -1,11 +1,14 @@
 'use client'
 
 import React, { useState, useRef, useEffect } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { Globe, Check } from 'lucide-react'
 
 const LanguageSwitcher: React.FC = () => {
   const { language, setLanguage } = useLanguage()
+  const pathname = usePathname()
+  const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
@@ -30,8 +33,24 @@ const LanguageSwitcher: React.FC = () => {
     }
   }, [isOpen])
 
-  const handleLanguageSelect = (langCode: string) => {
-    setLanguage(langCode as 'en' | 'id')
+  const handleLanguageSelect = (newLang: string) => {
+    // Extract current language from pathname
+    const segments = pathname.split('/').filter(Boolean)
+    const currentLang = segments[0]
+
+    // Replace language in pathname
+    if (currentLang === 'en' || currentLang === 'id') {
+      segments[0] = newLang
+    } else {
+      // If no language in path, add it
+      segments.unshift(newLang)
+    }
+
+    const newPath = '/' + segments.join('/')
+
+    // Update context and navigate
+    setLanguage(newLang as 'en' | 'id')
+    router.push(newPath)
     setIsOpen(false)
   }
 

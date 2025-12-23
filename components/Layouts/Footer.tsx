@@ -1,15 +1,38 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
 import stelarLogo from '@/public/logo/stelarea.svg'
-import { Linkedin, Twitter, Instagram, Github } from 'lucide-react'
-import { useLanguage } from '@/contexts/LanguageContext'
+import { Twitter, Instagram } from 'lucide-react'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 
-export default function Footer() {
+interface FooterProps {
+  dict: {
+    footer: {
+      description: string
+      sections: {
+        services: string
+        company: string
+        contact: string
+      }
+      links: {
+        webPlatform: string
+        uxuiDesign: string
+        aiAutomation: string
+        dataStrategy: string
+        aboutUs: string
+        caseStudies: string
+        insights: string
+        contact: string
+      }
+      location: string
+      rights: string
+      privacyPolicy: string
+      termsOfService: string
+    }
+  }
+}
+
+export default function Footer({ dict }: FooterProps) {
   const currentYear = new Date().getFullYear()
-  const { t } = useLanguage()
 
   return (
     <footer className="w-full bg-background-paper pt-16 pb-8">
@@ -26,7 +49,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-text-secondary text-sm leading-relaxed max-w-xs">
-              {t('footer.description')}
+              {dict.footer.description}
             </p>
             <div className="flex items-center gap-4">
               <SocialLink href="https://twitter.com/stelarealab" icon={<Twitter size={18} />} />
@@ -37,29 +60,29 @@ export default function Footer() {
           <div className='grid grid-cols-2 md:grid-cols-3 gap-12 justify-between bg-gradient-to-br from-[#1e293b] via-[#334155] to-[#0f172a] p-6 md:p-10 rounded-2xl overflow-hidden md:w-full'>
             {/* Services Column */}
             <div>
-              <h3 className="text-text font-semibold mb-6 text-white/50">{t('footer.sections.services')}</h3>
+              <h3 className="text-text font-semibold mb-6 text-white/50">{dict.footer.sections.services}</h3>
               <ul className="space-y-4">
-                <FooterLink href="/services#web-development">{t('footer.links.webPlatform')}</FooterLink>
-                <FooterLink href="/services#experience-design">{t('footer.links.uxuiDesign')}</FooterLink>
-                <FooterLink href="/services#ai-automation">{t('footer.links.aiAutomation')}</FooterLink>
-                <FooterLink href="/services#data-strategy">{t('footer.links.dataStrategy')}</FooterLink>
+                <FooterLink href="/services#web-development">{dict.footer.links.webPlatform}</FooterLink>
+                <FooterLink href="/services#experience-design">{dict.footer.links.uxuiDesign}</FooterLink>
+                <FooterLink href="/services#ai-automation">{dict.footer.links.aiAutomation}</FooterLink>
+                <FooterLink href="/services#data-strategy">{dict.footer.links.dataStrategy}</FooterLink>
               </ul>
             </div>
 
             {/* Company Column */}
             <div>
-              <h3 className="text-text font-semibold mb-6 text-white/50">{t('footer.sections.company')}</h3>
+              <h3 className="text-text font-semibold mb-6 text-white/50">{dict.footer.sections.company}</h3>
               <ul className="space-y-4">
-                <FooterLink href="/about">{t('footer.links.aboutUs')}</FooterLink>
-                <FooterLink href="/case-studies">{t('footer.links.caseStudies')}</FooterLink>
-                <FooterLink href="/insights">{t('footer.links.insights')}</FooterLink>
-                <FooterLink href="/contact">{t('footer.links.contact')}</FooterLink>
+                <FooterLink href="/about">{dict.footer.links.aboutUs}</FooterLink>
+                <FooterLink href="/case-studies">{dict.footer.links.caseStudies}</FooterLink>
+                <FooterLink href="/insights">{dict.footer.links.insights}</FooterLink>
+                <FooterLink href="/contact">{dict.footer.links.contact}</FooterLink>
               </ul>
             </div>
 
             {/* Contact Column */}
             <div>
-              <h3 className="text-text font-semibold mb-6 text-white/50">{t('footer.sections.contact')}</h3>
+              <h3 className="text-text font-semibold mb-6 text-white/50">{dict.footer.sections.contact}</h3>
               <ul className="space-y-4 text-sm text-text-secondary">
                 <li>
                   <a href="mailto:hello@stelarea.com" className="text-white hover:text-primary transition-colors">
@@ -67,7 +90,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li className="text-white">
-                  {t('footer.location')}
+                  {dict.footer.location}
                 </li>
               </ul>
             </div>
@@ -78,15 +101,15 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-text-muted text-xs">
-            {t('footer.rights').replace('{year}', currentYear.toString())}
+            {dict.footer.rights.replace('{year}', currentYear.toString())}
           </p>
           <div className="flex gap-6 items-center">
             <LanguageSwitcher />
             <Link href="/privacy" className="text-text-muted text-xs hover:text-text transition-colors">
-              {t('footer.privacyPolicy')}
+              {dict.footer.privacyPolicy}
             </Link>
             <Link href="/terms" className="text-text-muted text-xs hover:text-text transition-colors">
-              {t('footer.termsOfService')}
+              {dict.footer.termsOfService}
             </Link>
           </div>
         </div>

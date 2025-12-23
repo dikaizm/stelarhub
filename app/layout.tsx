@@ -3,7 +3,7 @@ import { Urbanist, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Layouts/Header";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import Footer from "@/components/Layouts/Footer";
+import FooterWrapper from "@/components/Layouts/FooterWrapper";
 
 const font = Plus_Jakarta_Sans({
   weight: "variable",
@@ -164,7 +164,7 @@ export default function RootLayout({
         <LanguageProvider>
           <Header />
           {children}
-          <Footer />
+          <FooterWrapper />
         </LanguageProvider>
       </body>
     </html>
