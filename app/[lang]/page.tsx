@@ -6,6 +6,7 @@ import PrimaryButton from "@/components/Buttons/PrimaryButton";
 import Card from "@/components/Card";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import { getDictionary, Language } from "@/lib/translations";
+import { caseStudies } from "@/lib/caseStudies";
 
 export default async function Home({ params }: { params: Promise<{ lang: Language }> }) {
     const { lang } = await params;
@@ -146,27 +147,19 @@ export default async function Home({ params }: { params: Promise<{ lang: Languag
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {/* Case Study Cards */}
-                    <CaseStudyCard
-                        brand={dict.homepage.featuredWork.projects.brin.brand}
-                        title={dict.homepage.featuredWork.projects.brin.title}
-                        description={dict.homepage.featuredWork.projects.brin.description}
-                        image="/assets/portfolio/brin-llm-eval/1.png"
-                        href={`/${lang}/case-studies/brin-llm-eval`}
-                    />
-                    <CaseStudyCard
-                        brand={dict.homepage.featuredWork.projects.lidm.brand}
-                        title={dict.homepage.featuredWork.projects.lidm.title}
-                        description={dict.homepage.featuredWork.projects.lidm.description}
-                        image="/assets/portfolio/cortex-lidm/1.png"
-                        href={`/${lang}/case-studies/cortex-lidm`}
-                    />
-                    <CaseStudyCard
-                        brand={dict.homepage.featuredWork.projects.matafutsal.brand}
-                        title={dict.homepage.featuredWork.projects.matafutsal.title}
-                        description={dict.homepage.featuredWork.projects.matafutsal.description}
-                        image="/assets/portfolio/matafutsal/1.png"
-                        href={`/${lang}/case-studies/matafutsal`}
-                    />
+                    {caseStudies.map((study) => {
+                        const content = study[lang] || study.en;
+                        return (
+                            <CaseStudyCard
+                                key={study.slug}
+                                brand={study.brand}
+                                title={content.title}
+                                description={content.description}
+                                image={study.images[0]}
+                                href={`/${lang}/case-studies/${study.slug}`}
+                            />
+                        );
+                    })}
                 </div>
 
                 <div className="mt-8 md:hidden">

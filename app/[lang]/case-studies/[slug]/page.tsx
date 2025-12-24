@@ -14,12 +14,15 @@ export function generateStaticParams() {
 }
 
 export default async function CaseStudyDetail({ params }: { params: Promise<{ lang: Language; slug: string }> }) {
+
     const { lang, slug } = await params;
     const study = getCaseStudyBySlug(slug);
 
     if (!study) {
         notFound();
     }
+
+    const content = study[lang as keyof Pick<typeof study, 'en' | 'id'>] || study.en;
 
     return (
         <main className="min-h-screen pt-8 pb-16">
@@ -42,10 +45,10 @@ export default async function CaseStudyDetail({ params }: { params: Promise<{ la
                                 </span>
                             </div>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-6 text-balance">
-                                {study.title}
+                                {content.title}
                             </h1>
                             <p className="text-xl text-text-secondary max-w-3xl leading-relaxed mb-8">
-                                {study.description}
+                                {content.description}
                             </p>
                         </div>
 
@@ -68,7 +71,7 @@ export default async function CaseStudyDetail({ params }: { params: Promise<{ la
             {/* Hero Image Slider */}
             <Section className="!pt-8 !pb-12">
                 <div className="max-w-7xl mx-auto">
-                    <ImageSlider images={study.images} alt={study.title} />
+                    <ImageSlider images={study.images} alt={content.title} />
                 </div>
             </Section>
 
@@ -91,7 +94,7 @@ export default async function CaseStudyDetail({ params }: { params: Promise<{ la
                                         </div>
                                         <div>
                                             <div className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-1">Industry</div>
-                                            <div className="text-text font-medium">{study.brandProfile.industry}</div>
+                                            <div className="text-text font-medium">{content.brandProfile.industry}</div>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4">
@@ -100,7 +103,7 @@ export default async function CaseStudyDetail({ params }: { params: Promise<{ la
                                         </div>
                                         <div>
                                             <div className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-1">Location</div>
-                                            <div className="text-text font-medium">{study.brandProfile.location}</div>
+                                            <div className="text-text font-medium">{content.brandProfile.location}</div>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4">
@@ -109,7 +112,7 @@ export default async function CaseStudyDetail({ params }: { params: Promise<{ la
                                         </div>
                                         <div>
                                             <div className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-1">Company Size</div>
-                                            <div className="text-text font-medium">{study.brandProfile.companySize}</div>
+                                            <div className="text-text font-medium">{content.brandProfile.companySize}</div>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-4">
@@ -118,7 +121,7 @@ export default async function CaseStudyDetail({ params }: { params: Promise<{ la
                                         </div>
                                         <div>
                                             <div className="text-xs font-semibold text-text-muted uppercase tracking-wider mb-1">Use Case</div>
-                                            <div className="text-text font-medium">{study.brandProfile.useCase}</div>
+                                            <div className="text-text font-medium">{content.brandProfile.useCase}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -129,7 +132,7 @@ export default async function CaseStudyDetail({ params }: { params: Promise<{ la
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
                                 <h3 className="text-lg font-bold mb-6 relative z-10">Impact Summary</h3>
                                 <div className="grid grid-cols-1 gap-6 relative z-10">
-                                    {study.impactStats.map((stat, i) => (
+                                    {content.impactStats.map((stat, i) => (
                                         <div key={i} className="border-b border-white/10 pb-4 last:border-0 last:pb-0">
                                             <div className="text-4xl font-bold text-primary mb-1">{stat.value}</div>
                                             <div className="text-sm font-medium text-slate-300">{stat.label}</div>
@@ -154,7 +157,7 @@ export default async function CaseStudyDetail({ params }: { params: Promise<{ la
                                 <h2 className="text-2xl font-bold text-text">The Business Challenge</h2>
                             </div>
                             <div className="prose prose-lg text-text-secondary max-w-none">
-                                {study.challenge.map((paragraph, idx) => (
+                                {content.challenge.map((paragraph, idx) => (
                                     <p key={idx}>{paragraph}</p>
                                 ))}
                             </div>
@@ -169,7 +172,7 @@ export default async function CaseStudyDetail({ params }: { params: Promise<{ la
                                 <h2 className="text-2xl font-bold text-text">The Solution</h2>
                             </div>
                             <div className="prose prose-lg text-text-secondary max-w-none mb-8">
-                                {study.solution.map((paragraph, idx) => (
+                                {content.solution.map((paragraph, idx) => (
                                     <p key={idx}>{paragraph}</p>
                                 ))}
                             </div>
@@ -209,7 +212,7 @@ export default async function CaseStudyDetail({ params }: { params: Promise<{ la
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 items-center">
                                 <div className="prose prose-lg text-text-secondary max-w-none">
-                                    {study.result.map((paragraph, idx) => (
+                                    {content.result.map((paragraph, idx) => (
                                         <p key={idx}>{paragraph}</p>
                                     ))}
                                 </div>

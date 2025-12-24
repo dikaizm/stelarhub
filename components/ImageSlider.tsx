@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -11,6 +11,20 @@ interface ImageSliderProps {
 
 export default function ImageSlider({ images, alt }: ImageSliderProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
+
+    // Auto-slide with 7-second interval
+    useEffect(() => {
+        if (images.length <= 1) return;
+
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => {
+                const isLastSlide = prevIndex === images.length - 1;
+                return isLastSlide ? 0 : prevIndex + 1;
+            });
+        }, 7000);
+
+        return () => clearInterval(interval);
+    }, [images.length]);
 
     const prevSlide = () => {
         const isFirstSlide = currentIndex === 0;
