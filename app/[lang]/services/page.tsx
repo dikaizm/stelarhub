@@ -174,8 +174,8 @@ function ServiceSection({ id, title, description, icon, image, whatWeDeliver, ou
                         <Image
                             src={image}
                             alt={`${title} visualization`}
-                            height={440}
-                            width={440}
+                            height={600}
+                            width={600}
                             className="object-cover"
                         />
                     </div>

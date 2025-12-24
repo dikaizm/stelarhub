@@ -197,8 +197,8 @@ function ServiceCard({ title, description, image, learnMore, link }: { title: st
                         src={image}
                         alt={`${title} preview`}
                         className="object-cover"
-                        height={200}
-                        width={200}
+                        height={400}
+                        width={400}
                     />
                 </div>
             </div>
