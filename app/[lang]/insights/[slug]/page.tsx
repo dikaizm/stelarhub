@@ -8,6 +8,24 @@ import Link from 'next/link'
 import BlogCard from '@/components/BlogCard'
 import { getDictionary, Language } from '@/lib/translations'
 
+// Generate static params for all combinations of lang and slug
+export async function generateStaticParams() {
+    const langs: Language[] = ['en', 'id'];
+    const allParams = [];
+
+    for (const lang of langs) {
+        const posts = await getAllPosts(lang);
+        for (const post of posts) {
+            allParams.push({
+                lang,
+                slug: post.slug,
+            });
+        }
+    }
+
+    return allParams;
+}
+
 interface Props {
     params: Promise<{
         lang: Language

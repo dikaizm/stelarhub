@@ -229,7 +229,8 @@
     },
     "notFound": {
         "title": "Page Not Found",
-        "description": "Oops! The page you're looking for isn't available. I'm here to help you navigate back to the homepage or explore other insights."
+        "description": "Oops! The page you're looking for isn't available. I'm here to help you navigate back to the homepage or explore other insights.",
+        "backHome": "Back to Home"
     },
     "modal": {
         "techStack": "Tech Stack",

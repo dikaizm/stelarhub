@@ -2,15 +2,18 @@
 
 import React, { useState, useRef, useEffect } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
-import { useLanguage } from '@/contexts/LanguageContext'
 import { Globe, Check } from 'lucide-react'
+import { Language } from '@/lib/translations'
 
 const LanguageSwitcher: React.FC = () => {
-  const { language, setLanguage } = useLanguage()
   const pathname = usePathname()
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // Extract language from pathname
+  const segments = pathname.split('/').filter(Boolean)
+  const currentLang: Language = (segments[0] === 'en' || segments[0] === 'id') ? segments[0] : 'en'
 
   const languages = [
     { code: 'en', label: 'English' },
@@ -34,22 +37,18 @@ const LanguageSwitcher: React.FC = () => {
   }, [isOpen])
 
   const handleLanguageSelect = (newLang: string) => {
-    // Extract current language from pathname
-    const segments = pathname.split('/').filter(Boolean)
-    const currentLang = segments[0]
-
     // Replace language in pathname
-    if (currentLang === 'en' || currentLang === 'id') {
-      segments[0] = newLang
+    const pathSegments = pathname.split('/').filter(Boolean)
+    const pathLang = pathSegments[0]
+
+    if (pathLang === 'en' || pathLang === 'id') {
+      pathSegments[0] = newLang
     } else {
       // If no language in path, add it
-      segments.unshift(newLang)
+      pathSegments.unshift(newLang)
     }
 
-    const newPath = '/' + segments.join('/')
-
-    // Update context and navigate
-    setLanguage(newLang as 'en' | 'id')
+    const newPath = '/' + pathSegments.join('/')
     router.push(newPath)
     setIsOpen(false)
   }
@@ -62,11 +61,11 @@ const LanguageSwitcher: React.FC = () => {
             <button
               key={lang.code}
               onClick={() => handleLanguageSelect(lang.code)}
-              className={`w-full text-left px-4 py-2 text-sm flex items-center justify-between hover:bg-gray-50 transition-colors ${language === lang.code ? 'text-primary font-medium' : 'text-gray-600'
+              className={`w-full text-left px-4 py-2 text-sm flex items-center justify-between hover:bg-gray-50 transition-colors ${currentLang === lang.code ? 'text-primary font-medium' : 'text-gray-600'
                 }`}
             >
               {lang.label}
-              {language === lang.code && <Check className="w-4 h-4" />}
+              {currentLang === lang.code && <Check className="w-4 h-4" />}
             </button>
           ))}
         </div>
@@ -81,7 +80,7 @@ const LanguageSwitcher: React.FC = () => {
         title="Change Language"
       >
         <Globe className="w-5 h-5 text-gray-500" />
-        <span className="text-gray-500 uppercase">{language}</span>
+        <span className="text-gray-500 uppercase">{currentLang}</span>
       </button>
     </div>
   )

@@ -5,6 +5,7 @@ import "../globals.css";
 import Header from "@/components/Layouts/Header";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import FooterWrapper from "@/components/Layouts/FooterWrapper";
+import { Language } from "@/lib/translations";
 
 const font = Plus_Jakarta_Sans({
     weight: "variable",
@@ -127,7 +128,7 @@ export default async function LangLayout({
     params,
 }: Readonly<{
     children: React.ReactNode;
-    params: Promise<{ lang: string }>;
+    params: Promise<{ lang: Language }>;
 }>) {
     const { lang } = await params;
 
@@ -175,6 +176,14 @@ export default async function LangLayout({
 
     return (
         <>
+            {/* Override html lang attribute for this route */}
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `document.documentElement.lang = "${lang}";`
+                }}
+            />
+            {/* Manifest link */}
+            <link rel="manifest" href={`/${lang}/site.webmanifest`} />
             {/* JSON-LD Structured Data */}
             <Script
                 id="json-ld-organization"
@@ -191,9 +200,9 @@ export default async function LangLayout({
                 }}
             />
             <LanguageProvider>
-                <Header />
+                <Header lang={lang} />
                 {children}
-                <FooterWrapper />
+                <FooterWrapper lang={lang} />
             </LanguageProvider>
         </>
     );

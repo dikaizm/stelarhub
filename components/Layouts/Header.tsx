@@ -8,25 +8,32 @@ import { Menu, X } from 'lucide-react'
 
 import stelarLogo from '@/public/logo/stelarea.svg'
 import PrimaryButton from '@/components/Buttons/PrimaryButton'
-import { useLanguage } from '@/contexts/LanguageContext'
+import { getDictionary, Language } from '@/lib/translations'
 
-const Header = () => {
+interface HeaderProps {
+  lang?: Language
+}
+
+const Header = ({ lang: propLang }: HeaderProps) => {
   const pathname = usePathname()
-  const { t } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  // Extract current language from pathname
+  // Extract current language from pathname or use prop
   const segments = pathname.split('/').filter(Boolean)
-  const currentLang = (segments[0] === 'en' || segments[0] === 'id') ? segments[0] : 'id'
+  const pathLang = (segments[0] === 'en' || segments[0] === 'id') ? segments[0] as Language : undefined
+  const currentLang: Language = propLang || pathLang || 'en'
+
+  // Get translations using the dictionary directly (SSG-safe)
+  const dict = getDictionary(currentLang)
 
   // Navigation data with translations
   const navItems = [
-    { id: 1, label: t('footer.links.aboutUs'), url: `/${currentLang}/about` },
-    { id: 2, label: t('footer.sections.services'), url: `/${currentLang}/services` },
-    { id: 3, label: t('footer.links.caseStudies'), url: `/${currentLang}/case-studies` },
-    { id: 4, label: t('footer.links.insights'), url: `/${currentLang}/insights` },
-    { id: 5, label: t('footer.links.contact'), url: `/${currentLang}/contact` },
+    { id: 1, label: dict.footer.links.aboutUs, url: `/${currentLang}/about` },
+    { id: 2, label: dict.footer.sections.services, url: `/${currentLang}/services` },
+    { id: 3, label: dict.footer.links.caseStudies, url: `/${currentLang}/case-studies` },
+    { id: 4, label: dict.footer.links.insights, url: `/${currentLang}/insights` },
+    { id: 5, label: dict.footer.links.contact, url: `/${currentLang}/contact` },
   ]
 
   // Handle scroll effect
@@ -90,7 +97,7 @@ const Header = () => {
                 href={`/${currentLang}/contact`}
                 className="hidden md:inline-flex items-center justify-center px-5 py-2 text-sm font-semibold text-white transition-all duration-200 bg-primary hover:bg-primary-hover rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/30 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-white"
               >
-                {t('header.contactUs')}
+                {dict.header.contactUs}
               </Link>
 
               {/* Mobile Menu Button */}
@@ -132,7 +139,7 @@ const Header = () => {
             )
           })}
           <PrimaryButton
-            label={t('header.contactUs')}
+            label={dict.header.contactUs}
             link={`/${currentLang}/contact`}
             fullWidth
             className="mt-4"
