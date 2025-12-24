@@ -57,7 +57,9 @@ export function middleware(request: NextRequest) {
     );
 
     if (pathnameHasLang) {
-        return NextResponse.next();
+        const response = NextResponse.next();
+        response.headers.set('x-pathname', pathname);
+        return response;
     }
 
     // For paths without language prefix, rewrite to include the detected language
@@ -67,7 +69,9 @@ export function middleware(request: NextRequest) {
     const newUrl = new URL(`/${detectedLang}${pathname}`, request.url);
     newUrl.search = request.nextUrl.search;
 
-    return NextResponse.rewrite(newUrl);
+    const response = NextResponse.rewrite(newUrl);
+    response.headers.set('x-pathname', `/${detectedLang}${pathname}`);
+    return response;
 }
 
 export const config = {
