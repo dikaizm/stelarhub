@@ -2,16 +2,13 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, ChevronRight, CheckCircle2, Building2, MapPin, Users2, Target } from 'lucide-react';
 import Section from '@/components/Section';
-import { caseStudies, getCaseStudyBySlug } from '@/lib/caseStudies';
+import { getCaseStudyBySlug } from '@/lib/caseStudies';
 import ImageSlider from '@/components/ImageSlider';
 import SimpleChart from '@/components/SimpleChart';
 import { Language } from '@/lib/translations';
 
-export function generateStaticParams() {
-    return caseStudies.map((study) => ({
-        slug: study.slug,
-    }));
-}
+// Force dynamic rendering to ensure LanguageProvider context is available
+export const dynamic = 'force-dynamic';
 
 export default async function CaseStudyDetail({ params }: { params: Promise<{ lang: Language; slug: string }> }) {
 

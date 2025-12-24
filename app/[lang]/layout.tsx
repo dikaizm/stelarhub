@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import "../globals.css";
 import Header from "@/components/Layouts/Header";
 import { LanguageProvider } from "@/contexts/LanguageContext";
@@ -174,26 +175,21 @@ export default async function LangLayout({
 
     return (
         <>
-            <head>
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="manifest" href={`/${lang}/site.webmanifest`} />
-
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(jsonLdOrganization),
-                    }}
-                />
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(jsonLdWebsite),
-                    }}
-                />
-
-                {/* Theme color for browser UI */}
-                <meta name="theme-color" content="#0a0a0a" />
-            </head>
+            {/* JSON-LD Structured Data */}
+            <Script
+                id="json-ld-organization"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(jsonLdOrganization),
+                }}
+            />
+            <Script
+                id="json-ld-website"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(jsonLdWebsite),
+                }}
+            />
             <LanguageProvider>
                 <Header />
                 {children}

@@ -21,6 +21,11 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} className="scroll-smooth">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="manifest" href={`/${lang}/site.webmanifest`} />
+        <meta name="theme-color" content="#0a0a0a" />
+      </head>
       <body className={`${font.className} bg-dark text-white`}>
         {children}
       </body>
