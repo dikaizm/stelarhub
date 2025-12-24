@@ -1,10 +1,17 @@
 'use client'
 
 import React, { createContext, useContext, useState, useEffect } from 'react'
-import translations from '@/data/translations.json'
+import enData from '@/data/en.json'
+import idData from '@/data/id.json'
 
 type Language = 'id' | 'en'
 type TranslationKey = string
+
+// Create a dictionary map
+const dictionaries = {
+  id: idData,
+  en: enData
+}
 
 interface LanguageContextType {
   language: Language
@@ -42,7 +49,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   }
 
   const t = (key: TranslationKey): string => {
-    const translation = getNestedValue(translations[language], key)
+    // Select the dictionary based on current language
+    const currentDictionary = dictionaries[language]
+    const translation = getNestedValue(currentDictionary, key)
     return translation || key
   }
 

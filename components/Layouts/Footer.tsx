@@ -1,62 +1,145 @@
 import Image from 'next/image'
-import stelarLogo from '@/assets/logo/stelar.svg'
-import { RiRocket2Fill } from 'react-icons/ri'
-import PrimaryButton from '../Buttons/PrimaryButton'
-import { FaFacebookF, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa';
+import Link from 'next/link'
+import stelarLogo from '@/public/logo/stelarea.svg'
+import { Twitter, Instagram } from 'lucide-react'
+import LanguageSwitcher from '@/components/LanguageSwitcher'
 
-export default function FooterSection() {
-  return (
-    <>
-      {/* <CTASection /> */}
-
-      <footer className="w-full border-t border-gray-800 pt-16 pb-4 px-4 sm:px-12">
-        <div className="w-full max-w-7xl mx-auto flex flex-col md:justify-center md:flex-row gap-12 md:gap-8">
-          {/* Left: Logo & Brand */}
-          <div className="flex flex-col items-center gap-6">
-            <div className="flex items-center gap-2">
-              <a href="/" className="h-12 w-auto">
-                <Image className="w-full h-full bg-contain" src={stelarLogo} alt="Stelarea" />
-              </a>
-            </div>
-            <p className="text-gray-400 text-sm">
-              Building the future with code and creativity.
-            </p>
-          </div>
-        </div>
-        {/* Bottom Bar */}
-        <div className="w-full border-t border-gray-800 mt-10 pt-6 gap-4 px-4 sm:px-8">
-          <div className="text-gray-400 text-xs text-center">© 2025 Stelarea. All rights reserved.</div>
-        </div>
-      </footer>
-    </>
-  );
+interface FooterProps {
+  dict: {
+    footer: {
+      description: string
+      sections: {
+        services: string
+        company: string
+        contact: string
+      }
+      links: {
+        webPlatform: string
+        uxuiDesign: string
+        aiAutomation: string
+        dataStrategy: string
+        aboutUs: string
+        caseStudies: string
+        insights: string
+        contact: string
+      }
+      location: string
+      rights: string
+      privacyPolicy: string
+      termsOfService: string
+    }
+  }
 }
 
-function CTASection() {
-  return (
-    <section className="w-full bg-[#1A2236] border-t border-gray-800 py-16 sm:py-24 mt-8 px-4 sm:px-12 relative overflow-hidden">
-      {/* Subtle Globe Network SVG Background */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none z-0 flex items-center justify-center">
-        <svg width="700" height="700" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-auto">
-          <circle cx="350" cy="350" r="340" stroke="#22A8E0" strokeOpacity="0.15" strokeWidth="2" />
-          <circle cx="350" cy="350" r="250" stroke="#22A8E0" strokeOpacity="0.10" strokeWidth="2" />
-          <circle cx="350" cy="350" r="160" stroke="#22A8E0" strokeOpacity="0.08" strokeWidth="2" />
-          <circle cx="350" cy="350" r="80" stroke="#22A8E0" strokeOpacity="0.06" strokeWidth="2" />
+export default function Footer({ dict }: FooterProps) {
+  const currentYear = new Date().getFullYear()
 
-        </svg>
-      </div>
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-8 relative z-10">
-        <div className="flex-1">
-          <h2 className="text-white text-3xl sm:text-4xl font-bold mb-4">Mulai Transformasi Bisnis Anda dengan AI</h2>
-          <p className="text-gray-300 text-base sm:text-lg max-w-2xl">Tingkatkan efisiensi dan daya saing perusahaan Anda dengan solusi AI dari Stelarhub. Konsultasikan kebutuhan bisnis Anda dan temukan layanan AI yang tepat untuk pertumbuhan optimal.</p>
+  return (
+    <footer className="w-full bg-background-paper pt-16 pb-8">
+      <div className="container mx-auto px-6 sm:px-8">
+        <div className="flex flex-col lg:flex-row gap-16 mb-16">
+
+          {/* Brand Column */}
+          <div className="space-y-6 md:w-3/5">
+            <Link href="/" className="block w-32">
+              <Image
+                src={stelarLogo}
+                alt="Stelarea"
+                className="w-full h-auto"
+              />
+            </Link>
+            <p className="text-text-secondary text-sm leading-relaxed max-w-xs">
+              {dict.footer.description}
+            </p>
+            <div className="flex items-center gap-4">
+              <SocialLink href="https://twitter.com/stelarealab" icon={<Twitter size={18} />} />
+              <SocialLink href="https://instagram.com/stelarealab" icon={<Instagram size={18} />} />
+            </div>
+          </div>
+
+          <div className='grid grid-cols-2 md:grid-cols-3 gap-12 justify-between bg-gradient-to-br from-[#1e293b] via-[#334155] to-[#0f172a] p-6 md:p-10 rounded-2xl overflow-hidden md:w-full'>
+            {/* Services Column */}
+            <div>
+              <h3 className="text-text font-semibold mb-6 text-white/50">{dict.footer.sections.services}</h3>
+              <ul className="space-y-4">
+                <FooterLink href="/services#web-development">{dict.footer.links.webPlatform}</FooterLink>
+                <FooterLink href="/services#experience-design">{dict.footer.links.uxuiDesign}</FooterLink>
+                <FooterLink href="/services#ai-automation">{dict.footer.links.aiAutomation}</FooterLink>
+                <FooterLink href="/services#data-strategy">{dict.footer.links.dataStrategy}</FooterLink>
+              </ul>
+            </div>
+
+            {/* Company Column */}
+            <div>
+              <h3 className="text-text font-semibold mb-6 text-white/50">{dict.footer.sections.company}</h3>
+              <ul className="space-y-4">
+                <FooterLink href="/about">{dict.footer.links.aboutUs}</FooterLink>
+                <FooterLink href="/case-studies">{dict.footer.links.caseStudies}</FooterLink>
+                <FooterLink href="/insights">{dict.footer.links.insights}</FooterLink>
+                <FooterLink href="/contact">{dict.footer.links.contact}</FooterLink>
+              </ul>
+            </div>
+
+            {/* Contact Column */}
+            <div>
+              <h3 className="text-text font-semibold mb-6 text-white/50">{dict.footer.sections.contact}</h3>
+              <ul className="space-y-4 text-sm text-text-secondary">
+                <li>
+                  <a href="mailto:hello@stelarea.com" className="text-white hover:text-primary transition-colors">
+                    hello@stelarea.com
+                  </a>
+                </li>
+                <li className="text-white">
+                  {dict.footer.location}
+                </li>
+              </ul>
+            </div>
+          </div>
+
         </div>
-        <a
-          href="https://wa.me/6285600809354"
-          className="mt-6 sm:mt-0 bg-primary hover:bg-primary-light text-white font-semibold text-base px-8 py-4 rounded-lg shadow transition whitespace-nowrap"
-        >
-          Konsultasi Sekarang
-        </a>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-text-muted text-xs">
+            {dict.footer.rights.replace('{year}', currentYear.toString())}
+          </p>
+          <div className="flex gap-6 items-center">
+            <LanguageSwitcher />
+            <Link href="/privacy" className="text-text-muted text-xs hover:text-text transition-colors">
+              {dict.footer.privacyPolicy}
+            </Link>
+            <Link href="/terms" className="text-text-muted text-xs hover:text-text transition-colors">
+              {dict.footer.termsOfService}
+            </Link>
+          </div>
+        </div>
       </div>
-    </section>
-  );
+    </footer>
+  )
+}
+
+function SocialLink({ href, icon }: { href: string; icon: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-border text-text-muted hover:bg-primary hover:text-white hover:border-primary transition-all duration-200 shadow-sm"
+    >
+      {icon}
+    </a>
+  )
+}
+
+function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <li>
+      <Link
+        href={href}
+        className="text-sm text-white hover:text-primary transition-colors inline-block"
+      >
+        {children}
+      </Link>
+    </li>
+  )
 }

@@ -1,22 +1,25 @@
+# Allow all search engines to crawl the site
 User-agent: *
 Allow: /
 
-# Block access to admin and private directories
+# Block access to admin and API areas
 Disallow: /admin/
 Disallow: /private/
 Disallow: /_next/
 Disallow: /api/
 
-# Allow common crawlers
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-# Crawl delay for general bots
-Crawl-delay: 1
-
 # Sitemap location
 Sitemap: https://stelarea.com/sitemap.xml
-Sitemap: https://stelarea.com/rss.xml 
+
+# Major search engine bots (explicit allow for clarity)
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Googlebot-News
+User-agent: Bingbot
+User-agent: Slurp
+User-agent: DuckDuckBot
+User-agent: Baiduspider
+User-agent: YandexBot
+User-agent: facebot
+User-agent: ia_archiver
+Allow: /

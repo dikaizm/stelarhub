@@ -1,0 +1,33 @@
+import React from 'react'
+
+interface SectionProps {
+    children: React.ReactNode
+    className?: string
+    id?: string
+    background?: 'white' | 'paper' | 'transparent'
+}
+
+const Section = ({ children, className = '', id, background = 'transparent' }: SectionProps) => {
+    const bgClasses = {
+        white: 'bg-background',
+        paper: 'bg-background-paper',
+        transparent: 'bg-transparent'
+    }
+
+    return (
+        <section
+            id={id}
+            className={`
+        w-full py-16 sm:py-20 relative
+        ${bgClasses[background]}
+        ${className}
+      `}
+        >
+            <div className="container mx-auto px-6 sm:px-8">
+                {children}
+            </div>
+        </section>
+    )
+}
+
+export default Section

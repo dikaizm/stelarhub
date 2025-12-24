@@ -8,36 +8,59 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   safelist: [
-    "container"
+    "container",
+    "bg-background-paper",
+    "bg-background-subtle"
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-plus-jakarta-sans)', 'sans-serif'],
+      },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        // Subtle gradients for light theme
+        "hero-gradient": "linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%)",
+        "card-gradient": "linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)",
+        "accent-gradient": "linear-gradient(135deg, #0EA5E9 0%, #3B82F6 100%)",
       },
       colors: {
         primary: {
-          DEFAULT: "#22A8E0",
-          hover: "#178EC0",
-          light: "#72D0F6",
-          dark: "#0F1016",
+          DEFAULT: "#0EA5E9", // Sky 500 - Professional Blue/Cyan
+          hover: "#0284C7",   // Sky 600
+          light: "#E0F2FE",   // Sky 100
+          dark: "#0369A1",    // Sky 700
         },
-        gray: {
-          blue: "#EDF4FA"
+        secondary: {
+          DEFAULT: "#6366F1", // Indigo 500 - Supportive accent
+          hover: "#4F46E5",
+          light: "#EEF2FF",
         },
-        dark: {
-          DEFAULT: "#0F1016",
-          "10": "#1C1D24",
-          "15": "#2B2D38"
+        // Replaced 'dark' object with 'text' and 'background' focused logic
+        text: {
+          DEFAULT: "#111827", // Gray 900 - High contrast
+          secondary: "#4B5563", // Gray 600 - Readable secondary
+          muted: "#9CA3AF",     // Gray 400
+          light: "#FFFFFF",     // White text on dark backgrounds
+        },
+        background: {
+          DEFAULT: "#FFFFFF",   // Pure white
+          paper: "#F8FAFC",     // Slate 50 - Very subtle off-white for sections
+          subtle: "#F1F5F9",    // Slate 100 - Slightly darker for cards/borders
+        },
+        border: {
+          DEFAULT: "#E2E8F0", // Slate 200
+          hover: "#CBD5E1",   // Slate 300
         }
       },
-      dropShadow: {
-        glow: [
-          "0 0px 4px rgba(255,255,255, 0.2)",
-          "0 0px 8px rgba(114, 208, 246, 1)",
-        ]
+      boxShadow: {
+        'soft': '0 2px 10px rgba(0, 0, 0, 0.03)',
+        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+        'float': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025)',
+      },
+      borderRadius: {
+        'xl': '1rem',
+        '2xl': '1.5rem',
+        '3xl': '2rem',
       }
     },
     container: {
@@ -46,7 +69,7 @@ const config: Config = {
         md: "900px",
         lg: "1024px",
         xl: "1280px",
-        '2xl': "1440px",
+        '2xl': "1280px",
       },
       center: true,
       padding: {
@@ -58,14 +81,6 @@ const config: Config = {
         '2xl': '5rem',
       },
     },
-    borderRadius: {
-      'none': '0',
-      'sm': '0.25rem',
-      DEFAULT: '0.75rem',
-      'md': '1rem',
-      'lg': '2.5rem',
-      'full': '9999px',
-    }
   },
   plugins: [typography],
 };
